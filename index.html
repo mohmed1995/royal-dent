@@ -14,7 +14,7 @@
 <!-- Fonts: High-end luxury Arabic fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=Amiri:ital,wght@0,700;1,700&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="clinics/royal-dent/royal_dent_logo.svg">
@@ -28,7 +28,7 @@
 :root {
   --f-body: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
   --f-head: "Alexandria", "El Messiri", sans-serif;
-  --f-royal: "El Messiri", "Alexandria", serif;
+  --f-royal: "Amiri", "El Messiri", serif;
   --f-mono: "JetBrains Mono", monospace;
 
   /* Natural Warm Ivory & Sand Clinic Palette (Sampled from real ads) */
@@ -1256,6 +1256,227 @@ body {
 }
 
 /* ========================================================
+   ROYAL SPECIALTIES & GPS MAP NAVIGATION SUITE
+   ======================================================== */
+.font-royal { font-family: var(--f-royal) !important; letter-spacing: -0.3px; }
+.font-alex { font-family: var(--f-head) !important; }
+
+/* 4-Branch Navigation & Communication Hub */
+.royal-branch-hub {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+.branch-hub-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (min-width: 768px) {
+  .branch-hub-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.branch-tabs-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+@media (min-width: 768px) {
+  .branch-tabs-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.branch-tab-card {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: var(--tx-primary);
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.branch-tab-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.branch-tab-card.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border-color: var(--gold-dark);
+  box-shadow: 0 6px 18px var(--gold-glow);
+}
+.branch-tab-card.active .tab-sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+.branch-tab-card .tab-sub {
+  font-size: 11px;
+  color: var(--tx-muted);
+  font-weight: 500;
+}
+
+/* Phone & GPS 2-Col Split */
+.branch-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 860px) {
+  .branch-details-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.phone-card-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+.phone-card-item:hover {
+  border-color: var(--gold);
+}
+.phone-digits {
+  font-family: var(--f-mono);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  letter-spacing: 0.5px;
+}
+.phone-badge-hot {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--gold-light);
+  color: var(--tx-gold);
+  border: 1px solid var(--bd-subtle);
+}
+
+.btn-phone-call {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--emerald);
+  color: #FFFFFF;
+  font-family: var(--f-head);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+.btn-phone-call:hover { filter: brightness(1.08); }
+
+.btn-phone-copy {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bd-subtle);
+  color: var(--tx-primary);
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-phone-copy:hover { border-color: var(--gold); }
+
+/* GPS Map Card */
+.gps-map-frame {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid var(--bd-subtle);
+  margin-top: 10px;
+}
+.gps-landmark-card {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  font-size: 12px;
+  color: var(--tx-primary);
+  line-height: 1.6;
+}
+
+/* Treatment Care Specialties Grid (Replaces FDI Teeth) */
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 12px 0 16px 0;
+}
+@media (min-width: 640px) {
+  .specialty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.specialty-card-btn {
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.specialty-card-btn:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.specialty-card-btn.selected {
+  background: var(--gold-light);
+  border-color: var(--gold);
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+.specialty-card-btn.selected .spec-name {
+  color: var(--gold-dark);
+}
+.spec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.spec-icon {
+  font-size: 20px;
+}
+.spec-name {
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--tx-primary);
+}
+.spec-desc {
+  font-size: 11px;
+  color: var(--tx-muted);
+}
+
+
+/* ========================================================
    OFFICIAL LOGO & BRAND BADGES (USER UPLOADED ASSET)
    ======================================================== */
 .brand-crest {
@@ -1718,6 +1939,96 @@ body {
     </div>
   </section>
 
+  <!-- ROYAL 4-BRANCH GPS MAPS & LIVE COMMUNICATION HUB (REQUESTED BY USER) -->
+  <section class="royal-branch-hub" id="royalBranchHub">
+    <div class="branch-hub-header">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:20px;">🧭</span>
+          <h2 class="font-royal" style="font-size:22px; font-weight:700; color:var(--tx-primary); margin:0;">
+            شبكة فروع مركز رويال — الخريطة التفاعلية والاتصال المباشر
+          </h2>
+        </div>
+        <p style="font-size:12.5px; color:var(--tx-muted); margin:4px 0 0 0;">
+          اختر الفرع للوصول إلى أرقام الاستقبال المباشرة، موقع Google Maps بالـ GPS، والاتجاهات الدقيقة
+        </p>
+      </div>
+      <div style="display:flex; align-items:center; gap:6px;">
+        <span class="badge-tag" style="font-size:12px; margin:0;">4 فروع رسمية بمحافظتي أسيوط والمنيا</span>
+      </div>
+    </div>
+
+    <!-- 4 Branch Switcher Tabs -->
+    <div class="branch-tabs-row">
+      <div class="branch-tab-card active" id="bcard-dairut" onclick="switchHubBranch('dairut')">
+        <span>👑 فرع ديروط (الرئيسي)</span>
+        <span class="tab-sub">ميدان أبو جبل • 3 خطوط</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-assiut" onclick="switchHubBranch('assiut')">
+        <span>🏢 فرع مدينة أسيوط</span>
+        <span class="tab-sub">ميدان الزهراء • عمر أفندي</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-qusiya" onclick="switchHubBranch('qusiya')">
+        <span>🏛️ فرع القوصية</span>
+        <span class="tab-sub">شارع الجلاء • بنك القاهرة</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-dayrmawas" onclick="switchHubBranch('dayrmawas')">
+        <span>🌿 فرع ديرمواس</span>
+        <span class="tab-sub">مدرسة التجارة • أسواق المهندس</span>
+      </div>
+    </div>
+
+    <!-- 2-Col Split: Left Phones, Right GPS Map -->
+    <div class="branch-details-grid">
+      <!-- Col 1: Phone Numbers & Direct Actions -->
+      <div style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--bd-subtle);">
+            <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);" id="hubPhoneBoxTitle">
+              أرقام التواصل وحجز المواعيد — فرع ديروط الرئيسي
+            </div>
+            <span style="font-size:11px; font-weight:700; color:var(--emerald);">● متاح للاتصال الآن</span>
+          </div>
+
+          <div id="hubPhoneListContainer">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <a id="hubWhatsAppBtn" href="#" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:12px; font-size:13.5px; margin-top:10px;">
+          <span>💬 محادثة واتساب فورية مع استقبال الفرع</span>
+        </a>
+      </div>
+
+      <!-- Col 2: GPS Map & Landmarks -->
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);">
+            📍 الموقع الدقيق على الخريطة والاتجاهات
+          </div>
+          <span id="hubGpsBadge" style="font-family:var(--f-mono); font-size:11px; font-weight:800; color:var(--tx-gold);">DAIRUT GPS</span>
+        </div>
+
+        <div class="gps-landmark-card" id="hubLandmarkCard">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="gps-map-frame">
+          <iframe id="hubMapIframe" style="width:100%; height:100%; border:none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=27.5583,30.8144&hl=ar&z=15&output=embed"></iframe>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <a id="hubGmapDirectionsBtn" href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-royal-submit" style="flex:1; background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 فتح الملاحة والمسار (Google Maps)</span>
+          </a>
+          <button type="button" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--bd-subtle); color:var(--tx-primary); padding:10px 14px; font-size:12.5px;" onclick="copyBranchAddress()">
+            <span>📋 نسخ العنوان</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SUITE DOCK BAR (5 SPECIALIZED SCREENS) -->
   <nav class="suite-dock-bar">
     <button type="button" class="dock-tab-btn active" id="tab-kiosk" onclick="switchSuiteTab('kiosk')">
@@ -1838,29 +2149,73 @@ body {
             </div>
           </div>
 
-          <!-- FDI 32-Teeth Chart -->
-          <div class="fdi-chart-container">
+          <!-- ROYAL CLINICAL SPECIALTIES SELECTOR (REPLACING OLD TEETH MAP) -->
+          <div style="margin-bottom:18px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <span style="font-size:12px; font-weight:800; color:var(--tx-primary);">تحديد الأسنان المصابة (مخطط الـ 32 سناً FDI)</span>
-              <span id="selectedTeethSummary" style="font-size:11px; color:var(--tx-gold); font-family:var(--f-mono);">(لم يتم تحديد أسنان)</span>
+              <span style="font-size:13px; font-weight:800; color:var(--tx-primary); font-family:var(--f-head);">
+                🦷 اختر التخصص أو العلاج المطلوب:
+              </span>
+              <span id="selectedSpecialtyLabel" style="font-size:11.5px; color:var(--tx-gold); font-family:var(--f-head); font-weight:700;">
+                تقويم الأسنان (0% فوائد)
+              </span>
             </div>
 
-            <div class="fdi-arch-label">الفك العلوي (UPPER MAXILLA)</div>
-            <div class="fdi-arch-row" id="upperTeethRow"></div>
+            <div class="specialty-grid" id="specialtyCareGrid">
+              <div class="specialty-card-btn selected" data-key="ortho" onclick="selectCareSpecialty('ortho')">
+                <div class="spec-head">
+                  <span class="spec-icon">📐</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-gold); font-family:var(--f-mono);">0% فوائد</span>
+                </div>
+                <div class="spec-name">تقويم الأسنان</div>
+                <div class="spec-desc">حاسبة الأقساط + مسح 3D</div>
+              </div>
 
-            <div class="fdi-arch-label" style="margin-top:10px;">الفك السفلي (LOWER MANDIBLE)</div>
-            <div class="fdi-arch-row" id="lowerTeethRow"></div>
+              <div class="specialty-card-btn" data-key="ladies" onclick="selectCareSpecialty('ladies')">
+                <div class="spec-head">
+                  <span class="spec-icon">🌸</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--rose); font-family:var(--f-head);">خصوصية</span>
+                </div>
+                <div class="spec-name">قسم السيدات</div>
+                <div class="spec-desc">أجنحة خاصة وطبيبات استشاريات</div>
+              </div>
 
-            <div class="pathology-tag-group" id="pathologyChips">
-              <span class="patho-chip" data-val="ألم عصب حاد">⚡ ألم عصب</span>
-              <span class="patho-chip" data-val="تسوس وفقدان حشوة">🦷 تسوس حاد</span>
-              <span class="patho-chip" data-val="تزاحم ومسافات تقويم">📐 مسافات تقويم</span>
-              <span class="patho-chip" data-val="سن مفقود يحتاج زراعة">🔩 سن مفقود (زراعة)</span>
-              <span class="patho-chip" data-val="تصبغات وتراكم جير">✨ تنظيف وتبييض</span>
-              <span class="patho-chip" data-val="كسر أو تآكل طارئ">💥 كسر أو حافة حادة</span>
+              <div class="specialty-card-btn" data-key="implant" onclick="selectCareSpecialty('implant')">
+                <div class="spec-head">
+                  <span class="spec-icon">🔬</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--emerald); font-family:var(--f-mono);">-25%</span>
+                </div>
+                <div class="spec-name">زراعة وجراحة</div>
+                <div class="spec-desc">غرسات سويسرية وألمانية</div>
+              </div>
+
+              <div class="specialty-card-btn" data-key="hollywood" onclick="selectCareSpecialty('hollywood')">
+                <div class="spec-head">
+                  <span class="spec-icon">✨</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-gold); font-family:var(--f-head);">تجميل</span>
+                </div>
+                <div class="spec-name">ابتسامة هوليوود</div>
+                <div class="spec-desc">فينير وإيماكس وتبييض ليزر</div>
+              </div>
+
+              <div class="specialty-card-btn" data-key="endo" onclick="selectCareSpecialty('endo')">
+                <div class="spec-head">
+                  <span class="spec-icon">⚡</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-slate); font-family:var(--f-head);">بدون ألم</span>
+                </div>
+                <div class="spec-name">علاج وحشو العصب</div>
+                <div class="spec-desc">ميكروسكوب ثلاثي الأبعاد</div>
+              </div>
+
+              <div class="specialty-card-btn" data-key="kids" onclick="selectCareSpecialty('kids')">
+                <div class="spec-head">
+                  <span class="spec-icon">👶</span>
+                  <span style="font-size:10.5px; font-weight:700; color:var(--clinical-teal); font-family:var(--f-head);">رويال كيدز</span>
+                </div>
+                <div class="spec-name">طب أسنان أطفال</div>
+                <div class="spec-desc">جلسات علاج ترفيهية مريحة</div>
+              </div>
             </div>
           </div>
-
           <div class="form-field">
             <label class="form-label" for="patientNotes">ملاحظات إضافية أو أعراض تشعر بها</label>
             <textarea id="patientNotes" class="form-textarea" rows="2" placeholder="اشرح لنا أي تفاصيل إضافية لتجهيز ملفك الطبي قبل وصولك..."></textarea>
@@ -2700,72 +3055,213 @@ const RoyalAudio = {
 };
 
 /* ========================================================
-   FDI 32 TEETH CHART & PATHOLOGY LOGIC
+   ROYAL 4-BRANCH GPS NAVIGATION & SPECIALTIES ENGINE
    ======================================================== */
-const selectedTeeth = new Set();
-const selectedPathologies = new Set();
-
-const FDI_TEETH = {
-  upper: [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28],
-  lower: [48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38]
+const ROYAL_GPS_DATA = {
+  dairut: {
+    title: "فرع ديروط الرئيسي (ميدان أبو جبل)",
+    badge: "DAIRUT GPS",
+    address: "📍 ديروط — ميدان أبو جبل، بجوار فرع فودافون أعلى Q جيم ومطعم التيسير - الدور الثاني",
+    landmarks: "🏢 علامات مميزة: أمام محطة الموقف، سهولة الوصول والمواقف متوفرة.",
+    lat: "27.5583",
+    lng: "30.8144",
+    whatsapp: "201066726432",
+    phones: [
+      { num: "01066726432", label: "الخط الساخن والحجز الفوري", isPrimary: true },
+      { num: "01500098392", label: "هاتف الاستقبال والطوارئ", isPrimary: false },
+      { num: "01044820100", label: "خدمة المتابعة ونتائج الأشعة", isPrimary: false }
+    ]
+  },
+  assiut: {
+    title: "فرع مدينة أسيوط (ميدان الزهراء)",
+    badge: "ASSIUT GPS",
+    address: "📍 أسيوط — ميدان الزهراء، بجوار عمر أفندي، برج مهران الدور الثاني",
+    landmarks: "🏢 علامات مميزة: قلب مدينة أسيوط، بجوار بنك الإسكندرية وأمام الموقف.",
+    lat: "27.1809",
+    lng: "31.1837",
+    whatsapp: "201116596599",
+    phones: [
+      { num: "01116596599", label: "استقبال فرع أسيوط الرئيسي", isPrimary: true },
+      { num: "01066726432", label: "الخط الموحد للحجوزات", isPrimary: false }
+    ]
+  },
+  qusiya: {
+    title: "فرع القوصية (شارع الجلاء)",
+    badge: "QUSIYA GPS",
+    address: "📍 القوصية — شارع الجلاء، بجوار بنك القاهرة، برج فاطمة الزهراء",
+    landmarks: "🏢 علامات مميزة: الشارع التجاري الرئيسي، خطوات من محطة القطار.",
+    lat: "27.4419",
+    lng: "30.8175",
+    whatsapp: "201500098392",
+    phones: [
+      { num: "01500098392", label: "استقبال فرع القوصية", isPrimary: true },
+      { num: "01066726432", label: "خدمة العملاء الموحدة", isPrimary: false }
+    ]
+  },
+  dayrmawas: {
+    title: "فرع ديرمواس (مدرسة التجارة)",
+    badge: "DAYRMAWAS GPS",
+    address: "📍 ديرمواس — شارع مدرسة التجارة، أعلى مكتبة الإسكندرية وأسواق المهندس",
+    landmarks: "🏢 علامات مميزة: بجوار صيدلية الشعب، موقع هادئ ومريح للمرضى.",
+    lat: "27.6441",
+    lng: "30.8465",
+    whatsapp: "201044820100",
+    phones: [
+      { num: "01044820100", label: "استقبال فرع ديرمواس", isPrimary: true },
+      { num: "01066726432", label: "الخط المركزي للحالات", isPrimary: false }
+    ]
+  }
 };
 
-function renderFdiTeeth() {
-  const upperRow = document.getElementById("upperTeethRow");
-  const lowerRow = document.getElementById("lowerTeethRow");
-  if (!upperRow || !lowerRow) return;
+let currentHubBranchKey = "dairut";
+let currentCareSpecialty = {
+  key: "ortho",
+  name: "تقويم الأسنان (0% فوائد)",
+  docId: "rd-doc-02",
+  coupon: "ROYAL-ORTHO-DISTANCES"
+};
 
-  upperRow.innerHTML = FDI_TEETH.upper.map(t => {
-    return '<button type="button" class="fdi-tooth-btn" data-tooth="' + t + '" onclick="toggleTooth(' + t + ')" title="السن رقم ' + t + '">' +
-      '<span class="tooth-icon">🦷</span>' +
-      '<span>' + t + '</span>' +
-    '</button>';
-  }).join("");
+function switchHubBranch(branchKey) {
+  currentHubBranchKey = branchKey;
+  const data = ROYAL_GPS_DATA[branchKey] || ROYAL_GPS_DATA.dairut;
 
-  lowerRow.innerHTML = FDI_TEETH.lower.map(t => {
-    return '<button type="button" class="fdi-tooth-btn" data-tooth="' + t + '" onclick="toggleTooth(' + t + ')" title="السن رقم ' + t + '">' +
-      '<span>' + t + '</span>' +
-      '<span class="tooth-icon">🦷</span>' +
-    '</button>';
-  }).join("");
+  // Sync with top bar select
+  const topSelect = document.getElementById("branchSelector");
+  if (topSelect && topSelect.value !== branchKey) {
+    topSelect.value = branchKey;
+  }
 
-  // Setup pathology chips
-  document.querySelectorAll(".patho-chip").forEach(chip => {
-    chip.addEventListener("click", function() {
-      const val = this.getAttribute("data-val");
-      if (selectedPathologies.has(val)) {
-        selectedPathologies.delete(val);
-        this.classList.remove("selected");
-      } else {
-        selectedPathologies.add(val);
-        this.classList.add("selected");
-      }
-      RoyalAudio.playChime();
-    });
+  // Update tabs active class
+  document.querySelectorAll(".branch-tab-card").forEach(c => c.classList.remove("active"));
+  const activeTab = document.getElementById("bcard-" + branchKey);
+  if (activeTab) activeTab.classList.add("active");
+
+  // Update phone list container
+  const titleEl = document.getElementById("hubPhoneBoxTitle");
+  if (titleEl) titleEl.innerText = "أرقام التواصل وحجز المواعيد — " + data.title;
+
+  const phoneContainer = document.getElementById("hubPhoneListContainer");
+  if (phoneContainer) {
+    phoneContainer.innerHTML = data.phones.map(p => {
+      return `<div class="phone-card-item">
+        <div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="phone-digits" dir="ltr">${p.num}</span>
+            ${p.isPrimary ? '<span class="phone-badge-hot">الخط الساخن</span>' : ''}
+          </div>
+          <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">${p.label}</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <a href="tel:${p.num}" class="btn-phone-call" title="اتصال هاتفي فوري">
+            <span>📞 اتصال</span>
+          </a>
+          <button type="button" class="btn-phone-copy" onclick="copyNumber('${p.num}')" title="نسخ الرقم">
+            📋 نسخ
+          </button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  // Update WhatsApp direct button
+  const waBtn = document.getElementById("hubWhatsAppBtn");
+  if (waBtn) {
+    waBtn.href = "https://wa.me/" + data.whatsapp + "?text=" + encodeURIComponent("مرحباً مركز رويال لطب الفم والأسنان، أود الاستفسار والحجز في " + data.title);
+  }
+
+  // Update Map & Landmark
+  const badgeEl = document.getElementById("hubGpsBadge");
+  if (badgeEl) badgeEl.innerText = data.badge;
+
+  const landmarkEl = document.getElementById("hubLandmarkCard");
+  if (landmarkEl) {
+    landmarkEl.innerHTML = `<div style="font-weight:700; color:var(--tx-primary); margin-bottom:4px;">${data.address}</div>
+      <div style="color:var(--tx-muted); font-size:11.5px;">${data.landmarks}</div>`;
+  }
+
+  const mapIframe = document.getElementById("hubMapIframe");
+  if (mapIframe) {
+    mapIframe.src = "https://maps.google.com/maps?q=" + data.lat + "," + data.lng + "&hl=ar&z=15&output=embed";
+  }
+
+  const directionsBtn = document.getElementById("hubGmapDirectionsBtn");
+  if (directionsBtn) {
+    directionsBtn.href = "https://maps.google.com/?q=" + data.lat + "," + data.lng;
+  }
+
+  // Update hero meta
+  const heroHeading = document.getElementById("heroBranchHeading");
+  if (heroHeading) heroHeading.innerText = data.title + " — ابتسامتك الملكية بأحدث المعايير";
+
+  const heroAddress = document.getElementById("heroAddressChip");
+  if (heroAddress) heroAddress.innerText = data.address;
+
+  const heroPhone = document.getElementById("heroPhoneChip");
+  if (heroPhone) heroPhone.innerText = "📞 " + data.phones.map(p => p.num).join(" - ");
+
+  updateLivePassPreview();
+}
+
+function copyBranchAddress() {
+  const data = ROYAL_GPS_DATA[currentHubBranchKey] || ROYAL_GPS_DATA.dairut;
+  const fullText = data.address + " | " + data.landmarks;
+  navigator.clipboard.writeText(fullText).then(() => {
+    RoyalAudio.playChime();
+    showToast("📍 تم نسخ عنوان " + data.title + " بالكامل للملاحة والخرائط!");
   });
 }
 
-function toggleTooth(toothNum) {
-  const btn = document.querySelector('.fdi-tooth-btn[data-tooth="' + toothNum + '"]');
-  if (selectedTeeth.has(toothNum)) {
-    selectedTeeth.delete(toothNum);
-    if (btn) btn.classList.remove("selected");
-  } else {
-    selectedTeeth.add(toothNum);
-    if (btn) btn.classList.add("selected");
+function copyNumber(num) {
+  navigator.clipboard.writeText(num).then(() => {
+    RoyalAudio.playChime();
+    showToast("📋 تم نسخ الرقم (" + num + ") في الحافظة بنجاح!");
+  });
+}
+
+function selectCareSpecialty(key) {
+  document.querySelectorAll(".specialty-card-btn").forEach(c => c.classList.remove("selected"));
+  const card = document.querySelector('.specialty-card-btn[data-key="' + key + '"]');
+  if (card) card.classList.add("selected");
+
+  const promoInput = document.getElementById("promoCode");
+  const docSelect = document.getElementById("doctorSelect");
+  const ladiesCheck = document.getElementById("ladiesDeptCheck");
+  const labelEl = document.getElementById("selectedSpecialtyLabel");
+
+  if (key === "ortho") {
+    currentCareSpecialty = { key: "ortho", name: "تقويم الأسنان (0% فوائد)", docId: "rd-doc-02", coupon: "ROYAL-ORTHO-DISTANCES" };
+    if (docSelect) docSelect.value = "rd-doc-02";
+    if (promoInput) promoInput.value = "ROYAL-ORTHO-DISTANCES";
+    if (ladiesCheck) ladiesCheck.checked = false;
+  } else if (key === "ladies") {
+    currentCareSpecialty = { key: "ladies", name: "قسم السيدات والخصوصية", docId: "rd-doc-03", coupon: "ROYAL-LADIES-SPECIAL" };
+    if (docSelect) docSelect.value = "rd-doc-03";
+    if (promoInput) promoInput.value = "ROYAL-LADIES-SPECIAL";
+    if (ladiesCheck) ladiesCheck.checked = true;
+  } else if (key === "implant") {
+    currentCareSpecialty = { key: "implant", name: "زراعة وجراحة الأسنان (-25%)", docId: "rd-doc-01", coupon: "ROYAL-IMPLANT-25" };
+    if (docSelect) docSelect.value = "rd-doc-01";
+    if (promoInput) promoInput.value = "ROYAL-IMPLANT-25";
+    if (ladiesCheck) ladiesCheck.checked = false;
+  } else if (key === "hollywood") {
+    currentCareSpecialty = { key: "hollywood", name: "ابتسامة هوليوود وتبييض الليزر", docId: "rd-doc-04", coupon: "ROYAL-HOLLYWOOD" };
+    if (docSelect) docSelect.value = "rd-doc-04";
+    if (promoInput) promoInput.value = "ROYAL-HOLLYWOOD";
+    if (ladiesCheck) ladiesCheck.checked = false;
+  } else if (key === "endo") {
+    currentCareSpecialty = { key: "endo", name: "علاج وحشو العصب التجميلي", docId: "rd-doc-04", coupon: "ROYAL-DIRECT" };
+    if (docSelect) docSelect.value = "rd-doc-04";
+    if (ladiesCheck) ladiesCheck.checked = false;
+  } else if (key === "kids") {
+    currentCareSpecialty = { key: "kids", name: "جناح رويال كيدز للأطفال", docId: "rd-doc-05", coupon: "ROYAL-KIDS" };
+    if (docSelect) docSelect.value = "rd-doc-05";
+    if (ladiesCheck) ladiesCheck.checked = false;
   }
 
-  const summary = document.getElementById("selectedTeethSummary");
-  if (summary) {
-    if (selectedTeeth.size === 0) {
-      summary.innerText = "(لم يتم تحديد أسنان)";
-    } else {
-      const arr = Array.from(selectedTeeth).sort((a,b) => a-b);
-      summary.innerText = "(" + arr.length + " أسنان محددة: #" + arr.join(", #") + ")";
-    }
-  }
-
+  if (labelEl) labelEl.innerText = currentCareSpecialty.name;
   RoyalAudio.playChime();
+  showToast("تم اختيار: " + currentCareSpecialty.name);
+  updateLivePassPreview();
 }
 
 /* ========================================================
@@ -2862,6 +3358,7 @@ function processVoiceTranscript(text) {
    ======================================================== */
 function onBranchChanged() {
   const branchKey = document.getElementById("branchSelector").value;
+  switchHubBranch(branchKey);
   const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
 
   const heading = document.getElementById("heroBranchHeading");
@@ -2931,6 +3428,8 @@ function updateLivePassPreview() {
   }
 
   if (passDiscount) {
+    passDiscount.innerText = currentCareSpecialty.name;
+  } else if (false) {
     const p = promoInput.value.trim().toUpperCase();
     if (p.includes("ORTHO")) {
       passDiscount.innerText = "تقسيط 0% فوائد + فحص 3D";
@@ -2991,8 +3490,8 @@ function submitClinicBooking() {
   }
 
   const doctor = ROYAL_NETWORK.doctors.find(d => d.id === docSelect) || ROYAL_NETWORK.doctors[0];
-  const teethList = Array.from(selectedTeeth).sort((a,b) => Number(a)-Number(b)).map(t => "#" + t).join(", ") || "فحص شامل";
-  const pathologyList = Array.from(selectedPathologies).join(" + ") || "كشف واستشارة عامة";
+  const teethList = currentCareSpecialty.name || "فحص سريري شامل";
+  const pathologyList = currentCareSpecialty.name + (isLadies ? " (قسم السيدات)" : "");
   const serial = "RD-" + branchKey.toUpperCase().slice(0,3) + "-" + Math.floor(1000 + Math.random() * 9000);
 
   document.getElementById("ticketSerialTag").innerText = serial;
@@ -3756,7 +4255,7 @@ window.addEventListener("DOMContentLoaded", () => {
     dateInput.value = new Date().toISOString().split('T')[0];
   }
 
-  renderFdiTeeth();
+  switchHubBranch("dairut"); selectCareSpecialty("ortho");
   renderAds();
   renderOrthoSystems();
   recalcOrthoInstallments();
