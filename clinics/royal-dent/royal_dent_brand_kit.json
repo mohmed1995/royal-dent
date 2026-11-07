@@ -1,0 +1,200 @@
+{
+  "extractedAt": "2026-11-07T17:30:00.000Z",
+  "sourceUrl": "https://www.facebook.com/RoyalDentDairut/",
+  "pageHandle": "RoyalDentDairut",
+  "clinicNameAr": "مركز رويال لطب الفم والأسنان — فرع ديروط",
+  "clinicNameEn": "Royal Dent Dental Center — Dairut Branch",
+  "sloganAr": "ابتسامتك الملكية تبدأ من هنا • أحدث تقنيات طب وتجميل الأسنان بأسيوط",
+  "sloganEn": "Your Royal Smile Starts Here • Advanced Dental & Ortho Care",
+  "contact": {
+    "phones": ["01066726432", "01044820100", "01500098392"],
+    "whatsapp": "201066726432",
+    "addressAr": "ديروط - ميدان أبو جبل، بجوار فرع فودافون، فوق مطعم التيسير و Q جيم، محافظة أسيوط",
+    "officialWebsite": "https://royal-dent-center.com",
+    "workingHours": {
+      "saturdayToThursday": "11:00 ص - 10:30 م",
+      "friday": "04:00 م - 10:00 م (طوارئ ومواعيد مسبقة)",
+      "morningShift": "11:00 ص - 03:00 م",
+      "eveningShift": "05:00 م - 10:30 م"
+    },
+    "otherBranches": [
+      { "branch": "فرع القوصية", "address": "شارع الجلاء - بجوار بنك القاهرة - برج فاطمة الزهراء - الدور الأول" },
+      { "branch": "فرع دير مواس", "address": "شارع مدرسة التجارة - أعلى مكتبة الإسكندرية وأسواق المهندس" }
+    ]
+  },
+  "visualIdentity": {
+    "themeName": "Royal Dental Luxury & Clinical Precision",
+    "palette": {
+      "primaryNavy": "#0A2540",
+      "royalBlue": "#00529B",
+      "accentGold": "#D4AF37",
+      "clinicalTeal": "#0EA5E9",
+      "canvasCream": "#F8FAFC",
+      "pureWhite": "#FFFFFF",
+      "textDark": "#0B1730"
+    },
+    "typography": {
+      "displayHeading": "El Messiri, serif",
+      "bodyText": "IBM Plex Sans Arabic, Cairo, sans-serif"
+    },
+    "logoUrl": "/clinics/royal-dent/logo.svg"
+  },
+  "orthodonticsDepartment": {
+    "titleAr": "قسم تقويم الأسنان والفكين المتقدم",
+    "description": "علاج التزاحم، العضة المفتوحة والمعكوسة، وفراغات الأسنان بأحدث أجهزة التقويم الرقمية",
+    "systems": [
+      {
+        "id": "clear-aligner",
+        "name": "التقويم الشفاف ديجيتال (Clear Aligners)",
+        "features": ["غير مرئي تماماً", "قابل للإزالة أثناء الأكل", "تصميم رقمي 3D للابتسامة"],
+        "durationMonths": "6 - 14 شهر",
+        "totalCost": 18000,
+        "downPayment": 4000,
+        "monthlyInstallment": 1000
+      },
+      {
+        "id": "american-metal",
+        "name": "التقويم المعدني الأمريكي (American Braces)",
+        "features": ["الأكثر كفاءة لحالات التزاحم الشديد", "ألوان وتوكات مبهجة للشباب", "متانة عالية"],
+        "durationMonths": "12 - 20 شهر",
+        "totalCost": 12000,
+        "downPayment": 2500,
+        "monthlyInstallment": 600
+      },
+      {
+        "id": "ceramic-aesthetic",
+        "name": "التقويم السيراميكي التجميلي (Ceramic Braces)",
+        "features": ["حاصرات خزفية بلون الأسنان الطبيعي", "مظهر أنيق وغير ملفت", "نتائج دقيقة وسريعة"],
+        "durationMonths": "10 - 18 شهر",
+        "totalCost": 15000,
+        "downPayment": 3000,
+        "monthlyInstallment": 800
+      },
+      {
+        "id": "pediatric-jaw",
+        "name": "تقويم الفكين الوظيفي للأطفال (Functional Ortho)",
+        "features": ["توجيه نمو الفك قبل البلوغ", "تجنب الجراحة المستقبلية", "جلسات مريحة ومتابعة دورية"],
+        "durationMonths": "8 - 15 شهر",
+        "totalCost": 9000,
+        "downPayment": 2000,
+        "monthlyInstallment": 500
+      }
+    ]
+  },
+  "doctorsRoster": [
+    {
+      "id": "rd-doc-01",
+      "name": "د. أحمد عبد الحليم",
+      "title": "استشاري أول جراحة الفم وزراعة الأسنان الديجيتال",
+      "specialty": "implants",
+      "room": "عيادة رقم 1 (الجراحة والزراعة)",
+      "schedule": ["السبت", "الأحد", "الثلاثاء", "الخميس"]
+    },
+    {
+      "id": "rd-doc-02",
+      "name": "د. محمد حسن رشاد",
+      "title": "استشاري تقويم الأسنان والفكين والتقويم الشفاف",
+      "specialty": "orthodontics",
+      "room": "عيادة رقم 2 (استوديو التقويم)",
+      "schedule": ["الأحد", "الإثنين", "الأربعاء"]
+    },
+    {
+      "id": "rd-doc-03",
+      "name": "د. سارة المنشاوي",
+      "title": "أخصائية تجميل الأسنان وفينير الابتسامة الرقمية DSD",
+      "specialty": "cosmetic",
+      "room": "عيادة رقم 3 (استوديو الابتسامة)",
+      "schedule": ["السبت", "الثلاثاء", "الخميس"]
+    },
+    {
+      "id": "rd-doc-04",
+      "name": "د. محمود العسقلاني",
+      "title": "أخصائي علاج الجذور وحشو العصب بالمايكروسكوب",
+      "specialty": "endodontics",
+      "room": "عيادة رقم 4 (الميكروسكوب الجراحي)",
+      "schedule": ["السبت", "الإثنين", "الأربعاء", "الخميس"]
+    },
+    {
+      "id": "rd-doc-05",
+      "name": "د. ندى الشريف",
+      "title": "أخصائية طب أسنان الأطفال ورعاية الأسنان الوقائية",
+      "specialty": "pediatric",
+      "room": "عيادة رقم 5 (جناح أبطال رويال)",
+      "schedule": ["الأحد", "الثلاثاء", "الخميس"]
+    }
+  ],
+  "activeFacebookCampaigns": [
+    {
+      "id": "ad-royal-01",
+      "title": "مهرجان زراعة الأسنان الديجيتال بدون جراحة 🦷🔩",
+      "hook": "عوض أسنانك المفقودة في جلسة واحدة بدون فتح جراحي أو خياطة!",
+      "badge": "العرض الأقوى بديروط",
+      "discount": "خصم 25% + أشعة بانوراما استرشادية مجاناً",
+      "couponCode": "ROYAL-IMPLANT-25",
+      "specialty": "implants",
+      "views": "14.2K",
+      "likes": "1,240",
+      "callToAction": "حجز كشف زراعة فوري"
+    },
+    {
+      "id": "ad-royal-02",
+      "title": "عرض تقويم الأسنان بالتقسيط المريح وبدون فوائد 🪥✨",
+      "hook": "ابتسامة متناسقة وجذابة بدون عبء مالي، مع خطط تقسيط تبدأ من 500 ج.م شهرياً!",
+      "badge": "تقسيط مباشر بدون بنوك",
+      "discount": "كشف مجاني + خطة علاج 3D محاكاة قبل البدء",
+      "couponCode": "ROYAL-ORTHO-EASY",
+      "specialty": "orthodontics",
+      "views": "28.5K",
+      "likes": "3,110",
+      "callToAction": "احسب قسط تقويمك الآن"
+    },
+    {
+      "id": "ad-royal-03",
+      "title": "هوليوود سمايل وتركيبات الزيركون والإيماكس في 24 ساعة 💎",
+      "hook": "بشراكة حصرية مع معمل ماستر آرت الرقمي لإنتاج أدق عدسات وفينير بالصعيد!",
+      "badge": "تسليم فوري قياسي",
+      "discount": "تبييض ليزر ألماني هدية مع باقة الفينير الكاملة",
+      "couponCode": "ROYAL-HOLLYWOOD",
+      "specialty": "cosmetic",
+      "views": "19.8K",
+      "likes": "2,450",
+      "callToAction": "معاينة الابتسامة بالكاميرا"
+    },
+    {
+      "id": "ad-royal-04",
+      "title": "باقة علاج الجذور بالمايكروسكوب في جلسة واحدة ⚡",
+      "hook": "وداعاً لألم العصب المتواصل! تعقيم كامل وحشو جذور ثلاثي الأبعاد في 45 دقيقة.",
+      "badge": "بدون ألم نهائياً",
+      "discount": "فحص مجاني ومتابعة رقمية",
+      "couponCode": "ROYAL-ENDO-CARE",
+      "specialty": "endodontics",
+      "views": "11.6K",
+      "likes": "980",
+      "callToAction": "حجز طوارئ عصب فوري"
+    },
+    {
+      "id": "ad-royal-05",
+      "title": "يوم أبطال رويال لأسنان الأطفال مع جو مرح 🧸🎈",
+      "hook": "ابنك هيحب دكتور السنان وهياخد هدايا وألعاب بعد كل جلسة وقاية وفلورايد!",
+      "badge": "أصدقاء الأطفال",
+      "discount": "فحص أسنان الأطفال مجاناً أيام السبت والإثنين",
+      "couponCode": "ROYAL-KIDS-HERO",
+      "specialty": "pediatric",
+      "views": "22.1K",
+      "likes": "2,890",
+      "callToAction": "حجز كشف طفلك"
+    },
+    {
+      "id": "ad-royal-06",
+      "title": "باقة تبييض الأسنان بالليزر الألماني + تنظيف وتلميع الجير 🦷✨",
+      "hook": "ابتسامة ناصعة البياض تفتح 4 درجات في جلسة واحدة مدتها 45 دقيقة فقط!",
+      "badge": "سعر خاص لفترة محدودة",
+      "discount": "750 ج.م بدلاً من 1200 ج.م",
+      "couponCode": "ROYAL-WHITE-750",
+      "specialty": "cosmetic",
+      "views": "16.4K",
+      "likes": "1,820",
+      "callToAction": "حجز جلسة التبييض"
+    }
+  ]
+}
