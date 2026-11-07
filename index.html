@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="clinics/royal-dent/royal_dent_logo.svg">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
 <style>
@@ -1255,6 +1257,12 @@ body {
       </a>
 
       <!-- Sound Toggle -->
+      
+      <!-- Emergency Hotline Button -->
+      <button type="button" class="btn-icon-pill" id="btnEmergencyModal" onclick="openEmergencyModal()" style="border-color:var(--rose); color:var(--rose);" title="طوارئ الأسنان الفورية">
+        <span>🚨 طوارئ</span>
+      </button>
+  
       <button type="button" class="btn-icon-pill" id="soundBtn" onclick="RoyalAudio.toggleSound()" title="تشغيل / كتم التنبيهات الصوتية">
         <span id="soundIcon">🔔</span>
       </button>
@@ -1720,6 +1728,42 @@ body {
     </div>
   </section>
 </main>
+
+
+<!-- Emergency Triage Modal -->
+<div id="emergencyModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(6,17,28,0.85); backdrop-filter:blur(14px); align-items:center; justify-content:center; padding:16px;">
+  <div class="lux-card" style="max-width:540px; width:100%; border-color:var(--rose); box-shadow:0 15px 50px rgba(244,63,94,0.3);">
+    <div class="card-head" style="border-bottom-color:rgba(244,63,94,0.2);">
+      <div class="card-head-title" style="color:var(--rose);">
+        <div class="icon-box" style="background:rgba(244,63,94,0.15); border-color:rgba(244,63,94,0.3); color:var(--rose);">🚨</div>
+        <div>
+          <div>طوارئ الأسنان الفورية — فرع ديروط</div>
+          <small style="color:var(--tx-muted); font-size:12px;">نبطشية الطوارئ على مدار الساعة • اتصال فوري بالطبيب المناوب</small>
+        </div>
+      </div>
+      <button type="button" onclick="closeEmergencyModal()" style="background:transparent; border:none; color:var(--tx-muted); font-size:22px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+      <div style="background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); border-radius:12px; padding:12px; font-size:13px; color:#FECDD3;">
+        ⚡ <strong>حالات الطوارئ المشمولة:</strong> ألم العصب الحاد، النزيف المستمر بعد الخلع، كسر الأسنان الأمامية، سقوط الحشوات، والتورم أو الخراج المفاجئ.
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <a href="tel:01066726432" class="btn-royal-submit" style="background:linear-gradient(135deg, #BE123C, #F43F5E); border-color:#FDA4AF; color:#FFFFFF; text-decoration:none; padding:12px; font-size:13px;">
+          <span>📞 اتصال بالطوارئ</span>
+        </a>
+        <a href="https://wa.me/201066726432?text=%D8%B7%D9%88%D8%A7%D8%B1%D8%A6%20%D8%B9%D8%A7%D8%AC%D9%84%D8%A9%20%D9%85%D9%86%20%D8%A8%D9%88%D8%A7%D8%A8%D8%A9%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D8%AF%D9%8A%D9%86%D8%AA%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A3%D9%84%D9%85%20%D8%AD%D8%A7%D8%AF" target="_blank" class="btn-royal-submit" style="background:linear-gradient(135deg, #059669, #10B981); border-color:#A7F3D0; color:#FFFFFF; text-decoration:none; padding:12px; font-size:13px;">
+          <span>💬 واتساب الطوارئ</span>
+        </a>
+      </div>
+    </div>
+
+    <div style="font-size:12px; color:var(--tx-muted); text-align:center;">
+      📍 العنوان: ديروط — ميدان أبو جبل، بجوار فودافون فوق مطعم التيسير و Q جيم
+    </div>
+  </div>
+</div>
 
 <!-- Toast Element -->
 <div id="royalToast" class="royal-toast">
@@ -2551,6 +2595,19 @@ function callSpecificPatient(patientName, room) {
 /* ========================================================
    NAVIGATION & THEME CONTROLS
    ======================================================== */
+
+function openEmergencyModal() {
+  const m = document.getElementById("emergencyModal");
+  if (m) m.style.display = "flex";
+  if (window.RoyalAudio) RoyalAudio.playChime();
+}
+function closeEmergencyModal() {
+  const m = document.getElementById("emergencyModal");
+  if (m) m.style.display = "none";
+}
+window.openEmergencyModal = openEmergencyModal;
+window.closeEmergencyModal = closeEmergencyModal;
+
 function switchSuiteTab(tabKey) {
   document.querySelectorAll(".dock-tab-btn").forEach(b => b.classList.remove("active"));
   document.querySelectorAll(".suite-view").forEach(v => v.classList.remove("active"));

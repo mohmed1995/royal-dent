@@ -1,0 +1,17 @@
+{
+  "name": "مركز رويال دينت التخصصي للأسنان — ديروط",
+  "short_name": "رويال دينت",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#06111C",
+  "theme_color": "#0A2540",
+  "orientation": "portrait",
+  "description": "البوابة الطبية الذكية لحجز ومتابعة علاج الأسنان وتقويم الفكين بديروط",
+  "icons": [
+    {
+      "src": "clinics/royal-dent/royal_dent_logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
