@@ -1342,64 +1342,176 @@ body {
   }
 }
 
-.phone-card-item {
+/* Refined Luxury Phone Cards */
+.phone-card-item, .lux-phone-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  margin-bottom: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+.phone-card-item:hover, .lux-phone-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--gold-glow);
+}
+.phone-card-item.is-hotline, .lux-phone-card.is-hotline {
+  border-color: rgba(197, 160, 89, 0.55);
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.06) 0%, var(--bg-card) 100%);
+}
+.lux-phone-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 14px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lux-phone-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lux-phone-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  background: var(--bg-card-soft);
-  border: 1.5px solid var(--bd-subtle);
-  margin-bottom: 10px;
-  transition: all 0.2s ease;
+  background: var(--gold-light);
+  border: 1px solid var(--bd-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  flex-shrink: 0;
 }
-.phone-card-item:hover {
-  border-color: var(--gold);
+.phone-card-item.is-hotline .lux-phone-icon, .lux-phone-card.is-hotline .lux-phone-icon {
+  background: #DCFCE7;
+  color: #15803D;
+  border-color: #86EFAC;
 }
-.phone-digits {
+.phone-digits, .lux-phone-number {
   font-family: var(--f-mono);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--tx-primary);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  direction: ltr;
+  display: inline-block;
+}
+.lux-phone-dept {
+  font-size: 11.5px;
+  color: var(--tx-muted);
+  margin-top: 2px;
+  font-weight: 500;
 }
 .phone-badge-hot {
   font-size: 10px;
   font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 99px;
-  background: var(--gold-light);
-  color: var(--tx-gold);
-  border: 1px solid var(--bd-subtle);
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FECACA;
 }
-
-.btn-phone-call {
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: var(--emerald);
+.telecom-pill {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-family: var(--f-mono);
+  letter-spacing: 0.5px;
+}
+.telecom-voda {
+  background: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+}
+.telecom-we {
+  background: #F3E8FF;
+  color: #7E22CE;
+  border: 1px solid #E9D5FF;
+}
+.telecom-eti {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+}
+.badge-available-now {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--emerald);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.lux-phone-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.btn-phone-call, .btn-lux-call {
+  flex: 1;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #10B981, #059669);
   color: #FFFFFF;
   font-family: var(--f-head);
-  font-size: 11.5px;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+  border: 1px solid #059669;
+}
+.btn-phone-call:hover, .btn-lux-call:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(16, 185, 129, 0.35);
+  filter: brightness(1.05);
+}
+.btn-phone-copy, .btn-lux-copy {
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  color: var(--tx-primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+.btn-phone-copy:hover, .btn-lux-copy:hover {
+  border-color: var(--gold);
+  background: var(--gold-light);
+  color: var(--gold-dark);
+}
+.btn-lux-wa-sm {
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
 }
-.btn-phone-call:hover { filter: brightness(1.08); }
-
-.btn-phone-copy {
-  padding: 6px 10px;
-  border-radius: 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--bd-subtle);
-  color: var(--tx-primary);
-  font-size: 11.5px;
-  cursor: pointer;
-  transition: all 0.15s ease;
+.btn-lux-wa-sm:hover {
+  filter: brightness(1.06);
 }
-.btn-phone-copy:hover { border-color: var(--gold); }
 
 /* GPS Map Card */
 .gps-map-frame {
@@ -2741,37 +2853,75 @@ body {
           </div>
 
           <div class="branch-phones-box">
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01066726432</span>
-                <span class="phone-badge-hot">الخط الساخن</span>
-                <div style="font-size:11px; color:var(--tx-muted);">استقبال الفرع وحجز المواعيد الفورية</div>
+            <!-- Line 1: Dairut Hotline -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">🔥</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الساخن واستقبال المواعيد الفورية</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="phone-badge-hot">الخط الساخن</span>
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01066726432')"><span>📋 نسخ</span></button>
               </div>
             </div>
 
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01500098392</span>
-                <div style="font-size:11px; color:var(--tx-muted);">هاتف الاستقبال والتنسيق الطبي</div>
+            <!-- Line 2: Dairut WE -->
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">015 0009 8392</span>
+                      <span class="telecom-pill telecom-we">وي WE</span>
+                    </div>
+                    <div class="lux-phone-dept">هاتف الاستقبال والتنسيق الطبي</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01500098392" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01500098392')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01500098392')"><span>📋 نسخ</span></button>
               </div>
             </div>
 
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01044820100</span>
-                <div style="font-size:11px; color:var(--tx-muted);">خدمة المتابعة ونتائج الأشعة الرقمية</div>
+            <!-- Line 3: Dairut Follow-up -->
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 4482 0100</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">خدمة المتابعة ونتائج الأشعة الرقمية</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01044820100" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01044820100')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01044820100" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01044820100')"><span>📋 نسخ</span></button>
               </div>
             </div>
           </div>
@@ -2809,26 +2959,51 @@ body {
           </div>
 
           <div class="branch-phones-box">
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01116596599</span>
-                <span class="phone-badge-hot">استقبال أسيوط</span>
-                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع أسيوط</div>
+            <!-- Line 1: Assiut Main -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">011 1659 6599</span>
+                      <span class="telecom-pill telecom-eti">اتصالات e&</span>
+                    </div>
+                    <div class="lux-phone-dept">استقبال وحجوزات عيادات فرع أسيوط</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="phone-badge-hot">استقبال أسيوط</span>
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01116596599" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01116596599')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01116596599" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201116596599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A3%D8%B3%D9%8A%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01116596599')"><span>📋 نسخ</span></button>
               </div>
             </div>
 
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01066726432</span>
-                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي للحالات والتحويلات</div>
+            <!-- Line 2: Unified Hotline -->
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي للحالات والتحويلات</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01066726432')"><span>📋 نسخ</span></button>
               </div>
             </div>
           </div>
@@ -2866,26 +3041,51 @@ body {
           </div>
 
           <div class="branch-phones-box">
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01500098392</span>
-                <span class="phone-badge-hot">استقبال القوصية</span>
-                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع القوصية</div>
+            <!-- Line 1: Qusiya WE -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">015 0009 8392</span>
+                      <span class="telecom-pill telecom-we">وي WE</span>
+                    </div>
+                    <div class="lux-phone-dept">حجوزات واستقبال عيادات فرع القوصية</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="phone-badge-hot">استقبال القوصية</span>
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01500098392" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01500098392')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D9%88%D8%B5%D9%8A%D8%A9" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01500098392')"><span>📋 نسخ</span></button>
               </div>
             </div>
 
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01066726432</span>
-                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي لخدمة العملاء</div>
+            <!-- Line 2: Unified Hotline -->
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي لخدمة العملاء</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01066726432')"><span>📋 نسخ</span></button>
               </div>
             </div>
           </div>
@@ -2923,26 +3123,51 @@ body {
           </div>
 
           <div class="branch-phones-box">
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01044820100</span>
-                <span class="phone-badge-hot">استقبال ديرمواس</span>
-                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع ديرمواس</div>
+            <!-- Line 1: Dayr Mawas Main -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 4482 0100</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">حجوزات واستقبال عيادات فرع ديرمواس</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="phone-badge-hot">استقبال ديرمواس</span>
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01044820100" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01044820100')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01044820100" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201044820100?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%85%D9%88%D8%A7%D8%B3" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01044820100')"><span>📋 نسخ</span></button>
               </div>
             </div>
 
-            <div class="branch-phone-row">
-              <div>
-                <span class="phone-digits" dir="ltr">01066726432</span>
-                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي للحالات والتحويلات</div>
+            <!-- Line 2: Unified Hotline -->
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي للحالات والتحويلات</div>
+                  </div>
+                </div>
+                <div class="lux-phone-badges">
+                  <span class="badge-available-now">● متاح للاتصال</span>
+                </div>
               </div>
-              <div style="display:flex; gap:6px;">
-                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
-                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <button type="button" class="btn-lux-copy" onclick="copyNumber('01066726432')"><span>📋 نسخ</span></button>
               </div>
             </div>
           </div>
@@ -3820,6 +4045,27 @@ let currentCareSpecialty = {
   coupon: "ROYAL-ORTHO-DISTANCES"
 };
 
+function formatPhoneDisplay(num) {
+  if (num && num.length === 11) {
+    return num.slice(0, 3) + " " + num.slice(3, 7) + " " + num.slice(7);
+  }
+  return num;
+}
+
+function getTelecomBadge(num) {
+  if (!num) return "";
+  if (num.startsWith("010")) {
+    return '<span class="telecom-pill telecom-voda">فودافون</span>';
+  } else if (num.startsWith("011")) {
+    return '<span class="telecom-pill telecom-eti">اتصالات e&</span>';
+  } else if (num.startsWith("015")) {
+    return '<span class="telecom-pill telecom-we">وي WE</span>';
+  } else if (num.startsWith("012")) {
+    return '<span class="telecom-pill" style="background:#FFF3E0; color:#E65100; border:1px solid #FFE0B2;">أورنج</span>';
+  }
+  return "";
+}
+
 function switchHubBranch(branchKey) {
   currentHubBranchKey = branchKey;
   const data = ROYAL_GPS_DATA[branchKey] || ROYAL_GPS_DATA.dairut;
@@ -3842,20 +4088,39 @@ function switchHubBranch(branchKey) {
   const phoneContainer = document.getElementById("hubPhoneListContainer");
   if (phoneContainer) {
     phoneContainer.innerHTML = data.phones.map(p => {
-      return `<div class="phone-card-item">
-        <div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span class="phone-digits" dir="ltr">${p.num}</span>
-            ${p.isPrimary ? '<span class="phone-badge-hot">الخط الساخن</span>' : ''}
+      const formatted = formatPhoneDisplay(p.num);
+      const telecom = getTelecomBadge(p.num);
+      const isHot = p.isPrimary;
+      const isWa = (p.num === "01066726432" || p.num === "01116596599" || p.num === "01500098392" || p.num === "01044820100");
+
+      return `<div class="lux-phone-card ${isHot ? 'is-hotline' : ''}">
+        <div class="lux-phone-card-top">
+          <div class="lux-phone-info">
+            <div class="lux-phone-icon">
+              ${isHot ? '🔥' : '📞'}
+            </div>
+            <div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span class="lux-phone-number" dir="ltr">${formatted}</span>
+                ${telecom}
+              </div>
+              <div class="lux-phone-dept">${p.label}</div>
+            </div>
           </div>
-          <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">${p.label}</div>
+          <div class="lux-phone-badges">
+            ${isHot ? '<span class="phone-badge-hot">الخط الساخن</span>' : ''}
+            <span class="badge-available-now">● متاح للاتصال</span>
+          </div>
         </div>
-        <div style="display:flex; align-items:center; gap:6px;">
-          <a href="tel:${p.num}" class="btn-phone-call" title="اتصال هاتفي فوري">
-            <span>📞 اتصال</span>
+        <div class="lux-phone-actions">
+          <a href="tel:${p.num}" class="btn-lux-call" title="اتصال هاتفي فوري">
+            <span>📞 اتصال فوري</span>
           </a>
-          <button type="button" class="btn-phone-copy" onclick="copyNumber('${p.num}')" title="نسخ الرقم">
-            📋 نسخ
+          ${isWa ? `<a href="https://wa.me/20${p.num.substring(1)}?text=${encodeURIComponent('مرحباً مركز رويال لطب الفم والأسنان، أود الاستفسار والحجز في ' + data.title)}" target="_blank" class="btn-lux-wa-sm" title="محادثة واتساب">
+            <span>💬 واتساب</span>
+          </a>` : ''}
+          <button type="button" class="btn-lux-copy" onclick="copyNumber('${p.num}')" title="نسخ الرقم">
+            <span>📋 نسخ</span>
           </button>
         </div>
       </div>`;
