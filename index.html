@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="رويال دينت ديروط">
-<meta name="theme-color" content="#0A2540">
+<meta name="apple-mobile-web-app-title" content="رويال دينت">
+<meta name="theme-color" content="#121820">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>مركز رويال دينت للأسنان — فرع ديروط | البوابة الطبية الذكية</title>
+<title>مركز رويال لطب الفم والأسنان — Royal Dental Center</title>
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="clinics/royal-dent/royal_dent_logo.svg">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
@@ -23,36 +26,39 @@
   --f-royal: "El Messiri", "Alexandria", serif;
   --f-mono: "JetBrains Mono", monospace;
 
-  /* Royal Dent Official Identity (Deep Royal Navy & Crown Gold) */
-  --bg-void: #06111C;
-  --bg-surface: #0A1C30;
-  --bg-card: rgba(12, 30, 52, 0.82);
-  --bg-card-hover: rgba(18, 44, 76, 0.9);
-  --bg-input: rgba(7, 18, 32, 0.75);
+  /* Official Royal Dental Brand Palette extracted from logo & campaign assets */
+  --bg-void: #0D131A;
+  --bg-surface: #141C24;
+  --bg-card: rgba(20, 28, 38, 0.85);
+  --bg-card-hover: rgba(26, 38, 52, 0.95);
+  --bg-input: rgba(13, 20, 28, 0.8);
 
-  --royal-navy: #0A2540;
-  --royal-blue: #00529B;
+  /* Warm Champagne Gold from official crown-tooth logo */
   --gold: #D4AF37;
-  --gold-light: #F4D068;
+  --gold-warm: #C8A962;
+  --gold-light: #F2DEAA;
   --gold-glow: rgba(212, 175, 55, 0.28);
-  --gold-dark: #997A15;
+  --gold-dark: #94711E;
 
+  /* Clinical accents */
   --clinical-teal: #0EA5E9;
   --clinical-glow: rgba(14, 165, 233, 0.25);
+  --ladies-pink: #EC4899;
+  --ladies-glow: rgba(236, 72, 153, 0.25);
   --emerald: #10B981;
   --rose: #F43F5E;
 
-  --tx-primary: #F8FAFC;
-  --tx-muted: #94A3B8;
-  --tx-dim: #64748B;
-  --tx-gold: #F4D068;
+  --tx-primary: #FAF8F5;
+  --tx-muted: #9BA8B5;
+  --tx-dim: #657585;
+  --tx-gold: #F2DEAA;
 
-  --bd-subtle: rgba(212, 175, 55, 0.2);
-  --bd-active: rgba(212, 175, 55, 0.6);
+  --bd-subtle: rgba(200, 169, 98, 0.22);
+  --bd-active: rgba(212, 175, 55, 0.65);
   --bd-teal: rgba(14, 165, 233, 0.35);
 
-  --shadow-lux: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.15);
-  --shadow-gold: 0 10px 30px -5px rgba(212, 175, 55, 0.3);
+  --shadow-lux: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(200, 169, 98, 0.15);
+  --shadow-gold: 0 10px 30px -5px rgba(212, 175, 55, 0.35);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -60,29 +66,25 @@
 }
 
 [data-theme="light"] {
-  --bg-void: #F4F7FB;
+  --bg-void: #F8F6F2;
   --bg-surface: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card: rgba(255, 255, 255, 0.96);
   --bg-card-hover: #FFFFFF;
-  --bg-input: #F8FAFC;
+  --bg-input: #FAF8F5;
 
-  --royal-navy: #0A2540;
-  --royal-blue: #0284C7;
-  --gold: #B4881B;
-  --gold-light: #997A15;
-  --gold-glow: rgba(180, 136, 27, 0.18);
+  --gold: #B88E28;
+  --gold-warm: #A07818;
+  --gold-light: #806010;
+  --gold-glow: rgba(184, 142, 40, 0.18);
 
-  --tx-primary: #0A1C30;
-  --tx-muted: #475569;
-  --tx-dim: #94A3B8;
-  --tx-gold: #997A15;
+  --tx-primary: #121820;
+  --tx-muted: #4B5A68;
+  --tx-dim: #8B99A6;
+  --tx-gold: #806010;
 
-  --bd-subtle: rgba(180, 136, 27, 0.25);
-  --bd-active: rgba(180, 136, 27, 0.7);
-  --bd-teal: rgba(14, 165, 233, 0.4);
-
-  --shadow-lux: 0 16px 40px -10px rgba(10, 37, 64, 0.08), 0 0 0 1px rgba(10, 37, 64, 0.06);
-  --shadow-gold: 0 8px 24px -4px rgba(180, 136, 27, 0.2);
+  --bd-subtle: rgba(184, 142, 40, 0.24);
+  --bd-active: rgba(184, 142, 40, 0.75);
+  --shadow-lux: 0 16px 40px -10px rgba(18, 24, 32, 0.08), 0 0 0 1px rgba(18, 24, 32, 0.06);
 }
 
 * {
@@ -96,9 +98,9 @@ body {
   font-family: var(--f-body);
   background-color: var(--bg-void);
   background-image: 
-    radial-gradient(circle at 10% 5%, rgba(14, 165, 233, 0.12), transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.14), transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(0, 82, 155, 0.1), transparent 50%);
+    radial-gradient(circle at 10% 8%, rgba(212, 175, 55, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 12%, rgba(14, 165, 233, 0.09), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(200, 169, 98, 0.08), transparent 50%);
   color: var(--tx-primary);
   min-height: 100vh;
   line-height: 1.6;
@@ -106,32 +108,33 @@ body {
   overflow-x: hidden;
 }
 
-/* App Container */
 .app-container {
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Top AppBar */
+/* ========================================================
+   TOP LUXURY APPBAR
+   ======================================================== */
 .royal-appbar {
   position: sticky;
   top: 0;
-  z-index: 900;
-  background: rgba(6, 17, 28, 0.85);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
-  border-bottom: 1px solid var(--bd-subtle);
+  z-index: 1000;
+  background: rgba(13, 19, 26, 0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1.5px solid var(--bd-subtle);
   padding: 10px 16px;
   transition: all 0.3s ease;
 }
 [data-theme="light"] .royal-appbar {
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom-color: rgba(180, 136, 27, 0.2);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(184, 142, 40, 0.2);
 }
 
 .appbar-inner {
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -148,22 +151,22 @@ body {
 }
 
 .brand-crest {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0A2540, #001833);
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1A2430, #0D131A);
   border: 1.5px solid var(--gold);
-  box-shadow: 0 4px 16px var(--gold-glow);
+  box-shadow: 0 4px 18px var(--gold-glow);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
   flex-shrink: 0;
+  overflow: hidden;
 }
-.brand-crest svg {
-  width: 38px;
-  height: 38px;
+.brand-crest svg, .brand-crest img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .brand-titles {
@@ -171,9 +174,9 @@ body {
   flex-direction: column;
 }
 .brand-main {
-  font-family: var(--f-royal);
+  font-family: var(--f-head);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: -0.3px;
   background: linear-gradient(120deg, #FFFFFF, var(--gold-light));
   -webkit-background-clip: text;
@@ -183,25 +186,26 @@ body {
   gap: 6px;
 }
 [data-theme="light"] .brand-main {
-  background: linear-gradient(120deg, var(--royal-navy), var(--gold-dark));
+  background: linear-gradient(120deg, #121820, var(--gold-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .brand-sub {
   font-size: 11px;
-  color: var(--clinical-teal);
-  font-weight: 600;
+  color: var(--gold-warm);
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--f-body);
 }
 
 .live-pulse-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--emerald);
-  box-shadow: 0 0 8px var(--emerald);
+  box-shadow: 0 0 10px var(--emerald);
   animation: pulseLive 2s infinite ease-in-out;
 }
 @keyframes pulseLive {
@@ -215,12 +219,35 @@ body {
   gap: 8px;
 }
 
+/* Branch Quick Switcher in Header */
+.branch-select-pill {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 99px;
+  background: rgba(20, 28, 38, 0.8);
+  border: 1.5px solid var(--bd-subtle);
+  color: var(--tx-gold);
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+[data-theme="light"] .branch-select-pill {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+  color: var(--gold-dark);
+}
+
 .btn-icon-pill {
   height: 38px;
   min-width: 38px;
   padding: 0 12px;
   border-radius: 99px;
-  background: rgba(12, 30, 52, 0.7);
+  background: rgba(20, 28, 38, 0.7);
   border: 1px solid var(--bd-subtle);
   color: var(--tx-primary);
   display: inline-flex;
@@ -240,14 +267,14 @@ body {
   transform: translateY(-1px);
 }
 [data-theme="light"] .btn-icon-pill {
-  background: #F1F5F9;
+  background: #FFFFFF;
   border-color: #E2E8F0;
   color: #1E293B;
 }
 
 .btn-hotline {
   background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-  color: #06111C !important;
+  color: #0D131A !important;
   border: 1px solid var(--gold-light);
   box-shadow: 0 4px 14px var(--gold-glow);
 }
@@ -256,35 +283,37 @@ body {
   transform: translateY(-1px) scale(1.02);
 }
 
-/* Hero Banner */
+/* ========================================================
+   HERO BANNER & BRANCH SHOWCASE
+   ======================================================== */
 .royal-hero {
   margin: 18px 0 24px 0;
-  padding: 24px 28px;
+  padding: 26px 30px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(10, 37, 64, 0.95), rgba(0, 82, 155, 0.75)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z" fill="%23D4AF37" fill-opacity="0.04"/></svg>');
+  background: linear-gradient(135deg, rgba(20, 28, 38, 0.95), rgba(13, 19, 26, 0.92)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z" fill="%23D4AF37" fill-opacity="0.04"/></svg>');
   border: 1.5px solid var(--bd-active);
   box-shadow: var(--shadow-lux);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 22px;
   position: relative;
   overflow: hidden;
 }
 .royal-hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 450px;
-  height: 450px;
+  top: -40%;
+  right: -15%;
+  width: 480px;
+  height: 480px;
   background: radial-gradient(circle, var(--gold-glow), transparent 70%);
   pointer-events: none;
 }
 
 .hero-content {
-  flex: 1 1 500px;
+  flex: 1 1 520px;
   position: relative;
   z-index: 1;
 }
@@ -304,18 +333,25 @@ body {
 }
 .hero-title {
   font-family: var(--f-royal);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 8px;
   line-height: 1.35;
 }
+[data-theme="light"] .hero-title {
+  color: #121820;
+}
 .hero-desc {
   font-size: 14px;
   color: #CBD5E1;
-  max-width: 650px;
-  margin-bottom: 16px;
+  max-width: 680px;
+  margin-bottom: 18px;
 }
+[data-theme="light"] .hero-desc {
+  color: #475569;
+}
+
 .hero-meta-chips {
   display: flex;
   flex-wrap: wrap;
@@ -325,29 +361,38 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(0, 0, 0, 0.28);
+  background: rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 10px;
   font-size: 12px;
   color: #E2E8F0;
 }
+[data-theme="light"] .meta-chip {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  color: #1E293B;
+}
 
 .hero-quick-kpi {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
 .kpi-card {
-  background: rgba(6, 17, 28, 0.65);
+  background: rgba(13, 19, 26, 0.7);
   border: 1px solid var(--bd-subtle);
   border-radius: var(--radius-md);
   padding: 14px 18px;
   text-align: center;
-  min-width: 110px;
+  min-width: 105px;
   backdrop-filter: blur(8px);
+}
+[data-theme="light"] .kpi-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
 }
 .kpi-card .val {
   font-family: var(--f-mono);
@@ -362,14 +407,16 @@ body {
   font-weight: 600;
 }
 
-/* Nav Switcher (Desktop Segmented Bar / Mobile Sticky Dock) */
+/* ========================================================
+   SUITE DOCK BAR (5 SPECIALIZED SCREENS)
+   ======================================================== */
 .suite-dock-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: rgba(10, 28, 48, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(20, 28, 38, 0.88);
+  backdrop-filter: blur(14px);
   padding: 6px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--bd-subtle);
@@ -378,20 +425,20 @@ body {
   white-space: nowrap;
 }
 [data-theme="light"] .suite-dock-bar {
-  background: rgba(255, 255, 255, 0.95);
+  background: #FFFFFF;
   border-color: #E2E8F0;
 }
 
 .dock-tab-btn {
   flex: 1 1 auto;
-  padding: 10px 18px;
+  padding: 11px 18px;
   border: none;
   background: transparent;
   color: var(--tx-muted);
   border-radius: 14px;
   font-family: var(--f-head);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -405,18 +452,17 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 .dock-tab-btn.active {
-  background: linear-gradient(135deg, var(--royal-navy), var(--royal-blue));
+  background: linear-gradient(135deg, var(--bg-surface), #1F2E3E);
   color: #FFFFFF;
-  border: 1px solid var(--gold);
-  box-shadow: 0 4px 16px var(--gold-glow);
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 4px 18px var(--gold-glow);
 }
 [data-theme="light"] .dock-tab-btn.active {
-  background: linear-gradient(135deg, #0A2540, #0284C7);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #FAF8F5, #FFFFFF);
+  color: #121820;
   border-color: var(--gold);
 }
 
-/* View Sections */
 .suite-view {
   display: none;
   animation: viewFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -429,7 +475,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Grid Layouts */
 .grid-2col {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -441,7 +486,6 @@ body {
   }
 }
 
-/* Luxury Card */
 .lux-card {
   background: var(--bg-card);
   border: 1px solid var(--bd-subtle);
@@ -478,8 +522,8 @@ body {
   color: var(--tx-primary);
 }
 .card-head-title .icon-box {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: var(--gold-glow);
   color: var(--tx-gold);
@@ -490,7 +534,9 @@ body {
   border: 1px solid var(--bd-subtle);
 }
 
-/* Voice AI Section */
+/* ========================================================
+   VOICE AI NLP BANNER
+   ======================================================== */
 .voice-ai-banner {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(212, 175, 55, 0.1));
   border: 1.5px dashed var(--clinical-teal);
@@ -501,14 +547,13 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  position: relative;
 }
 .voice-ai-info {
   flex: 1;
 }
 .voice-ai-title {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--clinical-teal);
   display: flex;
   align-items: center;
@@ -533,7 +578,6 @@ body {
   cursor: pointer;
   box-shadow: 0 6px 20px var(--clinical-glow);
   transition: all 0.25s ease;
-  position: relative;
   flex-shrink: 0;
 }
 .btn-voice-trigger:hover {
@@ -549,17 +593,43 @@ body {
   50% { transform: scale(1.14); }
 }
 
-/* Interactive FDI Dental Chart */
+/* Ladies Toggle Pill */
+.ladies-dept-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(236, 72, 153, 0.1);
+  border: 1.5px solid rgba(236, 72, 153, 0.35);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ladies-dept-toggle:hover {
+  background: rgba(236, 72, 153, 0.18);
+  border-color: var(--ladies-pink);
+}
+.ladies-dept-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ladies-pink);
+  cursor: pointer;
+}
+
+/* ========================================================
+   FDI 32-TEETH INTERACTIVE CHART
+   ======================================================== */
 .fdi-chart-container {
   margin: 18px 0;
-  background: rgba(7, 18, 32, 0.6);
+  background: rgba(13, 20, 28, 0.65);
   border: 1px solid var(--bd-subtle);
   border-radius: var(--radius-lg);
   padding: 16px;
   text-align: center;
 }
 [data-theme="light"] .fdi-chart-container {
-  background: #F8FAFC;
+  background: #FAF8F5;
   border-color: #E2E8F0;
 }
 .fdi-arch-label {
@@ -569,10 +639,6 @@ body {
   color: var(--tx-muted);
   letter-spacing: 1px;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
 .fdi-arch-row {
   display: flex;
@@ -583,10 +649,10 @@ body {
   padding-bottom: 4px;
 }
 .fdi-tooth-btn {
-  width: 32px;
-  height: 44px;
+  width: 33px;
+  height: 46px;
   border-radius: 8px;
-  background: rgba(14, 34, 58, 0.8);
+  background: rgba(26, 38, 52, 0.85);
   border: 1.5px solid rgba(255, 255, 255, 0.12);
   color: #E2E8F0;
   font-family: var(--f-mono);
@@ -606,15 +672,15 @@ body {
   color: #1E293B;
 }
 .fdi-tooth-btn:hover {
-  border-color: var(--clinical-teal);
+  border-color: var(--gold);
   transform: translateY(-2px);
 }
 .fdi-tooth-btn.selected {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   border-color: #FFE082;
-  color: #06111C;
+  color: #0D131A;
   font-weight: 900;
-  box-shadow: 0 4px 12px var(--gold-glow);
+  box-shadow: 0 4px 14px var(--gold-glow);
   transform: translateY(-3px);
 }
 .fdi-tooth-btn .tooth-icon {
@@ -630,30 +696,28 @@ body {
   margin-top: 12px;
 }
 .patho-chip {
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 8px;
   border: 1px solid var(--bd-subtle);
-  background: rgba(12, 30, 52, 0.7);
+  background: rgba(20, 28, 38, 0.7);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--tx-muted);
   cursor: pointer;
   transition: all 0.2s;
 }
 .patho-chip:hover, .patho-chip.selected {
-  background: var(--clinical-teal);
-  color: #FFFFFF;
-  border-color: var(--clinical-teal);
+  background: var(--gold);
+  color: #0D131A;
+  border-color: var(--gold);
 }
 [data-theme="light"] .patho-chip {
-  background: #F1F5F9;
+  background: #FFFFFF;
   border-color: #CBD5E1;
 }
 
 /* Form Styles */
-.form-field {
-  margin-bottom: 16px;
-}
+.form-field { margin-bottom: 16px; }
 .form-label {
   display: flex;
   justify-content: space-between;
@@ -678,15 +742,10 @@ body {
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px var(--gold-glow);
-  background: rgba(10, 24, 42, 0.95);
 }
 [data-theme="light"] .form-input, [data-theme="light"] .form-select {
-  background: #F8FAFC;
+  background: #FAF8F5;
   border-color: #CBD5E1;
-}
-[data-theme="light"] .form-input:focus, [data-theme="light"] .form-select:focus {
-  background: #FFFFFF;
-  border-color: var(--gold);
 }
 
 .grid-input-2 {
@@ -695,19 +754,16 @@ body {
   gap: 12px;
 }
 @media (max-width: 600px) {
-  .grid-input-2 {
-    grid-template-columns: 1fr;
-  }
+  .grid-input-2 { grid-template-columns: 1fr; }
 }
 
-/* Primary Submit Button */
 .btn-royal-submit {
   width: 100%;
   padding: 16px 24px;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
   border: 1.5px solid #FFE082;
-  color: #06111C;
+  color: #0D131A;
   font-family: var(--f-head);
   font-size: 16px;
   font-weight: 800;
@@ -724,13 +780,12 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 12px 35px var(--gold-glow);
 }
-.btn-royal-submit:active {
-  transform: translateY(0);
-}
 
-/* VIP Ticket Card */
+/* ========================================================
+   VIP PASS CARD
+   ======================================================== */
 .vip-pass-card {
-  background: linear-gradient(135deg, #0A2540, #001833);
+  background: linear-gradient(135deg, #16212D, #0D131A);
   border: 2px solid var(--gold);
   border-radius: var(--radius-xl);
   padding: 24px;
@@ -781,28 +836,26 @@ body {
   display: block;
 }
 
-/* Facebook Ads Cards */
+/* ========================================================
+   CAMPAIGN SHOWCASE CARDS (WITH REAL IMAGES)
+   ======================================================== */
 .ads-masonry {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  gap: 22px;
 }
 @media (max-width: 480px) {
-  .ads-masonry {
-    grid-template-columns: 1fr;
-  }
+  .ads-masonry { grid-template-columns: 1fr; }
 }
 
 .ad-card {
   background: var(--bg-card);
   border: 1.5px solid var(--bd-subtle);
   border-radius: var(--radius-xl);
-  padding: 22px;
   box-shadow: var(--shadow-lux);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 14px;
   position: relative;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -813,12 +866,33 @@ body {
 }
 .ad-card:hover {
   border-color: var(--gold);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: 0 16px 40px var(--gold-glow);
 }
-.ad-fb-header {
+
+.ad-media-banner {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+  background: #0D131A;
+}
+.ad-media-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.ad-card:hover .ad-media-banner img {
+  transform: scale(1.05);
+}
+
+.ad-body {
+  padding: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
   justify-content: space-between;
 }
 .ad-badge {
@@ -831,13 +905,6 @@ body {
   font-weight: 700;
   font-family: var(--f-mono);
 }
-.ad-fb-stats {
-  font-size: 11px;
-  color: var(--tx-muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
 .ad-title {
   font-family: var(--f-head);
   font-size: 17px;
@@ -849,15 +916,6 @@ body {
   font-size: 13px;
   color: var(--tx-muted);
   line-height: 1.6;
-}
-.ad-offer-box {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(212, 175, 55, 0.08));
-  border: 1px dashed var(--clinical-teal);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .ad-coupon {
   font-family: var(--f-mono);
@@ -874,8 +932,8 @@ body {
   width: 100%;
   padding: 12px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--royal-navy), var(--royal-blue));
-  border: 1px solid var(--clinical-teal);
+  background: linear-gradient(135deg, var(--bg-surface), #1A2634);
+  border: 1px solid var(--gold);
   color: #FFFFFF;
   font-family: var(--f-head);
   font-size: 13px;
@@ -888,14 +946,16 @@ body {
   transition: all 0.2s ease;
 }
 .btn-ad-apply:hover {
-  background: linear-gradient(135deg, var(--clinical-teal), #0284C7);
-  box-shadow: 0 4px 16px var(--clinical-glow);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #0D131A;
 }
 
-/* Ortho Studio & Calculator */
+/* ========================================================
+   ORTHO STUDIO & BEFORE/AFTER COMPARISON
+   ======================================================== */
 .ortho-systems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -906,40 +966,22 @@ body {
   padding: 18px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-.ortho-card:hover {
-  border-color: var(--clinical-teal);
-  transform: translateY(-2px);
 }
 .ortho-card.selected {
   border-color: var(--gold);
-  background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(0, 82, 155, 0.5));
+  background: linear-gradient(135deg, rgba(26, 38, 52, 0.95), rgba(13, 19, 26, 0.9));
   box-shadow: 0 8px 24px var(--gold-glow);
-}
-.ortho-card-title {
-  font-family: var(--f-head);
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: var(--tx-primary);
-}
-.ortho-price-tag {
-  font-family: var(--f-mono);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--tx-gold);
 }
 
 .calc-slider-box {
-  background: rgba(7, 18, 32, 0.6);
+  background: rgba(13, 20, 28, 0.7);
   border: 1px solid var(--bd-subtle);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 20px;
 }
 [data-theme="light"] .calc-slider-box {
-  background: #F8FAFC;
+  background: #FAF8F5;
   border-color: #E2E8F0;
 }
 .slider-header {
@@ -974,10 +1016,6 @@ body {
   border: 2px solid #FFFFFF;
   box-shadow: 0 0 10px var(--gold-glow);
   cursor: pointer;
-  transition: transform 0.1s;
-}
-.lux-range::-webkit-slider-thumb:hover {
-  transform: scale(1.18);
 }
 
 .calc-metrics-row {
@@ -987,12 +1025,10 @@ body {
   margin-bottom: 20px;
 }
 @media (max-width: 600px) {
-  .calc-metrics-row {
-    grid-template-columns: 1fr;
-  }
+  .calc-metrics-row { grid-template-columns: 1fr; }
 }
 .calc-metric-card {
-  background: rgba(12, 30, 52, 0.85);
+  background: rgba(20, 28, 38, 0.85);
   border: 1px solid var(--bd-subtle);
   border-radius: var(--radius-md);
   padding: 16px;
@@ -1015,7 +1051,9 @@ body {
   font-weight: 600;
 }
 
-/* Reception & Rooms Monitor */
+/* ========================================================
+   RECEPTION ROOM MONITOR & CHIME
+   ======================================================== */
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -1031,37 +1069,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-  position: relative;
   box-shadow: var(--shadow-lux);
 }
 [data-theme="light"] .room-card {
   background: #FFFFFF;
   border-color: #E2E8F0;
 }
-.room-card.status-free {
-  border-top: 4px solid var(--emerald);
-}
-.room-card.status-busy {
-  border-top: 4px solid #F59E0B;
-}
-.room-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 99px;
-  width: fit-content;
-}
-.badge-free {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--emerald);
-}
-.badge-busy {
-  background: rgba(245, 158, 11, 0.15);
-  color: #F59E0B;
-}
+.room-card.status-free { border-top: 4px solid var(--emerald); }
+.room-card.status-busy { border-top: 4px solid #F59E0B; }
 
 .queue-table {
   width: 100%;
@@ -1082,14 +1097,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   font-weight: 600;
 }
-[data-theme="light"] .queue-table th {
-  border-bottom-color: #E2E8F0;
-}
-[data-theme="light"] .queue-table td {
-  border-bottom-color: #F1F5F9;
-}
 
-/* Sound chime button */
 .btn-chime-call {
   padding: 8px 14px;
   border-radius: 8px;
@@ -1104,18 +1112,14 @@ body {
   gap: 6px;
   transition: all 0.2s;
 }
-.btn-chime-call:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px var(--clinical-glow);
-}
 
-/* Toast Notification */
+/* Toast */
 .royal-toast {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background: rgba(10, 37, 64, 0.96);
+  background: rgba(13, 19, 26, 0.96);
   border: 1.5px solid var(--gold);
   color: #FFFFFF;
   padding: 14px 24px;
@@ -1131,78 +1135,7 @@ body {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
-.royal-toast.show {
-  transform: translateX(-50%) translateY(0);
-}
-
-/* Doctors Roster Grid */
-.doctors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-.doc-card {
-  background: var(--bg-card);
-  border: 1.5px solid var(--bd-subtle);
-  border-radius: var(--radius-xl);
-  padding: 20px;
-  box-shadow: var(--shadow-lux);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.doc-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-3px);
-}
-[data-theme="light"] .doc-card {
-  background: #FFFFFF;
-  border-color: #E2E8F0;
-}
-.doc-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.doc-avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--royal-navy), var(--royal-blue));
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: #FFFFFF;
-  flex-shrink: 0;
-}
-.doc-info .name {
-  font-family: var(--f-head);
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--tx-primary);
-}
-.doc-info .title {
-  font-size: 12px;
-  color: var(--tx-muted);
-}
-.doc-schedule-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.day-tag {
-  background: rgba(14, 165, 233, 0.12);
-  border: 1px solid var(--bd-teal);
-  color: var(--clinical-teal);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-}
+.royal-toast.show { transform: translateX(-50%) translateY(0); }
 
 /* Footer */
 .royal-footer {
@@ -1229,53 +1162,60 @@ body {
   <div class="appbar-inner">
     <a href="javascript:void(0)" class="brand-badge" onclick="switchSuiteTab('kiosk')">
       <div class="brand-crest">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 40 L35 15 L50 35 L65 15 L80 40 Z" fill="#D4AF37" stroke="#FFE082" stroke-width="2"/>
-          <circle cx="35" cy="15" r="4" fill="#FFFFFF"/>
-          <circle cx="50" cy="35" r="4" fill="#0EA5E9"/>
-          <circle cx="65" cy="15" r="4" fill="#FFFFFF"/>
-          <path d="M50 45 C65 45, 75 58, 70 75 C66 90, 56 95, 50 85 C44 95, 34 90, 30 75 C25 58, 35 45, 50 45 Z" fill="#0EA5E9" stroke="#FFFFFF" stroke-width="2"/>
+        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFEBB8" />
+              <stop offset="50%" stop-color="#D4AF37" />
+              <stop offset="100%" stop-color="#8C6615" />
+            </linearGradient>
+          </defs>
+          <path d="M 175 185 L 250 135 L 325 185 L 385 185 L 345 235 C 385 275, 395 345, 360 410 C 335 455, 295 460, 270 415 C 255 385, 250 330, 250 295 C 250 330, 245 385, 230 415 C 205 460, 165 455, 140 410 C 105 345, 115 275, 155 235 L 115 185 Z" fill="none" stroke="url(#gGold)" stroke-width="20" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M 180 190 L 250 250 L 320 190" fill="none" stroke="url(#gGold)" stroke-width="20" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M 250 250 L 250 300" fill="none" stroke="url(#gGold)" stroke-width="16" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="brand-titles">
         <div class="brand-main">
-          مركز رويال دينت للأسنان
+          مركز رويال
           <span style="font-size:12px; color:var(--tx-gold);">👑</span>
         </div>
         <div class="brand-sub">
           <span class="live-pulse-dot"></span>
-          فرع ديروط • ميدان أبو جبل • أحدث تقنيات 2026
+          لطب الفم والأسنان • Royal Dental Center
         </div>
       </div>
     </a>
 
     <div class="appbar-actions">
+      <!-- Official Branch Switcher -->
+      <select id="branchSelector" class="branch-select-pill" onchange="onBranchChanged()">
+        <option value="dairut" selected>📍 فرع ديروط (ميدان أبو جبل)</option>
+        <option value="assiut">📍 فرع أسيوط (ميدان الزهراء)</option>
+        <option value="qusiya">📍 فرع القوصية (ش الجلاء)</option>
+        <option value="dayrmawas">📍 فرع ديرمواس (ش مدرسة التجارة)</option>
+      </select>
+
+      <!-- Emergency Hotline Button -->
+      <button type="button" class="btn-icon-pill" onclick="openEmergencyModal()" style="border-color:var(--rose); color:var(--rose);" title="طوارئ الأسنان الفورية">
+        <span>🚨 طوارئ</span>
+      </button>
+
       <!-- WhatsApp Hotline Direct -->
-      <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D8%AF%D9%8A%D9%86%D8%AA%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%83%D8%B4%D9%81" target="_blank" class="btn-icon-pill btn-hotline" title="واتساب العيادة المباشر">
+      <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D8%AF%D9%8A%D9%86%D8%AA%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%83%D8%B4%D9%81" target="_blank" class="btn-icon-pill btn-hotline" id="topWhatsappBtn" title="واتساب الحجز المباشر">
         <span>💬</span>
-        <span>01066726432</span>
+        <span id="topWhatsappNum">01066726432</span>
       </a>
 
       <!-- Sound Toggle -->
-      
-      <!-- Emergency Hotline Button -->
-      <button type="button" class="btn-icon-pill" id="btnEmergencyModal" onclick="openEmergencyModal()" style="border-color:var(--rose); color:var(--rose);" title="طوارئ الأسنان الفورية">
-        <span>🚨 طوارئ</span>
-      </button>
-  
-      <button type="button" class="btn-icon-pill" id="soundBtn" onclick="RoyalAudio.toggleSound()" title="تشغيل / كتم التنبيهات الصوتية">
+      <button type="button" class="btn-icon-pill" onclick="RoyalAudio.toggleSound()" title="تشغيل / كتم التنبيهات">
         <span id="soundIcon">🔔</span>
       </button>
 
       <!-- Theme Switcher -->
-      <button type="button" class="btn-icon-pill" id="themeBtn" onclick="toggleRoyalTheme()" title="تغيير المظهر الليلي / النهاري">
+      <button type="button" class="btn-icon-pill" onclick="toggleRoyalTheme()" title="تبديل المظهر">
         <span id="themeIcon">🌙</span>
       </button>
-
-      <!-- Back to Master Art Lab -->
-      <a href="./" class="btn-icon-pill" title="العودة لبوابة ماستر آرت">
-        <span>🔬 معمل ماستر آرت</span>
-      </a>
     </div>
   </div>
 </header>
@@ -1286,23 +1226,23 @@ body {
     <div class="hero-content">
       <div class="hero-tag">
         <span>✦</span>
-        <span>ROYAL DENT CLINICAL SUITE 2026</span>
+        <span>ROYAL DENTAL LUXURY NETWORK 2026</span>
       </div>
-      <h1 class="hero-title">ابتسامتك الملكية تبدأ في ديروط بأعلى معايير الدقة الرقمية</h1>
+      <h1 class="hero-title" id="heroBranchHeading">ابتسامتك الملكية بأحدث المعايير الطبية العالمية</h1>
       <p class="hero-desc">
-        منظومة كشف ذكية متكاملة تجمع بين الذكاء الاصطناعي الصوتي، ومخطط الـ 32 سناً التشريحي، ومعرض عروض صفحة الفيس بوك الرسمية، واستوديو تقويم الأسنان المريح بدون فوائد.
+        صرح طبي رائد لطب وجراحة وتجميل وزراعة وتقويم الأسنان يجمع بين الخبرة الاستشارية، والذكاء الاصطناعي، وأحدث ما توصلت إليه تكنولوجيا الأسنان العالمية في 4 فروع بمحافظة أسيوط والمنيا.
       </p>
       <div class="hero-meta-chips">
-        <span class="meta-chip">📍 ديروط: ميدان أبو جبل، بجوار فودافون فوق التيسير و Q جيم</span>
-        <span class="meta-chip">⏰ مواعيد العمل: يومياً 11:00 ص - 10:30 م (الجمعة 4:00 م - 10:00 م)</span>
-        <span class="meta-chip">📞 الخط الساخن: 01066726432 - 01044820100</span>
+        <span class="meta-chip" id="heroAddressChip">📍 ديروط: ميدان أبو جبل، بجوار فودافون أعلى Q جيم</span>
+        <span class="meta-chip">⏰ يومياً 11:00 ص - 10:30 م (الجمعة 4:00 م - 10:00 م)</span>
+        <span class="meta-chip" id="heroPhoneChip">📞 01066726432 - 01500098392 - 01044820100</span>
       </div>
     </div>
 
     <div class="hero-quick-kpi">
       <div class="kpi-card">
-        <span class="val">5</span>
-        <span class="lbl">عيادات تخصصية</span>
+        <span class="val">4</span>
+        <span class="lbl">فروع معتمدة</span>
       </div>
       <div class="kpi-card">
         <span class="val">32</span>
@@ -1313,8 +1253,8 @@ body {
         <span class="lbl">فوائد التقويم</span>
       </div>
       <div class="kpi-card">
-        <span class="val">6</span>
-        <span class="lbl">عروض حصرية</span>
+        <span class="val">🌸</span>
+        <span class="lbl">قسم للسيدات</span>
       </div>
     </div>
   </section>
@@ -1327,7 +1267,7 @@ body {
     </button>
     <button type="button" class="dock-tab-btn" id="tab-ads" onclick="switchSuiteTab('ads')">
       <span>📢</span>
-      <span>عروض وإعلانات رويال (6)</span>
+      <span>معرض الإعلانات والعروض الرسمية</span>
     </button>
     <button type="button" class="dock-tab-btn" id="tab-ortho" onclick="switchSuiteTab('ortho')">
       <span>📐</span>
@@ -1335,11 +1275,11 @@ body {
     </button>
     <button type="button" class="dock-tab-btn" id="tab-doctors" onclick="switchSuiteTab('doctors')">
       <span>🩺</span>
-      <span>جدول الأطباء والعيادات</span>
+      <span>جدول الاستشاريين والعيادات</span>
     </button>
     <button type="button" class="dock-tab-btn" id="tab-reception" onclick="switchSuiteTab('reception')">
       <span>🔔</span>
-      <span>شاشة نداء الاستقبال والعيادات</span>
+      <span>شاشة نداء الاستقبال الحية</span>
     </button>
   </nav>
 
@@ -1352,8 +1292,8 @@ body {
           <div class="card-head-title">
             <div class="icon-box">🎙️</div>
             <div>
-              <div>استمارة حجز الكشف الذكي الفوري</div>
-              <small style="color:var(--tx-muted); font-size:12px;">تسجيل صوتي باللهجة المصرية أو يدوي فائق السرعة</small>
+              <div>استمارة الحجز الذكي الفوري</div>
+              <small style="color:var(--tx-muted); font-size:12px;">تسجيل صوتي مصري مباشر أو إدخال سريع في ثوانٍ</small>
             </div>
           </div>
           <span class="hero-tag" style="margin-bottom:0">VIP PASS</span>
@@ -1363,16 +1303,24 @@ body {
         <div class="voice-ai-banner">
           <div class="voice-ai-info">
             <div class="voice-ai-title">
-              <span>⚡ المساعد الصوتي المصري الذكي لرويال دينت</span>
+              <span>⚡ المساعد الصوتي المصري لمركز رويال</span>
             </div>
             <div class="voice-ai-sub" id="voiceStatusText">
-              اضغط على المايك وتحدث بحرية: "عاوز احجز عند دكتور التقويم يوم الثلاثاء ضرسي اليمين بيوجعني"
+              اضغط على المايك وتحدث: "عاوز احجز عند دكتور التقويم يوم الثلاثاء ضرسي اليمين بيوجعني"
             </div>
           </div>
           <button type="button" class="btn-voice-trigger" id="voiceTriggerBtn" onclick="RoyalVoiceAI.toggleVoice()" title="بدء التسجيل الصوتي">
             🎤
           </button>
         </div>
+
+        <!-- Dedicated Ladies Department Checkbox -->
+        <label class="ladies-dept-toggle">
+          <input type="checkbox" id="ladiesDeptCheck" onchange="onLadiesToggled()">
+          <span style="font-size:13px; font-weight:800; color:var(--ladies-pink);">
+            🌸 قسم متخصص للسيدات (طبيبات أسنان متخصصات لضمان كامل الراحة والخصوصية)
+          </span>
+        </label>
 
         <!-- Booking Form Fields -->
         <form id="clinicBookingForm" onsubmit="event.preventDefault(); submitClinicBooking();">
@@ -1382,7 +1330,7 @@ body {
                 <span>اسم المريض الثلاثي</span>
                 <span style="color:var(--rose);">*</span>
               </label>
-              <input type="text" id="patientName" class="form-input" placeholder="مثال: أحمد محمد عبد الستار" required>
+              <input type="text" id="patientName" class="form-input" placeholder="مثال: محمد عبد الستار" required>
             </div>
 
             <div class="form-field">
@@ -1400,11 +1348,11 @@ body {
                 <span>العيادة والطبيب المختص</span>
               </label>
               <select id="doctorSelect" class="form-select" onchange="onDoctorChanged()">
-                <option value="rd-doc-01">د. أحمد عبد الحليم — جراحة وزراعة الأسنان (عيادة 1)</option>
-                <option value="rd-doc-02" selected>د. محمد حسن رشاد — استشاري التقويم والفكين (عيادة 2)</option>
-                <option value="rd-doc-03">د. سارة المنشاوي — تجميل الأسنان وفينير DSD (عيادة 3)</option>
-                <option value="rd-doc-04">د. محمود العسقلاني — علاج الجذور والمايكروسكوب (عيادة 4)</option>
-                <option value="rd-doc-05">د. ندى الشريف — طب أسنان الأطفال الوقائي (عيادة 5)</option>
+                <option value="rd-doc-01">د. أحمد عبد الحليم — استشاري أول جراحة وزراعة الأسنان</option>
+                <option value="rd-doc-02" selected>د. محمد حسن رشاد — استشاري التقويم والفكين والتقويم الشفاف</option>
+                <option value="rd-doc-03">د. سارة المنشاوي — أخصائية تجميل الأسنان وفينير الابتسامة (قسم السيدات)</option>
+                <option value="rd-doc-04">د. محمود العسقلاني — أخصائي علاج الجذور وحشو العصب بالمايكروسكوب</option>
+                <option value="rd-doc-05">د. ندى الشريف — أخصائية طب أسنان الأطفال ورعاية الأسنان الوقائية</option>
               </select>
             </div>
 
@@ -1412,7 +1360,7 @@ body {
               <label class="form-label">
                 <span>الفترة والموعد المفضل</span>
               </label>
-              <select id="shiftSelect" class="form-select">
+              <select id="shiftSelect" class="form-select" onchange="updateLivePassPreview()">
                 <option value="morning">الفترة الصباحية (11:00 ص - 03:00 م)</option>
                 <option value="evening" selected>الفترة المسائية (05:00 م - 10:30 م)</option>
                 <option value="emergency">طوارئ فورية عاجلة اليوم</option>
@@ -1430,9 +1378,9 @@ body {
 
             <div class="form-field">
               <label class="form-label">
-                <span>كود كوبون الخصم (من إعلانات الفيس بوك)</span>
+                <span>كود كوبون العرض</span>
               </label>
-              <input type="text" id="promoCode" class="form-input" placeholder="مثال: ROYAL-ORTHO-EASY" style="font-family:var(--f-mono);">
+              <input type="text" id="promoCode" class="form-input" placeholder="مثال: ROYAL-ORTHO-DISTANCES" style="font-family:var(--f-mono);">
             </div>
           </div>
 
@@ -1444,23 +1392,16 @@ body {
             </label>
 
             <div class="fdi-chart-container">
-              <!-- Upper Arch (Maxilla) -->
               <div class="fdi-arch-label">
                 <span>▲ الفك العلوي (الأسنان الدائمة 18 - 28)</span>
               </div>
-              <div class="fdi-arch-row" id="upperArchRow">
-                <!-- Populated via JavaScript for crisp rendering -->
-              </div>
+              <div class="fdi-arch-row" id="upperArchRow"></div>
 
-              <!-- Lower Arch (Mandible) -->
               <div class="fdi-arch-label" style="margin-top:10px;">
                 <span>▼ الفك السفلي (الأسنان الدائمة 48 - 38)</span>
               </div>
-              <div class="fdi-arch-row" id="lowerArchRow">
-                <!-- Populated via JavaScript -->
-              </div>
+              <div class="fdi-arch-row" id="lowerArchRow"></div>
 
-              <!-- Pathology Quick Tag Chips -->
               <div class="pathology-tag-group">
                 <span class="patho-chip selected" onclick="togglePathologyTag(this, 'تسوس وألم')">تسوس وألم</span>
                 <span class="patho-chip" onclick="togglePathologyTag(this, 'علاج عصب')">علاج عصب</span>
@@ -1475,30 +1416,29 @@ body {
 
           <div class="form-field">
             <label class="form-label">
-              <span>ملاحظات إضافية أو شكوى المريض</span>
+              <span>ملاحظات المريض أو التاريخ الطبي</span>
             </label>
-            <textarea id="patientNotes" class="form-textarea" rows="2" placeholder="اكتب أي ملاحظة أو تاريخ مرضي مثل الحساسية أو الضغط أو السكر..."></textarea>
+            <textarea id="patientNotes" class="form-textarea" rows="2" placeholder="اكتب أي ملاحظة أو تاريخ مرضي مثل الضغط، السكر، أو حساسية أدوية..."></textarea>
           </div>
 
           <button type="submit" class="btn-royal-submit">
-            <span>👑 إصدار بطاقة الكشف الملكية وتأكيد الحجز عبر الواتساب</span>
+            <span>👑 إصدار بطاقة الكشف وتأكيد الموعد عبر الواتساب</span>
           </button>
         </form>
       </div>
 
       <!-- Right: Live VIP Clinical Pass & Clinic Perks -->
       <div style="display:flex; flex-direction:column; gap:20px;">
-        <!-- Live Pass Preview -->
         <div class="vip-pass-card" id="livePassBox">
           <div class="vip-pass-header">
             <div style="display:flex; align-items:center; gap:10px;">
               <span style="font-size:28px;">👑</span>
               <div>
-                <div style="font-family:var(--f-royal); font-size:17px; font-weight:800; color:#FFFFFF;">
+                <div style="font-family:var(--f-royal); font-size:18px; font-weight:800; color:#FFFFFF;">
                   بطاقة المريض الملكية — VIP PASS
                 </div>
-                <div style="font-size:11px; color:var(--clinical-teal); font-family:var(--f-mono);">
-                  ROYAL DENT CENTER • DAIRUT BRANCH
+                <div style="font-size:11px; color:var(--gold-warm); font-family:var(--f-mono);" id="passBranchTag">
+                  ROYAL DENTAL CENTER • DAIRUT BRANCH
                 </div>
               </div>
             </div>
@@ -1509,7 +1449,7 @@ body {
             <div style="display:flex; flex-direction:column; gap:8px;">
               <div>
                 <span style="font-size:11px; color:var(--tx-muted); display:block;">اسم المريض:</span>
-                <strong style="font-size:16px; color:#FFFFFF;" id="passPatientName">أحمد محمد عبد الستار</strong>
+                <strong style="font-size:16px; color:#FFFFFF;" id="passPatientName">محمد عبد الستار</strong>
               </div>
               <div>
                 <span style="font-size:11px; color:var(--tx-muted); display:block;">العيادة والطبيب:</span>
@@ -1527,46 +1467,43 @@ body {
               </div>
               <div>
                 <span style="font-size:11px; color:var(--tx-muted); display:block;">الأسنان المحددة:</span>
-                <span style="font-size:12px; color:var(--clinical-teal); font-family:var(--f-mono);" id="passTeeth">#16, #26 (طواحن علوية)</span>
+                <span style="font-size:12px; color:var(--clinical-teal); font-family:var(--f-mono);" id="passTeeth">فحص شامل لكامل الفكين</span>
               </div>
             </div>
 
-            <div class="qr-code-box" id="passQrCode">
-              <!-- Dynamically generated QR code -->
-            </div>
+            <div class="qr-code-box" id="passQrCode"></div>
           </div>
 
           <div style="margin-top:16px; padding-top:12px; border-top:1px dashed rgba(212, 175, 55, 0.3); display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:11px; color:#94A3B8;">خصم العرض: <strong style="color:var(--emerald);" id="passDiscount">كشف مجاني + فحص 3D</strong></span>
+            <span style="font-size:11px; color:#94A3B8;">خصم العرض: <strong style="color:var(--emerald);" id="passDiscount">كشف مجاني + معاينة 3D</strong></span>
             <button type="button" class="btn-icon-pill btn-hotline" style="height:32px; font-size:11px;" onclick="dispatchTicketWhatsApp()">
-              <span>📲 إرسال فوري للواتساب</span>
+              <span>📲 تأكيد بالواتساب</span>
             </button>
           </div>
         </div>
 
-        <!-- Clinic Guarantees & Features -->
         <div class="lux-card">
           <div class="card-head" style="margin-bottom:14px; padding-bottom:10px;">
             <div class="card-head-title" style="font-size:15px;">
-              <span>🛡️ مزايا وخدمات مركز رويال دينت ديروط</span>
+              <span>🛡️ معايير الجودة العالمية في مركز رويال</span>
             </div>
           </div>
           <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13px; color:var(--tx-muted);">
             <li style="display:flex; align-items:center; gap:8px;">
               <span style="color:var(--gold);">✔</span>
-              <span>تعقيم أوتوكلاف كلاس B قياسي بأعلى المعايير الطبية لكل مريض على حدة.</span>
+              <span><strong>تعقيم جراحي صارم:</strong> أحدث أجهزة الأوتوكلاف كلاس B الأوروبية مع فتح أدوات معقمة أمام المريض.</span>
             </li>
             <li style="display:flex; align-items:center; gap:8px;">
               <span style="color:var(--gold);">✔</span>
-              <span>شراكة رقمية مباشرة مع معمل <strong>ماستر آرت (Master Art Lab)</strong> لتسليم التركيبات في 24 ساعة.</span>
+              <span><strong>قسم خاص بالسيدات:</strong> كادر طبي نسائي متكامل لضمان أقصى درجات الخصوصية والراحة.</span>
             </li>
             <li style="display:flex; align-items:center; gap:8px;">
               <span style="color:var(--gold);">✔</span>
-              <span>أشعة سينية وبانوراما ديجيتال فورية داخل المركز لتوفير وقت المريض.</span>
+              <span><strong>تقويم الأسنان بأقساط مريحة 0% فوائد:</strong> بدون تعقيدات بنكية أو فوائد إضافية.</span>
             </li>
             <li style="display:flex; align-items:center; gap:8px;">
               <span style="color:var(--gold);">✔</span>
-              <span>أنظمة دفع وتقسيط مرنة بدون فوائد وبدون إجراءات بنكية معقدة.</span>
+              <span><strong>أشعة بانوراما وتشخيص رقمي فوري:</strong> داخل المركز لاختصار وقت وجهد المريض.</span>
             </li>
           </ul>
         </div>
@@ -1574,25 +1511,23 @@ body {
     </div>
   </section>
 
-  <!-- SCREEN 2: FACEBOOK ADS & PROMOTIONS WALL -->
+  <!-- SCREEN 2: REAL FACEBOOK CAMPAIGNS SHOWCASE -->
   <section id="view-ads" class="suite-view">
-    <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <div style="margin-bottom:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
       <div>
         <h2 style="font-family:var(--f-head); font-size:22px; font-weight:800; color:var(--tx-primary);">
-          معرض إعلانات وعروض رويال دينت الرسمية
+          معرض الحملات والإعلانات الرسمية لمركز رويال
         </h2>
         <p style="font-size:13px; color:var(--tx-muted);">
-          مستخرجة مباشرة من صفحة الفيس بوك (facebook.com/RoyalDentDairut) مع إمكانية تطبيق العرض بنقرة واحدة
+          منشورات وحملات المركز المعتمدة في ديروط وأسيوط والقوصية وديرمواس مع تطبيق الكوبون بنقرة واحدة
         </p>
       </div>
-      <a href="https://www.facebook.com/RoyalDentDairut/" target="_blank" class="btn-icon-pill" style="border-color:var(--clinical-teal);">
-        <span>🌐 زيارة صفحة الفيس بوك الرسمية</span>
+      <a href="https://www.facebook.com/RoyalDentDairut/" target="_blank" class="btn-icon-pill" style="border-color:var(--gold); color:var(--tx-gold);">
+        <span>🌐 صفحة الفيسبوك الرسمية</span>
       </a>
     </div>
 
-    <div class="ads-masonry" id="adsContainer">
-      <!-- Populated via JavaScript dynamically from Brand Kit -->
-    </div>
+    <div class="ads-masonry" id="adsContainer"></div>
   </section>
 
   <!-- SCREEN 3: ORTHODONTICS STUDIO & 0% INSTALLMENT CALCULATOR -->
@@ -1602,30 +1537,24 @@ body {
         <div class="card-head-title">
           <div class="icon-box">📐</div>
           <div>
-            <div>استوديو تقويم الأسنان والفكين الرقمي وحاسبة الأقساط</div>
-            <small style="color:var(--tx-muted); font-size:12px;">اختر نوع التقويم المناسب واحسب قسطك الشهري مع مبادرة 0% فوائد</small>
+            <div>استوديو تقويم الأسنان والفكين "التقويم هيقرب المسافات"</div>
+            <small style="color:var(--tx-muted); font-size:12px;">مبادرة التقسيط المباشر 0% فوائد لجميع الأعمار بأحدث التقنيات الرقمية</small>
           </div>
         </div>
         <span class="hero-tag">0% INTEREST</span>
       </div>
 
-      <!-- Systems Selector Cards -->
-      <div class="ortho-systems-grid" id="orthoSystemsGrid">
-        <!-- Rendered by JS -->
-      </div>
+      <div class="ortho-systems-grid" id="orthoSystemsGrid"></div>
 
-      <!-- Live Interactive Sliders -->
       <div class="calc-slider-box">
-        <!-- Total Cost Slider -->
         <div style="margin-bottom:20px;">
           <div class="slider-header">
-            <span>إجمالي تكلفة منظومة التقويم المختارة:</span>
+            <span>إجمالي تكلفة كورس التقويم:</span>
             <span class="slider-val-bubble" id="totalCostBubble">18,000 ج.م</span>
           </div>
           <input type="range" id="totalCostRange" class="lux-range" min="8000" max="35000" step="1000" value="18000" oninput="recalcOrthoInstallments()">
         </div>
 
-        <!-- Down Payment Slider -->
         <div style="margin-bottom:20px;">
           <div class="slider-header">
             <span>الدفعة الأولى (المقدم المرن):</span>
@@ -1634,7 +1563,6 @@ body {
           <input type="range" id="downPaymentRange" class="lux-range" min="1500" max="15000" step="500" value="4000" oninput="recalcOrthoInstallments()">
         </div>
 
-        <!-- Duration Months Slider -->
         <div>
           <div class="slider-header">
             <span>مدة سداد الأقساط (بالأشهر):</span>
@@ -1644,7 +1572,6 @@ body {
         </div>
       </div>
 
-      <!-- Calculated Metrics Output Cards -->
       <div class="calc-metrics-row">
         <div class="calc-metric-card">
           <span class="big" id="monthlyInstallmentVal">1,000 ج.م</span>
@@ -1652,35 +1579,32 @@ body {
         </div>
         <div class="calc-metric-card">
           <span class="big" style="color:var(--emerald);">0% فوائد</span>
-          <span class="small">بدون رسوم إدارية أو أرباح</span>
+          <span class="small">مبادرة تقسيط مباشر بدون بنوك</span>
         </div>
         <div class="calc-metric-card">
           <span class="big" id="remainingBalanceVal">14,000 ج.م</span>
-          <span class="small">المتبقي المجدول بعد الدفعة</span>
+          <span class="small">المتبقي المجدول</span>
         </div>
       </div>
 
-      <!-- Action Button -->
       <button type="button" class="btn-royal-submit" onclick="bookOrthoPlanWithInstallment()">
         <span>💎 تثبيت خطة التقسيط وحجز جلسة المسح ثلاثي الأبعاد 3D Scan</span>
       </button>
     </div>
   </section>
 
-  <!-- SCREEN 4: DOCTORS ROSTER & CLINICAL SHIFTS MATRIX -->
+  <!-- SCREEN 4: DOCTORS ROSTER & BRANCH SCHEDULE -->
   <section id="view-doctors" class="suite-view">
     <div style="margin-bottom:20px;">
       <h2 style="font-family:var(--f-head); font-size:22px; font-weight:800; color:var(--tx-primary);">
-        نخبة أطباء وجراحي مركز رويال دينت — ديروط
+        نخبة استشاريي وأطباء مركز رويال للأسنان
       </h2>
       <p style="font-size:13px; color:var(--tx-muted);">
-        استشاريون متخصصون في جراحة وزراعة الأسنان، التقويم، التجميل وعلاج الجذور وأسنان الأطفال
+        أطباء واستشاريون بدرجة الماجستير والدكتوراه في كافة تخصصات طب وجراحة وتجميل وتقويم الأسنان
       </p>
     </div>
 
-    <div class="doctors-grid" id="doctorsGridContainer">
-      <!-- Populated via JavaScript -->
-    </div>
+    <div class="ads-masonry" id="doctorsGridContainer"></div>
   </section>
 
   <!-- SCREEN 5: RECEPTION CALLING SCREEN & ROOMS MONITOR -->
@@ -1690,8 +1614,8 @@ body {
         <div class="card-head-title">
           <div class="icon-box">🔔</div>
           <div>
-            <div>شاشة نداء الاستقبال ومراقبة غرف الكشف الحية</div>
-            <small style="color:var(--tx-muted); font-size:12px;">نظام صوتي بنغمة Chime الأكوستيك لاستدعاء المرضى للعيادات</small>
+            <div>شاشة نداء الاستقبال الحية ومراقبة العيادات</div>
+            <small style="color:var(--tx-muted); font-size:12px;">نظام استدعاء صوتي متطور بنغمات Chime أكوستيك موسيقية</small>
           </div>
         </div>
         <button type="button" class="btn-icon-pill" onclick="RoyalAudio.playChime()">
@@ -1699,12 +1623,8 @@ body {
         </button>
       </div>
 
-      <!-- Clinical Rooms Status Grid -->
-      <div class="rooms-grid" id="clinicRoomsGrid">
-        <!-- Rendered by JS -->
-      </div>
+      <div class="rooms-grid" id="clinicRoomsGrid"></div>
 
-      <!-- Live Queue Table -->
       <h3 style="font-family:var(--f-head); font-size:16px; margin:20px 0 10px 0; color:var(--tx-primary);">
         قائمة انتظار المرضى بالمركز اليوم
       </h3>
@@ -1716,19 +1636,16 @@ body {
               <th>اسم المريض</th>
               <th>العيادة المختارة</th>
               <th>الطبيب المعالج</th>
-              <th>الحالة الحالية</th>
+              <th>الحالة</th>
               <th>إجراء الاستدعاء</th>
             </tr>
           </thead>
-          <tbody id="queueTableBody">
-            <!-- Populated via JS -->
-          </tbody>
+          <tbody id="queueTableBody"></tbody>
         </table>
       </div>
     </div>
   </section>
 </main>
-
 
 <!-- Emergency Triage Modal -->
 <div id="emergencyModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(6,17,28,0.85); backdrop-filter:blur(14px); align-items:center; justify-content:center; padding:16px;">
@@ -1738,7 +1655,7 @@ body {
         <div class="icon-box" style="background:rgba(244,63,94,0.15); border-color:rgba(244,63,94,0.3); color:var(--rose);">🚨</div>
         <div>
           <div>طوارئ الأسنان الفورية — فرع ديروط</div>
-          <small style="color:var(--tx-muted); font-size:12px;">نبطشية الطوارئ على مدار الساعة • اتصال فوري بالطبيب المناوب</small>
+          <small style="color:var(--tx-muted); font-size:12px;">اتصال فوري بالطبيب المناوب على مدار الساعة</small>
         </div>
       </div>
       <button type="button" onclick="closeEmergencyModal()" style="background:transparent; border:none; color:var(--tx-muted); font-size:22px; cursor:pointer;">✕</button>
@@ -1746,14 +1663,14 @@ body {
 
     <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
       <div style="background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); border-radius:12px; padding:12px; font-size:13px; color:#FECDD3;">
-        ⚡ <strong>حالات الطوارئ المشمولة:</strong> ألم العصب الحاد، النزيف المستمر بعد الخلع، كسر الأسنان الأمامية، سقوط الحشوات، والتورم أو الخراج المفاجئ.
+        ⚡ <strong>حالات الطوارئ المشمولة:</strong> ألم العصب الحاد، النزيف المستمر بعد الخلع، كسر الأسنان، سقوط الحشوات والتركيبات، والتورم أو الخراج المفاجئ.
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
         <a href="tel:01066726432" class="btn-royal-submit" style="background:linear-gradient(135deg, #BE123C, #F43F5E); border-color:#FDA4AF; color:#FFFFFF; text-decoration:none; padding:12px; font-size:13px;">
           <span>📞 اتصال بالطوارئ</span>
         </a>
-        <a href="https://wa.me/201066726432?text=%D8%B7%D9%88%D8%A7%D8%B1%D8%A6%20%D8%B9%D8%A7%D8%AC%D9%84%D8%A9%20%D9%85%D9%86%20%D8%A8%D9%88%D8%A7%D8%A8%D8%A9%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D8%AF%D9%8A%D9%86%D8%AA%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A3%D9%84%D9%85%20%D8%AD%D8%A7%D8%AF" target="_blank" class="btn-royal-submit" style="background:linear-gradient(135deg, #059669, #10B981); border-color:#A7F3D0; color:#FFFFFF; text-decoration:none; padding:12px; font-size:13px;">
+        <a href="https://wa.me/201066726432?text=%D8%B7%D9%88%D8%A7%D8%B1%D8%A6%20%D8%B9%D8%A7%D8%AC%D9%84%D8%A9%20%D9%85%D9%86%20%D8%A8%D9%88%D8%A7%D8%A8%D8%A9%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D8%AF%D9%8A%D9%86%D8%AA" target="_blank" class="btn-royal-submit" style="background:linear-gradient(135deg, #059669, #10B981); border-color:#A7F3D0; color:#FFFFFF; text-decoration:none; padding:12px; font-size:13px;">
           <span>💬 واتساب الطوارئ</span>
         </a>
       </div>
@@ -1773,21 +1690,47 @@ body {
 
 <!-- Footer -->
 <footer class="royal-footer">
-  <div class="footer-logo">مركز رويال دينت التخصصي للأسنان</div>
-  <p>ديروط — ميدان أبو جبل • أسيوط | متصل رقمياً بنظام معمل ماستر آرت Master Art Lab</p>
-  <p style="margin-top:6px; font-size:11px; color:var(--tx-dim);">جميع الحقوق محفوظة © 2026 • Royal Dent Dental Center Dairut</p>
+  <div class="footer-logo">مركز رويال لطب الفم والأسنان — Royal Dental Center</div>
+  <p id="footerBranchesTxt">فروعنا المعتمدة: ديروط • أسيوط • القوصية • ديرمواس</p>
+  <p style="margin-top:6px; font-size:11px; color:var(--tx-dim);">جميع الحقوق محفوظة © 2026 • المنظومة الطبية الذكية لمركز رويال دينت</p>
 </footer>
 
 <script>
 /* ========================================================
-   ROYAL DENT DATA SYSTEM & BRAND KIT INTEGRATION
+   OFFICIAL DATA NETWORK (4 BRANCHES & REAL CAMPAIGNS)
    ======================================================== */
-const ROYAL_DATA = {
-  clinicName: "مركز رويال دينت التخصصي لطب وجراحة وتجميل وزراعة الأسنان — فرع ديروط",
-  phones: ["01066726432", "01044820100", "01500098392"],
-  whatsapp: "201066726432",
-  address: "ديروط - ميدان أبو جبل، بجوار فرع فودافون، فوق مطعم التيسير و Q جيم، أسيوط",
-  
+const ROYAL_NETWORK = {
+  branches: {
+    dairut: {
+      name: "فرع ديروط (الفرع الرئيسي)",
+      address: "ديروط: ميدان أبو جبل - بجوار فرع فودافون أعلى Q جيم",
+      phones: ["01066726432", "01500098392", "01044820100"],
+      whatsapp: "201066726432",
+      badge: "DAIRUT BRANCH"
+    },
+    assiut: {
+      name: "فرع أسيوط",
+      address: "أسيوط: ميدان الزهراء - بجوار عمر أفندي - برج مهران الدور الثاني",
+      phones: ["01116596599", "01066726432"],
+      whatsapp: "201116596599",
+      badge: "ASSIUT CITY BRANCH"
+    },
+    qusiya: {
+      name: "فرع القوصية",
+      address: "القوصية: شارع الجلاء - بجوار بنك القاهرة - برج فاطمة الزهراء",
+      phones: ["01500098392", "01066726432"],
+      whatsapp: "201500098392",
+      badge: "QUSIYA BRANCH"
+    },
+    dayrmawas: {
+      name: "فرع ديرمواس",
+      address: "ديرمواس: شارع مدرسة التجارة - أعلى مكتبة الإسكندرية وأسواق المهندس",
+      phones: ["01044820100", "01066726432"],
+      whatsapp: "201044820100",
+      badge: "DAYR MAWAS BRANCH"
+    }
+  },
+
   doctors: [
     {
       id: "rd-doc-01",
@@ -1795,6 +1738,7 @@ const ROYAL_DATA = {
       title: "استشاري أول جراحة الفم وزراعة الأسنان الديجيتال",
       room: "عيادة 1 (الجراحة والزراعة)",
       schedule: ["السبت", "الأحد", "الثلاثاء", "الخميس"],
+      isFemale: false,
       avatar: "👨‍⚕️"
     },
     {
@@ -1803,14 +1747,16 @@ const ROYAL_DATA = {
       title: "استشاري تقويم الأسنان والفكين والتقويم الشفاف",
       room: "عيادة 2 (استوديو التقويم)",
       schedule: ["الأحد", "الإثنين", "الأربعاء"],
+      isFemale: false,
       avatar: "👨‍⚕️"
     },
     {
       id: "rd-doc-03",
       name: "د. سارة المنشاوي",
-      title: "أخصائية تجميل الأسنان وفينير الابتسامة الرقمية DSD",
-      room: "عيادة 3 (استوديو الابتسامة)",
+      title: "أخصائية تجميل الأسنان وفينير الابتسامة (قسم السيدات التخصصي)",
+      room: "عيادة 3 (استوديو الابتسامة وقسم السيدات)",
       schedule: ["السبت", "الثلاثاء", "الخميس"],
+      isFemale: true,
       avatar: "👩‍⚕️"
     },
     {
@@ -1819,14 +1765,16 @@ const ROYAL_DATA = {
       title: "أخصائي علاج الجذور وحشو العصب بالمايكروسكوب",
       room: "عيادة 4 (الميكروسكوب الجراحي)",
       schedule: ["السبت", "الإثنين", "الأربعاء", "الخميس"],
+      isFemale: false,
       avatar: "👨‍⚕️"
     },
     {
       id: "rd-doc-05",
       name: "د. ندى الشريف",
-      title: "أخصائية طب أسنان الأطفال ورعاية الأسنان الوقائية",
+      title: "أخصائية طب أسنان الأطفال وقسم السيدات التخصصي",
       room: "عيادة 5 (جناح أبطال رويال)",
       schedule: ["الأحد", "الثلاثاء", "الخميس"],
+      isFemale: true,
       avatar: "👩‍⚕️"
     }
   ],
@@ -1844,7 +1792,7 @@ const ROYAL_DATA = {
     {
       id: "american-metal",
       name: "التقويم المعدني الأمريكي (American Braces)",
-      features: ["قوة فائقة للحالات المتقدمة", "توكات ملونة مبهجة", "نتائج مضمونة 100%"],
+      features: ["حملة 'التقويم هيقرب المسافات'", "قوة فائقة وتوكات ملونة مبهجة", "نتائج مضمونة 100%"],
       duration: "12 - 20 شهر",
       cost: 12000,
       down: 2500,
@@ -1853,7 +1801,7 @@ const ROYAL_DATA = {
     {
       id: "ceramic-aesthetic",
       name: "التقويم السيراميكي التجميلي (Ceramic Braces)",
-      features: ["حاصرات بلون الأسنان الطبيعي", "شكل راقٍ وغير ملفت", "حماية لمينا الأسنان"],
+      features: ["حاصرات خزفية بلون الأسنان", "شكل راقٍ ومظهر تجميلي أنيق", "حماية لمينا الأسنان"],
       duration: "10 - 18 شهر",
       cost: 15000,
       down: 3000,
@@ -1872,70 +1820,50 @@ const ROYAL_DATA = {
 
   campaigns: [
     {
-      id: "ad-01",
-      title: "مهرجان زراعة الأسنان الديجيتال الفورية بدون فتح جراحي 🦷🔩",
-      hook: "عوض أسنانك المفقودة في جلسة واحدة بدون خياطة مع أحدث تكنولوجيا الزراعة الرقمية الألمانية!",
-      badge: "العرض الأقوى بديروط",
+      id: "ad-ortho-distance",
+      title: "التقويم هيقرب المسافات 🪥✨",
+      hook: "علاج التزاحم وفراغات الأسنان بأحدث أجهزة التقويم الأمريكية والشفافة، مع خطط تقسيط مريحة 0% فوائد بدون بنوك!",
+      badge: "الحملة الرسمية الكبرى",
+      discount: "كشف واستشارة مجانية + فحص 3D ومعاينة للابتسامة قبل البدء",
+      coupon: "ROYAL-ORTHO-DISTANCES",
+      image: "assets/ad_ortho_distances.jpg",
+      docId: "rd-doc-02"
+    },
+    {
+      id: "ad-ladies-privacy",
+      title: "قسم متخصص للسيدات لضمان راحتك وخصوصيتك 🌸",
+      hook: "طبيبات أسنان متخصصات بدرجة الماجستير والاستشارية لتقديم كافة خدمات العلاج والتجميل بأعلى درجات الخصوصية والراحة التامة.",
+      badge: "قسم السيدات المستقل",
+      discount: "كشف مجاني وجلسة إزالة جير وتلميع هدية مع باقات التجميل",
+      coupon: "ROYAL-LADIES-CARE",
+      image: "assets/ad_ladies_clinic.jpg",
+      docId: "rd-doc-03"
+    },
+    {
+      id: "ad-implant-fast",
+      title: "زراعة الأسنان الفورية بدون فتح جراحي 🦷🔩",
+      hook: "عوض أسنانك المفقودة في جلسة واحدة بأحدث أنظمة الزرع الألمانية والسويسرية المعتمدة بضمان مدى الحياة وبدون أي ألم.",
+      badge: "زراعة ديجيتال متقدمة",
       discount: "خصم 25% + أشعة بانوراما استرشادية مجاناً",
       coupon: "ROYAL-IMPLANT-25",
-      docId: "rd-doc-01",
-      stats: "👁️ 14.2K مشاهدة • 👍 1,240 إعجاب"
+      image: "assets/royal_logo_official.jpg",
+      docId: "rd-doc-01"
     },
     {
-      id: "ad-02",
-      title: "عرض تقويم الأسنان بالتقسيط المريح 0% فوائد 🪥✨",
-      hook: "ابتسامة متناسقة وجذابة بدون أي عبء مالي، خطط تقسيط مرنة تبدأ من 500 ج.م شهرياً وبدون بنوك!",
-      badge: "تقسيط مباشر بدون فوائد",
-      discount: "كشف مجاني + فحص ومعاينة 3D رقمية كاملة",
-      coupon: "ROYAL-ORTHO-EASY",
-      docId: "rd-doc-02",
-      stats: "👁️ 28.5K مشاهدة • 👍 3,110 إعجاب"
-    },
-    {
-      id: "ad-03",
-      title: "ابتسامة هوليوود الملكية وتركيبات الزيركون والإيماكس في 24 ساعة 💎",
-      hook: "بشراكة حصرية مع معمل ماستر آرت الرقمي؛ أفضل وأدق عدسات تجميلية وفينير في الصعيد!",
+      id: "ad-hollywood-smile",
+      title: "ابتسامة هوليوود الملكية وتركيبات الإيماكس والزيركون 💎",
+      hook: "تصميم رقمي ثلاثي الأبعاد للابتسامة DSD وتسليم فوري قياسي خلال 24 ساعة بأعلى دقة جمالية مطابقة للأسنان الطبيعية.",
       badge: "تسليم قياسي سريع",
-      discount: "تبييض أسنان ليزر مجاناً مع باقة الفينير الكاملة",
+      discount: "تبييض ليزر مجاني مع باقة الابتسامة الكاملة",
       coupon: "ROYAL-HOLLYWOOD",
-      docId: "rd-doc-03",
-      stats: "👁️ 19.8K مشاهدة • 👍 2,450 إعجاب"
-    },
-    {
-      id: "ad-04",
-      title: "علاج الجذور بالمايكروسكوب الجراحي في جلسة واحدة ⚡",
-      hook: "وداعاً لألم العصب المتكرر، تعقيم كامل ثلاثي الأبعاد وحشو ميكروسكوبي في 45 دقيقة وبدون أي ألم!",
-      badge: "علاج فوري بدون ألم",
-      discount: "كشف وفحص عصب دقيق مجاناً",
-      coupon: "ROYAL-ENDO-CARE",
-      docId: "rd-doc-04",
-      stats: "👁️ 11.6K مشاهدة • 👍 980 إعجاب"
-    },
-    {
-      id: "ad-05",
-      title: "يوم أبطال رويال لأسنان الأطفال وجو ترفيهي مرح 🧸🎈",
-      hook: "ابنك مش هيخاف من دكتور السنان بعد النهاردة! هدايا وألعاب بعد كل جلسة حشو أو وقاية بالفلورايد.",
-      badge: "أصدقاء الأطفال",
-      discount: "فحص أسنان الأطفال مجاناً أيام السبت والإثنين",
-      coupon: "ROYAL-KIDS-HERO",
-      docId: "rd-doc-05",
-      stats: "👁️ 22.1K مشاهدة • 👍 2,890 إعجاب"
-    },
-    {
-      id: "ad-06",
-      title: "باقة تبييض الأسنان بالليزر الألماني + تنظيف وتلميع الجير ✨",
-      hook: "ابتسامة ناصعة البياض تفتح 4 درجات في جلسة واحدة 45 دقيقة فقط مع إزالة كاملة للاصفرار وتصبغات التدخين.",
-      badge: "سعر خاص لفترة محدودة",
-      discount: "750 ج.م فقط بدلاً من 1200 ج.م",
-      coupon: "ROYAL-WHITE-750",
-      docId: "rd-doc-03",
-      stats: "👁️ 16.4K مشاهدة • 👍 1,820 إعجاب"
+      image: "assets/royal_logo_official.jpg",
+      docId: "rd-doc-03"
     }
   ]
 };
 
 /* ========================================================
-   AUDIO SYNTHESIZER (WEB AUDIO API CHIMES & FX)
+   AUDIO SYSTEM (WEB AUDIO API DUAL ACOUSTIC CHIME)
    ======================================================== */
 const RoyalAudio = {
   enabled: true,
@@ -1960,28 +1888,21 @@ const RoyalAudio = {
     try {
       this.init();
       if (this.ctx.state === "suspended") this.ctx.resume();
-      
       const now = this.ctx.currentTime;
-      // High-end medical chime: 880Hz (A5) then 659.25Hz (E5)
-      const freqs = [880, 659.25];
-      freqs.forEach((f, idx) => {
+      [880, 659.25].forEach((f, idx) => {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = "sine";
         osc.frequency.setValueAtTime(f, now + idx * 0.18);
-        
         gain.gain.setValueAtTime(0, now + idx * 0.18);
         gain.gain.linearRampToValueAtTime(0.25, now + idx * 0.18 + 0.02);
         gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.18 + 0.8);
-        
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start(now + idx * 0.18);
         osc.stop(now + idx * 0.18 + 0.85);
       });
-    } catch(e) {
-      console.warn("Audio error:", e);
-    }
+    } catch(e) {}
   },
 
   playSuccess() {
@@ -1990,8 +1911,7 @@ const RoyalAudio = {
       this.init();
       if (this.ctx.state === "suspended") this.ctx.resume();
       const now = this.ctx.currentTime;
-      const freqs = [523.25, 659.25, 783.99, 1046.50]; // C Major arpeggio
-      freqs.forEach((f, idx) => {
+      [523.25, 659.25, 783.99, 1046.50].forEach((f, idx) => {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = "triangle";
@@ -2008,7 +1928,7 @@ const RoyalAudio = {
 };
 
 /* ========================================================
-   VOICE AI NLP SPEECH ENGINE (EGYPTIAN ARABIC)
+   VOICE AI ENGINE (EGYPTIAN ARABIC)
    ======================================================== */
 const RoyalVoiceAI = {
   isListening: false,
@@ -2027,7 +1947,7 @@ const RoyalVoiceAI = {
         const btn = document.getElementById("voiceTriggerBtn");
         const status = document.getElementById("voiceStatusText");
         if (btn) btn.classList.add("recording");
-        if (status) status.innerText = "جاري الاستماع إليك الآن... تحدث بطبيعتك وبلهجتك المصرية";
+        if (status) status.innerText = "جاري الاستماع إليك... تحدث بطبيعتك وبلهجتك المصرية";
       };
 
       this.recognition.onresult = (evt) => {
@@ -2038,19 +1958,17 @@ const RoyalVoiceAI = {
       this.recognition.onerror = () => {
         this.stopListening();
         const status = document.getElementById("voiceStatusText");
-        if (status) status.innerText = "تعذر التقاط الصوت، يمكنك كتابة البيانات يدوياً بسهولة.";
+        if (status) status.innerText = "تعذر التقاط الصوت، يمكنك الكتابة يدوياً بكل سهولة.";
       };
 
-      this.recognition.onend = () => {
-        this.stopListening();
-      };
+      this.recognition.onend = () => { this.stopListening(); };
     }
   },
 
   toggleVoice() {
     if (!this.recognition) this.init();
     if (!this.recognition) {
-      showToast("المتصفح لا يدعم التسجيل الصوتي المباشر، يمكنك الكتابة يدوياً");
+      showToast("المتصفح لا يدعم التسجيل الصوتي المباشر");
       return;
     }
     if (this.isListening) {
@@ -2070,53 +1988,48 @@ const RoyalVoiceAI = {
 
   parseEgyptianVoice(text) {
     const status = document.getElementById("voiceStatusText");
-    if (status) status.innerHTML = `تم التقاط الصوت: "<strong>${text}</strong>"`;
+    if (status) status.innerHTML = "تم التقاط الصوت: <strong>" + text + "</strong>";
     RoyalAudio.playSuccess();
 
-    // 1. Check for Specialty/Doctor
-    if (text.includes("تقويم") || text.includes("سلوك") || text.includes("محمد حسن")) {
+    if (text.includes("سيدات") || text.includes("دكتورة") || text.includes("ستات")) {
+      const chk = document.getElementById("ladiesDeptCheck");
+      if (chk) { chk.checked = true; onLadiesToggled(); }
+    } else if (text.includes("تقويم") || text.includes("سلوك") || text.includes("محمد حسن")) {
       document.getElementById("doctorSelect").value = "rd-doc-02";
     } else if (text.includes("زراعة") || text.includes("خلع") || text.includes("جراحة") || text.includes("احمد عبد الحليم")) {
       document.getElementById("doctorSelect").value = "rd-doc-01";
-    } else if (text.includes("تجميل") || text.includes("فينير") || text.includes("ابتسامة") || text.includes("سارة")) {
+    } else if (text.includes("تجميل") || text.includes("فينير") || text.includes("سارة")) {
       document.getElementById("doctorSelect").value = "rd-doc-03";
-    } else if (text.includes("عصب") || text.includes("جذور") || text.includes("ميكروسكوب") || text.includes("العسقلاني")) {
+    } else if (text.includes("عصب") || text.includes("جذور") || text.includes("العسقلاني")) {
       document.getElementById("doctorSelect").value = "rd-doc-04";
     } else if (text.includes("اطفال") || text.includes("طفل") || text.includes("ندى")) {
       document.getElementById("doctorSelect").value = "rd-doc-05";
     }
 
-    // 2. Check for Shift
-    if (text.includes("صبح") || text.includes("نهار") || text.includes("صباحية")) {
+    if (text.includes("صبح") || text.includes("صباحية")) {
       document.getElementById("shiftSelect").value = "morning";
-    } else if (text.includes("ليل") || text.includes("مسا") || text.includes("بعد العصر")) {
+    } else if (text.includes("مسا") || text.includes("مسائية") || text.includes("ليل")) {
       document.getElementById("shiftSelect").value = "evening";
-    } else if (text.includes("طوارئ") || text.includes("مستعجل") || text.includes("دلوقتي")) {
-      document.getElementById("shiftSelect").value = "emergency";
     }
 
-    // 3. Teeth auto-flag
     if (text.includes("ضرس") || text.includes("ضرسي")) {
-      selectTooth("16");
-      selectTooth("26");
-    } else if (text.includes("سنة") || text.includes("سناني") || text.includes("قدام")) {
-      selectTooth("11");
-      selectTooth("21");
+      selectTooth("16"); selectTooth("26");
+    } else if (text.includes("سنة") || text.includes("قدام")) {
+      selectTooth("11"); selectTooth("21");
     }
 
-    // Append to notes
     const notes = document.getElementById("patientNotes");
     if (notes) {
-      notes.value = (notes.value ? notes.value + " — " : "") + "ملاحظة صوتية: " + text;
+      notes.value = (notes.value ? notes.value + " — " : "") + "طلب صوتي: " + text;
     }
 
     onDoctorChanged();
-    showToast("تم فهم الصوت وتعبئة البيانات بذكاء!");
+    showToast("تم فهم طلبك الصوتي وتعبئة البيانات بذكاء!");
   }
 };
 
 /* ========================================================
-   INTERACTIVE FDI 32-TEETH CHART
+   FDI 32-TEETH INTERACTIVE CHART
    ======================================================== */
 const selectedTeeth = new Set();
 const selectedPathologies = new Set(["تسوس وألم"]);
@@ -2125,37 +2038,27 @@ function renderFdiTeeth() {
   const upperRow = document.getElementById("upperArchRow");
   const lowerRow = document.getElementById("lowerArchRow");
 
-  // Upper right (18 to 11) & Upper left (21 to 28)
   const upperTeeth = [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28];
-  // Lower right (48 to 41) & Lower left (31 to 38)
   const lowerTeeth = [48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38];
 
   if (upperRow) {
-    upperRow.innerHTML = upperTeeth.map(t => `
-      <button type="button" class="fdi-tooth-btn ${selectedTeeth.has(String(t)) ? 'selected' : ''}" id="tooth-${t}" onclick="toggleTooth('${t}')" title="السن رقم ${t}">
-        <span class="tooth-icon">🦷</span>
-        <span>${t}</span>
-      </button>
-    `).join("");
+    upperRow.innerHTML = upperTeeth.map(function(t) {
+      return '<button type="button" class="fdi-tooth-btn ' + (selectedTeeth.has(String(t)) ? 'selected' : '') + '" id="tooth-' + t + '" onclick="toggleTooth(\'' + t + '\')" title="السن #' + t + '"><span class="tooth-icon">🦷</span><span>' + t + '</span></button>';
+    }).join("");
   }
 
   if (lowerRow) {
-    lowerRow.innerHTML = lowerTeeth.map(t => `
-      <button type="button" class="fdi-tooth-btn ${selectedTeeth.has(String(t)) ? 'selected' : ''}" id="tooth-${t}" onclick="toggleTooth('${t}')" title="السن رقم ${t}">
-        <span class="tooth-icon">🦷</span>
-        <span>${t}</span>
-      </button>
-    `).join("");
+    lowerRow.innerHTML = lowerTeeth.map(function(t) {
+      return '<button type="button" class="fdi-tooth-btn ' + (selectedTeeth.has(String(t)) ? 'selected' : '') + '" id="tooth-' + t + '" onclick="toggleTooth(\'' + t + '\')" title="السن #' + t + '"><span class="tooth-icon">🦷</span><span>' + t + '</span></button>';
+    }).join("");
   }
 }
 
 function toggleTooth(toothId) {
-  if (selectedTeeth.has(toothId)) {
-    selectedTeeth.delete(toothId);
-  } else {
-    selectedTeeth.add(toothId);
-  }
-  const btn = document.getElementById(`tooth-${toothId}`);
+  if (selectedTeeth.has(toothId)) selectedTeeth.delete(toothId);
+  else selectedTeeth.add(toothId);
+  
+  const btn = document.getElementById("tooth-" + toothId);
   if (btn) btn.classList.toggle("selected", selectedTeeth.has(toothId));
   updateSelectedTeethDisplay();
   RoyalAudio.playChime();
@@ -2163,7 +2066,7 @@ function toggleTooth(toothId) {
 
 function selectTooth(toothId) {
   selectedTeeth.add(toothId);
-  const btn = document.getElementById(`tooth-${toothId}`);
+  const btn = document.getElementById("tooth-" + toothId);
   if (btn) btn.classList.add("selected");
   updateSelectedTeethDisplay();
 }
@@ -2177,8 +2080,8 @@ function updateSelectedTeethDisplay() {
     counter.innerText = "(لم يتم تحديد أسنان)";
     if (passTeeth) passTeeth.innerText = "فحص شامل لكامل الفكين";
   } else {
-    const list = Array.from(selectedTeeth).sort((a,b) => Number(a)-Number(b)).map(t => `#${t}`).join(", ");
-    counter.innerText = `(${selectedTeeth.size} سن محدد: ${list})`;
+    const list = Array.from(selectedTeeth).sort(function(a,b) { return Number(a)-Number(b); }).map(function(t) { return "#" + t; }).join(", ");
+    counter.innerText = "(" + selectedTeeth.size + " سن محدد: " + list + ")";
     if (passTeeth) passTeeth.innerText = list;
   }
 }
@@ -2191,6 +2094,49 @@ function togglePathologyTag(el, tag) {
     selectedPathologies.add(tag);
     el.classList.add("selected");
   }
+}
+
+/* ========================================================
+   BRANCH SWITCHER CONTROLLER
+   ======================================================== */
+function onBranchChanged() {
+  const branchKey = document.getElementById("branchSelector").value;
+  const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
+
+  const heading = document.getElementById("heroBranchHeading");
+  if (heading) heading.innerText = branch.name + " — ابتسامتك الملكية بأحدث المعايير";
+
+  const addr = document.getElementById("heroAddressChip");
+  if (addr) addr.innerText = "📍 " + branch.address;
+
+  const phoneChip = document.getElementById("heroPhoneChip");
+  if (phoneChip) phoneChip.innerText = "📞 " + branch.phones.join(" - ");
+
+  const topWhatsappNum = document.getElementById("topWhatsappNum");
+  if (topWhatsappNum) topWhatsappNum.innerText = branch.phones[0];
+
+  const topWhatsappBtn = document.getElementById("topWhatsappBtn");
+  if (topWhatsappBtn) topWhatsappBtn.href = "https://wa.me/" + branch.whatsapp + "?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20" + encodeURIComponent(branch.name) + "%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B2";
+
+  const passBranchTag = document.getElementById("passBranchTag");
+  if (passBranchTag) passBranchTag.innerText = "ROYAL DENTAL CENTER • " + branch.badge;
+
+  showToast("تم اختيار " + branch.name + " بنجاح!");
+  RoyalAudio.playChime();
+  updateLivePassPreview();
+}
+
+function onLadiesToggled() {
+  const isChecked = document.getElementById("ladiesDeptCheck").checked;
+  const docSelect = document.getElementById("doctorSelect");
+
+  if (isChecked) {
+    docSelect.value = "rd-doc-03";
+    showToast("تم تفعيل قسم السيدات المتخصص (طبيبات أسنان وخصوصية تامة)");
+  } else {
+    docSelect.value = "rd-doc-02";
+  }
+  onDoctorChanged();
 }
 
 /* ========================================================
@@ -2209,10 +2155,10 @@ function updateLivePassPreview() {
   const passShift = document.getElementById("passShift");
   const passDiscount = document.getElementById("passDiscount");
 
-  if (passName) passName.innerText = nameInput.value.trim() || "اسم المريض";
+  if (passName) passName.innerText = nameInput.value.trim() || "محمد عبد الستار";
   if (passDoc) {
-    const doc = ROYAL_DATA.doctors.find(d => d.id === docSelect.value);
-    passDoc.innerText = doc ? `${doc.name} — ${doc.title}` : "استشاري المركز";
+    const doc = ROYAL_NETWORK.doctors.find(function(d) { return d.id === docSelect.value; });
+    passDoc.innerText = doc ? doc.name + " — " + doc.title : "استشاري المركز";
   }
   if (passDate) passDate.innerText = dateInput.value || "اليوم (تأكيد فوري)";
   if (passShift) {
@@ -2227,12 +2173,12 @@ function updateLivePassPreview() {
     const p = promoInput.value.trim().toUpperCase();
     if (p.includes("ORTHO")) {
       passDiscount.innerText = "تقسيط 0% فوائد + فحص 3D";
+    } else if (p.includes("LADIES")) {
+      passDiscount.innerText = "كشف مجاني وجلسة تلميع هدية";
     } else if (p.includes("IMPLANT")) {
       passDiscount.innerText = "خصم 25% زراعة + بانوراما مجاناً";
-    } else if (p.includes("WHITE")) {
-      passDiscount.innerText = "سعر خاص 750 ج.م";
     } else if (p) {
-      passDiscount.innerText = `كوبون معتمد (${p})`;
+      passDiscount.innerText = "كوبون معتمد (" + p + ")";
     } else {
       passDiscount.innerText = "كشف مجاني واستشارة مبدئية";
     }
@@ -2245,9 +2191,9 @@ function generatePassQr() {
   const container = document.getElementById("passQrCode");
   if (!container || typeof qrcode === "undefined") return;
 
-  const serial = document.getElementById("ticketSerialTag")?.innerText || "RD-2026-9042";
-  const name = document.getElementById("patientName")?.value || "Patient";
-  const qrData = `https://royal-dent-center.com/verify?id=${encodeURIComponent(serial)}&name=${encodeURIComponent(name)}`;
+  const serial = document.getElementById("ticketSerialTag") ? document.getElementById("ticketSerialTag").innerText : "RD-2026-9042";
+  const branch = document.getElementById("branchSelector") ? document.getElementById("branchSelector").value : "dairut";
+  const qrData = "https://royal-dent.pages.dev/verify?id=" + encodeURIComponent(serial) + "&branch=" + branch;
 
   try {
     const qr = qrcode(0, 'M');
@@ -2255,8 +2201,12 @@ function generatePassQr() {
     qr.make();
     container.innerHTML = qr.createImgTag(3);
   } catch(e) {
-    container.innerHTML = `<span style="font-size:10px; font-weight:700; color:#0A2540;">QR ACTIVE</span>`;
+    container.innerHTML = '<span style="font-size:10px; font-weight:700; color:#0D131A;">QR ACTIVE</span>';
   }
+}
+
+function onDoctorChanged() {
+  updateLivePassPreview();
 }
 
 /* ========================================================
@@ -2270,23 +2220,24 @@ function submitClinicBooking() {
   const dateVal = document.getElementById("appointmentDate").value || "أقرب موعد متاح";
   const promo = document.getElementById("promoCode").value.trim() || "ROYAL-DIRECT";
   const notes = document.getElementById("patientNotes").value.trim();
+  const isLadies = document.getElementById("ladiesDeptCheck").checked;
+  const branchKey = document.getElementById("branchSelector").value;
+  const branch = ROYAL_NETWORK.branches[branchKey];
 
   if (!name || !phone) {
     showToast("يرجى كتابة اسم المريض ورقم الهاتف بالكامل");
     return;
   }
 
-  const doctor = ROYAL_DATA.doctors.find(d => d.id === docSelect) || ROYAL_DATA.doctors[0];
-  const teethList = Array.from(selectedTeeth).sort((a,b) => Number(a)-Number(b)).map(t => `#${t}`).join(", ") || "فحص شامل";
+  const doctor = ROYAL_NETWORK.doctors.find(function(d) { return d.id === docSelect; }) || ROYAL_NETWORK.doctors[0];
+  const teethList = Array.from(selectedTeeth).sort(function(a,b) { return Number(a)-Number(b); }).map(function(t) { return "#" + t; }).join(", ") || "فحص شامل";
   const pathologyList = Array.from(selectedPathologies).join(" + ") || "كشف دوري";
-  const serial = "RD-DAIRUT-" + Math.floor(1000 + Math.random() * 9000);
+  const serial = "RD-" + branchKey.toUpperCase().slice(0,3) + "-" + Math.floor(1000 + Math.random() * 9000);
 
-  // Update Pass
   document.getElementById("ticketSerialTag").innerText = serial;
   updateLivePassPreview();
   RoyalAudio.playSuccess();
 
-  // Save to LocalStorage queue
   const appointmentObj = {
     id: serial,
     patientName: name,
@@ -2299,6 +2250,8 @@ function submitClinicBooking() {
     pathology: pathologyList,
     promo: promo,
     notes: notes,
+    branch: branch.name,
+    isLadies: isLadies,
     timestamp: new Date().toISOString()
   };
 
@@ -2307,85 +2260,85 @@ function submitClinicBooking() {
   localStorage.setItem("royal_clinic_queue", JSON.stringify(queue.slice(0, 30)));
   renderQueueTable();
 
-  // Show Toast
-  showToast("تم إصدار بطاقة الكشف الملكية بنجاح! جاري توجيهك للواتساب...");
-
-  // Dispatch WhatsApp after 600ms
-  setTimeout(() => {
-    dispatchTicketWhatsApp();
-  }, 700);
+  showToast("تم إصدار بطاقة الكشف الملكية بنجاح! جاري التوجيه للواتساب...");
+  setTimeout(function() { dispatchTicketWhatsApp(); }, 700);
 }
 
 function dispatchTicketWhatsApp() {
-  const serial = document.getElementById("ticketSerialTag")?.innerText || "RD-DAIRUT-2026";
-  const name = document.getElementById("patientName")?.value || "مريض رويال دينت";
-  const phone = document.getElementById("patientPhone")?.value || "";
-  const docSelect = document.getElementById("doctorSelect")?.value;
-  const doctor = ROYAL_DATA.doctors.find(d => d.id === docSelect) || ROYAL_DATA.doctors[0];
-  const dateVal = document.getElementById("appointmentDate")?.value || "أقرب موعد اليوم";
-  const shift = document.getElementById("shiftSelect")?.options[document.getElementById("shiftSelect").selectedIndex]?.text || "المسائية";
-  const promo = document.getElementById("promoCode")?.value || "ROYAL-DIRECT";
-  const teeth = Array.from(selectedTeeth).map(t => `#${t}`).join(", ") || "كشف عام";
+  const serial = document.getElementById("ticketSerialTag") ? document.getElementById("ticketSerialTag").innerText : "RD-2026";
+  const name = document.getElementById("patientName") ? document.getElementById("patientName").value : "مريض رويال";
+  const phone = document.getElementById("patientPhone") ? document.getElementById("patientPhone").value : "";
+  const docSelect = document.getElementById("doctorSelect") ? document.getElementById("doctorSelect").value : "";
+  const doctor = ROYAL_NETWORK.doctors.find(function(d) { return d.id === docSelect; }) || ROYAL_NETWORK.doctors[0];
+  const dateVal = document.getElementById("appointmentDate") ? document.getElementById("appointmentDate").value : "أقرب موعد اليوم";
+  const shift = document.getElementById("shiftSelect") ? document.getElementById("shiftSelect").options[document.getElementById("shiftSelect").selectedIndex].text : "المسائية";
+  const promo = document.getElementById("promoCode") ? document.getElementById("promoCode").value : "ROYAL-DIRECT";
+  const teeth = Array.from(selectedTeeth).map(function(t) { return "#" + t; }).join(", ") || "كشف عام";
   const patho = Array.from(selectedPathologies).join("، ") || "كشف واستشارة";
-  const notes = document.getElementById("patientNotes")?.value || "لا توجد ملاحظات إضافية";
+  const isLadies = document.getElementById("ladiesDeptCheck") ? document.getElementById("ladiesDeptCheck").checked : false;
+  const branchKey = document.getElementById("branchSelector") ? document.getElementById("branchSelector").value : "dairut";
+  const branch = ROYAL_NETWORK.branches[branchKey];
 
   const msg = 
-`👑 *بطاقة حجز كشف طبي — مركز رويال دينت ديروط* 👑
-------------------------------------
-🎫 *رقم التذكرة:* ${serial}
-👤 *اسم المريض:* ${name}
-📱 *رقم الهاتف:* ${phone}
-🩺 *العيادة والطبيب:* ${doctor.name} (${doctor.room})
-📅 *تاريخ الكشف:* ${dateVal}
-⏰ *الفترة:* ${shift}
-🦷 *الأسنان المحددة:* ${teeth}
-🔬 *نوع الشكوى:* ${patho}
-🏷️ *كوبون الخصم:* ${promo}
-📝 *ملاحظات:* ${notes}
-------------------------------------
-📍 *فرع ديروط:* ميدان أبو جبل، بجوار فودافون فوق مطعم التيسير
-✨ تم الحجز عبر البوابة الذكية لمركز رويال دينت بالتعاون مع ماستر آرت`;
+"👑 *بطاقة حجز كشف طبي — مركز رويال لطب الفم والأسنان* 👑\n" +
+"------------------------------------\n" +
+"🎫 *رقم التذكرة:* " + serial + "\n" +
+"👤 *اسم المريض:* " + name + "\n" +
+"📱 *رقم الهاتف:* " + phone + "\n" +
+"🏢 *الفرع المختار:* " + branch.name + "\n" +
+"🩺 *العيادة والطبيب:* " + doctor.name + " (" + doctor.room + ")\n" +
+"🌸 *قسم السيدات:* " + (isLadies ? 'نعم (حجز خاص للسيدات)' : 'العيادات العامة') + "\n" +
+"📅 *تاريخ الكشف:* " + dateVal + "\n" +
+"⏰ *الفترة:* " + shift + "\n" +
+"🦷 *الأسنان المحددة:* " + teeth + "\n" +
+"🔬 *نوع الشكوى:* " + patho + "\n" +
+"🏷️ *كوبون الخصم:* " + promo + "\n" +
+"------------------------------------\n" +
+"📍 *العنوان:* " + branch.address + "\n" +
+"✨ تم تأكيد الحجز إلكترونياً عبر البوابة الذكية لمركز رويال دينت";
 
-  const url = `https://wa.me/201066726432?text=${encodeURIComponent(msg)}`;
+  const url = "https://wa.me/" + branch.whatsapp + "?text=" + encodeURIComponent(msg);
   window.open(url, "_blank");
 }
 
 /* ========================================================
-   RENDER FACEBOOK ADS
+   RENDER CAMPAIGNS (WITH REAL IMAGES)
    ======================================================== */
 function renderAds() {
   const container = document.getElementById("adsContainer");
   if (!container) return;
 
-  container.innerHTML = ROYAL_DATA.campaigns.map(ad => `
-    <div class="ad-card">
-      <div>
-        <div class="ad-fb-header">
-          <span class="ad-badge">${ad.badge}</span>
-          <span class="ad-fb-stats">${ad.stats}</span>
-        </div>
-        <h3 class="ad-title" style="margin-top:10px;">${ad.title}</h3>
-        <p class="ad-hook" style="margin-top:8px;">${ad.hook}</p>
-      </div>
-
-      <div>
-        <div class="ad-offer-box">
-          <span style="font-size:12px; font-weight:700; color:#FFFFFF;">${ad.discount}</span>
-          <span class="ad-coupon" onclick="copyCouponCode('${ad.coupon}')" title="انقر لنسخ الكود">
-            📋 ${ad.coupon}
-          </span>
-        </div>
-        <button type="button" class="btn-ad-apply" style="margin-top:12px;" onclick="applyAdCoupon('${ad.coupon}', '${ad.docId}')">
-          <span>⚡ تطبيق العرض وحجز الكشف فوراً</span>
-        </button>
-      </div>
-    </div>
-  `).join("");
+  container.innerHTML = ROYAL_NETWORK.campaigns.map(function(ad) {
+    return '<div class="ad-card">' +
+      '<div class="ad-media-banner">' +
+        '<img src="' + ad.image + '" alt="' + ad.title + '" loading="lazy">' +
+      '</div>' +
+      '<div class="ad-body">' +
+        '<div>' +
+          '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">' +
+            '<span class="ad-badge">' + ad.badge + '</span>' +
+            '<span style="font-size:11px; color:var(--tx-gold); font-family:var(--f-mono);">معتمد رسمي</span>' +
+          '</div>' +
+          '<h3 class="ad-title">' + ad.title + '</h3>' +
+          '<p class="ad-hook" style="margin-top:6px;">' + ad.hook + '</p>' +
+        '</div>' +
+        '<div>' +
+          '<div style="background:rgba(212,175,55,0.1); border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">' +
+            '<span style="font-size:12px; font-weight:700; color:#FFFFFF;">' + ad.discount + '</span>' +
+            '<span class="ad-coupon" onclick="copyCouponCode(\'' + ad.coupon + '\')" title="انقر لنسخ الكود">📋 ' + ad.coupon + '</span>' +
+          '</div>' +
+          '<button type="button" class="btn-ad-apply" style="margin-top:10px;" onclick="applyAdCoupon(\'' + ad.coupon + '\', \'' + ad.docId + '\')">' +
+            '<span>⚡ تطبيق العرض وحجز الكشف فوراً</span>' +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join("");
 }
 
 function copyCouponCode(code) {
-  navigator.clipboard.writeText(code).then(() => {
-    showToast(`تم نسخ الكوبون: ${code}`);
+  navigator.clipboard.writeText(code).then(function() {
+    showToast("تم نسخ الكوبون: " + code);
     RoyalAudio.playChime();
   });
 }
@@ -2394,39 +2347,44 @@ function applyAdCoupon(coupon, docId) {
   switchSuiteTab('kiosk');
   document.getElementById("promoCode").value = coupon;
   if (docId) document.getElementById("doctorSelect").value = docId;
+  if (coupon.includes("LADIES")) {
+    document.getElementById("ladiesDeptCheck").checked = true;
+  }
   onDoctorChanged();
   updateLivePassPreview();
-  showToast(`تم تطبيق العرض: ${coupon}`);
+  showToast("تم تطبيق العرض بنجاح!");
   RoyalAudio.playSuccess();
 }
 
 /* ========================================================
    ORTHODONTICS STUDIO CALCULATOR (0% INTEREST)
    ======================================================== */
-let activeOrthoSystem = ROYAL_DATA.orthoSystems[0];
+let activeOrthoSystem = ROYAL_NETWORK.orthoSystems[1];
 
 function renderOrthoSystems() {
   const grid = document.getElementById("orthoSystemsGrid");
   if (!grid) return;
 
-  grid.innerHTML = ROYAL_DATA.orthoSystems.map((sys, idx) => `
-    <div class="ortho-card ${idx === 0 ? 'selected' : ''}" id="ortho-sys-${sys.id}" onclick="selectOrthoSystem('${sys.id}')">
-      <div class="ortho-card-title">${sys.name}</div>
-      <div class="ortho-price-tag">التكلفة التقريبية: ${sys.cost.toLocaleString('ar-EG')} ج.م</div>
-      <ul style="list-style:none; margin-top:10px; font-size:12px; color:var(--tx-muted); display:flex; flex-direction:column; gap:4px;">
-        ${sys.features.map(f => `<li>• ${f}</li>`).join("")}
-      </ul>
-      <div style="margin-top:8px; font-size:11px; color:var(--clinical-teal); font-weight:700;">
-        ⏱️ المدة المتوقعة: ${sys.duration}
-      </div>
-    </div>
-  `).join("");
+  grid.innerHTML = ROYAL_NETWORK.orthoSystems.map(function(sys, idx) {
+    return '<div class="ortho-card ' + (idx === 1 ? 'selected' : '') + '" id="ortho-sys-' + sys.id + '" onclick="selectOrthoSystem(\'' + sys.id + '\')">' +
+      '<div style="font-family:var(--f-head); font-size:15px; font-weight:800; margin-bottom:6px; color:var(--tx-primary);">' + sys.name + '</div>' +
+      '<div style="font-family:var(--f-mono); font-size:13px; font-weight:700; color:var(--tx-gold);">' +
+        'التكلفة التقديرية: ' + sys.cost.toLocaleString('ar-EG') + ' ج.م' +
+      '</div>' +
+      '<ul style="list-style:none; margin-top:8px; font-size:12px; color:var(--tx-muted); display:flex; flex-direction:column; gap:4px;">' +
+        sys.features.map(function(f) { return '<li>• ' + f + '</li>'; }).join("") +
+      '</ul>' +
+      '<div style="margin-top:8px; font-size:11px; color:var(--clinical-teal); font-weight:700;">' +
+        '⏱️ المدة المتوقعة: ' + sys.duration +
+      '</div>' +
+    '</div>';
+  }).join("");
 }
 
 function selectOrthoSystem(sysId) {
-  activeOrthoSystem = ROYAL_DATA.orthoSystems.find(s => s.id === sysId) || ROYAL_DATA.orthoSystems[0];
-  document.querySelectorAll(".ortho-card").forEach(c => c.classList.remove("selected"));
-  const card = document.getElementById(`ortho-sys-${sysId}`);
+  activeOrthoSystem = ROYAL_NETWORK.orthoSystems.find(function(s) { return s.id === sysId; }) || ROYAL_NETWORK.orthoSystems[0];
+  document.querySelectorAll(".ortho-card").forEach(function(c) { c.classList.remove("selected"); });
+  const card = document.getElementById("ortho-sys-" + sysId);
   if (card) card.classList.add("selected");
 
   document.getElementById("totalCostRange").value = activeOrthoSystem.cost;
@@ -2442,7 +2400,6 @@ function recalcOrthoInstallments() {
   const down = Number(document.getElementById("downPaymentRange").value);
   const months = Number(document.getElementById("durationMonthsRange").value);
 
-  // Update slider labels
   document.getElementById("totalCostBubble").innerText = total.toLocaleString('ar-EG') + " ج.م";
   document.getElementById("downPaymentBubble").innerText = down.toLocaleString('ar-EG') + " ج.م";
   document.getElementById("durationMonthsBubble").innerText = months + " شهراً";
@@ -2456,8 +2413,8 @@ function recalcOrthoInstallments() {
 
 function bookOrthoPlanWithInstallment() {
   switchSuiteTab('kiosk');
-  document.getElementById("doctorSelect").value = "rd-doc-02"; // Orthodontics Consultant
-  document.getElementById("promoCode").value = "ROYAL-ORTHO-EASY";
+  document.getElementById("doctorSelect").value = "rd-doc-02";
+  document.getElementById("promoCode").value = "ROYAL-ORTHO-DISTANCES";
 
   const total = Number(document.getElementById("totalCostRange").value);
   const down = Number(document.getElementById("downPaymentRange").value);
@@ -2466,95 +2423,92 @@ function bookOrthoPlanWithInstallment() {
 
   const notes = document.getElementById("patientNotes");
   if (notes) {
-    notes.value = `خطة تقويم مختارة: ${activeOrthoSystem.name} | التكلفة: ${total} ج.م | المقدم: ${down} ج.م | القسط الشهري: ${monthly} ج.م على ${months} شهر (0% فوائد)`;
+    notes.value = "خطة تقويم مختارة: " + activeOrthoSystem.name + " | التكلفة: " + total + " ج.م | المقدم: " + down + " ج.م | القسط: " + monthly + " ج.م على " + months + " شهر (0% فوائد)";
   }
 
   onDoctorChanged();
   updateLivePassPreview();
-  showToast("تم نقل خطة التقسيط إلى استمارة الحجز بنجاح!");
+  showToast("تم تحويل خطة التقسيط إلى استمارة الحجز بنجاح!");
   RoyalAudio.playSuccess();
 }
 
 /* ========================================================
-   RENDER DOCTORS ROSTER
+   DOCTORS ROSTER & RECEPTION
    ======================================================== */
 function renderDoctorsRoster() {
   const grid = document.getElementById("doctorsGridContainer");
   if (!grid) return;
 
-  grid.innerHTML = ROYAL_DATA.doctors.map(doc => `
-    <div class="doc-card">
-      <div>
-        <div class="doc-head">
-          <div class="doc-avatar">${doc.avatar}</div>
-          <div class="doc-info">
-            <h3 class="name">${doc.name}</h3>
-            <p class="title">${doc.title}</p>
-          </div>
-        </div>
-
-        <div style="margin:14px 0 8px 0; font-size:12px; color:var(--tx-gold); font-weight:700;">
-          🏢 ${doc.room}
-        </div>
-
-        <div class="doc-schedule-tags">
-          ${doc.schedule.map(s => `<span class="day-tag">${s}</span>`).join("")}
-        </div>
-      </div>
-
-      <button type="button" class="btn-royal-submit" style="padding:10px 14px; font-size:13px;" onclick="bookWithSpecificDoctor('${doc.id}')">
-        <span>📅 حجز كشف مع ${doc.name.split(" ")[1]}</span>
-      </button>
-    </div>
-  `).join("");
+  grid.innerHTML = ROYAL_NETWORK.doctors.map(function(doc) {
+    return '<div class="lux-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:14px;">' +
+      '<div>' +
+        '<div style="display:flex; align-items:center; gap:14px;">' +
+          '<div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg, #1A2430, #0D131A); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px;">' +
+            doc.avatar +
+          '</div>' +
+          '<div>' +
+            '<h3 style="font-family:var(--f-head); font-size:16px; font-weight:800; color:var(--tx-primary);">' + doc.name + '</h3>' +
+            '<p style="font-size:12px; color:var(--tx-muted);">' + doc.title + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div style="margin:14px 0 8px 0; font-size:12px; color:var(--tx-gold); font-weight:700;">🏢 ' + doc.room + '</div>' +
+        '<div style="display:flex; flex-wrap:wrap; gap:6px;">' +
+          doc.schedule.map(function(s) {
+            return '<span style="background:rgba(212,175,55,0.12); border:1px solid var(--bd-subtle); color:var(--tx-gold); padding:3px 8px; border-radius:6px; font-size:11px; font-weight:700;">' + s + '</span>';
+          }).join("") +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="btn-royal-submit" style="padding:10px 14px; font-size:13px;" onclick="bookWithSpecificDoctor(\'' + doc.id + '\')">' +
+        '<span>📅 حجز كشف مع ' + doc.name.split(" ")[1] + '</span>' +
+      '</button>' +
+    '</div>';
+  }).join("");
 }
 
 function bookWithSpecificDoctor(docId) {
   switchSuiteTab('kiosk');
   document.getElementById("doctorSelect").value = docId;
+  const doc = ROYAL_NETWORK.doctors.find(function(d) { return d.id === docId; });
+  if (doc && doc.isFemale) {
+    document.getElementById("ladiesDeptCheck").checked = true;
+  }
   onDoctorChanged();
   updateLivePassPreview();
-  showToast("تم اختيار الطبيب وتجهيز الموعد!");
+  showToast("تم اختيار الطبيب والموعد!");
   RoyalAudio.playSuccess();
 }
 
-/* ========================================================
-   RECEPTION ROOM MONITOR & AUDIO CHIME CALL
-   ======================================================== */
 function renderClinicRooms() {
   const grid = document.getElementById("clinicRoomsGrid");
   if (!grid) return;
 
   const rooms = [
     { num: 1, name: "عيادة الجراحة والزراعة", doc: "د. أحمد عبد الحليم", status: "free", label: "متاحة الآن" },
-    { num: 2, name: "استوديو تقويم الأسنان", doc: "د. محمد حسن رشاد", status: "busy", label: "جلسة جارية" },
-    { num: 3, name: "استوديو الابتسامة وفينير DSD", doc: "د. سارة المنشاوي", status: "free", label: "متاحة الآن" },
+    { num: 2, name: "استوديو تقويم الأسنان", doc: "د. محمد حسن رشاد", status: "busy", label: "جلسة تقويم جارية" },
+    { num: 3, name: "استوديو الابتسامة وقسم السيدات", doc: "د. سارة المنشاوي", status: "free", label: "متاحة الآن" },
     { num: 4, name: "عيادة المايكروسكوب الجراحي", doc: "د. محمود العسقلاني", status: "busy", label: "حشو عصب جاري" },
     { num: 5, name: "جناح رويال كيدز للأطفال", doc: "د. ندى الشريف", status: "free", label: "متاحة الآن" }
   ];
 
-  grid.innerHTML = rooms.map(r => `
-    <div class="room-card ${r.status === 'free' ? 'status-free' : 'status-busy'}">
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <strong style="font-size:15px; color:var(--tx-primary);">${r.name}</strong>
-          <span class="room-status-badge ${r.status === 'free' ? 'badge-free' : 'badge-busy'}">
-            ● ${r.label}
-          </span>
-        </div>
-        <div style="font-size:12px; color:var(--tx-muted); margin-top:4px;">${r.doc}</div>
-      </div>
-
-      <button type="button" class="btn-chime-call" onclick="callNextPatientToRoom(${r.num}, '${r.name}')">
-        <span>📢 استدعاء التالي بنغمة صوتية</span>
-      </button>
-    </div>
-  `).join("");
+  grid.innerHTML = rooms.map(function(r) {
+    return '<div class="room-card ' + (r.status === 'free' ? 'status-free' : 'status-busy') + '">' +
+      '<div>' +
+        '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+          '<strong style="font-size:15px; color:var(--tx-primary);">' + r.name + '</strong>' +
+          '<span style="font-size:11px; font-weight:700; padding:4px 10px; border-radius:99px; background:' + (r.status === 'free' ? 'rgba(16,185,129,0.15)' : 'rgba(245,158,11,0.15)') + '; color:' + (r.status === 'free' ? 'var(--emerald)' : '#F59E0B') + ';">● ' + r.label + '</span>' +
+        '</div>' +
+        '<div style="font-size:12px; color:var(--tx-muted); margin-top:4px;">' + r.doc + '</div>' +
+      '</div>' +
+      '<button type="button" class="btn-chime-call" onclick="callNextPatientToRoom(' + r.num + ', \'' + r.name + '\')">' +
+        '<span>📢 استدعاء المريض التالي</span>' +
+      '</button>' +
+    '</div>';
+  }).join("");
 }
 
 function callNextPatientToRoom(roomNum, roomName) {
   RoyalAudio.playChime();
-  showToast(`تم استدعاء المريض التالي صوتياً إلى: ${roomName}`);
+  showToast("تم استدعاء المريض التالي بنغمة صوتية إلى: " + roomName);
 }
 
 function renderQueueTable() {
@@ -2563,57 +2517,39 @@ function renderQueueTable() {
 
   let queue = JSON.parse(localStorage.getItem("royal_clinic_queue") || "[]");
   if (queue.length === 0) {
-    // Initial sample queue
     queue = [
-      { id: "RD-DAIRUT-9021", patientName: "محمود سيد عثمان", doctor: "د. محمد حسن رشاد", room: "عيادة 2 (التقويم)", status: "قيد الانتظار" },
-      { id: "RD-DAIRUT-9022", patientName: "مريم إبراهيم خليل", doctor: "د. سارة المنشاوي", room: "عيادة 3 (التجميل)", status: "قيد الانتظار" },
-      { id: "RD-DAIRUT-9023", patientName: "يوسف حسام الدين", doctor: "د. ندى الشريف", room: "عيادة 5 (أطفال)", status: "قيد الانتظار" }
+      { id: "RD-DAI-9021", patientName: "محمود سيد عثمان", doctor: "د. محمد حسن رشاد", room: "عيادة 2 (التقويم)", status: "قيد الانتظار" },
+      { id: "RD-DAI-9022", patientName: "مريم إبراهيم خليل", doctor: "د. سارة المنشاوي", room: "عيادة 3 (قسم السيدات)", status: "قيد الانتظار" },
+      { id: "RD-DAI-9023", patientName: "يوسف حسام الدين", doctor: "د. ندى الشريف", room: "عيادة 5 (أطفال)", status: "قيد الانتظار" }
     ];
   }
 
-  tbody.innerHTML = queue.map(q => `
-    <tr>
-      <td style="font-family:var(--f-mono); color:var(--tx-gold);">${q.id}</td>
-      <td><strong>${q.patientName}</strong></td>
-      <td>${q.room || "عيادة الفحص"}</td>
-      <td>${q.doctor}</td>
-      <td><span class="room-status-badge badge-free">● جاهز للكشف</span></td>
-      <td>
-        <button type="button" class="btn-chime-call" style="padding:4px 8px; font-size:11px;" onclick="callSpecificPatient('${q.patientName}', '${q.room || 'عيادة الكشف'}')">
-          <span>🔔 نداء</span>
-        </button>
-      </td>
-    </tr>
-  `).join("");
+  tbody.innerHTML = queue.map(function(q) {
+    return '<tr>' +
+      '<td style="font-family:var(--f-mono); color:var(--tx-gold);">' + q.id + '</td>' +
+      '<td><strong>' + q.patientName + '</strong></td>' +
+      '<td>' + (q.room || "عيادة الفحص") + '</td>' +
+      '<td>' + q.doctor + '</td>' +
+      '<td><span style="font-size:11px; font-weight:700; color:var(--emerald);">● جاهز للدخول</span></td>' +
+      '<td><button type="button" class="btn-chime-call" style="padding:4px 8px; font-size:11px;" onclick="callSpecificPatient(\'' + q.patientName + '\', \'' + (q.room || 'عيادة الكشف') + '\')"><span>🔔 نداء</span></button></td>' +
+    '</tr>';
+  }).join("");
 }
 
 function callSpecificPatient(patientName, room) {
   RoyalAudio.playChime();
-  showToast(`نداء: نرجو من المريض / ${patientName} التوجه إلى ${room}`);
+  showToast("نداء: نرجو من المريض / " + patientName + " التوجه إلى " + room);
 }
 
 /* ========================================================
-   NAVIGATION & THEME CONTROLS
+   CONTROLS & MODALS
    ======================================================== */
-
-function openEmergencyModal() {
-  const m = document.getElementById("emergencyModal");
-  if (m) m.style.display = "flex";
-  if (window.RoyalAudio) RoyalAudio.playChime();
-}
-function closeEmergencyModal() {
-  const m = document.getElementById("emergencyModal");
-  if (m) m.style.display = "none";
-}
-window.openEmergencyModal = openEmergencyModal;
-window.closeEmergencyModal = closeEmergencyModal;
-
 function switchSuiteTab(tabKey) {
-  document.querySelectorAll(".dock-tab-btn").forEach(b => b.classList.remove("active"));
-  document.querySelectorAll(".suite-view").forEach(v => v.classList.remove("active"));
+  document.querySelectorAll(".dock-tab-btn").forEach(function(b) { b.classList.remove("active"); });
+  document.querySelectorAll(".suite-view").forEach(function(v) { v.classList.remove("active"); });
 
-  const tabBtn = document.getElementById(`tab-${tabKey}`);
-  const viewEl = document.getElementById(`view-${tabKey}`);
+  const tabBtn = document.getElementById("tab-" + tabKey);
+  const viewEl = document.getElementById("view-" + tabKey);
 
   if (tabBtn) tabBtn.classList.add("active");
   if (viewEl) viewEl.classList.add("active");
@@ -2621,8 +2557,15 @@ function switchSuiteTab(tabKey) {
   window.scrollTo({ top: 380, behavior: 'smooth' });
 }
 
-function onDoctorChanged() {
-  updateLivePassPreview();
+function openEmergencyModal() {
+  const m = document.getElementById("emergencyModal");
+  if (m) m.style.display = "flex";
+  RoyalAudio.playChime();
+}
+
+function closeEmergencyModal() {
+  const m = document.getElementById("emergencyModal");
+  if (m) m.style.display = "none";
 }
 
 function toggleRoyalTheme() {
@@ -2641,30 +2584,24 @@ function showToast(msg) {
   if (toast && msgEl) {
     msgEl.innerText = msg;
     toast.classList.add("show");
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3200);
+    setTimeout(function() { toast.classList.remove("show"); }, 3200);
   }
 }
 
 /* ========================================================
    BOOTSTRAP
    ======================================================== */
-window.addEventListener("DOMContentLoaded", () => {
-  // Restore theme
+window.addEventListener("DOMContentLoaded", function() {
   const savedTheme = localStorage.getItem("royal_dent_theme") || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
   const icon = document.getElementById("themeIcon");
   if (icon) icon.innerText = savedTheme === "dark" ? "🌙" : "☀️";
 
-  // Set today's date in picker
   const dateInput = document.getElementById("appointmentDate");
   if (dateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.value = today;
+    dateInput.value = new Date().toISOString().split('T')[0];
   }
 
-  // Initialize Modules
   renderFdiTeeth();
   renderAds();
   renderOrthoSystems();
@@ -2673,9 +2610,9 @@ window.addEventListener("DOMContentLoaded", () => {
   renderClinicRooms();
   renderQueueTable();
   updateLivePassPreview();
+  onBranchChanged();
 
-  // Listen to form input changes to update pass in real-time
-  ["patientName", "patientPhone", "doctorSelect", "shiftSelect", "appointmentDate", "promoCode"].forEach(id => {
+  ["patientName", "patientPhone", "doctorSelect", "shiftSelect", "appointmentDate", "promoCode"].forEach(function(id) {
     const el = document.getElementById(id);
     if (el) el.addEventListener("input", updateLivePassPreview);
   });
