@@ -1254,6 +1254,332 @@ body {
   color: var(--tx-primary);
   margin-bottom: 6px;
 }
+
+/* ========================================================
+   OFFICIAL LOGO & BRAND BADGES (USER UPLOADED ASSET)
+   ======================================================== */
+.brand-crest {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #1C242C;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 4px 18px var(--gold-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 2px;
+}
+.brand-crest-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+  display: block;
+}
+
+/* Hero Official Logo Showcase Card */
+.hero-brand-badge-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: 18px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.12);
+  transition: all 0.3s ease;
+}
+.hero-brand-badge-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--gold-glow);
+}
+.hero-brand-logo-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  border: 2px solid var(--gold);
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.hero-brand-badge-info {
+  text-align: right;
+}
+.badge-tag {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tx-gold);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.badge-name {
+  font-family: var(--f-royal);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--tx-primary);
+}
+.badge-sub {
+  font-size: 12px;
+  color: var(--tx-muted);
+}
+
+/* Tab Count Badge */
+.tab-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 99px;
+  background: var(--rose);
+  color: #FFFFFF;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+/* ========================================================
+   BOOKING DISPATCH & MANAGEMENT HUB (ADMIN / RECEPTION)
+   ======================================================== */
+.mgmt-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.mgmt-kpi-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+}
+.mgmt-kpi-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.mgmt-kpi-val {
+  font-family: var(--f-mono);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--tx-primary);
+}
+.mgmt-kpi-lbl {
+  font-size: 12px;
+  color: var(--tx-muted);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.mgmt-kpi-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* Management Toolbar */
+.mgmt-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+.mgmt-filters-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.mgmt-select {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--bd-subtle);
+  color: var(--tx-primary);
+  font-family: var(--f-body);
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+}
+.mgmt-search-input {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--bd-subtle);
+  color: var(--tx-primary);
+  font-family: var(--f-body);
+  font-size: 13px;
+  min-width: 220px;
+  flex: 1;
+  outline: none;
+}
+.mgmt-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-mgmt-action {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+}
+.btn-mgmt-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+.btn-mgmt-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-mgmt-outline {
+  background: var(--bg-surface);
+  border-color: var(--bd-subtle);
+  color: var(--tx-primary);
+}
+.btn-mgmt-outline:hover {
+  border-color: var(--gold);
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 800;
+  font-family: var(--f-head);
+  white-space: nowrap;
+}
+.status-pending {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+}
+.status-confirmed {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+.status-completed {
+  background: #DBEAFE;
+  color: #1E40AF;
+  border: 1px solid #93C5FD;
+}
+
+/* Table Row Action Buttons */
+.row-actions-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.btn-row-action {
+  padding: 5px 9px;
+  border-radius: 8px;
+  font-family: var(--f-head);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.btn-act-confirm {
+  background: #059669;
+  color: #FFFFFF;
+}
+.btn-act-confirm:hover { background: #047857; }
+.btn-act-wa {
+  background: #25D366;
+  color: #FFFFFF;
+}
+.btn-act-wa:hover { background: #1EBE5D; }
+.btn-act-call {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+.btn-act-call:hover { background: #1D4ED8; }
+.btn-act-chime {
+  background: var(--gold-light);
+  color: var(--tx-gold);
+  border-color: var(--bd-subtle);
+}
+.btn-act-done {
+  background: #EDE9FE;
+  color: #5B21B6;
+  border-color: #DDD6FE;
+}
+.btn-act-del {
+  background: transparent;
+  color: var(--rose);
+  border-color: #FECDD3;
+}
+.btn-act-del:hover { background: #FFE4E6; }
+
+/* Modals */
+.royal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(28, 36, 44, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.royal-modal-box {
+  max-width: 580px;
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
 </style>
 </head>
 <body>
@@ -1261,21 +1587,10 @@ body {
 <!-- TOP APPBAR -->
 <header class="royal-appbar">
   <div class="appbar-inner">
-    <div class="brand-block" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <div class="brand-block" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="مركز رويال لطب الفم والأسنان">
       <div class="brand-crest">
-        <!-- Official Crown + Tooth Stroke Emblem SVG -->
-        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FCEFCF"/>
-              <stop offset="50%" stop-color="#C5A059"/>
-              <stop offset="100%" stop-color="#8C6615"/>
-            </linearGradient>
-          </defs>
-          <path d="M 175 185 L 250 135 L 325 185 L 385 185 L 345 235 C 385 275, 395 345, 360 410 C 335 455, 295 460, 270 415 C 255 385, 250 330, 250 295 C 250 330, 245 385, 230 415 C 205 460, 165 455, 140 410 C 105 345, 115 275, 155 235 L 115 185 Z" fill="none" stroke="url(#gGold)" stroke-width="20" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M 180 190 L 250 250 L 320 190" fill="none" stroke="url(#gGold)" stroke-width="20" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M 250 250 L 250 300" fill="none" stroke="url(#gGold)" stroke-width="16" stroke-linecap="round"/>
-        </svg>
+        <!-- Official Logo Image Uploaded by Clinic -->
+        <img src="assets/royal_logo_official.jpg" alt="شعار مركز رويال الرسمي لطب الفم والأسنان" class="brand-crest-logo-img">
       </div>
       <div class="brand-titles">
         <div class="brand-main">
@@ -1350,6 +1665,15 @@ body {
   <!-- HERO SECTION -->
   <section class="royal-hero">
     <div class="hero-content">
+      <div class="hero-brand-badge-card">
+        <img src="assets/royal_logo_official.jpg" alt="الشعار الرسمي المعتمد لمركز رويال لطب الفم والأسنان" class="hero-brand-logo-img">
+        <div class="hero-brand-badge-info">
+          <div class="badge-tag">👑 الشعار الرسمي المعتمد • ROYAL DENTAL CENTER</div>
+          <div class="badge-name">مركز رويال لطب الفم والأسنان</div>
+          <div class="badge-sub">ديروط • أسيوط • القوصية • ديرمواس — تحت إشراف نخبة من كبار الاستشاريين</div>
+        </div>
+      </div>
+
       <div class="hero-tag">
         <span>✦</span>
         <span>ROYAL DENTAL LUXURY NETWORK 2026</span>
@@ -1413,8 +1737,8 @@ body {
       <span>نخبة الأطباء والاستشاريين</span>
     </button>
     <button type="button" class="dock-tab-btn" id="tab-reception" onclick="switchSuiteTab('reception')">
-      <span>🔔</span>
-      <span>شاشة نداء الاستقبال الحية</span>
+      <span>📋</span>
+      <span>إدارة وتأكيد الحجوزات <span id="queueBadgeCount" class="tab-count-badge">4</span></span>
     </button>
   </nav>
 
@@ -1552,13 +1876,16 @@ body {
       <div>
         <div class="vip-pass-card" id="vipPassCard">
           <div class="vip-pass-header">
-            <div>
-              <div style="font-family:var(--f-royal); font-size:18px; font-weight:800; color:var(--tx-primary);">
-                بطاقة المراجع الملكية • ROYAL VIP
+            <div style="display:flex; align-items:center; gap:12px;">
+              <img src="assets/royal_logo_official.jpg" alt="شعار رويال الرسمي" style="width:48px; height:48px; border-radius:10px; border:1.5px solid var(--gold); object-fit:cover; box-shadow:0 3px 10px rgba(0,0,0,0.12);">
+              <div>
+                <div style="font-family:var(--f-royal); font-size:17px; font-weight:800; color:var(--tx-primary);">
+                  بطاقة المراجع الملكية • ROYAL VIP
+                </div>
+                <small id="passBranchTag" style="font-family:var(--f-mono); color:var(--tx-gold); font-size:11px;">
+                  ROYAL DENTAL CENTER • DAIRUT BRANCH
+                </small>
               </div>
-              <small id="passBranchTag" style="font-family:var(--f-mono); color:var(--tx-gold); font-size:11px;">
-                ROYAL DENTAL CENTER • DAIRUT BRANCH
-              </small>
             </div>
             <span style="background:var(--gold-light); border:1px solid var(--gold); color:var(--tx-gold); font-size:11px; font-weight:800; padding:4px 10px; border-radius:99px;">
               تأكيد فوري
@@ -1712,41 +2039,115 @@ body {
     <div class="ads-masonry" id="doctorsGridContainer"></div>
   </section>
 
-  <!-- SCREEN 5: RECEPTION CALLING SCREEN & ROOMS MONITOR -->
+  <!-- SCREEN 5: RECEPTION & BOOKINGS MANAGEMENT HUB -->
   <section id="view-reception" class="suite-view">
     <div class="lux-card" style="margin-bottom:24px;">
       <div class="card-head">
         <div class="card-head-title">
-          <div class="icon-box">🔔</div>
+          <div class="icon-box">📋</div>
           <div>
-            <div>شاشة نداء الاستقبال الحية ومراقبة العيادات</div>
-            <small style="color:var(--tx-muted); font-size:12px;">نظام استدعاء صوتي متطور بنغمات Chime أكوستيك موسيقية</small>
+            <div>لوحة إدارة وتأكيد الحجوزات والاستقبال الملكية</div>
+            <small style="color:var(--tx-muted); font-size:12px;">نظام متكامل لتأكيد الحجوزات، إرسال إشعارات الواتساب، والنداء الصوتي للأطباء والعيادات</small>
           </div>
         </div>
-        <button type="button" class="btn-icon-pill" onclick="RoyalAudio.playChime()">
-          <span>🔊 تجربة نغمة النداء</span>
-        </button>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button type="button" class="btn-mgmt-action btn-mgmt-primary" onclick="openManualBookingModal()">
+            <span>➕ تسجيل حجز يدوي / هاتفياً</span>
+          </button>
+          <button type="button" class="btn-mgmt-action btn-mgmt-outline" onclick="exportBookingsToCSV()" title="تنزيل ملف إكسل لجميع الحجوزات">
+            <span>📥 تصدير Excel</span>
+          </button>
+        </div>
       </div>
 
-      <div class="rooms-grid" id="clinicRoomsGrid"></div>
+      <!-- KPI METRIC TILES -->
+      <div class="mgmt-kpi-grid">
+        <div class="mgmt-kpi-card">
+          <div>
+            <div class="mgmt-kpi-val" id="kpiTotalBookings">0</div>
+            <div class="mgmt-kpi-lbl">إجمالي الحجوزات المسجلة</div>
+          </div>
+          <div class="mgmt-kpi-icon" style="background:var(--gold-light); color:var(--tx-gold);">📑</div>
+        </div>
+        <div class="mgmt-kpi-card">
+          <div>
+            <div class="mgmt-kpi-val" id="kpiConfirmedBookings" style="color:var(--emerald);">0</div>
+            <div class="mgmt-kpi-lbl">حجوزات مؤكدة رسمياً ✅</div>
+          </div>
+          <div class="mgmt-kpi-icon" style="background:#D1FAE5; color:#065F46;">✅</div>
+        </div>
+        <div class="mgmt-kpi-card">
+          <div>
+            <div class="mgmt-kpi-val" id="kpiPendingBookings" style="color:#D97706;">0</div>
+            <div class="mgmt-kpi-lbl">بانتظار المراجعة والتأكيد ⏳</div>
+          </div>
+          <div class="mgmt-kpi-icon" style="background:#FEF3C7; color:#92400E;">⏳</div>
+        </div>
+        <div class="mgmt-kpi-card">
+          <div>
+            <div class="mgmt-kpi-val" id="kpiLadiesBookings" style="color:var(--rose);">0</div>
+            <div class="mgmt-kpi-lbl">قسم السيدات والخصوصية 🌸</div>
+          </div>
+          <div class="mgmt-kpi-icon" style="background:#FFE4E6; color:#BE123C;">🌸</div>
+        </div>
+      </div>
 
-      <h3 style="font-family:var(--f-head); font-size:16px; margin:20px 0 10px 0; color:var(--tx-primary);">
-        قائمة انتظار المرضى بالمركز اليوم
-      </h3>
-      <div style="overflow-x:auto;">
+      <!-- TOOLBAR: FILTERS & SEARCH -->
+      <div class="mgmt-toolbar">
+        <div class="mgmt-filters-group">
+          <select id="mgmtBranchFilter" class="mgmt-select" onchange="renderBookingsManager()">
+            <option value="all">📍 جميع الفروع (4 فروع)</option>
+            <option value="dairut">فرع ديروط الرئيسي</option>
+            <option value="assiut">فرع أسيوط</option>
+            <option value="qusiya">فرع القوصية</option>
+            <option value="dayrmawas">فرع ديرمواس</option>
+          </select>
+
+          <select id="mgmtStatusFilter" class="mgmt-select" onchange="renderBookingsManager()">
+            <option value="all">⚡ جميع الحالات</option>
+            <option value="pending">⏳ قيد المراجعة والتأكيد</option>
+            <option value="confirmed">✅ مؤكد رسمياً</option>
+            <option value="completed">🩺 تم الكشف</option>
+          </select>
+
+          <input type="text" id="mgmtSearchInput" class="mgmt-search-input" placeholder="🔍 بحث باسم المريض، رقم الهاتف، أو كود الحجز..." oninput="renderBookingsManager()">
+        </div>
+
+        <div class="mgmt-actions-group">
+          <button type="button" class="btn-mgmt-action btn-mgmt-outline" onclick="renderBookingsManager()" title="تحديث القائمة">
+            <span>🔄 تحديث</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOOKINGS INTERACTIVE TABLE -->
+      <div style="overflow-x:auto; margin-bottom:28px;">
         <table class="queue-table">
           <thead>
             <tr>
-              <th>رقم التذكرة</th>
-              <th>اسم المريض</th>
-              <th>العيادة المختارة</th>
-              <th>الطبيب المعالج</th>
-              <th>الحالة</th>
-              <th>إجراء الاستدعاء</th>
+              <th>كود الحجز والتاريخ</th>
+              <th>بيانات المريض</th>
+              <th>الفرع والعيادة</th>
+              <th>تفاصيل الفحص</th>
+              <th>حالة الحجز</th>
+              <th>إجراءات الإدارة والتأكيد الفورية</th>
             </tr>
           </thead>
-          <tbody id="queueTableBody"></tbody>
+          <tbody id="bookingsTableBody"></tbody>
         </table>
+      </div>
+
+      <!-- ROOMS MONITOR & CHIME CALLER -->
+      <div style="margin-top:20px; padding-top:16px; border-top:1.5px dashed var(--bd-subtle);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+          <h3 style="font-family:var(--f-head); font-size:16px; color:var(--tx-primary); margin:0;">
+            🔔 شاشة نداء ومراقبة عيادات المركز الحية
+          </h3>
+          <button type="button" class="btn-icon-pill" onclick="RoyalAudio.playChime()">
+            <span>🔊 تجربة نغمة الاستدعاء</span>
+          </button>
+        </div>
+        <div class="rooms-grid" id="clinicRoomsGrid"></div>
       </div>
     </div>
   </section>
@@ -1787,6 +2188,126 @@ body {
   </div>
 </div>
 
+<!-- Booking Success & Confirmation Direct Modal -->
+<div id="bookingSuccessModal" class="royal-modal-overlay" style="display:none;">
+  <div class="royal-modal-box">
+    <div style="text-align:center; margin-bottom:18px;">
+      <div style="width:68px; height:68px; margin:0 auto 12px auto; border-radius:16px; overflow:hidden; border:2px solid var(--gold); box-shadow:0 4px 16px var(--gold-glow);">
+        <img src="assets/royal_logo_official.jpg" alt="شعار رويال" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <span class="status-pill status-confirmed" style="font-size:13px; padding:6px 16px; margin-bottom:8px;">
+        ✅ تم تسجيل طلب الحجز بنجاح بنظام العيادة
+      </span>
+      <h3 style="font-family:var(--f-royal); font-size:22px; color:var(--tx-primary); margin:8px 0 4px 0;">
+        أهلاً بك في مركز رويال لطب الفم والأسنان
+      </h3>
+      <p style="font-size:13px; color:var(--tx-muted); margin:0;">
+        تم إصدار تذكرتك الطبية الفورية، ويمكنك الآن تأكيد الموعد واستلام اللوكيشن:
+      </p>
+    </div>
+
+    <!-- Ticket Summary Card -->
+    <div style="background:var(--bg-card-soft); border:1.5px solid var(--bd-subtle); border-radius:14px; padding:16px; margin-bottom:20px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px dashed var(--bd-subtle);">
+        <span style="font-size:12px; color:var(--tx-muted);">كود الحجز المرجعي:</span>
+        <strong id="modalSuccessSerial" style="font-family:var(--f-mono); color:var(--tx-gold); font-size:15px;">RD-DAI-0000</strong>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12.5px;">
+        <div><span style="color:var(--tx-muted);">المراجع:</span> <strong id="modalSuccessName">-</strong></div>
+        <div><span style="color:var(--tx-muted);">الفرع:</span> <strong id="modalSuccessBranch">-</strong></div>
+        <div><span style="color:var(--tx-muted);">الطبيب:</span> <strong id="modalSuccessDoctor">-</strong></div>
+        <div><span style="color:var(--tx-muted);">الموعد:</span> <strong id="modalSuccessDate">-</strong></div>
+      </div>
+    </div>
+
+    <!-- Confirmation Direct Actions -->
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <a id="modalSuccessWaBtn" href="#" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:12px; font-size:13.5px;">
+        <span>💬 تأكيد الموعد عبر واتساب العيادة الآن</span>
+      </a>
+      <button type="button" class="btn-royal-submit" style="background:var(--bg-surface); border:1.5px solid var(--bd-subtle); color:var(--tx-primary); padding:12px; font-size:13px;" onclick="goToManagementFromModal()">
+        <span>📋 فتح ومتابعة الحجز في لوحة الإدارة والاستقبال</span>
+      </button>
+      <button type="button" onclick="closeBookingSuccessModal()" style="background:transparent; border:none; color:var(--tx-muted); font-size:12px; cursor:pointer; padding:6px;">
+        إغلاق النافذة والعودة للصفحة
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Manual Booking Modal (For Reception Walk-ins & Phone calls) -->
+<div id="manualBookingModal" class="royal-modal-overlay" style="display:none;">
+  <div class="royal-modal-box">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--bd-subtle);">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:22px;">➕</span>
+        <div>
+          <h3 style="font-family:var(--f-head); font-size:16px; margin:0; color:var(--tx-primary);">تسجيل حجز مباشر / عبر الهاتف</h3>
+          <small style="color:var(--tx-muted); font-size:11.5px;">إضافة مريض جديد لكشف الاستقبال وتأكيد موعده فوراً</small>
+        </div>
+      </div>
+      <button type="button" onclick="closeManualBookingModal()" style="background:transparent; border:none; font-size:20px; cursor:pointer; color:var(--tx-muted);">✕</button>
+    </div>
+
+    <form onsubmit="event.preventDefault(); submitManualBooking();" style="display:flex; flex-direction:column; gap:12px;">
+      <div>
+        <label class="form-label" for="manualPatientName">اسم المريض *</label>
+        <input type="text" id="manualPatientName" class="form-input" required placeholder="مثال: حسام الدين محمود">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div>
+          <label class="form-label" for="manualPatientPhone">رقم الهاتف (واتساب) *</label>
+          <input type="tel" id="manualPatientPhone" class="form-input" required placeholder="01xxxxxxxxx">
+        </div>
+        <div>
+          <label class="form-label" for="manualBranch">الفرع المختار</label>
+          <select id="manualBranch" class="form-select">
+            <option value="dairut">فرع ديروط الرئيسي</option>
+            <option value="assiut">فرع أسيوط</option>
+            <option value="qusiya">فرع القوصية</option>
+            <option value="dayrmawas">فرع ديرمواس</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div>
+          <label class="form-label" for="manualDoctor">العيادة / الطبيب</label>
+          <select id="manualDoctor" class="form-select">
+            <option value="د. محمد حسن رشاد (استشاري التقويم)">د. محمد حسن رشاد (استشاري التقويم)</option>
+            <option value="د. سارة المنشاوي (استشارية قسم السيدات)">د. سارة المنشاوي (استشارية قسم السيدات)</option>
+            <option value="د. كريم الزمر (استشاري زراعة وجراحة)">د. كريم الزمر (استشاري زراعة وجراحة)</option>
+            <option value="د. ندى الشريف (طب وتجميل الأسنان)">د. ندى الشريف (طب وتجميل الأسنان)</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label" for="manualShift">فترة الكشف</label>
+          <select id="manualShift" class="form-select">
+            <option value="المسائية (4:00 م - 10:30 م)">الفترة المسائية (4:00 م - 10:30 م)</option>
+            <option value="الصباحية (11:00 ص - 3:30 م)">الفترة الصباحية (11:00 ص - 3:30 م)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div>
+          <label class="form-label" for="manualDate">تاريخ الموعد</label>
+          <input type="date" id="manualDate" class="form-input">
+        </div>
+        <div>
+          <label class="form-label" for="manualComplaint">نوع الفحص / الشكوى</label>
+          <input type="text" id="manualComplaint" class="form-input" placeholder="مثال: ألم ضرس، تقويم، كشف دوري">
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+        <button type="button" class="btn-mgmt-action btn-mgmt-outline" onclick="closeManualBookingModal()">إلغاء</button>
+        <button type="submit" class="btn-mgmt-action btn-mgmt-primary">💾 حفظ وتأكيد الحجز فوراً</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <!-- Toast Element -->
 <div id="royalToast" class="royal-toast">
   <span id="toastIcon">👑</span>
@@ -1795,7 +2316,13 @@ body {
 
 <!-- Footer -->
 <footer class="royal-footer">
-  <div class="footer-logo">مركز رويال لطب الفم والأسنان — Royal Dental Center</div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:12px;">
+    <img src="assets/royal_logo_official.jpg" alt="شعار مركز رويال الرسمي لطب الفم والأسنان" style="width:52px; height:52px; border-radius:12px; border:1.5px solid var(--gold); object-fit:cover; box-shadow:0 3px 12px rgba(0,0,0,0.12);">
+    <div style="text-align:right;">
+      <div class="footer-logo" style="margin-bottom:2px;">مركز رويال لطب الفم والأسنان — Royal Dental Center</div>
+      <div style="font-size:12px; color:var(--tx-gold); font-family:var(--f-mono);">Official Certified Clinical Brand © 2026</div>
+    </div>
+  </div>
   <p id="footerBranchesTxt">فروعنا المعتمدة: ديروط • أسيوط • القوصية • ديرمواس</p>
   <p style="margin-top:6px; font-size:11px; color:var(--tx-dim);">جميع الحقوق محفوظة © 2026 • المنظومة الطبية الذكية لمركز رويال دينت</p>
 </footer>
@@ -2456,7 +2983,7 @@ function submitClinicBooking() {
   const notes = document.getElementById("patientNotes").value.trim();
   const isLadies = document.getElementById("ladiesDeptCheck").checked;
   const branchKey = document.getElementById("branchSelector").value;
-  const branch = ROYAL_NETWORK.branches[branchKey];
+  const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
 
   if (!name || !phone) {
     showToast("يرجى كتابة اسم المريض ورقم الهاتف بالكامل");
@@ -2465,7 +2992,7 @@ function submitClinicBooking() {
 
   const doctor = ROYAL_NETWORK.doctors.find(d => d.id === docSelect) || ROYAL_NETWORK.doctors[0];
   const teethList = Array.from(selectedTeeth).sort((a,b) => Number(a)-Number(b)).map(t => "#" + t).join(", ") || "فحص شامل";
-  const pathologyList = Array.from(selectedPathologies).join(" + ") || "كشف دوري";
+  const pathologyList = Array.from(selectedPathologies).join(" + ") || "كشف واستشارة عامة";
   const serial = "RD-" + branchKey.toUpperCase().slice(0,3) + "-" + Math.floor(1000 + Math.random() * 9000);
 
   document.getElementById("ticketSerialTag").innerText = serial;
@@ -2478,24 +3005,72 @@ function submitClinicBooking() {
     phone: phone,
     doctor: doctor.name,
     room: doctor.room,
-    shift: shiftSelect,
+    shift: shiftSelect === "morning" ? "الصباحية (11:00 ص - 3:30 م)" : shiftSelect === "emergency" ? "طوارئ اليوم" : "المسائية (4:00 م - 10:30 م)",
     date: dateVal,
     teeth: teethList,
     pathology: pathologyList,
     promo: promo,
     notes: notes,
-    branch: branch.name,
+    branchKey: branchKey,
+    branchName: branch.name,
+    branchPhone: branch.phones[0],
+    branchAddress: branch.address,
+    branchWhatsapp: branch.whatsapp,
     isLadies: isLadies,
-    timestamp: new Date().toISOString()
+    status: "pending",
+    createdAt: new Date().toLocaleDateString('ar-EG') + " " + new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'})
   };
 
-  const queue = JSON.parse(localStorage.getItem("royal_clinic_queue") || "[]");
-  queue.unshift(appointmentObj);
-  localStorage.setItem("royal_clinic_queue", JSON.stringify(queue.slice(0, 30)));
-  renderQueueTable();
+  // Save to persistent storage
+  const bookings = getStoredBookings();
+  bookings.unshift(appointmentObj);
+  saveStoredBookings(bookings);
 
-  showToast("تم إصدار بطاقة الكشف الملكية بنجاح! جاري التوجيه للواتساب...");
-  setTimeout(function() { dispatchTicketWhatsApp(); }, 700);
+  // Update UI and show confirmation modal
+  renderBookingsManager();
+  showBookingSuccessModal(appointmentObj);
+}
+
+function showBookingSuccessModal(b) {
+  document.getElementById("modalSuccessSerial").innerText = b.id;
+  document.getElementById("modalSuccessName").innerText = b.patientName;
+  document.getElementById("modalSuccessBranch").innerText = b.branchName;
+  document.getElementById("modalSuccessDoctor").innerText = b.doctor;
+  document.getElementById("modalSuccessDate").innerText = b.date + " (" + b.shift + ")";
+
+  const msg = `👑 *طلب تأكيد حجز موعد — مركز رويال لطب الفم والأسنان* 👑
+------------------------------------
+🎫 *رقم التذكرة:* ${b.id}
+👤 *اسم المريض:* ${b.patientName}
+📱 *رقم الهاتف:* ${b.phone}
+🏢 *الفرع:* ${b.branchName}
+🩺 *العيادة والطبيب:* ${b.doctor} (${b.room})
+📅 *الموعد:* ${b.date} — ${b.shift}
+🦷 *الأسنان المحددة:* ${b.teeth}
+🔬 *نوع الكشف:* ${b.pathology}
+🏷️ *الكوبون:* ${b.promo}
+${b.isLadies ? '🌸 *قسم السيدات:* نعم (خصوصية تامة)\n' : ''}------------------------------------
+📍 *العنوان:* ${b.branchAddress}
+✨ نرجو تأكيد الموعد واستلام لوكيشن العيادة بالتفصيل.`;
+
+  const waBtn = document.getElementById("modalSuccessWaBtn");
+  if (waBtn) {
+    waBtn.href = "https://wa.me/" + b.branchWhatsapp + "?text=" + encodeURIComponent(msg);
+  }
+
+  const modal = document.getElementById("bookingSuccessModal");
+  if (modal) modal.style.display = "flex";
+}
+
+function closeBookingSuccessModal() {
+  const modal = document.getElementById("bookingSuccessModal");
+  if (modal) modal.style.display = "none";
+}
+
+function goToManagementFromModal() {
+  closeBookingSuccessModal();
+  switchSuiteTab('reception');
+  showToast("📋 تم نقلك للوحة الاستقبال لمتابعة وإدارة حالة الحجز");
 }
 
 function dispatchTicketWhatsApp() {
@@ -2511,40 +3086,25 @@ function dispatchTicketWhatsApp() {
   const patho = Array.from(selectedPathologies).join("، ") || "كشف واستشارة";
   const isLadies = document.getElementById("ladiesDeptCheck") ? document.getElementById("ladiesDeptCheck").checked : false;
   const branchKey = document.getElementById("branchSelector") ? document.getElementById("branchSelector").value : "dairut";
-  const branch = ROYAL_NETWORK.branches[branchKey];
+  const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
 
   const msg = 
-"👑 *بطاقة حجز كشف طبي — مركز رويال لطب الفم والأسنان* 👑
-" +
-"------------------------------------
-" +
-"🎫 *رقم التذكرة:* " + serial + "
-" +
-"👤 *اسم المريض:* " + name + "
-" +
-"📱 *رقم الهاتف:* " + phone + "
-" +
-"🏢 *الفرع المختار:* " + branch.name + "
-" +
-"🩺 *العيادة والطبيب:* " + doctor.name + " (" + doctor.room + ")
-" +
-"🌸 *قسم السيدات:* " + (isLadies ? 'نعم (حجز خاص للسيدات)' : 'العيادات العامة') + "
-" +
-"📅 *تاريخ الكشف:* " + dateVal + "
-" +
-"⏰ *الفترة:* " + shift + "
-" +
-"🦷 *الأسنان المحددة:* " + teeth + "
-" +
-"🔬 *نوع الشكوى:* " + patho + "
-" +
-"🏷️ *كوبون الخصم:* " + promo + "
-" +
-"------------------------------------
-" +
-"📍 *العنوان:* " + branch.address + "
-" +
-"✨ تم تأكيد الحجز إلكترونياً عبر البوابة الذكية لمركز رويال دينت";
+    "👑 *بطاقة حجز كشف طبي — مركز رويال لطب الفم والأسنان* 👑\n" +
+    "------------------------------------\n" +
+    "🎫 *رقم التذكرة:* " + serial + "\n" +
+    "👤 *اسم المريض:* " + name + "\n" +
+    "📱 *رقم الهاتف:* " + phone + "\n" +
+    "🏢 *الفرع المختار:* " + branch.name + "\n" +
+    "🩺 *العيادة والطبيب:* " + doctor.name + " (" + doctor.room + ")\n" +
+    "🌸 *قسم السيدات:* " + (isLadies ? 'نعم (حجز خاص للسيدات)' : 'العيادات العامة') + "\n" +
+    "📅 *تاريخ الكشف:* " + dateVal + "\n" +
+    "⏰ *الفترة:* " + shift + "\n" +
+    "🦷 *الأسنان المحددة:* " + teeth + "\n" +
+    "🔬 *نوع الشكوى:* " + patho + "\n" +
+    "🏷️ *كوبون الخصم:* " + promo + "\n" +
+    "------------------------------------\n" +
+    "📍 *العنوان:* " + branch.address + "\n" +
+    "✨ تم تأكيد الحجز إلكترونياً عبر البوابة الذكية لمركز رويال دينت";
 
   const url = "https://wa.me/" + branch.whatsapp + "?text=" + encodeURIComponent(msg);
   window.open(url, "_blank");
@@ -2558,30 +3118,30 @@ function renderAds() {
   if (!container) return;
 
   container.innerHTML = ROYAL_NETWORK.campaigns.map(ad => {
-    return '<div class="ad-card">' +
-      '<div class="ad-media-banner">' +
-        '<img src="' + ad.image + '" alt="' + ad.title + '" loading="lazy">' +
-      '</div>' +
-      '<div class="ad-body">' +
-        '<div>' +
-          '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">' +
-            '<span class="ad-badge">' + ad.badge + '</span>' +
-            '<span style="font-size:11px; color:var(--tx-gold); font-family:var(--f-mono);">معتمد رسمي</span>' +
-          '</div>' +
-          '<h3 class="ad-title">' + ad.title + '</h3>' +
-          '<p class="ad-hook" style="margin-top:6px;">' + ad.hook + '</p>' +
-        '</div>' +
-        '<div>' +
-          '<div style="background:var(--bg-card-soft); border:1.5px dashed var(--gold); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">' +
-            '<span style="font-size:12px; font-weight:800; color:var(--tx-primary);">' + ad.discount + '</span>' +
-            '<span class="ad-coupon" onclick="copyCouponCode('' + ad.coupon + '')" title="انقر لنسخ الكود">📋 ' + ad.coupon + '</span>' +
-          '</div>' +
-          '<button type="button" class="btn-ad-apply" style="margin-top:10px;" onclick="applyAdCoupon('' + ad.coupon + '', '' + ad.docId + '')">' +
-            '<span>⚡ تطبيق العرض وحجز الكشف فوراً</span>' +
-          '</button>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
+    return `<div class="ad-card">
+      <div class="ad-media-banner">
+        <img src="${ad.image}" alt="${ad.title}" loading="lazy">
+      </div>
+      <div class="ad-body">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span class="ad-badge">${ad.badge}</span>
+            <span style="font-size:11px; color:var(--tx-gold); font-family:var(--f-mono);">معتمد رسمي</span>
+          </div>
+          <h3 class="ad-title">${ad.title}</h3>
+          <p class="ad-hook" style="margin-top:6px;">${ad.hook}</p>
+        </div>
+        <div>
+          <div style="background:var(--bg-card-soft); border:1.5px dashed var(--gold); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; font-weight:800; color:var(--tx-primary);">${ad.discount}</span>
+            <span class="ad-coupon" onclick="copyCouponCode('${ad.coupon}')" title="انقر لنسخ الكود">📋 ${ad.coupon}</span>
+          </div>
+          <button type="button" class="btn-ad-apply" style="margin-top:10px;" onclick="applyAdCoupon('${ad.coupon}', '${ad.docId}')">
+            <span>⚡ تطبيق العرض وحجز الكشف فوراً</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
   }).join("");
 }
 
@@ -2615,18 +3175,18 @@ function renderOrthoSystems() {
   if (!grid) return;
 
   grid.innerHTML = ROYAL_NETWORK.orthoSystems.map((sys, idx) => {
-    return '<div class="ortho-card ' + (idx === 1 ? 'selected' : '') + '" id="ortho-sys-' + sys.id + '" onclick="selectOrthoSystem('' + sys.id + '')">' +
-      '<div style="font-family:var(--f-head); font-size:15px; font-weight:800; margin-bottom:6px; color:var(--tx-primary);">' + sys.name + '</div>' +
-      '<div style="font-family:var(--f-mono); font-size:13px; font-weight:700; color:var(--tx-gold);">' +
-        'التكلفة التقديرية: ' + sys.cost.toLocaleString('ar-EG') + ' ج.م' +
-      '</div>' +
-      '<ul style="list-style:none; margin-top:8px; font-size:12px; color:var(--tx-muted); display:flex; flex-direction:column; gap:4px;">' +
-        sys.features.map(f => '<li>• ' + f + '</li>').join("") +
-      '</ul>' +
-      '<div style="margin-top:8px; font-size:11px; color:var(--clinical-teal); font-weight:700;">' +
-        '⏱️ المدة المتوقعة: ' + sys.duration +
-      '</div>' +
-    '</div>';
+    return `<div class="ortho-card ${idx === 1 ? 'selected' : ''}" id="ortho-sys-${sys.id}" onclick="selectOrthoSystem('${sys.id}')">
+      <div style="font-family:var(--f-head); font-size:15px; font-weight:800; margin-bottom:6px; color:var(--tx-primary);">${sys.name}</div>
+      <div style="font-family:var(--f-mono); font-size:13px; font-weight:700; color:var(--tx-gold);">
+        التكلفة التقديرية: ${sys.cost.toLocaleString('ar-EG')} ج.م
+      </div>
+      <ul style="list-style:none; margin-top:8px; font-size:12px; color:var(--tx-muted); display:flex; flex-direction:column; gap:4px;">
+        ${sys.features.map(f => '<li>• ' + f + '</li>').join("")}
+      </ul>
+      <div style="margin-top:8px; font-size:11px; color:var(--clinical-teal); font-weight:700;">
+        ⏱️ المدة المتوقعة: ${sys.duration}
+      </div>
+    </div>`;
   }).join("");
 }
 
@@ -2689,28 +3249,26 @@ function renderDoctorsRoster() {
   if (!grid) return;
 
   grid.innerHTML = ROYAL_NETWORK.doctors.map(doc => {
-    return '<div class="lux-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:14px;">' +
-      '<div>' +
-        '<div style="display:flex; align-items:center; gap:14px;">' +
-          '<div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg, #FFF9ED, #FAF2E3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px;">' +
-            doc.avatar +
-          '</div>' +
-          '<div>' +
-            '<h3 style="font-family:var(--f-head); font-size:16px; font-weight:800; color:var(--tx-primary);">' + doc.name + '</h3>' +
-            '<p style="font-size:12px; color:var(--tx-muted);">' + doc.title + '</p>' +
-          '</div>' +
-        '</div>' +
-        '<div style="margin:14px 0 8px 0; font-size:12px; color:var(--tx-gold); font-weight:700;">🏢 ' + doc.room + '</div>' +
-        '<div style="display:flex; flex-wrap:wrap; gap:6px;">' +
-          doc.schedule.map(s => {
-            return '<span style="background:var(--gold-light); border:1px solid var(--bd-subtle); color:var(--tx-gold); padding:3px 8px; border-radius:6px; font-size:11px; font-weight:700;">' + s + '</span>';
-          }).join("") +
-        '</div>' +
-      '</div>' +
-      '<button type="button" class="btn-royal-submit" style="padding:10px 14px; font-size:13px;" onclick="bookWithSpecificDoctor('' + doc.id + '')">' +
-        '<span>📅 حجز كشف مع ' + doc.name.split(" ")[1] + '</span>' +
-      '</button>' +
-    '</div>';
+    return `<div class="lux-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:14px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg, #FFF9ED, #FAF2E3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px;">
+            ${doc.avatar}
+          </div>
+          <div>
+            <h3 style="font-family:var(--f-head); font-size:16px; font-weight:800; color:var(--tx-primary);">${doc.name}</h3>
+            <p style="font-size:12px; color:var(--tx-muted);">${doc.title}</p>
+          </div>
+        </div>
+        <div style="margin:14px 0 8px 0; font-size:12px; color:var(--tx-gold); font-weight:700;">🏢 ${doc.room}</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+          ${doc.schedule.map(s => `<span style="background:var(--gold-light); border:1px solid var(--bd-subtle); color:var(--tx-gold); padding:3px 8px; border-radius:6px; font-size:11px; font-weight:700;">${s}</span>`).join("")}
+        </div>
+      </div>
+      <button type="button" class="btn-royal-submit" style="padding:10px 14px; font-size:13px;" onclick="bookWithSpecificDoctor('${doc.id}')">
+        <span>📅 حجز كشف مع ${doc.name.split(" ")[1]}</span>
+      </button>
+    </div>`;
   }).join("");
 }
 
@@ -2740,18 +3298,18 @@ function renderClinicRooms() {
   ];
 
   grid.innerHTML = rooms.map(r => {
-    return '<div class="room-card ' + (r.status === 'free' ? 'status-free' : 'status-busy') + '">' +
-      '<div>' +
-        '<div style="display:flex; justify-content:space-between; align-items:center;">' +
-          '<strong style="font-size:15px; color:var(--tx-primary);">' + r.name + '</strong>' +
-          '<span style="font-size:11px; font-weight:700; padding:4px 10px; border-radius:99px; background:' + (r.status === 'free' ? 'var(--emerald-bg)' : '#FEF3C7') + '; color:' + (r.status === 'free' ? 'var(--emerald)' : '#D97706') + ';">● ' + r.label + '</span>' +
-        '</div>' +
-        '<div style="font-size:12px; color:var(--tx-muted); margin-top:4px;">' + r.doc + '</div>' +
-      '</div>' +
-      '<button type="button" class="btn-chime-call" onclick="callNextPatientToRoom(' + r.num + ', '' + r.name + '')">' +
-        '<span>📢 استدعاء المريض التالي</span>' +
-      '</button>' +
-    '</div>';
+    return `<div class="room-card ${r.status === 'free' ? 'status-free' : 'status-busy'}">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="font-size:15px; color:var(--tx-primary);">${r.name}</strong>
+          <span style="font-size:11px; font-weight:700; padding:4px 10px; border-radius:99px; background:${r.status === 'free' ? 'var(--emerald-bg)' : '#FEF3C7'}; color:${r.status === 'free' ? 'var(--emerald)' : '#D97706'};">● ${r.label}</span>
+        </div>
+        <div style="font-size:12px; color:var(--tx-muted); margin-top:4px;">${r.doc}</div>
+      </div>
+      <button type="button" class="btn-chime-call" onclick="callNextPatientToRoom(${r.num}, '${r.name}')">
+        <span>📢 استدعاء المريض التالي</span>
+      </button>
+    </div>`;
   }).join("");
 }
 
@@ -2760,34 +3318,380 @@ function callNextPatientToRoom(roomNum, roomName) {
   showToast("تم استدعاء المريض التالي بنغمة صوتية إلى: " + roomName);
 }
 
-function renderQueueTable() {
-  const tbody = document.getElementById("queueTableBody");
+/* ========================================================
+   BOOKINGS MANAGEMENT & CONFIRMATION ENGINE (ADMIN / RECEPTION)
+   ======================================================== */
+const DEFAULT_SAMPLE_BOOKINGS = [
+  {
+    id: "RD-DAI-9021",
+    patientName: "محمود سيد عثمان",
+    phone: "01066726432",
+    doctor: "د. محمد حسن رشاد",
+    room: "عيادة 2 (التقويم)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-09",
+    teeth: "#11, #21",
+    pathology: "استشارة وحساب أقساط تقويم 0%",
+    promo: "ROYAL-ORTHO-DISTANCES",
+    branchKey: "dairut",
+    branchName: "فرع ديروط (الفرع الرئيسي)",
+    branchPhone: "01066726432",
+    branchAddress: "ديروط: ميدان أبو جبل - بجوار فرع فودافون أعلى Q جيم",
+    isLadies: false,
+    status: "pending",
+    createdAt: "2026-11-08 09:30 ص"
+  },
+  {
+    id: "RD-ASS-9022",
+    patientName: "مريم إبراهيم خليل",
+    phone: "01116596599",
+    doctor: "د. سارة المنشاوي",
+    room: "عيادة 3 (قسم السيدات)",
+    shift: "الصباحية (11:00 ص - 3:30 م)",
+    date: "2026-11-09",
+    teeth: "#16, #26",
+    pathology: "كشف خاص لقسم السيدات وتنظيف ليزر",
+    promo: "ROYAL-LADIES-SPECIAL",
+    branchKey: "assiut",
+    branchName: "فرع أسيوط",
+    branchPhone: "01116596599",
+    branchAddress: "أسيوط: ميدان الزهراء - بجوار عمر أفندي - برج مهران الدور الثاني",
+    isLadies: true,
+    status: "confirmed",
+    confirmedAt: "10:15 ص",
+    createdAt: "2026-11-08 10:00 ص"
+  },
+  {
+    id: "RD-QUS-9023",
+    patientName: "أحمد علي الشريف",
+    phone: "01500098392",
+    doctor: "د. كريم الزمر",
+    room: "عيادة 1 (الجراحة والزرع)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-10",
+    teeth: "#36, #46",
+    pathology: "زراعة فورية وتثبيت غرسة سويسرية",
+    promo: "ROYAL-IMPLANT-25",
+    branchKey: "qusiya",
+    branchName: "فرع القوصية",
+    branchPhone: "01500098392",
+    branchAddress: "القوصية: شارع الجلاء - بجوار بنك القاهرة - برج فاطمة الزهراء",
+    isLadies: false,
+    status: "confirmed",
+    confirmedAt: "11:20 ص",
+    createdAt: "2026-11-08 11:00 ص"
+  },
+  {
+    id: "RD-DAY-9024",
+    patientName: "يوسف حسام الدين",
+    phone: "01044820100",
+    doctor: "د. ندى الشريف",
+    room: "عيادة 5 (طب أسنان أطفال)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-10",
+    teeth: "#55",
+    pathology: "فحص تسوس وحشوة ليزر تجميلية",
+    promo: "ROYAL-DIRECT",
+    branchKey: "dayrmawas",
+    branchName: "فرع ديرمواس",
+    branchPhone: "01044820100",
+    branchAddress: "ديرمواس: شارع مدرسة التجارة - أعلى مكتبة الإسكندرية وأسواق المهندس",
+    isLadies: false,
+    status: "pending",
+    createdAt: "2026-11-08 11:45 ص"
+  }
+];
+
+function getStoredBookings() {
+  try {
+    const raw = localStorage.getItem("royal_clinic_bookings_v2");
+    if (!raw) {
+      localStorage.setItem("royal_clinic_bookings_v2", JSON.stringify(DEFAULT_SAMPLE_BOOKINGS));
+      return DEFAULT_SAMPLE_BOOKINGS;
+    }
+    return JSON.parse(raw);
+  } catch(e) {
+    return DEFAULT_SAMPLE_BOOKINGS;
+  }
+}
+
+function saveStoredBookings(list) {
+  try {
+    localStorage.setItem("royal_clinic_bookings_v2", JSON.stringify(list));
+  } catch(e) {}
+}
+
+function renderBookingsManager() {
+  const tbody = document.getElementById("bookingsTableBody");
   if (!tbody) return;
 
-  let queue = JSON.parse(localStorage.getItem("royal_clinic_queue") || "[]");
-  if (queue.length === 0) {
-    queue = [
-      { id: "RD-DAI-9021", patientName: "محمود سيد عثمان", doctor: "د. محمد حسن رشاد", room: "عيادة 2 (التقويم)", status: "قيد الانتظار" },
-      { id: "RD-DAI-9022", patientName: "مريم إبراهيم خليل", doctor: "د. سارة المنشاوي", room: "عيادة 3 (قسم السيدات)", status: "قيد الانتظار" },
-      { id: "RD-DAI-9023", patientName: "يوسف حسام الدين", doctor: "د. ندى الشريف", room: "عيادة 5 (أطفال)", status: "قيد الانتظار" }
-    ];
+  const bookings = getStoredBookings();
+  const branchFilter = document.getElementById("mgmtBranchFilter") ? document.getElementById("mgmtBranchFilter").value : "all";
+  const statusFilter = document.getElementById("mgmtStatusFilter") ? document.getElementById("mgmtStatusFilter").value : "all";
+  const searchKw = document.getElementById("mgmtSearchInput") ? document.getElementById("mgmtSearchInput").value.trim().toLowerCase() : "";
+
+  // Compute KPI Counts
+  const total = bookings.length;
+  const confirmedCount = bookings.filter(b => b.status === "confirmed").length;
+  const pendingCount = bookings.filter(b => b.status === "pending").length;
+  const ladiesCount = bookings.filter(b => b.isLadies).length;
+
+  const elTotal = document.getElementById("kpiTotalBookings");
+  const elConf = document.getElementById("kpiConfirmedBookings");
+  const elPend = document.getElementById("kpiPendingBookings");
+  const elLadies = document.getElementById("kpiLadiesBookings");
+  const elBadge = document.getElementById("queueBadgeCount");
+
+  if (elTotal) elTotal.innerText = total;
+  if (elConf) elConf.innerText = confirmedCount;
+  if (elPend) elPend.innerText = pendingCount;
+  if (elLadies) elLadies.innerText = ladiesCount;
+  if (elBadge) elBadge.innerText = pendingCount;
+
+  // Filter Bookings
+  const filtered = bookings.filter(b => {
+    if (branchFilter !== "all" && b.branchKey !== branchFilter) return false;
+    if (statusFilter !== "all" && b.status !== statusFilter) return false;
+    if (searchKw) {
+      const matchName = (b.patientName || "").toLowerCase().includes(searchKw);
+      const matchPhone = (b.phone || "").toLowerCase().includes(searchKw);
+      const matchId = (b.id || "").toLowerCase().includes(searchKw);
+      if (!matchName && !matchPhone && !matchId) return false;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:32px; color:var(--tx-muted); font-size:14px;">لا توجد حجوزات مطابقة للفلاتر المحددة حالياً. يمكنك إضافة حجز جديد بالزر أعلاه.</td></tr>';
+    return;
   }
 
-  tbody.innerHTML = queue.map(q => {
-    return '<tr>' +
-      '<td style="font-family:var(--f-mono); color:var(--tx-gold);">' + q.id + '</td>' +
-      '<td><strong>' + q.patientName + '</strong></td>' +
-      '<td>' + (q.room || "عيادة الفحص") + '</td>' +
-      '<td>' + q.doctor + '</td>' +
-      '<td><span style="font-size:11px; font-weight:700; color:var(--emerald);">● جاهز للدخول</span></td>' +
-      '<td><button type="button" class="btn-chime-call" style="padding:4px 8px; font-size:11px;" onclick="callSpecificPatient('' + q.patientName + '', '' + (q.room || 'عيادة الكشف') + '')"><span>🔔 نداء</span></button></td>' +
-    '</tr>';
+  tbody.innerHTML = filtered.map(b => {
+    let statusBadge = '';
+    if (b.status === "confirmed") {
+      statusBadge = `<span class="status-pill status-confirmed">✅ مؤكد رسمياً ${b.confirmedAt ? '(' + b.confirmedAt + ')' : ''}</span>`;
+    } else if (b.status === "completed") {
+      statusBadge = '<span class="status-pill status-completed">🩺 تم الكشف بنجاح</span>';
+    } else {
+      statusBadge = '<span class="status-pill status-pending">⏳ قيد المراجعة</span>';
+    }
+
+    return `<tr>
+      <td>
+        <div style="font-family:var(--f-mono); font-weight:800; color:var(--tx-gold); font-size:13px;">${b.id}</div>
+        <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">${b.date || 'اليوم'} • ${b.shift || 'المسائية'}</div>
+      </td>
+      <td>
+        <div style="font-weight:800; font-size:14px; color:var(--tx-primary);">${b.patientName}</div>
+        <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
+          <span style="font-family:var(--f-mono); font-size:12px; color:var(--tx-muted);">${b.phone}</span>
+          <a href="tel:${b.phone}" class="btn-row-action btn-act-call" style="padding:2px 6px; font-size:10px;" title="اتصال هاتفي">📞</a>
+        </div>
+      </td>
+      <td>
+        <div style="font-size:12.5px; font-weight:700; color:var(--tx-primary);">${b.branchName || 'فرع ديروط'}</div>
+        <div style="font-size:11.5px; color:var(--tx-gold); margin-top:2px;">${b.doctor} <span style="color:var(--tx-dim);">(${b.room || 'عيادة الفحص'})</span></div>
+      </td>
+      <td>
+        <div style="font-size:12px; color:var(--tx-primary);">${b.pathology || 'كشف دوري'}</div>
+        <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">الأسنان: <strong>${b.teeth || 'فحص شامل'}</strong> ${b.isLadies ? ' • <span style="color:var(--rose); font-weight:700;">🌸 قسم السيدات</span>' : ''}</div>
+      </td>
+      <td>${statusBadge}</td>
+      <td>
+        <div class="row-actions-flex">
+          ${b.status !== "confirmed" ? 
+            `<button type="button" class="btn-row-action btn-act-confirm" onclick="confirmBookingById('${b.id}')" title="تأكيد الحجز فوراً"><span>✅ تأكيد</span></button>` : 
+            `<button type="button" class="btn-row-action btn-act-done" onclick="markBookingCompleted('${b.id}')" title="تسجيل إنهاء الكشف"><span>🩺 إنهاء</span></button>`
+          }
+          <button type="button" class="btn-row-action btn-act-wa" onclick="sendWhatsAppConfirmation('${b.id}')" title="إرسال رسالة تأكيد لواتساب المريض"><span>💬 واتساب</span></button>
+          <button type="button" class="btn-row-action btn-act-chime" onclick="callPatientByVoice('${b.patientName}', '${b.room || 'عيادة الكشف'}')" title="استدعاء صوتي للمريض"><span>🔔 نداء</span></button>
+          <button type="button" class="btn-row-action btn-act-del" onclick="deleteBookingById('${b.id}')" title="إلغاء الحجز"><span>✕</span></button>
+        </div>
+      </td>
+    </tr>`;
   }).join("");
 }
 
-function callSpecificPatient(patientName, room) {
+function confirmBookingById(id) {
+  const bookings = getStoredBookings();
+  const target = bookings.find(b => b.id === id);
+  if (target) {
+    target.status = "confirmed";
+    target.confirmedAt = new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'});
+    saveStoredBookings(bookings);
+    renderBookingsManager();
+    RoyalAudio.playSuccess();
+    showToast("✅ تم تأكيد حجز المريض / " + target.patientName + " رسمياً!");
+  }
+}
+
+function markBookingCompleted(id) {
+  const bookings = getStoredBookings();
+  const target = bookings.find(b => b.id === id);
+  if (target) {
+    target.status = "completed";
+    saveStoredBookings(bookings);
+    renderBookingsManager();
+    RoyalAudio.playChime();
+    showToast("🩺 تم تسجيل انتهاء كشف المريض / " + target.patientName);
+  }
+}
+
+function deleteBookingById(id) {
+  if (!confirm("هل أنت متأكد من رغبتك في إلغاء هذا الحجز؟")) return;
+  let bookings = getStoredBookings();
+  bookings = bookings.filter(b => b.id !== id);
+  saveStoredBookings(bookings);
+  renderBookingsManager();
+  showToast("تم إلغاء الحجز بنجاح");
+}
+
+function sendWhatsAppConfirmation(id) {
+  const bookings = getStoredBookings();
+  const b = bookings.find(item => item.id === id);
+  if (!b) return;
+
+  const phone = (b.phone || "").replace(/[^0-9]/g, "");
+  const formattedPhone = phone.startsWith("0") ? "2" + phone : phone;
+
+  const msg = `👑 *تأكيد حجز موعد طبي — مركز رويال لطب الفم والأسنان* 👑
+------------------------------------
+أهلاً بحضرتك أستاذ/ة: *${b.patientName}*
+يسعدنا إبلاغك بأنه قد تم *تأكيد موعد كشفك الطبي رسمياً* لدينا:
+
+🎫 *رقم التذكرة:* ${b.id}
+🏢 *الفرع:* ${b.branchName || "فرع ديروط الرئيسي"}
+🩺 *العيادة والطبيب:* ${b.doctor} (${b.room || "عيادة الكشف"})
+📅 *تاريخ الموعد:* ${b.date || "اليوم"} (${b.shift || "المسائية"})
+🦷 *الفحص:* ${b.pathology || "كشف واستشارة"} — ${b.teeth || "فحص شامل"}
+${b.isLadies ? '🌸 *قسم السيدات:* نعم (أجنحة مخصصة بخصوصية تامة)\n' : ''}------------------------------------
+📍 *العنوان:* ${b.branchAddress || "ديروط: ميدان أبو جبل - بجوار فودافون"}
+📞 *هاتف الاستقبال:* ${b.branchPhone || "01066726432"}
+
+✨ نتشرف بزيارتك، ونتمنى لك دوام الصحة والابتسامة المشرقة!`;
+
+  const url = "https://wa.me/" + formattedPhone + "?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
   RoyalAudio.playChime();
-  showToast("نداء: نرجو من المريض / " + patientName + " التوجه إلى " + room);
+  showToast("جاري فتح محادثة الواتساب مع المريض لإرسال تأكيد الموعد...");
+}
+
+function callPatientByVoice(patientName, room) {
+  RoyalAudio.playChime();
+  showToast("📢 نداء صوتي طبي: نرجو من المريض / " + patientName + " التوجه فوراً إلى " + room);
+}
+
+function exportBookingsToCSV() {
+  const bookings = getStoredBookings();
+  if (bookings.length === 0) {
+    showToast("لا توجد حجوزات لتصديرها");
+    return;
+  }
+
+  const NL = String.fromCharCode(10);
+  let csvContent = "\uFEFF";
+  csvContent += "رقم التذكرة,اسم المريض,رقم الهاتف,الفرع,الطبيب المعالج,العيادة,تاريخ الموعد,الفترة,الحالة,الأسنان,نوع الشكوى" + NL;
+
+  bookings.forEach(b => {
+    const row = [
+      '"' + (b.id || '') + '"',
+      '"' + (b.patientName || '') + '"',
+      '"' + (b.phone || '') + '"',
+      '"' + (b.branchName || '') + '"',
+      '"' + (b.doctor || '') + '"',
+      '"' + (b.room || '') + '"',
+      '"' + (b.date || '') + '"',
+      '"' + (b.shift || '') + '"',
+      '"' + (b.status === 'confirmed' ? 'مؤكد' : b.status === 'completed' ? 'تم الكشف' : 'قيد المراجعة') + '"',
+      '"' + (b.teeth || '') + '"',
+      '"' + (b.pathology || '') + '"'
+    ];
+    csvContent += row.join(",") + NL;
+  });
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "royal_dent_bookings_" + new Date().toISOString().split('T')[0] + ".csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  RoyalAudio.playSuccess();
+  showToast("📥 تم تصدير سجل الحجوزات بنجاح بصيغة Excel CSV!");
+}
+
+/* Manual Booking Modal */
+function openManualBookingModal() {
+  const m = document.getElementById("manualBookingModal");
+  if (m) {
+    m.style.display = "flex";
+    const dateInput = document.getElementById("manualDate");
+    if (dateInput && !dateInput.value) {
+      dateInput.value = new Date().toISOString().split('T')[0];
+    }
+  }
+  RoyalAudio.playChime();
+}
+
+function closeManualBookingModal() {
+  const m = document.getElementById("manualBookingModal");
+  if (m) m.style.display = "none";
+}
+
+function submitManualBooking() {
+  const name = document.getElementById("manualPatientName").value.trim();
+  const phone = document.getElementById("manualPatientPhone").value.trim();
+  const branchKey = document.getElementById("manualBranch").value;
+  const doctor = document.getElementById("manualDoctor").value;
+  const shift = document.getElementById("manualShift").value;
+  const dateVal = document.getElementById("manualDate").value || new Date().toISOString().split('T')[0];
+  const complaint = document.getElementById("manualComplaint").value.trim() || "كشف واستشارة مباشرة";
+
+  if (!name || !phone) {
+    showToast("يرجى ملء اسم المريض ورقم الهاتف");
+    return;
+  }
+
+  const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
+  const serial = "RD-" + branchKey.toUpperCase().slice(0,3) + "-" + Math.floor(1000 + Math.random() * 9000);
+
+  const newBooking = {
+    id: serial,
+    patientName: name,
+    phone: phone,
+    doctor: doctor,
+    room: "عيادة الكشف المباشر",
+    shift: shift,
+    date: dateVal,
+    teeth: "فحص شامل",
+    pathology: complaint,
+    promo: "WALK-IN-DIRECT",
+    branchKey: branchKey,
+    branchName: branch.name,
+    branchPhone: branch.phones[0],
+    branchAddress: branch.address,
+    isLadies: doctor.includes("سيدات"),
+    status: "confirmed",
+    confirmedAt: new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'}),
+    createdAt: new Date().toLocaleDateString('ar-EG') + " " + new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'})
+  };
+
+  const bookings = getStoredBookings();
+  bookings.unshift(newBooking);
+  saveStoredBookings(bookings);
+
+  closeManualBookingModal();
+  renderBookingsManager();
+  RoyalAudio.playSuccess();
+  showToast("✅ تم تسجيل وتأكيد الحجز المباشر للمريض / " + name + " بنجاح!");
+}
+
+/* Legacy queue table backward compatibility */
+function renderQueueTable() {
+  renderBookingsManager();
 }
 
 /* ========================================================
