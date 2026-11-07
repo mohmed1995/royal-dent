@@ -1420,6 +1420,166 @@ body {
   line-height: 1.6;
 }
 
+/* ========================================================
+   COMPREHENSIVE CONTACT & COMMUNICATION SUITE
+   ======================================================== */
+.contact-branches-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+@media (min-width: 860px) {
+  .contact-branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.branch-contact-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.branch-contact-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px var(--gold-glow);
+}
+.branch-contact-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(197, 160, 89, 0.06) 0%, var(--bg-card) 100%);
+}
+.branch-contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.branch-contact-title {
+  font-family: var(--f-head);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  margin-bottom: 4px;
+}
+.branch-contact-address {
+  font-size: 12.5px;
+  color: var(--tx-muted);
+  line-height: 1.6;
+}
+.branch-badge-pill {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--gold-light);
+  color: var(--tx-gold);
+  border: 1px solid var(--bd-subtle);
+  white-space: nowrap;
+}
+.branch-phones-box {
+  background: var(--bg-card-soft);
+  border: 1px solid var(--bd-subtle);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.branch-phone-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--bd-subtle);
+}
+.branch-phone-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.branch-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Call-Back Request Card */
+.callback-card {
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, var(--bg-card) 100%);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+
+/* Floating Speed-Dial Contact Bar */
+.floating-contact-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 8px 14px;
+  border-radius: 40px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 8px 28px rgba(181, 142, 63, 0.25);
+}
+[data-theme="dark"] .floating-contact-bar {
+  background: rgba(28, 36, 44, 0.95);
+}
+.float-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+.float-btn-wa:hover {
+  transform: scale(1.04);
+}
+.float-btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px var(--gold-glow);
+}
+.float-btn-phone:hover {
+  transform: scale(1.04);
+}
+
 /* Treatment Care Specialties Grid (Replaces FDI Teeth) */
 .specialty-grid {
   display: grid;
@@ -2008,8 +2168,11 @@ body {
           اختر الفرع للوصول إلى أرقام الاستقبال المباشرة، موقع Google Maps بالـ GPS، والاتجاهات الدقيقة
         </p>
       </div>
-      <div style="display:flex; align-items:center; gap:6px;">
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
         <span class="badge-tag" style="font-size:12px; margin:0;">4 فروع رسمية بمحافظتي أسيوط والمنيا</span>
+        <button type="button" class="btn-royal-submit" style="padding:6px 14px; font-size:11.5px; background:var(--gold-light); border-color:var(--gold); color:var(--tx-gold); font-weight:800; cursor:pointer;" onclick="switchSuiteTab('contact')">
+          <span>📞 دليل الفروع الشامل</span>
+        </button>
       </div>
     </div>
 
@@ -2084,7 +2247,7 @@ body {
     </div>
   </section>
 
-  <!-- SUITE DOCK BAR (5 SPECIALIZED SCREENS) -->
+  <!-- SUITE DOCK BAR (6 SPECIALIZED SCREENS) -->
   <nav class="suite-dock-bar">
     <button type="button" class="dock-tab-btn active" id="tab-kiosk" onclick="switchSuiteTab('kiosk')">
       <span>🪪</span>
@@ -2101,6 +2264,10 @@ body {
     <button type="button" class="dock-tab-btn" id="tab-doctors" onclick="switchSuiteTab('doctors')">
       <span>👨‍⚕️</span>
       <span>نخبة الأطباء والاستشاريين</span>
+    </button>
+    <button type="button" class="dock-tab-btn" id="tab-contact" onclick="switchSuiteTab('contact')">
+      <span>📞</span>
+      <span>الفروع وأرقام التواصل</span>
     </button>
     <button type="button" class="dock-tab-btn" id="tab-reception" onclick="switchSuiteTab('reception')">
       <span>📋</span>
@@ -2538,6 +2705,362 @@ body {
     </div>
 
     <div class="ads-masonry" id="doctorsGridContainer"></div>
+  </section>
+
+  <!-- SCREEN: COMPREHENSIVE CONTACT & BRANCH HUB -->
+  <section id="view-contact" class="suite-view">
+    <div style="margin-bottom:24px; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:4px 16px; border-radius:30px; background:var(--gold-light); border:1px solid var(--bd-subtle); color:var(--tx-gold); font-size:12px; font-weight:800; margin-bottom:8px;">
+        <span>✦</span> <span>شبكة الفروع المعتمدة • تغطية شاملة لمحافظتي أسيوط والمنيا</span> <span>✦</span>
+      </div>
+      <h2 style="font-family:var(--f-royal); font-size:28px; color:var(--tx-primary); margin-bottom:8px;">
+        مركز الفروع وأرقام التواصل والاتجاهات الملكية 👑
+      </h2>
+      <p style="font-size:13px; color:var(--tx-muted); max-width:680px; margin:0 auto;">
+        فريق الاستقبال متواجد يومياً من 11:00 صباحاً وحتى 10:30 مساءً للرد على استفساراتكم وحجز الكشوفات العاجلة والاستشارية
+      </p>
+    </div>
+
+    <!-- 4 BRANCHES GRID -->
+    <div class="contact-branches-grid">
+      <!-- 1. Dairut Main Branch -->
+      <div class="branch-contact-card featured">
+        <div>
+          <div class="branch-contact-header">
+            <div>
+              <div class="branch-contact-title">👑 فرع ديروط (الفرع الرئيسي)</div>
+              <div class="branch-contact-address">
+                📍 ميدان أبو جبل، بجوار فرع فودافون، أعلى Q جيم ومطعم التيسير — الدور الثاني
+              </div>
+            </div>
+            <span class="branch-badge-pill">الفرع الرئيسي • DAIRUT</span>
+          </div>
+
+          <div style="margin:12px 0; font-size:11.5px; color:var(--tx-dim); display:flex; align-items:center; gap:6px;">
+            <span>🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م</span>
+          </div>
+
+          <div class="branch-phones-box">
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01066726432</span>
+                <span class="phone-badge-hot">الخط الساخن</span>
+                <div style="font-size:11px; color:var(--tx-muted);">استقبال الفرع وحجز المواعيد الفورية</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              </div>
+            </div>
+
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01500098392</span>
+                <div style="font-size:11px; color:var(--tx-muted);">هاتف الاستقبال والتنسيق الطبي</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01500098392" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01500098392')">📋 نسخ</button>
+              </div>
+            </div>
+
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01044820100</span>
+                <div style="font-size:11px; color:var(--tx-muted);">خدمة المتابعة ونتائج الأشعة الرقمية</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01044820100" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01044820100')">📋 نسخ</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; font-size:11.5px; color:var(--tx-gold); font-weight:700;">
+            👨‍⚕️ الاستشاريون المقيمون: د. محمد عبدالراضي • د. عبدالله عزام • د. محمد عبدالواحد
+          </div>
+        </div>
+
+        <div class="branch-actions-row">
+          <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>💬 واتساب فرع ديروط</span>
+          </a>
+          <a href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 مسار GPS (خريطة ديروط)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Assiut Branch -->
+      <div class="branch-contact-card">
+        <div>
+          <div class="branch-contact-header">
+            <div>
+              <div class="branch-contact-title">🏢 فرع مدينة أسيوط (ميدان الزهراء)</div>
+              <div class="branch-contact-address">
+                📍 ميدان الزهراء، بجوار عمر أفندي وبنك الإسكندرية، برج مهران — الدور الثاني
+              </div>
+            </div>
+            <span class="branch-badge-pill">عاصمة المحافظة • ASSIUT</span>
+          </div>
+
+          <div style="margin:12px 0; font-size:11.5px; color:var(--tx-dim); display:flex; align-items:center; gap:6px;">
+            <span>🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م</span>
+          </div>
+
+          <div class="branch-phones-box">
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01116596599</span>
+                <span class="phone-badge-hot">استقبال أسيوط</span>
+                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع أسيوط</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01116596599" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01116596599')">📋 نسخ</button>
+              </div>
+            </div>
+
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01066726432</span>
+                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي للحالات والتحويلات</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; font-size:11.5px; color:var(--rose); font-weight:700;">
+            🌸 أجنحة متخصصة لقسم السيدات بكادر نسائي استشاري مستقل
+          </div>
+        </div>
+
+        <div class="branch-actions-row">
+          <a href="https://wa.me/201116596599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A3%D8%B3%D9%8A%D9%88%D8%B7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>💬 واتساب فرع أسيوط</span>
+          </a>
+          <a href="https://maps.google.com/?q=27.1809,31.1837" target="_blank" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 مسار GPS (خريطة أسيوط)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Qusiya Branch -->
+      <div class="branch-contact-card">
+        <div>
+          <div class="branch-contact-header">
+            <div>
+              <div class="branch-contact-title">🏛️ فرع القوصية (شارع الجلاء)</div>
+              <div class="branch-contact-address">
+                📍 شارع الجلاء التجاري، بجوار بنك القاهرة، برج فاطمة الزهراء — خطوات من محطة القطار
+              </div>
+            </div>
+            <span class="branch-badge-pill">مركز القوصية • QUSIYA</span>
+          </div>
+
+          <div style="margin:12px 0; font-size:11.5px; color:var(--tx-dim); display:flex; align-items:center; gap:6px;">
+            <span>🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م</span>
+          </div>
+
+          <div class="branch-phones-box">
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01500098392</span>
+                <span class="phone-badge-hot">استقبال القوصية</span>
+                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع القوصية</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01500098392" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01500098392')">📋 نسخ</button>
+              </div>
+            </div>
+
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01066726432</span>
+                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي لخدمة العملاء</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; font-size:11.5px; color:var(--clinical-teal); font-weight:700;">
+            🦷 عيادات متكاملة لتقويم الأسنان وزراعة الأسنان وعلاج الجذور
+          </div>
+        </div>
+
+        <div class="branch-actions-row">
+          <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D9%88%D8%B5%D9%8A%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>💬 واتساب فرع القوصية</span>
+          </a>
+          <a href="https://maps.google.com/?q=27.4419,30.8175" target="_blank" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 مسار GPS (خريطة القوصية)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Dayr Mawas Branch -->
+      <div class="branch-contact-card">
+        <div>
+          <div class="branch-contact-header">
+            <div>
+              <div class="branch-contact-title">🌿 فرع ديرمواس (مدرسة التجارة)</div>
+              <div class="branch-contact-address">
+                📍 شارع مدرسة التجارة، أعلى مكتبة الإسكندرية وأسواق المهندس — موقع هادئ ومريح للمرضى
+              </div>
+            </div>
+            <span class="branch-badge-pill">جنوب المنيا • DAYR MAWAS</span>
+          </div>
+
+          <div style="margin:12px 0; font-size:11.5px; color:var(--tx-dim); display:flex; align-items:center; gap:6px;">
+            <span>🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م</span>
+          </div>
+
+          <div class="branch-phones-box">
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01044820100</span>
+                <span class="phone-badge-hot">استقبال ديرمواس</span>
+                <div style="font-size:11px; color:var(--tx-muted);">حجوزات واستقبال عيادات فرع ديرمواس</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01044820100" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01044820100')">📋 نسخ</button>
+              </div>
+            </div>
+
+            <div class="branch-phone-row">
+              <div>
+                <span class="phone-digits" dir="ltr">01066726432</span>
+                <div style="font-size:11px; color:var(--tx-muted);">الخط الموحد المركزي للحالات والتحويلات</div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <a href="tel:01066726432" class="btn-phone-call"><span>📞 اتصال</span></a>
+                <button type="button" class="btn-phone-copy" onclick="copyNumber('01066726432')">📋 نسخ</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; font-size:11.5px; color:var(--tx-gold); font-weight:700;">
+            👑 أحدث أجهزة الأشعة الرقمية والتشخيص الديجيتال الفوري
+          </div>
+        </div>
+
+        <div class="branch-actions-row">
+          <a href="https://wa.me/201044820100?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%85%D9%88%D8%A7%D8%B3%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>💬 واتساب فرع ديرمواس</span>
+          </a>
+          <a href="https://maps.google.com/?q=27.6441,30.8465" target="_blank" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 مسار GPS (خريطة ديرمواس)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALLBACK REQUEST & EMERGENCY GRID -->
+    <div style="display:grid; grid-template-columns:1fr; gap:20px; margin-bottom:28px;">
+      <!-- Call Back Form Card -->
+      <div class="callback-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--bd-subtle);">
+          <div>
+            <h3 style="font-family:var(--f-head); font-size:17px; font-weight:800; color:var(--tx-primary); margin-bottom:4px;">
+              📞 اطلب مكالمة هاتفية فورية من موظف الاستقبال
+            </h3>
+            <p style="font-size:12.5px; color:var(--tx-muted); margin:0;">
+              اترك اسمك ورقم هاتفك وسيقوم مسؤول الاستقبال بالاتصال بك خلال 5 دقائق لتأكيد الموعد والإجابة عن أي استفسار
+            </p>
+          </div>
+          <span style="font-size:24px;">⏱️</span>
+        </div>
+
+        <form id="quickCallbackForm" onsubmit="event.preventDefault(); submitQuickCallback();">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:14px;">
+            <div>
+              <label class="form-label" for="cbName">اسم المريض الكريم</label>
+              <input type="text" id="cbName" class="form-input" placeholder="اكتب اسمك الثلاثي..." required>
+            </div>
+            <div>
+              <label class="form-label" for="cbPhone">رقم الهاتف للتواصل</label>
+              <input type="tel" id="cbPhone" class="form-input" placeholder="010XXXXXXXX" dir="ltr" required>
+            </div>
+            <div>
+              <label class="form-label" for="cbBranch">الفرع الأقرب إليك</label>
+              <select id="cbBranch" class="form-select">
+                <option value="dairut">فرع ديروط (الرئيسي)</option>
+                <option value="assiut">فرع مدينة أسيوط (ميدان الزهراء)</option>
+                <option value="qusiya">فرع القوصية (شارع الجلاء)</option>
+                <option value="dayrmawas">فرع ديرمواس (مدرسة التجارة)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="cbTopic">نوع الكشف أو الاستفسار</label>
+              <input type="text" id="cbTopic" class="form-input" placeholder="مثال: استشارة تقويم، زراعة، كشف ألم">
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end;">
+            <button type="submit" class="btn-royal-submit" style="padding:12px 28px; font-size:13.5px;">
+              <span>📞 إرسال الطلب والاتصال بي فوراً</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Social & Emergency Card -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <!-- Facebook Page Card -->
+        <div class="lux-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+              <div style="width:40px; height:40px; border-radius:10px; background:#1877F2; display:flex; align-items:center; justify-content:center; color:#fff; font-size:22px; font-weight:800;">
+                f
+              </div>
+              <div>
+                <h4 style="font-family:var(--f-head); font-size:15px; font-weight:800; color:var(--tx-primary); margin:0;">
+                  الصفحة الرسمية على فيسبوك
+                </h4>
+                <div style="font-size:11.5px; color:var(--tx-gold); font-family:var(--f-mono);">@RoyalDentDairut • موثقة</div>
+              </div>
+            </div>
+            <p style="font-size:12px; color:var(--tx-muted); line-height:1.5;">
+              تابع أحدث عروض التقويم الترويجي، ونتائج الحالات السريرية وتجارب المراجعين الحقيقية بالفيديو.
+            </p>
+          </div>
+          <a href="https://www.facebook.com/RoyalDentDairut/" target="_blank" class="btn-royal-submit" style="background:#1877F2; border-color:#1565C0; text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>👍 متابعة صفحة مركز رويال على فيسبوك</span>
+          </a>
+        </div>
+
+        <!-- 24/7 Dental Emergency Card -->
+        <div class="lux-card" style="border-color:var(--rose); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+              <div style="width:40px; height:40px; border-radius:10px; background:rgba(225,29,72,0.12); border:1.5px solid var(--rose); display:flex; align-items:center; justify-content:center; color:var(--rose); font-size:20px;">
+                🚨
+              </div>
+              <div>
+                <h4 style="font-family:var(--f-head); font-size:15px; font-weight:800; color:var(--rose); margin:0;">
+                  خط طوارئ الأسنان السريع 24/7
+                </h4>
+                <div style="font-size:11.5px; color:var(--tx-muted);">استجابة للحالات الحرجة والألم الشديد</div>
+              </div>
+            </div>
+            <p style="font-size:12px; color:var(--tx-muted); line-height:1.5;">
+              إذا كنت تعاني من ألم حاد ومفاجئ، نزيف بعد الخلع، أو كسر سن، يمكنك التواصل مباشرة مع الطبيب المناوب.
+            </p>
+          </div>
+          <button type="button" class="btn-royal-submit" style="background:var(--rose); border-color:#9F1239; color:#fff; padding:10px; font-size:12.5px;" onclick="openEmergencyModal()">
+            <span>🚨 فتح نافذة الطوارئ الفورية الآن</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SCREEN 5: RECEPTION & BOOKINGS MANAGEMENT HUB -->
@@ -4426,6 +4949,57 @@ function showToast(msg) {
 }
 
 /* ========================================================
+   QUICK CALLBACK SUBMISSION HANDLER
+   ======================================================== */
+function submitQuickCallback() {
+  const name = document.getElementById("cbName").value.trim();
+  const phone = document.getElementById("cbPhone").value.trim();
+  const branchKey = document.getElementById("cbBranch").value;
+  const topic = document.getElementById("cbTopic").value.trim() || "استفسار ومكالمة كشف عام";
+
+  if (!name || !phone) {
+    showToast("يرجى إدخال اسمك ورقم هاتفك بالكامل");
+    return;
+  }
+
+  const branch = ROYAL_NETWORK.branches[branchKey] || ROYAL_NETWORK.branches.dairut;
+  const cbId = "CB-" + Math.floor(1000 + Math.random() * 9000);
+
+  // Add callback record to stored bookings for receptionists to see
+  const cbBooking = {
+    id: cbId,
+    patientName: name,
+    phone: phone,
+    doctor: "مسؤول الاستقبال والمكالمات",
+    room: "خدمة العملاء الهاتفية",
+    shift: "مكالمة عاجلة خلال 5 دقائق",
+    date: new Date().toISOString().split("T")[0],
+    teeth: "طلب اتصال هاتفي",
+    pathology: "📞 " + topic,
+    promo: "CALLBACK-REQ",
+    branchKey: branchKey,
+    branchName: branch.name,
+    branchPhone: branch.phones[0],
+    branchAddress: branch.address,
+    isLadies: false,
+    status: "pending",
+    createdAt: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })
+  };
+
+  const list = getStoredBookings();
+  list.unshift(cbBooking);
+  saveStoredBookings(list);
+  renderBookingsManager();
+
+  // Reset form
+  const form = document.getElementById("quickCallbackForm");
+  if (form) form.reset();
+
+  RoyalAudio.playSuccess();
+  showToast("📞 تم استلام طلبك بنجاح! سيتصل بك مسؤول استقبال " + branch.name + " خلال 5 دقائق.");
+}
+
+/* ========================================================
    BOOTSTRAP
    ======================================================== */
 window.addEventListener("DOMContentLoaded", () => {
@@ -4456,5 +5030,15 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<!-- FLOATING SPEED-DIAL CONTACT BAR -->
+<div class="floating-contact-bar" id="floatingContactBar">
+  <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%84%D8%B7%D8%A8%20%D8%A7%D9%84%D8%A3%D8%B3%D9%86%D8%A7%D9%86" target="_blank" class="float-btn-wa" title="محادثة واتساب فورية">
+    <span>💬 واتساب الفرع</span>
+  </a>
+  <a href="tel:01066726432" class="float-btn-phone" title="اتصال هاتفي مباشر">
+    <span>📞 01066726432</span>
+  </a>
+</div>
 </body>
 </html>
