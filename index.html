@@ -2174,11 +2174,11 @@ body {
             <div class="form-field">
               <label class="form-label" for="doctorSelect">الطبيب أو العيادة المتخصصة</label>
               <select id="doctorSelect" class="form-select" onchange="onDoctorChanged()">
-                <option value="rd-doc-01">د. أحمد عبد الحليم — استشاري أول جراحة وزراعة الأسنان</option>
-                <option value="rd-doc-02" selected>د. محمد حسن رشاد — استشاري التقويم والفكين والتقويم الشفاف</option>
-                <option value="rd-doc-03">د. سارة المنشاوي — أخصائية تجميل الأسنان وفينير الابتسامة (قسم السيدات)</option>
-                <option value="rd-doc-04">د. محمود العسقلاني — أخصائي علاج الجذور وحشو العصب بالمايكروسكوب</option>
-                <option value="rd-doc-05">د. ندى الشريف — أخصائية طب أسنان الأطفال ورعاية الأسنان الوقائية</option>
+                <option value="rd-doc-01">د. محمد عبدالراضي — استشاري أول جراحة وزراعة وتجميل الأسنان</option>
+                <option value="rd-doc-02" selected>د. عبدالله عزام — استشاري تقويم الأسنان والفكين والتقويم الشفاف</option>
+                <option value="rd-doc-03">د. محمد عبدالواحد — استشاري تجميل الأسنان وفينير الابتسامة وحشو العصب</option>
+                <option value="rd-doc-04">نخبة طبيبات قسم السيدات — أجنحة مستقلة لراحة وخصوصية المرأة</option>
+                <option value="rd-doc-05">عيادة رويال كيدز المتخصصة — رعاية وطب أسنان الأطفال بدون ألم</option>
               </select>
             </div>
 
@@ -2775,10 +2775,11 @@ body {
         <div>
           <label class="form-label" for="manualDoctor">العيادة / الطبيب</label>
           <select id="manualDoctor" class="form-select">
-            <option value="د. محمد حسن رشاد (استشاري التقويم)">د. محمد حسن رشاد (استشاري التقويم)</option>
-            <option value="د. سارة المنشاوي (استشارية قسم السيدات)">د. سارة المنشاوي (استشارية قسم السيدات)</option>
-            <option value="د. كريم الزمر (استشاري زراعة وجراحة)">د. كريم الزمر (استشاري زراعة وجراحة)</option>
-            <option value="د. ندى الشريف (طب وتجميل الأسنان)">د. ندى الشريف (طب وتجميل الأسنان)</option>
+            <option value="د. محمد عبدالراضي (استشاري جراحة وزراعة)">د. محمد عبدالراضي (استشاري جراحة وزراعة)</option>
+            <option value="د. عبدالله عزام (استشاري التقويم والفكين)">د. عبدالله عزام (استشاري التقويم والفكين)</option>
+            <option value="د. محمد عبدالواحد (استشاري التجميل والعصب)">د. محمد عبدالواحد (استشاري التجميل والعصب)</option>
+            <option value="نخبة طبيبات قسم السيدات (استشاريات المركز)">نخبة طبيبات قسم السيدات (استشاريات المركز)</option>
+            <option value="عيادة رويال كيدز (طب أسنان أطفال)">عيادة رويال كيدز (طب أسنان أطفال)</option>
           </select>
         </div>
         <div>
@@ -2867,9 +2868,9 @@ const ROYAL_NETWORK = {
   doctors: [
     {
       id: "rd-doc-01",
-      name: "د. أحمد عبد الحليم",
-      title: "استشاري أول جراحة الفم وزراعة الأسنان الديجيتال",
-      room: "عيادة 1 (الجراحة والزراعة)",
+      name: "د. محمد عبدالراضي",
+      title: "استشاري أول جراحة الفم وتثبيت الغرسات والتركيبات الثابتة",
+      room: "عيادة 1 (الجراحة والزراعة الموجهة)",
       schedule: ["السبت", "الأحد", "الثلاثاء", "الخميس"],
       isFemale: false,
       avatar: "👨‍⚕️",
@@ -2877,9 +2878,9 @@ const ROYAL_NETWORK = {
     },
     {
       id: "rd-doc-02",
-      name: "د. محمد حسن رشاد",
-      title: "استشاري تقويم الأسنان والفكين والتقويم الشفاف",
-      room: "عيادة 2 (استوديو التقويم)",
+      name: "د. عبدالله عزام",
+      title: "استشاري تقويم الأسنان والفكين والتقويم الشفاف (0% فوائد)",
+      room: "عيادة 2 (استوديو التقويم المتقدم)",
       schedule: ["الأحد", "الإثنين", "الأربعاء"],
       isFemale: false,
       avatar: "👨‍⚕️",
@@ -2887,32 +2888,32 @@ const ROYAL_NETWORK = {
     },
     {
       id: "rd-doc-03",
-      name: "د. سارة المنشاوي",
-      title: "استشارية تجميل الأسنان وفينير الابتسامة (قسم السيدات)",
-      room: "عيادة 3 (قسم السيدات والخصوصية)",
+      name: "د. محمد عبدالواحد",
+      title: "استشاري تجميل الأسنان وهوليوود سمايل وحشو العصب بالمجهر",
+      room: "عيادة 3 (التجميل والمجهر الجراحي)",
       schedule: ["السبت", "الإثنين", "الأربعاء", "الخميس"],
-      isFemale: true,
-      avatar: "👩‍⚕️",
-      avatarImg: "https://images.unsplash.com/photo-1594824813637-44f2d33ecb2a?auto=format&fit=crop&w=300&q=80"
-    },
-    {
-      id: "rd-doc-04",
-      name: "د. محمود العسقلاني",
-      title: "أخصائي علاج الجذور وحشو العصب بالمايكروسكوب",
-      room: "عيادة 4 (المجهر الجراحي)",
-      schedule: ["السبت", "الأحد", "الأربعاء"],
       isFemale: false,
       avatar: "👨‍⚕️",
       avatarImg: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80"
     },
     {
-      id: "rd-doc-05",
-      name: "د. ندى الشريف",
-      title: "أخصائية طب أسنان الأطفال ورعاية الأسنان الوقائية",
-      room: "عيادة 5 (رويال كيدز)",
-      schedule: ["الإثنين", "الثلاثاء", "الخميس"],
+      id: "rd-doc-04",
+      name: "نخبة طبيبات قسم السيدات",
+      title: "فريق طبي نسائي استشاري متكامل يوفر أقصى درجات الخصوصية والراحة",
+      room: "عيادة 4 (جناح السيدات والخصوصية)",
+      schedule: ["طوال أيام الأسبوع"],
       isFemale: true,
       avatar: "👩‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1594824813637-44f2d33ecb2a?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      id: "rd-doc-05",
+      name: "فريق رويال كيدز المتخصص",
+      title: "استشاريات طب وجراحة أسنان الأطفال والرعاية السنية الوقائية بدون ألم",
+      room: "عيادة 5 (جناح الأطفال الترفيهي)",
+      schedule: ["السبت", "الإثنين", "الأربعاء", "الخميس"],
+      isFemale: true,
+      avatar: "👶",
       avatarImg: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
     }
   ],
@@ -2921,7 +2922,7 @@ const ROYAL_NETWORK = {
     {
       id: "ad-ortho",
       title: "التقويم هيقرب المسافات 🪥✨",
-      hook: "احصل على ابتسامة متناسقة بأحدث أجهزة التقويم الأمريكية والتقويم الشفاف غير المرئي مع أنظمة تقسيط مرنة 0% فوائد بجميع فروعنا.",
+      hook: "احصل على ابتسامة متناسقة بأحدث أجهزة التقويم الأمريكية والتقويم الشفاف غير المرئي مع أنظمة تقسيط مرنة 0% فوائد بإشراف د. عبدالله عزام.",
       discount: "تقسيط مريح يبدأ من 594 ج.م شهرياً بدون بنوك",
       coupon: "ROYAL-ORTHO-DISTANCES",
       badge: "حملة التقويم الكبرى",
@@ -2936,12 +2937,12 @@ const ROYAL_NETWORK = {
       coupon: "ROYAL-LADIES-CARE",
       badge: "قسم السيدات الحصري",
       image: "assets/ad_ladies_clinic.jpg",
-      docId: "rd-doc-03"
+      docId: "rd-doc-04"
     },
     {
       id: "ad-implant",
       title: "زراعة الأسنان الفورية بدون فتح جراحي 🦷🔩",
-      hook: "عوض أسنانك المفقودة في جلسة واحدة بأحدث أنظمة الزرع الألمانية والسويسرية المعتمدة بضمان مدى الحياة وبدون أي ألم.",
+      hook: "عوض أسنانك المفقودة في جلسة واحدة بأحدث أنظمة الزرع الألمانية والسويسرية المعتمدة بضمان مدى الحياة وبدون أي ألم بإشراف د. محمد عبدالراضي.",
       discount: "خصم 25% + أشعة بانوراما استرشادية مجاناً",
       coupon: "ROYAL-IMPLANT-25",
       badge: "زراعة ديجيتال موجهة",
@@ -2951,7 +2952,7 @@ const ROYAL_NETWORK = {
     {
       id: "ad-hollywood",
       title: "ابتسامة هوليوود الملكية وتركيبات الإيماكس والزيركون 💎",
-      hook: "تصميم رقمي ثلاثي الأبعاد للابتسامة DSD وتسليم فوري قياسي خلال 24 ساعة بأعلى دقة جمالية مطابقة للأسنان الطبيعية.",
+      hook: "تصميم رقمي ثلاثي الأبعاد للابتسامة DSD وتسليم فوري قياسي خلال 24 ساعة بأعلى دقة جمالية مطابقة للأسنان الطبيعية بإشراف د. محمد عبدالواحد.",
       discount: "تبييض ليزر مجاني مع باقة الابتسامة الكاملة",
       coupon: "ROYAL-HOLLYWOOD",
       badge: "تجميل وتبييض ملكي",
@@ -2961,17 +2962,17 @@ const ROYAL_NETWORK = {
     {
       id: "ad-endo",
       title: "علاج وحشو العصب المجهري بأعلى دقة وبدون أي ألم 🔬⚡",
-      hook: "استعادة صحة ضرسك بأحدث أجهزة المجهر الجراحي ثلاثي الأبعاد وتنظيف القنوات بأمان تام في جلسة واحدة تحميك من خلع السن.",
+      hook: "استعادة صحة ضرسك بأحدث أجهزة المجهر الجراحي ثلاثي الأبعاد وتنظيف القنوات بأمان تام في جلسة واحدة تحميك من خلع السن بإشراف د. محمد عبدالواحد.",
       discount: "جلسة واحدة قياسية + أشعة ديجيتال RVG استرشادية مجاناً",
       coupon: "ROYAL-ENDO-CARE",
       badge: "مجهر جراحي ثلاثي الأبعاد",
       image: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80",
-      docId: "rd-doc-04"
+      docId: "rd-doc-03"
     },
     {
       id: "ad-kids",
       title: "رويال كيدز: عيادة ترفيهية متخصصة لأسنان الأطفال 🎈👶",
-      hook: "تجربة علاجية ممتعة بدون خوف وبدون إبرة، مع كادر نسائي متخصص برعاية ابتسامة طفلك ووقاية الأسنان اللبنية والدائمة في بيئة آمنة.",
+      hook: "تجربة علاجية ممتعة بدون خوف وبدون إبرة، مع كادر نسائي متخصص برعاية ابتسامة طفلك ووقاية الأسنان اللبنية والدائمة في بيئة آمنة ومبهجة.",
       discount: "جلسة فلورايد وقائية مجانية + هدية البطل الملكية",
       coupon: "ROYAL-KIDS-SMILE",
       badge: "جناح أطفال ترفيهي بدون ألم",
@@ -3409,8 +3410,8 @@ function selectCareSpecialty(key) {
     if (promoInput) promoInput.value = "ROYAL-ORTHO-DISTANCES";
     if (ladiesCheck) ladiesCheck.checked = false;
   } else if (key === "ladies") {
-    currentCareSpecialty = { key: "ladies", name: "قسم السيدات والخصوصية", docId: "rd-doc-03", coupon: "ROYAL-LADIES-SPECIAL" };
-    if (docSelect) docSelect.value = "rd-doc-03";
+    currentCareSpecialty = { key: "ladies", name: "قسم السيدات والخصوصية", docId: "rd-doc-04", coupon: "ROYAL-LADIES-SPECIAL" };
+    if (docSelect) docSelect.value = "rd-doc-04";
     if (promoInput) promoInput.value = "ROYAL-LADIES-SPECIAL";
     if (ladiesCheck) ladiesCheck.checked = true;
   } else if (key === "implant") {
@@ -3419,17 +3420,19 @@ function selectCareSpecialty(key) {
     if (promoInput) promoInput.value = "ROYAL-IMPLANT-25";
     if (ladiesCheck) ladiesCheck.checked = false;
   } else if (key === "hollywood") {
-    currentCareSpecialty = { key: "hollywood", name: "ابتسامة هوليوود وتبييض الليزر", docId: "rd-doc-04", coupon: "ROYAL-HOLLYWOOD" };
-    if (docSelect) docSelect.value = "rd-doc-04";
+    currentCareSpecialty = { key: "hollywood", name: "ابتسامة هوليوود وتبييض الليزر", docId: "rd-doc-03", coupon: "ROYAL-HOLLYWOOD" };
+    if (docSelect) docSelect.value = "rd-doc-03";
     if (promoInput) promoInput.value = "ROYAL-HOLLYWOOD";
     if (ladiesCheck) ladiesCheck.checked = false;
   } else if (key === "endo") {
-    currentCareSpecialty = { key: "endo", name: "علاج وحشو العصب التجميلي", docId: "rd-doc-04", coupon: "ROYAL-DIRECT" };
-    if (docSelect) docSelect.value = "rd-doc-04";
+    currentCareSpecialty = { key: "endo", name: "علاج وحشو العصب التجميلي بالمجهر", docId: "rd-doc-03", coupon: "ROYAL-ENDO-CARE" };
+    if (docSelect) docSelect.value = "rd-doc-03";
+    if (promoInput) promoInput.value = "ROYAL-ENDO-CARE";
     if (ladiesCheck) ladiesCheck.checked = false;
   } else if (key === "kids") {
-    currentCareSpecialty = { key: "kids", name: "جناح رويال كيدز للأطفال", docId: "rd-doc-05", coupon: "ROYAL-KIDS" };
+    currentCareSpecialty = { key: "kids", name: "جناح رويال كيدز للأطفال", docId: "rd-doc-05", coupon: "ROYAL-KIDS-SMILE" };
     if (docSelect) docSelect.value = "rd-doc-05";
+    if (promoInput) promoInput.value = "ROYAL-KIDS-SMILE";
     if (ladiesCheck) ladiesCheck.checked = false;
   }
 
@@ -3971,11 +3974,11 @@ function renderClinicRooms() {
   if (!grid) return;
 
   const rooms = [
-    { num: 1, name: "عيادة الجراحة والزراعة", doc: "د. أحمد عبد الحليم", status: "free", label: "متاحة الآن" },
-    { num: 2, name: "استوديو تقويم الأسنان", doc: "د. محمد حسن رشاد", status: "busy", label: "جلسة تقويم جارية" },
-    { num: 3, name: "استوديو الابتسامة وقسم السيدات", doc: "د. سارة المنشاوي", status: "free", label: "متاحة الآن" },
-    { num: 4, name: "عيادة المايكروسكوب الجراحي", doc: "د. محمود العسقلاني", status: "busy", label: "حشو عصب جاري" },
-    { num: 5, name: "جناح رويال كيدز للأطفال", doc: "د. ندى الشريف", status: "free", label: "متاحة الآن" }
+    { num: 1, name: "عيادة الجراحة والزراعة الرقمية", doc: "د. محمد عبدالراضي", status: "free", label: "متاحة الآن" },
+    { num: 2, name: "استوديو تقويم الأسنان المتقدم", doc: "د. عبدالله عزام", status: "busy", label: "جلسة تقويم جارية" },
+    { num: 3, name: "استوديو الابتسامة وعلاج الجذور", doc: "د. محمد عبدالواحد", status: "free", label: "متاحة الآن" },
+    { num: 4, name: "جناح السيدات والخصوصية المستقل", doc: "نخبة طبيبات قسم السيدات", status: "busy", label: "كشف استشاري جاري" },
+    { num: 5, name: "جناح رويال كيدز لطب الأطفال", doc: "فريق رويال كيدز المتخصص", status: "free", label: "متاحة الآن" }
   ];
 
   grid.innerHTML = rooms.map(r => {
@@ -4007,7 +4010,7 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     id: "RD-DAI-9021",
     patientName: "محمود سيد عثمان",
     phone: "01066726432",
-    doctor: "د. محمد حسن رشاد",
+    doctor: "د. عبدالله عزام",
     room: "عيادة 2 (التقويم)",
     shift: "المسائية (4:00 م - 10:30 م)",
     date: "2026-11-09",
@@ -4026,8 +4029,8 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     id: "RD-ASS-9022",
     patientName: "مريم إبراهيم خليل",
     phone: "01116596599",
-    doctor: "د. سارة المنشاوي",
-    room: "عيادة 3 (قسم السيدات)",
+    doctor: "نخبة طبيبات قسم السيدات",
+    room: "عيادة 4 (قسم السيدات)",
     shift: "الصباحية (11:00 ص - 3:30 م)",
     date: "2026-11-09",
     teeth: "#16, #26",
@@ -4046,7 +4049,7 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     id: "RD-QUS-9023",
     patientName: "أحمد علي الشريف",
     phone: "01500098392",
-    doctor: "د. كريم الزمر",
+    doctor: "د. محمد عبدالراضي",
     room: "عيادة 1 (الجراحة والزرع)",
     shift: "المسائية (4:00 م - 10:30 م)",
     date: "2026-11-10",
@@ -4066,8 +4069,8 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     id: "RD-DAY-9024",
     patientName: "يوسف حسام الدين",
     phone: "01044820100",
-    doctor: "د. ندى الشريف",
-    room: "عيادة 5 (طب أسنان أطفال)",
+    doctor: "د. محمد عبدالواحد",
+    room: "عيادة 3 (التجميل وحشو العصب)",
     shift: "المسائية (4:00 م - 10:30 م)",
     date: "2026-11-10",
     teeth: "#55",
@@ -4085,9 +4088,9 @@ const DEFAULT_SAMPLE_BOOKINGS = [
 
 function getStoredBookings() {
   try {
-    const raw = localStorage.getItem("royal_clinic_bookings_v2");
+    const raw = localStorage.getItem("royal_clinic_bookings_v3");
     if (!raw) {
-      localStorage.setItem("royal_clinic_bookings_v2", JSON.stringify(DEFAULT_SAMPLE_BOOKINGS));
+      localStorage.setItem("royal_clinic_bookings_v3", JSON.stringify(DEFAULT_SAMPLE_BOOKINGS));
       return DEFAULT_SAMPLE_BOOKINGS;
     }
     return JSON.parse(raw);
@@ -4098,7 +4101,7 @@ function getStoredBookings() {
 
 function saveStoredBookings(list) {
   try {
-    localStorage.setItem("royal_clinic_bookings_v2", JSON.stringify(list));
+    localStorage.setItem("royal_clinic_bookings_v3", JSON.stringify(list));
   } catch(e) {}
 }
 
