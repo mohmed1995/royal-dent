@@ -1424,7 +1424,7 @@ body {
 .specialty-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
   margin: 12px 0 16px 0;
 }
 @media (min-width: 640px) {
@@ -1433,46 +1433,101 @@ body {
   }
 }
 .specialty-card-btn {
-  padding: 12px;
+  padding: 0;
   border-radius: 14px;
-  background: var(--bg-card-soft);
+  background: var(--bg-card);
   border: 1.5px solid var(--bd-subtle);
   cursor: pointer;
   text-align: right;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 .specialty-card-btn:hover {
   border-color: var(--gold);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(181, 142, 63, 0.16);
 }
 .specialty-card-btn.selected {
   background: var(--gold-light);
   border-color: var(--gold);
-  box-shadow: 0 4px 14px var(--gold-glow);
+  box-shadow: 0 6px 20px var(--gold-glow);
 }
 .specialty-card-btn.selected .spec-name {
   color: var(--gold-dark);
 }
-.spec-head {
+.spec-cover-wrap {
+  position: relative;
+  width: 100%;
+  height: 92px;
+  overflow: hidden;
+  background: #EFE9DE;
+}
+.spec-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+.specialty-card-btn:hover .spec-cover-img {
+  transform: scale(1.06);
+}
+.spec-badge-float {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 4px;
+  border: 1px solid rgba(220, 200, 160, 0.4);
 }
-.spec-icon {
-  font-size: 20px;
+.spec-check-indicator {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.specialty-card-btn.selected .spec-check-indicator {
+  display: flex;
+}
+.spec-body-box {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
 }
 .spec-name {
   font-family: var(--f-head);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 800;
   color: var(--tx-primary);
+  line-height: 1.3;
 }
 .spec-desc {
   font-size: 11px;
   color: var(--tx-muted);
+  line-height: 1.4;
 }
 
 
@@ -2162,57 +2217,87 @@ body {
 
             <div class="specialty-grid" id="specialtyCareGrid">
               <div class="specialty-card-btn selected" data-key="ortho" onclick="selectCareSpecialty('ortho')">
-                <div class="spec-head">
-                  <span class="spec-icon">📐</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-gold); font-family:var(--f-mono);">0% فوائد</span>
+                <div class="spec-cover-wrap">
+                  <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" alt="تقويم الأسنان" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--tx-gold);">
+                    <span>📐</span> <span>0% فوائد</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">تقويم الأسنان</div>
-                <div class="spec-desc">حاسبة الأقساط + مسح 3D</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">تقويم الأسنان والفكين</div>
+                  <div class="spec-desc">حاسبة أقساط مرنة + مسح ثلاثي الأبعاد 3D</div>
+                </div>
               </div>
 
               <div class="specialty-card-btn" data-key="ladies" onclick="selectCareSpecialty('ladies')">
-                <div class="spec-head">
-                  <span class="spec-icon">🌸</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--rose); font-family:var(--f-head);">خصوصية</span>
+                <div class="spec-cover-wrap">
+                  <img src="assets/ad_ladies_clinic.jpg" alt="قسم السيدات" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--rose);">
+                    <span>🌸</span> <span>خصوصية تامة</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">قسم السيدات</div>
-                <div class="spec-desc">أجنحة خاصة وطبيبات استشاريات</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">قسم السيدات المتخصص</div>
+                  <div class="spec-desc">أجنحة خاصة وطبيبات استشاريات</div>
+                </div>
               </div>
 
               <div class="specialty-card-btn" data-key="implant" onclick="selectCareSpecialty('implant')">
-                <div class="spec-head">
-                  <span class="spec-icon">🔬</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--emerald); font-family:var(--f-mono);">-25%</span>
+                <div class="spec-cover-wrap">
+                  <img src="https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=600&q=80" alt="زراعة وجراحة الأسنان" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--emerald);">
+                    <span>🔬</span> <span>-25% خصم</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">زراعة وجراحة</div>
-                <div class="spec-desc">غرسات سويسرية وألمانية</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">زراعة وجراحة الفم</div>
+                  <div class="spec-desc">غرسات سويسرية وألمانية موجهة</div>
+                </div>
               </div>
 
               <div class="specialty-card-btn" data-key="hollywood" onclick="selectCareSpecialty('hollywood')">
-                <div class="spec-head">
-                  <span class="spec-icon">✨</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-gold); font-family:var(--f-head);">تجميل</span>
+                <div class="spec-cover-wrap">
+                  <img src="https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=600&q=80" alt="ابتسامة هوليوود" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--tx-gold);">
+                    <span>✨</span> <span>تجميل ملكي</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">ابتسامة هوليوود</div>
-                <div class="spec-desc">فينير وإيماكس وتبييض ليزر</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">ابتسامة هوليوود وفينير</div>
+                  <div class="spec-desc">إيماكس وتبييض ليزر فوري</div>
+                </div>
               </div>
 
               <div class="specialty-card-btn" data-key="endo" onclick="selectCareSpecialty('endo')">
-                <div class="spec-head">
-                  <span class="spec-icon">⚡</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--tx-slate); font-family:var(--f-head);">بدون ألم</span>
+                <div class="spec-cover-wrap">
+                  <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=600&q=80" alt="علاج وحشو العصب" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--tx-slate);">
+                    <span>⚡</span> <span>بدون ألم</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">علاج وحشو العصب</div>
-                <div class="spec-desc">ميكروسكوب ثلاثي الأبعاد</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">علاج وحشو العصب</div>
+                  <div class="spec-desc">ميكروسكوب ثلاثي الأبعاد دقيق</div>
+                </div>
               </div>
 
               <div class="specialty-card-btn" data-key="kids" onclick="selectCareSpecialty('kids')">
-                <div class="spec-head">
-                  <span class="spec-icon">👶</span>
-                  <span style="font-size:10.5px; font-weight:700; color:var(--clinical-teal); font-family:var(--f-head);">رويال كيدز</span>
+                <div class="spec-cover-wrap">
+                  <img src="https://images.unsplash.com/photo-1758205307836-0829c799890b?auto=format&fit=crop&w=600&q=80" alt="طب أسنان أطفال" class="spec-cover-img" loading="lazy">
+                  <div class="spec-badge-float" style="color:var(--clinical-teal);">
+                    <span>👶</span> <span>رويال كيدز</span>
+                  </div>
+                  <div class="spec-check-indicator">✓</div>
                 </div>
-                <div class="spec-name">طب أسنان أطفال</div>
-                <div class="spec-desc">جلسات علاج ترفيهية مريحة</div>
+                <div class="spec-body-box">
+                  <div class="spec-name">طب أسنان الأطفال</div>
+                  <div class="spec-desc">جلسات علاج ترفيهية مريحة وودودة</div>
+                </div>
               </div>
             </div>
           </div>
@@ -2315,6 +2400,67 @@ body {
     </div>
 
     <div class="ads-masonry" id="adsContainer"></div>
+
+    <!-- ROYAL CLINIC LUXURY ENVIRONMENT & TECH SUITE -->
+    <div style="margin-top:36px; padding-top:28px; border-top:1px solid var(--bd-subtle);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <span style="display:inline-block; padding:4px 14px; background:var(--gold-light); border:1px solid var(--bd-subtle); border-radius:30px; font-size:11.5px; font-weight:800; color:var(--tx-gold); margin-bottom:8px;">
+          ✦ المعايير والبيئة السريرية الفاخرة ✦
+        </span>
+        <h3 style="font-family:var(--f-royal); font-size:22px; color:var(--tx-primary); margin-bottom:6px;">
+          تجهيزات طبية أوروبية وأجنحة مصممة لراحتك المطلقة
+        </h3>
+        <p style="font-size:12.5px; color:var(--tx-muted); max-width:600px; margin:0 auto;">
+          نجمع بين أعلى تقنيات طب الأسنان الرقمي المعاصر وأرقى مستويات الضيافة الطبية الفندقية الهادئة
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+        <div class="lux-card" style="padding:0; overflow:hidden; border-radius:14px;">
+          <div style="height:160px; overflow:hidden; position:relative;">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="أجنحة علاج VIP خاصة" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            <span style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px;">أجنحة VIP مستقلة</span>
+          </div>
+          <div style="padding:14px;">
+            <h4 style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary); margin-bottom:4px;">كراسي علاج ذكية إيطالية</h4>
+            <p style="font-size:11.5px; color:var(--tx-muted); line-height:1.5;">راحة مريحة للظهر مع شاشات تفاعلية لشرح خطة العلاج ومتابعة الحالة لحظياً.</p>
+          </div>
+        </div>
+
+        <div class="lux-card" style="padding:0; overflow:hidden; border-radius:14px;">
+          <div style="height:160px; overflow:hidden; position:relative;">
+            <img src="https://images.unsplash.com/photo-1762625570087-6d98fca29531?auto=format&fit=crop&w=800&q=80" alt="ردهات استرخاء هادئة" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            <span style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px;">بيئة هادئة ومريحة</span>
+          </div>
+          <div style="padding:14px;">
+            <h4 style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary); margin-bottom:4px;">ردهة استرخاء بطراز فندقي</h4>
+            <p style="font-size:11.5px; color:var(--tx-muted); line-height:1.5;">إضاءة مريحة للعين، وموسيقى استرخاء ومشروبات ضيافة تزيل أي قلق قبل الكشف.</p>
+          </div>
+        </div>
+
+        <div class="lux-card" style="padding:0; overflow:hidden; border-radius:14px;">
+          <div style="height:160px; overflow:hidden; position:relative;">
+            <img src="https://images.unsplash.com/photo-1771442873038-dda05b6ca447?auto=format&fit=crop&w=800&q=80" alt="مسح رقمي ثلاثي الأبعاد" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            <span style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px;">ديجيتال 3D بالكامل</span>
+          </div>
+          <div style="padding:14px;">
+            <h4 style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary); margin-bottom:4px;">الماسح الرقمي 3D Intraoral</h4>
+            <p style="font-size:11.5px; color:var(--tx-muted); line-height:1.5;">أخذ طبعات ومقاسات الأسنان بدقة الميكرون خلال دقيقة واحدة وبدون أي معجون مزعج.</p>
+          </div>
+        </div>
+
+        <div class="lux-card" style="padding:0; overflow:hidden; border-radius:14px;">
+          <div style="height:160px; overflow:hidden; position:relative;">
+            <img src="https://images.unsplash.com/photo-1771442873035-474765b40ac6?auto=format&fit=crop&w=800&q=80" alt="تعقيم ألماني فائق" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            <span style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px;">تعقيم B-Class أوروبي</span>
+          </div>
+          <div style="padding:14px;">
+            <h4 style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary); margin-bottom:4px;">بروتوكول تعقيم من 7 مراحل</h4>
+            <p style="font-size:11.5px; color:var(--tx-muted); line-height:1.5;">تغليف حراري مفرغ من الهواء لكل أداة يُفتح أمام المريض مباشرة لضمان أمان 100%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SCREEN 3: ORTHODONTIC STUDIO & 0% INSTALLMENT CALCULATOR -->
@@ -2726,7 +2872,8 @@ const ROYAL_NETWORK = {
       room: "عيادة 1 (الجراحة والزراعة)",
       schedule: ["السبت", "الأحد", "الثلاثاء", "الخميس"],
       isFemale: false,
-      avatar: "👨‍⚕️"
+      avatar: "👨‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80"
     },
     {
       id: "rd-doc-02",
@@ -2735,7 +2882,8 @@ const ROYAL_NETWORK = {
       room: "عيادة 2 (استوديو التقويم)",
       schedule: ["الأحد", "الإثنين", "الأربعاء"],
       isFemale: false,
-      avatar: "👨‍⚕️"
+      avatar: "👨‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=300&q=80"
     },
     {
       id: "rd-doc-03",
@@ -2744,7 +2892,8 @@ const ROYAL_NETWORK = {
       room: "عيادة 3 (قسم السيدات والخصوصية)",
       schedule: ["السبت", "الإثنين", "الأربعاء", "الخميس"],
       isFemale: true,
-      avatar: "👩‍⚕️"
+      avatar: "👩‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1594824813637-44f2d33ecb2a?auto=format&fit=crop&w=300&q=80"
     },
     {
       id: "rd-doc-04",
@@ -2753,7 +2902,8 @@ const ROYAL_NETWORK = {
       room: "عيادة 4 (المجهر الجراحي)",
       schedule: ["السبت", "الأحد", "الأربعاء"],
       isFemale: false,
-      avatar: "👨‍⚕️"
+      avatar: "👨‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80"
     },
     {
       id: "rd-doc-05",
@@ -2762,7 +2912,8 @@ const ROYAL_NETWORK = {
       room: "عيادة 5 (رويال كيدز)",
       schedule: ["الإثنين", "الثلاثاء", "الخميس"],
       isFemale: true,
-      avatar: "👩‍⚕️"
+      avatar: "👩‍⚕️",
+      avatarImg: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
     }
   ],
 
@@ -2794,7 +2945,7 @@ const ROYAL_NETWORK = {
       discount: "خصم 25% + أشعة بانوراما استرشادية مجاناً",
       coupon: "ROYAL-IMPLANT-25",
       badge: "زراعة ديجيتال موجهة",
-      image: "assets/royal_logo_official.jpg",
+      image: "https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=1200&q=80",
       docId: "rd-doc-01"
     },
     {
@@ -2804,8 +2955,28 @@ const ROYAL_NETWORK = {
       discount: "تبييض ليزر مجاني مع باقة الابتسامة الكاملة",
       coupon: "ROYAL-HOLLYWOOD",
       badge: "تجميل وتبييض ملكي",
-      image: "assets/royal_logo_official.jpg",
+      image: "https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=1200&q=80",
       docId: "rd-doc-03"
+    },
+    {
+      id: "ad-endo",
+      title: "علاج وحشو العصب المجهري بأعلى دقة وبدون أي ألم 🔬⚡",
+      hook: "استعادة صحة ضرسك بأحدث أجهزة المجهر الجراحي ثلاثي الأبعاد وتنظيف القنوات بأمان تام في جلسة واحدة تحميك من خلع السن.",
+      discount: "جلسة واحدة قياسية + أشعة ديجيتال RVG استرشادية مجاناً",
+      coupon: "ROYAL-ENDO-CARE",
+      badge: "مجهر جراحي ثلاثي الأبعاد",
+      image: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80",
+      docId: "rd-doc-04"
+    },
+    {
+      id: "ad-kids",
+      title: "رويال كيدز: عيادة ترفيهية متخصصة لأسنان الأطفال 🎈👶",
+      hook: "تجربة علاجية ممتعة بدون خوف وبدون إبرة، مع كادر نسائي متخصص برعاية ابتسامة طفلك ووقاية الأسنان اللبنية والدائمة في بيئة آمنة.",
+      discount: "جلسة فلورايد وقائية مجانية + هدية البطل الملكية",
+      coupon: "ROYAL-KIDS-SMILE",
+      badge: "جناح أطفال ترفيهي بدون ألم",
+      image: "https://images.unsplash.com/photo-1758205307836-0829c799890b?auto=format&fit=crop&w=1200&q=80",
+      docId: "rd-doc-05"
     }
   ],
 
@@ -2817,6 +2988,7 @@ const ROYAL_NETWORK = {
       down: 6000,
       months: 18,
       duration: "6 - 14 شهر",
+      image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
       features: ["غير مرئي 100% وقابل للإزالة عند الأكل", "تصميم رقمي 3D مسبق لكامل مراحل العلاج", "مريح للثة وبدون أسلاك أو حاصرات معدنية"]
     },
     {
@@ -2826,6 +2998,7 @@ const ROYAL_NETWORK = {
       down: 2500,
       months: 16,
       duration: "12 - 18 شهر",
+      image: "assets/ad_ortho_distances.jpg",
       features: ["قوة شد عالية وسرعة فائقة في غلق المسافات", "حاصرات أصلية مصنعة في الولايات المتحدة", "متابعة شهرية مع استشاري التقويم مباشرة"]
     },
     {
@@ -2835,6 +3008,7 @@ const ROYAL_NETWORK = {
       down: 3500,
       months: 16,
       duration: "10 - 16 شهر",
+      image: "https://images.unsplash.com/photo-1598256989809-394fa4f6cd26?auto=format&fit=crop&w=600&q=80",
       features: ["حاصرات خزفية بلون الأسنان الطبيعي", "مظهر أنيق غير ملفت في العمل والمناسبات", "مقاوم للتصبغات مع مطاطات شفافة"]
     },
     {
@@ -2844,6 +3018,7 @@ const ROYAL_NETWORK = {
       down: 2000,
       months: 12,
       duration: "8 - 15 شهر",
+      image: "https://images.unsplash.com/photo-1631051103633-24959376b92d?auto=format&fit=crop&w=600&q=80",
       features: ["توجيه نمو الفك قبل البلوغ", "تجنب العمليات الجراحية لاحقاً", "متابعة دورية مرحة ومريحة للأطفال"]
     }
   ]
@@ -3675,6 +3850,9 @@ function renderOrthoSystems() {
 
   grid.innerHTML = ROYAL_NETWORK.orthoSystems.map((sys, idx) => {
     return `<div class="ortho-card ${idx === 1 ? 'selected' : ''}" id="ortho-sys-${sys.id}" onclick="selectOrthoSystem('${sys.id}')">
+      ${sys.image ? `<div style="width:100%; height:110px; border-radius:10px; overflow:hidden; margin-bottom:10px; background:#f0ebe1;">
+        <img src="${sys.image}" alt="${sys.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+      </div>` : ''}
       <div style="font-family:var(--f-head); font-size:15px; font-weight:800; margin-bottom:6px; color:var(--tx-primary);">${sys.name}</div>
       <div style="font-family:var(--f-mono); font-size:13px; font-weight:700; color:var(--tx-gold);">
         التكلفة التقديرية: ${sys.cost.toLocaleString('ar-EG')} ج.م
@@ -3748,11 +3926,15 @@ function renderDoctorsRoster() {
   if (!grid) return;
 
   grid.innerHTML = ROYAL_NETWORK.doctors.map(doc => {
+    const avatarHtml = doc.avatarImg 
+      ? `<img src="${doc.avatarImg}" alt="${doc.name}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" loading="lazy">` 
+      : `${doc.avatar}`;
+
     return `<div class="lux-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:14px;">
       <div>
         <div style="display:flex; align-items:center; gap:14px;">
-          <div style="width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg, #FFF9ED, #FAF2E3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px;">
-            ${doc.avatar}
+          <div style="width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg, #FFF9ED, #FAF2E3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px; overflow:hidden; flex-shrink:0; box-shadow:0 3px 10px rgba(0,0,0,0.08);">
+            ${avatarHtml}
           </div>
           <div>
             <h3 style="font-family:var(--f-head); font-size:16px; font-weight:800; color:var(--tx-primary);">${doc.name}</h3>
