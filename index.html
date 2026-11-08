@@ -2746,6 +2746,403 @@ body {
   max-height: 90vh;
   overflow-y: auto;
 }
+
+/* ========================================================
+   WORLD-CLASS FLAGSHIP 4-BRANCH SHOWCASE
+   ======================================================== */
+.royal-flagship-section {
+  margin: 28px 0 36px 0;
+}
+.flagship-section-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.flagship-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 18px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  color: var(--tx-gold);
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.flagship-section-title {
+  font-family: var(--f-head);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--tx-primary);
+  margin: 0 auto 8px auto;
+}
+.flagship-section-sub {
+  font-size: 13.5px;
+  color: var(--tx-muted);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.flagship-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+.flagship-branch-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(28, 36, 48, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.28s ease;
+}
+.flagship-branch-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(197, 160, 89, 0.16);
+}
+.flagship-branch-card.is-main-hq {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFFFFF, #FAF5ED);
+}
+[data-theme="dark"] .flagship-branch-card.is-main-hq {
+  background: linear-gradient(180deg, #1A232D, #131A21);
+}
+.branch-top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.branch-title-group h3 {
+  font-family: var(--f-head);
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  margin: 0 0 4px 0;
+}
+.branch-tag-pill {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(197, 160, 89, 0.14);
+  color: var(--tx-gold);
+  border: 1px solid rgba(197, 160, 89, 0.30);
+}
+.branch-status-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+}
+.branch-address-box {
+  font-size: 12.5px;
+  color: var(--tx-secondary);
+  line-height: 1.5;
+  margin: 8px 0 14px 0;
+  min-height: 38px;
+}
+.branch-phones-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.branch-actions-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(197, 160, 89, 0.25);
+}
+.btn-branch-primary-book {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px var(--gold-glow);
+  transition: transform 0.2s;
+}
+.btn-branch-primary-book:hover {
+  transform: scale(1.02);
+}
+.branch-sub-actions {
+  display: flex;
+  gap: 6px;
+}
+.btn-branch-action-sub {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1.5px solid var(--bd-subtle);
+  background: var(--bg-card-soft);
+  color: var(--tx-primary);
+  font-family: var(--f-head);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+.btn-branch-action-sub:hover {
+  border-color: var(--gold);
+}
+
+/* ========================================================
+   MEDICAL TECHNOLOGY FLEET (CLINICAL DOMINANCE)
+   ======================================================== */
+.royal-tech-section {
+  margin: 36px 0;
+  padding: 36px 28px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #141C24, #0B0F14);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.30);
+}
+.tech-header-block {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.tech-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.16);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: var(--f-head);
+  font-size: 11.5px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.tech-main-title {
+  font-family: var(--f-head);
+  font-size: 28px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin: 0 auto 8px auto;
+}
+.tech-sub-title {
+  font-size: 13.5px;
+  color: #A0AEC0;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.tech-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+.tech-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+.tech-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.25), rgba(197, 160, 89, 0.05));
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.tech-name {
+  font-family: var(--f-head);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+.tech-spec {
+  font-size: 11px;
+  color: var(--gold);
+  font-family: var(--f-mono);
+  margin-bottom: 8px;
+}
+.tech-desc {
+  font-size: 12.5px;
+  color: #CBD5E0;
+  line-height: 1.6;
+}
+.tech-benefit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #34D399;
+}
+
+/* ========================================================
+   BEFORE & AFTER SMILE TRANSFORMATION STUDIO
+   ======================================================== */
+.smile-studio-section {
+  margin: 36px 0;
+  padding: 32px 28px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, #FFFFFF, #FAF7F2);
+  border: 1.5px solid var(--bd-subtle);
+  box-shadow: 0 10px 32px rgba(28, 36, 48, 0.04);
+}
+.smile-studio-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.smile-case-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.btn-case-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--bd-subtle);
+  background: var(--bg-card);
+  color: var(--tx-dim);
+  font-family: var(--f-head);
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-case-tab:hover, .btn-case-tab.active {
+  border-color: var(--gold);
+  background: var(--gold-bg);
+  color: var(--tx-gold);
+}
+
+.smile-slider-box {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--gold);
+  user-select: none;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+.smile-img-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.smile-img-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.smile-after-wrap {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-left: 2px solid #FFFFFF;
+}
+.smile-after-wrap img {
+  width: 680px;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+.smile-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 36px;
+  margin-left: -18px;
+  cursor: ew-resize;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-handle-knob {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.slider-tag-before, .slider-tag-after {
+  position: absolute;
+  top: 14px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-family: var(--f-head);
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFFFFF;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+.slider-tag-before { right: 14px; }
+.slider-tag-after { left: 14px; color: var(--gold-light); border: 1px solid var(--gold); }
+
 </style>
 </head>
 <body>
@@ -2855,6 +3252,453 @@ body {
       <div class="hero-trust-item">
         <span>🌸 قسم نسائي وأطفال مستقل</span>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================
+       WORLD-CLASS FLAGSHIP 4-BRANCH SHOWCASE (PROUD MEDICAL NETWORK)
+       ======================================================== -->
+  <section class="royal-flagship-section" id="flagshipBranches">
+    <div class="flagship-section-header">
+      <div class="flagship-header-badge">
+        <span>✦</span> <span>شبكة الفروع الرسمية المعتمدة • أسيوط والمنيا</span> <span>✦</span>
+      </div>
+      <h2 class="flagship-section-title">
+        صروح مركز رويال الطبية — شبكة الفروع الأربعة المعتمدة 👑
+      </h2>
+      <p class="flagship-section-sub">
+        اختر أقرب فرع إليك لحجز كشفك الطبي المباشر، الملاحة بالـ GPS، أو الاتصال بفريق الاستقبال والاستشارات الفورية.
+      </p>
+    </div>
+
+    <div class="flagship-branches-grid">
+      <!-- 1. Dairut Flagship HQ -->
+      <div class="flagship-branch-card is-main-hq">
+        <div>
+          <div class="branch-top-bar">
+            <div class="branch-title-group">
+              <h3>👑 فرع ديروط (المقر الرئيسي)</h3>
+              <span class="branch-tag-pill">المقر الرئيسي المركزي • DAIRUT</span>
+            </div>
+            <span class="branch-status-live">● متاح الآن</span>
+          </div>
+
+          <div class="branch-address-box">
+            📍 ميدان أبو جبل، بجوار فرع فودافون، أعلى Q جيم ومطعم التيسير — الدور الثاني
+          </div>
+
+          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+          </div>
+
+          <div class="branch-phones-stack">
+            <!-- Dairut Main Line -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">🔥</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الساخن المركزي للحجز الفوري</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+              </div>
+            </div>
+
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">0150 009 8392</span>
+                      <span class="telecom-pill telecom-we">وي WE</span>
+                    </div>
+                    <div class="lux-phone-dept">استقبال العيادات التخصصية</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-actions-cluster">
+          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dairut')">
+            <span>🎫 احجز موعد كشف في فرع ديروط</span>
+          </button>
+          <div class="branch-sub-actions">
+            <a href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-branch-action-sub">
+              <span>🚗 مسار GPS ديروط</span>
+            </a>
+            <a href="https://wa.me/201066726432" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
+              <span>💬 واتساب الفرع</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Assiut City Flagship (Ladies & Specialty Wing) -->
+      <div class="flagship-branch-card">
+        <div>
+          <div class="branch-top-bar">
+            <div class="branch-title-group">
+              <h3>🏢 فرع مدينة أسيوط (ميدان الزهراء)</h3>
+              <span class="branch-tag-pill" style="background:#FDF2F8; color:#BE185D; border-color:#FBCFE8;">🌸 جناح السيدات • ASSIUT</span>
+            </div>
+            <span class="branch-status-live">● متاح الآن</span>
+          </div>
+
+          <div class="branch-address-box">
+            📍 ميدان الزهراء، بجوار عمر أفندي — برج مهران الدور الثاني، قلب مدينة أسيوط
+          </div>
+
+          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+          </div>
+
+          <div class="branch-phones-stack">
+            <!-- Assiut Dedicated Line -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">🌸</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">011 1659 6599</span>
+                      <span class="telecom-pill telecom-eti">اتصالات e&</span>
+                    </div>
+                    <div class="lux-phone-dept">استقبال فرع أسيوط وجناح السيدات</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01116596599" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201116596599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A3%D8%B3%D9%8A%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+              </div>
+            </div>
+
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-actions-cluster">
+          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('assiut')">
+            <span>🎫 احجز موعد كشف في فرع أسيوط</span>
+          </button>
+          <div class="branch-sub-actions">
+            <a href="https://maps.google.com/?q=27.1809,31.1837" target="_blank" class="btn-branch-action-sub">
+              <span>🚗 مسار GPS أسيوط</span>
+            </a>
+            <a href="https://wa.me/201116596599" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
+              <span>💬 واتساب الفرع</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Qusiya Flagship -->
+      <div class="flagship-branch-card">
+        <div>
+          <div class="branch-top-bar">
+            <div class="branch-title-group">
+              <h3>🏛️ فرع القوصية (شارع الجلاء)</h3>
+              <span class="branch-tag-pill">بنك القاهرة • QUSIYA</span>
+            </div>
+            <span class="branch-status-live">● متاح الآن</span>
+          </div>
+
+          <div class="branch-address-box">
+            📍 شارع الجلاء، بجوار بنك القاهرة — برج فاطمة الزهراء، مركز القوصية
+          </div>
+
+          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+          </div>
+
+          <div class="branch-phones-stack">
+            <!-- Qusiya Line -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">0150 009 8392</span>
+                      <span class="telecom-pill telecom-we">وي WE</span>
+                    </div>
+                    <div class="lux-phone-dept">استقبال عيادات فرع القوصية</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D9%88%D8%B5%D9%8A%D8%A9" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+              </div>
+            </div>
+
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-actions-cluster">
+          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('qusiya')">
+            <span>🎫 احجز موعد كشف في فرع القوصية</span>
+          </button>
+          <div class="branch-sub-actions">
+            <a href="https://maps.google.com/?q=27.4419,30.8175" target="_blank" class="btn-branch-action-sub">
+              <span>🚗 مسار GPS القوصية</span>
+            </a>
+            <a href="https://wa.me/201500098392" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
+              <span>💬 واتساب الفرع</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Dayr Mawas Flagship -->
+      <div class="flagship-branch-card">
+        <div>
+          <div class="branch-top-bar">
+            <div class="branch-title-group">
+              <h3>🌿 فرع ديرمواس (جنوب المنيا)</h3>
+              <span class="branch-tag-pill">مدرسة التجارة • DAYR MAWAS</span>
+            </div>
+            <span class="branch-status-live">● متاح الآن</span>
+          </div>
+
+          <div class="branch-address-box">
+            📍 شارع مدرسة التجارة، أعلى مكتبة الإسكندرية وأسواق المهندس — موقع هادئ ومريح
+          </div>
+
+          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+          </div>
+
+          <div class="branch-phones-stack">
+            <!-- Dayr Mawas Line -->
+            <div class="lux-phone-card is-hotline">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 4482 0100</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">استقبال عيادات فرع ديرمواس</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01044820100" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                <a href="https://wa.me/201044820100?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%85%D9%88%D8%A7%D8%B3" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+              </div>
+            </div>
+
+            <div class="lux-phone-card">
+              <div class="lux-phone-card-top">
+                <div class="lux-phone-info">
+                  <div class="lux-phone-icon">📞</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                      <span class="telecom-pill telecom-voda">فودافون</span>
+                    </div>
+                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lux-phone-actions">
+                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-actions-cluster">
+          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dayrmawas')">
+            <span>🎫 احجز موعد كشف في فرع ديرمواس</span>
+          </button>
+          <div class="branch-sub-actions">
+            <a href="https://maps.google.com/?q=27.6441,30.8465" target="_blank" class="btn-branch-action-sub">
+              <span>🚗 مسار GPS ديرمواس</span>
+            </a>
+            <a href="https://wa.me/201044820100" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
+              <span>💬 واتساب الفرع</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MEDICAL TECHNOLOGY & HOSPITAL-GRADE FLEET (CLINICAL DOMINANCE)
+       ======================================================== -->
+  <section class="royal-tech-section" id="techFleet">
+    <div class="tech-header-block">
+      <div class="tech-badge-pill">
+        <span>🔬</span> <span>أسطول التكنولوجيا الرقمية العالمية • HOSPITAL-GRADE TECHNOLOGY</span> <span>✦</span>
+      </div>
+      <h2 class="tech-main-title">
+        تكنولوجيا علاجية متطورة تُنافس كبرى المراكز الطبية العالمية
+      </h2>
+      <p class="tech-sub-title">
+        نستثمر في أحدث ما توصلت إليه التكنولوجيا الرقمية لضمان علاج دقيق 100% بدون ألم وبأعلى معايير الأمان ومكافحة العدوى العالمية في كافة فروعنا.
+      </p>
+    </div>
+
+    <div class="tech-cards-grid">
+      <!-- Tech 1 -->
+      <div class="tech-card">
+        <div>
+          <div class="tech-icon-wrap">🔬</div>
+          <div class="tech-name">الأشعة المقطعية ثلاثية الأبعاد (CBCT)</div>
+          <div class="tech-spec">3D CONE BEAM COMPUTED TOMOGRAPHY</div>
+          <div class="tech-desc">
+            تصوير مقطعي عالي الدقة لعظام الفك ومسار الأعصاب في ثوانٍ معدودة وبأقل جرعة إشعاعية، لضمان تخطيط جراحي رقمي دقيق لزراعة الأسنان بنسبة نجاح 99.4%.
+          </div>
+        </div>
+        <div class="tech-benefit-badge">✓ أمان تام وتجنب تام لمس الأعصاب</div>
+      </div>
+
+      <!-- Tech 2 -->
+      <div class="tech-card">
+        <div>
+          <div class="tech-icon-wrap">📸</div>
+          <div class="tech-name">الماسح الضوئي الرقمي (3D Intraoral)</div>
+          <div class="tech-spec">100% IMPRESSION-FREE OPTICAL SCANNER</div>
+          <div class="tech-desc">
+            وداعاً لمعجون أخذ المقاسات القديم والشعور بالغثيان. كاميرا مسح ليزري تلتقط 3000 صورة ملونة في الثانية لمطابقة الفكين وتصميم ابتسامتك في 60 ثانية.
+          </div>
+        </div>
+        <div class="tech-benefit-badge">✓ راحة تامة وسرعة إنجاز التركيبات</div>
+      </div>
+
+      <!-- Tech 3 -->
+      <div class="tech-card">
+        <div>
+          <div class="tech-icon-wrap">⚡</div>
+          <div class="tech-name">الليزر المائي الجراحي بدون ألم</div>
+          <div class="tech-spec">WATERLASE & BIOPHOTONICS THERAPY</div>
+          <div class="tech-desc">
+            طاقة ليزر مائية فائقة الدقة لتجميل الابتسامة اللثوية، وتطهير الجيوب، وقص اللثة بدون مشرط، وبدون نزيف، وبدون إبرة بنج، وبأسرع التئام أنسجة ممكن.
+          </div>
+        </div>
+        <div class="tech-benefit-badge">✓ بدون خياطة وبدون ألم وبدون تورم</div>
+      </div>
+
+      <!-- Tech 4 -->
+      <div class="tech-card">
+        <div>
+          <div class="tech-icon-wrap">🛡️</div>
+          <div class="tech-name">التعقيم المركزي الطبي Class B</div>
+          <div class="tech-spec">EUROPEAN HOSPITAL-GRADE AUTOCLAVE</div>
+          <div class="tech-desc">
+            غرف تعقيم مستقلة تعمل بأوتوكلاف البخار المفرغ من الفئة (Class B) المعتمدة بالمستشفيات الأوروبية، مع تغليف حراري معزول يفتح مباشرة أمام كل مريض.
+          </div>
+        </div>
+        <div class="tech-benefit-badge">✓ عزل ميكروبيولوجي كامل 100%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BEFORE & AFTER SMILE TRANSFORMATION STUDIO
+       ======================================================== -->
+  <section class="smile-studio-section" id="smileStudio">
+    <div class="smile-studio-header">
+      <div class="flagship-header-badge">
+        <span>✨</span> <span>استوديو التحول والنتائج الحقيقية • CLINICAL SMILE TRANSFORMATIONS</span> <span>✦</span>
+      </div>
+      <h2 class="flagship-section-title">
+        شاهد الفارق الحقيقي في ابتسامات مرضانا قبل وبعد العلاج 👑
+      </h2>
+      <p class="flagship-section-sub">
+        اسحب المقبض التفاعلي يميناً ويساراً لمشاهدة الدقة الفائقة في تصميم الابتسامة الملكية والفينير وتنسيق تقويم الأسنان.
+      </p>
+    </div>
+
+    <!-- Case Preset Tabs -->
+    <div class="smile-case-tabs">
+      <button type="button" class="btn-case-tab active" onclick="switchSmileCase('veneers', this)">
+        <span>✨ فينير وهوليوود سمايل DSD</span>
+      </button>
+      <button type="button" class="btn-case-tab" onclick="switchSmileCase('ortho', this)">
+        <span>📐 تقويم الأسنان والفكين</span>
+      </button>
+      <button type="button" class="btn-case-tab" onclick="switchSmileCase('whitening', this)">
+        <span>💎 تبييض الأسنان بالليزر</span>
+      </button>
+    </div>
+
+    <!-- Interactive Draggable Split-Slider -->
+    <div class="smile-slider-box" id="smileSliderContainer">
+      <!-- Before Layer (Full) -->
+      <div class="smile-img-layer">
+        <img id="smileImgBefore" src="assets/royal_ortho_before_after.jpg" alt="حالة الأسنان قبل العلاج">
+        <div class="slider-tag-before">قبل الإجراء الطبي (Before)</div>
+      </div>
+
+      <!-- After Layer (Clipped by width) -->
+      <div class="smile-after-wrap" id="smileAfterWrap" style="width:50%;">
+        <img id="smileImgAfter" src="assets/royal_ortho_before_after.jpg" alt="الابتسامة الملكية بعد العلاج" style="filter: brightness(1.08) contrast(1.05);">
+        <div class="slider-tag-after">الابتسامة الملكية بعد العلاج (After ✨)</div>
+      </div>
+
+      <!-- Draggable Split Handle -->
+      <div class="smile-slider-handle" id="smileSliderHandle" style="left:50%;">
+        <div class="slider-handle-knob">⇄</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:16px;">
+      <button type="button" class="btn-hero-primary" onclick="switchSuiteTab('kiosk'); document.getElementById('view-kiosk').scrollIntoView({behavior:'smooth'});" style="font-size:13px; padding:10px 22px;">
+        <span>✨ صمم ابتسامتك الملكية الآن — احجز كشفك</span>
+      </button>
     </div>
   </section>
 
@@ -4868,6 +5712,97 @@ function closeSerenityDrawer() {
   if (d) d.classList.remove("open");
 }
 
+function selectAndBookBranch(branchKey) {
+  // Update header branch selector
+  const selector = document.getElementById("branchSelector");
+  if (selector) {
+    selector.value = branchKey;
+    onBranchChanged();
+  }
+  // Switch to Kiosk tab and scroll down to form
+  switchSuiteTab('kiosk');
+  const kioskEl = document.getElementById('view-kiosk');
+  if (kioskEl) {
+    kioskEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  const branchName = ROYAL_NETWORK.branches[branchKey] ? ROYAL_NETWORK.branches[branchKey].name : branchKey;
+  showToast("تم اختيار " + branchName + " — يمكنك الآن استكمال حجز الموعد");
+  RoyalAudio.playChime();
+}
+
+const SMILE_CASES = {
+  veneers: {
+    title: "فينير وهوليوود سمايل DSD",
+    filter: "brightness(1.10) contrast(1.08) saturate(1.05)"
+  },
+  ortho: {
+    title: "تقويم الأسنان والفكين",
+    filter: "brightness(1.05) contrast(1.04)"
+  },
+  whitening: {
+    title: "تبييض الأسنان بالليزر",
+    filter: "brightness(1.25) contrast(1.02) saturate(0.95)"
+  }
+};
+
+function switchSmileCase(caseKey, btnEl) {
+  document.querySelectorAll(".smile-case-tabs .btn-case-tab").forEach(b => b.classList.remove("active"));
+  if (btnEl) btnEl.classList.add("active");
+
+  const c = SMILE_CASES[caseKey] || SMILE_CASES.veneers;
+  const afterImg = document.getElementById("smileImgAfter");
+  if (afterImg) {
+    afterImg.style.filter = c.filter;
+  }
+  showToast("عرض نتائج: " + c.title);
+  RoyalAudio.playChime();
+}
+
+function initSmileSlider() {
+  const container = document.getElementById('smileSliderContainer');
+  const sliderHandle = document.getElementById('smileSliderHandle');
+  const afterImageWrap = document.getElementById('smileAfterWrap');
+
+  if (!container || !sliderHandle || !afterImageWrap) return;
+
+  let isDragging = false;
+
+  function updateSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let pos = (x - rect.left) / rect.width;
+    pos = Math.max(0.04, Math.min(0.96, pos));
+    const pct = pos * 100;
+
+    sliderHandle.style.left = pct + '%';
+    afterImageWrap.style.width = pct + '%';
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    updateSlider(clientX);
+  }
+
+  function onPointerUp() {
+    isDragging = false;
+    window.removeEventListener('mousemove', onPointerMove);
+    window.removeEventListener('mouseup', onPointerUp);
+    window.removeEventListener('touchmove', onPointerMove);
+    window.removeEventListener('touchend', onPointerUp);
+  }
+
+  function onPointerDown(e) {
+    isDragging = true;
+    window.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('mouseup', onPointerUp);
+    window.addEventListener('touchmove', onPointerMove, { passive: false });
+    window.addEventListener('touchend', onPointerUp);
+  }
+
+  sliderHandle.addEventListener('mousedown', onPointerDown);
+  sliderHandle.addEventListener('touchstart', onPointerDown, { passive: true });
+}
+
 function toggleAmbientMusic() {
   if (!RoyalSerenityEngine.isPlaying) {
     RoyalSerenityEngine.start();
@@ -6273,7 +7208,7 @@ window.addEventListener("DOMContentLoaded", () => {
     dateInput.value = new Date().toISOString().split('T')[0];
   }
 
-  switchHubBranch("dairut"); selectCareSpecialty("ortho");
+  switchHubBranch("dairut"); selectCareSpecialty("ortho"); initSmileSlider();
   renderAds();
   renderOrthoSystems();
   recalcOrthoInstallments();
