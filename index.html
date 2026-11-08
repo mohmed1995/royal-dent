@@ -349,80 +349,336 @@ body {
 }
 
 /* ========================================================
-   DISCRETE SERENITY AMBIENCE FLOATING BAR
+   ROYAL SERENITY AMBIENT SUITE 2.0 (MEDITATIVE AUDIO SUITE)
    ======================================================== */
 .serenity-player-bar {
-  margin: 14px 0 20px 0;
-  padding: 12px 20px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #FFFFFF, #FAF4E6);
+  margin: 14px 0 24px 0;
+  padding: 18px 24px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #FFFFFF, #FAF5EA);
   border: 1.5px solid var(--bd-subtle);
-  box-shadow: var(--shadow-lux);
+  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+[data-theme="dark"] .serenity-player-bar {
+  background: linear-gradient(135deg, #18222C, #131A22);
+}
+.serenity-player-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+  opacity: 0.9;
+}
+.serenity-header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
 }
-[data-theme="dark"] .serenity-player-bar {
-  background: linear-gradient(135deg, #18222C, #131A22);
-}
-.serenity-info {
+.serenity-brand-block {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex: 1 1 300px;
+  gap: 14px;
+  flex: 1 1 320px;
 }
-.serenity-pulse {
-  width: 10px;
-  height: 10px;
+.serenity-pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 99px;
+  background: rgba(197, 160, 89, 0.14);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tx-gold);
+  white-space: nowrap;
+}
+.serenity-pulse-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 10px var(--gold);
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseGreen 2s infinite ease-in-out;
 }
-.serenity-title {
+@keyframes pulseGreen {
+  0%, 100% { opacity: 0.6; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 12px #10B981; }
+}
+.serenity-title-box {
+  display: flex;
+  flex-direction: column;
+}
+.serenity-main-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.serenity-sub-desc {
+  font-size: 11.5px;
+  color: var(--tx-muted);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* Equalizer Visualizer */
+.serenity-visualizer-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 3.5px;
+  height: 32px;
+  padding: 4px 10px;
+  background: rgba(197, 160, 89, 0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+}
+.serenity-visualizer-bar {
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+  border-radius: 3px;
+  transition: height 0.08s ease;
+}
+
+/* Mood Selection Cards */
+.serenity-moods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+.serenity-mood-pill {
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.22s ease;
+  user-select: none;
+  text-align: right;
+}
+.serenity-mood-pill:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.16);
+}
+.serenity-mood-pill.active {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.16), rgba(229, 201, 143, 0.09));
+  box-shadow: 0 4px 16px rgba(197, 160, 89, 0.22);
+}
+.serenity-mood-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.serenity-mood-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.serenity-mood-name {
   font-size: 13px;
   font-weight: 800;
   color: var(--tx-primary);
 }
-.serenity-sub {
-  font-size: 11px;
-  color: var(--tx-muted);
+.serenity-mood-pill.active .serenity-mood-name {
+  color: var(--tx-gold);
 }
-.serenity-controls {
+.serenity-mood-tag {
+  font-size: 11px;
+  color: var(--tx-dim);
+  margin-top: 2px;
+}
+
+/* Controls bottom row */
+.serenity-controls-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(197, 160, 89, 0.28);
 }
-.btn-serenity-action {
-  padding: 7px 16px;
+.serenity-play-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-serenity-master {
+  padding: 9px 22px;
   border-radius: 99px;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: #FFFFFF;
   border: none;
   font-family: var(--f-head);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  box-shadow: 0 2px 10px var(--gold-glow);
-  transition: all 0.2s;
+  gap: 8px;
+  box-shadow: 0 4px 14px var(--gold-glow);
+  transition: all 0.22s ease;
 }
-.btn-serenity-action:hover {
+.btn-serenity-master:hover {
   transform: scale(1.03);
+  box-shadow: 0 6px 18px var(--gold-glow);
 }
-.serenity-volume {
+.btn-serenity-master.is-active-playing {
+  background: linear-gradient(135deg, #10B981, #059669);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+.serenity-now-playing {
+  display: flex;
+  flex-direction: column;
+}
+.serenity-track-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+}
+.serenity-track-desc {
+  font-size: 11px;
+  color: var(--tx-dim);
+}
+
+.serenity-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.serenity-vol-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card-soft);
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--bd-subtle);
+  font-size: 12px;
+}
+.serenity-vol-slider {
+  width: 85px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.serenity-vol-label {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--tx-gold);
+  min-width: 32px;
+}
+
+.serenity-timer-box {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 11.5px;
+  color: var(--tx-muted);
 }
-.serenity-volume input[type="range"] {
-  width: 80px;
-  accent-color: var(--gold);
+.btn-timer-pill {
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--bd-subtle);
+  background: var(--bg-card-soft);
+  color: var(--tx-dim);
+  font-size: 11px;
+  font-weight: 700;
   cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-timer-pill:hover, .btn-timer-pill.active {
+  border-color: var(--gold);
+  background: var(--gold-bg);
+  color: var(--tx-gold);
+}
+
+/* FLOATING SERENITY MINI-WIDGET */
+.floating-serenity-widget {
+  position: fixed;
+  bottom: 78px;
+  left: 20px;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid var(--bd-subtle);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.28s ease;
+  user-select: none;
+}
+[data-theme="dark"] .floating-serenity-widget {
+  background: rgba(24, 34, 44, 0.94);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.floating-serenity-widget.is-playing {
+  border-color: var(--gold);
+  box-shadow: 0 4px 22px rgba(197, 160, 89, 0.28);
+}
+.mini-visualizer-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+}
+.mini-visualizer-bars span {
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: height 0.08s ease;
+}
+.floating-serenity-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-float-serenity-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  box-shadow: 0 2px 8px var(--gold-glow);
+  transition: transform 0.15s;
+}
+.btn-float-serenity-toggle:hover {
+  transform: scale(1.1);
 }
 
 /* ========================================================
@@ -2188,24 +2444,103 @@ body {
 
 <main class="app-container">
 
-  <!-- DISCRETE SERENITY PLAYER BAR (MEDITATIVE CLINIC AMBIENCE) -->
+  <!-- ROYAL SERENITY AMBIENT SUITE (CLINICAL 432Hz MEDITATIVE AUDIO) -->
   <div class="serenity-player-bar" id="serenityBar">
-    <div class="serenity-info">
-      <span class="serenity-pulse"></span>
-      <div>
-        <div class="serenity-title">🎧 استمع لأجواء الاسترخاء والهدوء الطبي في عيادات رويال</div>
-        <div class="serenity-sub">ترددات صوتية مهدئة لراحة الأعصاب وتخفيف التوتر أثناء اختيار علاجك وكشفك الطبي</div>
+    <!-- Top Header Row -->
+    <div class="serenity-header-row">
+      <div class="serenity-brand-block">
+        <div class="serenity-pulse-badge">
+          <span class="serenity-pulse-dot"></span>
+          <span>أجواء صوتية استرخائية حية</span>
+        </div>
+        <div class="serenity-title-box">
+          <div class="serenity-main-title">
+            <span>🎧 استمع للأجواء الهادئة في عيادات رويال (Royal Serenity)</span>
+            <span class="telecom-pill" style="background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;">مُعتمد 432Hz</span>
+          </div>
+          <div class="serenity-sub-desc">
+            ترددات صوتية مهدئة علمياً لتخفيف ضربات القلب وإزالة خوف الأسنان (Dentophobia) لراحة تامة أثناء التصفح والكشف
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-time Equalizer Visualizer (Dynamic Web Audio Bars) -->
+      <div class="serenity-visualizer-wrap" id="serenityVisualizer" title="محلل الترددات الصوتية الحي">
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
       </div>
     </div>
-    <div class="serenity-controls">
-      <button type="button" class="btn-serenity-action" id="btnSerenityPlay" onclick="toggleAmbientMusic()">
-        <span id="serenityPlayIcon">▶</span>
-        <span id="serenityPlayText">تشغيل الموسيقى الهادئة</span>
-      </button>
-      <div class="serenity-volume">
-        <span>🔉</span>
-        <input type="range" min="0" max="100" value="40" id="ambientVolRange" oninput="setAmbientVolume(this.value)" title="مستوى الصوت">
-        <span>🔊</span>
+
+    <!-- Mood Selection Cards (3 Clinical Ambience Modes) -->
+    <div class="serenity-moods-grid">
+      <!-- Mode 1: Piano & Crystals -->
+      <div class="serenity-mood-pill active" data-mode="piano" onclick="setSerenityMode('piano')" title="نغمات بيانو وأوتار هادئة ورنين كريستالي">
+        <div class="serenity-mood-icon">🎹</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">بيانو وسكينة ملكية</div>
+          <div class="serenity-mood-tag">432Hz • أوتار ورنين كريستالي دافئ</div>
+        </div>
+      </div>
+
+      <!-- Mode 2: Zen & Water Stream -->
+      <div class="serenity-mood-pill" data-mode="zen" onclick="setSerenityMode('zen')" title="صوت خرير ماء هادئ ورياح لطيفة مع نغمات بنتونيك">
+        <div class="serenity-mood-icon">🌿</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">واحة زن وخرير الماء</div>
+          <div class="serenity-mood-tag">طبيعة نقية • أمواج وشلالات ناعمة</div>
+        </div>
+      </div>
+
+      <!-- Mode 3: Deep Alpha Waves -->
+      <div class="serenity-mood-pill" data-mode="alpha" onclick="setSerenityMode('alpha')" title="ترددات ألفا 10Hz لمزامنة المخ وإزالة توتر عضلات الوجه">
+        <div class="serenity-mood-icon">✨</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">ترددات ألفا 432Hz للشفاء</div>
+          <div class="serenity-mood-tag">موجات ثنائية 10Hz • استرخاء عصبي عميق</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls & Timer Row -->
+    <div class="serenity-controls-row">
+      <div class="serenity-play-group">
+        <button type="button" class="btn-serenity-master" id="btnSerenityPlay" onclick="toggleAmbientMusic()">
+          <span id="serenityPlayIcon" style="font-size:14px;">▶</span>
+          <span id="serenityPlayText">تشغيل الموسيقى الهادئة</span>
+        </button>
+
+        <div class="serenity-now-playing">
+          <div class="serenity-track-title" id="serenityTrackTitle">بيانو الاسترخاء الملكي</div>
+          <div class="serenity-track-desc" id="serenityTrackDesc">أوتار هادئة ورنين كريستالي 432Hz لتخفيف التوتر وإشاعة الطمأنينة قبل الكشف</div>
+        </div>
+      </div>
+
+      <div class="serenity-actions-group">
+        <!-- Volume Control -->
+        <div class="serenity-vol-box" title="التحكم في شدة الصوت">
+          <button type="button" onclick="toggleMuteSerenity()" style="background:none; border:none; cursor:pointer; font-size:13px;" id="serenityMuteIcon">🔉</button>
+          <input type="range" min="0" max="100" value="40" id="ambientVolRange" class="serenity-vol-slider" oninput="setAmbientVolume(this.value)" title="مستوى الصوت">
+          <span class="serenity-vol-label" id="ambientVolLabel">40%</span>
+        </div>
+
+        <!-- Sleep Timer -->
+        <div class="serenity-timer-box">
+          <span>⏱ مؤقت الاسترخاء:</span>
+          <button type="button" class="btn-timer-pill active" onclick="setSerenitySleepTimer(0, this)">مستمر</button>
+          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(10, this)">10 د</button>
+          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(20, this)">20 د</button>
+          <span id="sleepTimerStatus" style="font-family:var(--f-mono); font-size:11px; font-weight:700; color:var(--tx-gold); margin-right:4px;"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -3774,73 +4109,272 @@ const ROYAL_NETWORK = {
 };
 
 /* ========================================================
-   RELAXING AMBIENT MUSIC ENGINE (WEB AUDIO API)
-   Designed specifically for dental anxiety relief & calming atmosphere
+   RELAXING AMBIENT MUSIC ENGINE 2.0 (WEB AUDIO API)
+   Multi-mode Solfeggio 432Hz & Natural Sound Generator for Dental Anxiety Relief
    ======================================================== */
 const RoyalSerenityEngine = {
   ctx: null,
-  isPlaying: false,
+  analyser: null,
   masterGain: null,
+  filterNode: null,
+  noiseNode: null,
+  noiseGain: null,
+  noiseFilter: null,
+  isPlaying: false,
   timerId: null,
   volume: 0.40,
+  lastNonZeroVolume: 0.40,
   chordIndex: 0,
+  currentMode: 'piano', // 'piano' | 'zen' | 'alpha'
+  sleepTimerId: null,
+  sleepSeconds: 0,
+  visualizerInterval: null,
 
-  // 432 Hz Solfeggio / Ambient Lounge Meditative Chords:
-  chords: [
-    [174.61, 220.00, 261.63, 329.63, 392.00], // Fmaj9 (Serenity & Openness)
-    [130.81, 196.00, 246.94, 261.63, 329.63], // Cmaj7 (Deep Calm & Clarity)
-    [110.00, 164.81, 220.00, 261.63, 329.63], // Am9 (Gentle Introspection)
-    [98.00, 146.83, 196.00, 246.94, 293.66]   // G6/9 (Uplifting Relief)
-  ],
+  modes: {
+    piano: {
+      id: 'piano',
+      name: 'بيانو الاسترخاء الملكي',
+      tag: '432Hz • هدوء الأعصاب',
+      desc: 'أوتار هادئة ورنين كريستالي 432Hz لتخفيف التوتر وإشاعة الطمأنينة قبل الكشف',
+      chords: [
+        [174.61, 220.00, 261.63, 329.63, 392.00], // Fmaj9
+        [130.81, 196.00, 246.94, 261.63, 329.63], // Cmaj7
+        [110.00, 164.81, 220.00, 261.63, 329.63], // Am9
+        [98.00, 146.83, 196.00, 246.94, 293.66],  // G6/9
+        [164.81, 196.00, 246.94, 329.63, 392.00]  // Em7/9
+      ],
+      stepDuration: 4800
+    },
+    zen: {
+      id: 'zen',
+      name: 'واحة زن وخرير المياه الطبيعي',
+      tag: 'طبيعة نقية • راحة تامة',
+      desc: 'خرير مياه رقراقة ونغمات رنين بنتونيك دافئة تحاكي هدوء الطبيعة وتزيل الخوف تماماً',
+      notes: [146.83, 174.61, 196.00, 220.00, 261.63, 293.66, 349.23, 392.00], // Celtic/Zen pentatonic
+      stepDuration: 3600
+    },
+    alpha: {
+      id: 'alpha',
+      name: 'ترددات ألفا 432Hz للشفاء العصبي',
+      tag: 'موجات ألفا 10Hz طبية',
+      desc: 'ترددات صوتية مدروسة علمياً لمزامنة موجات الدماغ وإبطاء دقات القلب والوصول للسلام النفسي',
+      baseFreq: 432.0,
+      beatFreq: 10.0, // 10Hz Alpha State
+      stepDuration: 5500
+    }
+  },
 
   init() {
     if (this.ctx) return;
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) return;
-    this.ctx = new AudioContextClass();
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    this.ctx = new AudioCtx();
 
+    // Analyser node for real-time visualizer
+    this.analyser = this.ctx.createAnalyser();
+    this.analyser.fftSize = 64;
+    this.analyser.smoothingTimeConstant = 0.8;
+
+    // Master gain
     this.masterGain = this.ctx.createGain();
     this.masterGain.gain.setValueAtTime(this.volume, this.ctx.currentTime);
-    this.masterGain.connect(this.ctx.destination);
+
+    // Warm master filter
+    this.filterNode = this.ctx.createBiquadFilter();
+    this.filterNode.type = "lowpass";
+    this.filterNode.frequency.setValueAtTime(900, this.ctx.currentTime);
+
+    this.filterNode.connect(this.masterGain);
+    this.masterGain.connect(this.analyser);
+    this.analyser.connect(this.ctx.destination);
   },
 
-  playChord(frequencies, duration = 5.5) {
+  setMode(modeKey) {
+    if (!this.modes[modeKey]) return;
+    this.currentMode = modeKey;
+    this.chordIndex = 0;
+
+    if (modeKey !== 'zen') {
+      this.stopNoise();
+    } else if (this.isPlaying) {
+      this.startNoise();
+    }
+
+    this.updateUI();
+  },
+
+  // Generates soothing continuous stream/water sound using pink noise
+  startNoise() {
+    if (!this.ctx) return;
+    this.stopNoise();
+
+    const bufferSize = this.ctx.sampleRate * 4;
+    const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+
+    for (let i = 0; i < bufferSize; i++) {
+      const white = Math.random() * 2 - 1;
+      b0 = 0.99886 * b0 + white * 0.0555179;
+      b1 = 0.99332 * b1 + white * 0.0750759;
+      b2 = 0.96900 * b2 + white * 0.1538520;
+      b3 = 0.86650 * b3 + white * 0.3104856;
+      b4 = 0.55000 * b4 + white * 0.5329522;
+      b5 = -0.7616 * b5 - white * 0.0168980;
+      output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.04;
+      b6 = white * 0.115926;
+    }
+
+    const whiteSource = this.ctx.createBufferSource();
+    whiteSource.buffer = noiseBuffer;
+    whiteSource.loop = true;
+
+    // Filter to simulate gentle water stream & soft breeze
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.frequency.setValueAtTime(420, this.ctx.currentTime);
+    filter.Q.setValueAtTime(0.7, this.ctx.currentTime);
+
+    // Modulate the filter frequency slowly with an LFO to create waves/stream effect
+    const lfo = this.ctx.createOscillator();
+    const lfoGain = this.ctx.createGain();
+    lfo.frequency.setValueAtTime(0.18, this.ctx.currentTime);
+    lfoGain.gain.setValueAtTime(160, this.ctx.currentTime);
+    lfo.connect(filter.frequency);
+    lfo.start();
+
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(0.001, this.ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.18, this.ctx.currentTime + 1.5);
+
+    whiteSource.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.masterGain);
+
+    whiteSource.start();
+
+    this.noiseNode = whiteSource;
+    this.noiseGain = gain;
+    this.noiseFilter = filter;
+  },
+
+  stopNoise() {
+    if (this.noiseGain && this.ctx) {
+      try {
+        this.noiseGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.6);
+        setTimeout(() => {
+          if (this.noiseNode) {
+            try { this.noiseNode.stop(); } catch(e){}
+            this.noiseNode = null;
+          }
+        }, 700);
+      } catch(e) {
+        this.noiseNode = null;
+      }
+    }
+  },
+
+  playStep() {
     if (!this.ctx || !this.isPlaying) return;
+    const mode = this.modes[this.currentMode];
+
+    if (this.currentMode === 'piano') {
+      const chord = mode.chords[this.chordIndex];
+      this.playPianoChord(chord, 5.2);
+      this.chordIndex = (this.chordIndex + 1) % mode.chords.length;
+      this.timerId = setTimeout(() => this.playStep(), mode.stepDuration);
+    } else if (this.currentMode === 'zen') {
+      this.playZenHarp(mode.notes);
+      this.timerId = setTimeout(() => this.playStep(), mode.stepDuration);
+    } else if (this.currentMode === 'alpha') {
+      this.playAlphaTone(mode.baseFreq, mode.beatFreq, 5.8);
+      this.timerId = setTimeout(() => this.playStep(), mode.stepDuration);
+    }
+  },
+
+  playPianoChord(freqs, duration) {
     const now = this.ctx.currentTime;
-
-    // Filter to keep sound silky, warm, never harsh on the ears
-    const biquad = this.ctx.createBiquadFilter();
-    biquad.type = "lowpass";
-    biquad.frequency.setValueAtTime(650, now);
-    biquad.connect(this.masterGain);
-
-    // Warm chord oscillators
-    frequencies.forEach((freq, idx) => {
+    freqs.forEach((freq, idx) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
-
       osc.type = idx === 0 ? "triangle" : "sine";
       osc.frequency.setValueAtTime(freq, now);
 
-      // Very gentle attack and long soothing decay
       gain.gain.setValueAtTime(0.001, now);
-      gain.gain.exponentialRampToValueAtTime(0.07 / frequencies.length, now + 1.8);
+      gain.gain.exponentialRampToValueAtTime(0.065 / freqs.length, now + 1.6);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
       osc.connect(gain);
-      gain.connect(biquad);
+      gain.connect(this.filterNode);
 
       osc.start(now);
       osc.stop(now + duration);
     });
 
-    // Occasional calming crystalline chime (at 432 harmonic multiples)
-    if (Math.random() > 0.3) {
-      this.playChimeBell(frequencies[frequencies.length - 1] * 2, now + 0.8);
+    if (Math.random() > 0.25) {
+      this.playCrystalBell(freqs[freqs.length - 1] * 2, now + 0.9);
     }
   },
 
-  playChimeBell(freq, time) {
+  playZenHarp(notes) {
+    const now = this.ctx.currentTime;
+    const count = 2 + Math.floor(Math.random() * 2);
+    for (let i = 0; i < count; i++) {
+      const note = notes[Math.floor(Math.random() * notes.length)];
+      const delay = i * 0.75 + (Math.random() * 0.2);
+      this.playCrystalBell(note, now + delay, 3.2, 0.04);
+    }
+  },
+
+  playAlphaTone(base, beat, duration) {
+    const now = this.ctx.currentTime;
+
+    const oscL = this.ctx.createOscillator();
+    const gainL = this.ctx.createGain();
+    oscL.type = "sine";
+    oscL.frequency.setValueAtTime(base, now);
+
+    const oscR = this.ctx.createOscillator();
+    const gainR = this.ctx.createGain();
+    oscR.type = "sine";
+    oscR.frequency.setValueAtTime(base + beat, now);
+
+    const sub = this.ctx.createOscillator();
+    const subGain = this.ctx.createGain();
+    sub.type = "triangle";
+    sub.frequency.setValueAtTime(base / 2, now);
+
+    gainL.gain.setValueAtTime(0.001, now);
+    gainL.gain.exponentialRampToValueAtTime(0.035, now + 2.0);
+    gainL.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    gainR.gain.setValueAtTime(0.001, now);
+    gainR.gain.exponentialRampToValueAtTime(0.035, now + 2.0);
+    gainR.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    subGain.gain.setValueAtTime(0.001, now);
+    subGain.gain.exponentialRampToValueAtTime(0.02, now + 2.0);
+    subGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    oscL.connect(gainL);
+    gainL.connect(this.masterGain);
+
+    oscR.connect(gainR);
+    gainR.connect(this.masterGain);
+
+    sub.connect(subGain);
+    subGain.connect(this.masterGain);
+
+    oscL.start(now);
+    oscR.start(now);
+    sub.start(now);
+
+    oscL.stop(now + duration);
+    oscR.stop(now + duration);
+    sub.stop(now + duration);
+  },
+
+  playCrystalBell(freq, time, duration = 2.6, volume = 0.025) {
     if (!this.ctx) return;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
@@ -3849,14 +4383,14 @@ const RoyalSerenityEngine = {
     osc.frequency.setValueAtTime(freq, time);
 
     gain.gain.setValueAtTime(0.001, time);
-    gain.gain.linearRampToValueAtTime(0.02, time + 0.05);
-    gain.gain.exponentialRampToValueAtTime(0.0001, time + 2.4);
+    gain.gain.linearRampToValueAtTime(volume, time + 0.06);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
 
     osc.connect(gain);
     gain.connect(this.masterGain);
 
     osc.start(time);
-    osc.stop(time + 2.5);
+    osc.stop(time + duration + 0.1);
   },
 
   start() {
@@ -3867,63 +4401,255 @@ const RoyalSerenityEngine = {
     this.isPlaying = true;
     this.masterGain.gain.setValueAtTime(this.volume, this.ctx.currentTime);
 
-    const step = () => {
-      if (!this.isPlaying) return;
-      const currentChord = this.chords[this.chordIndex];
-      this.playChord(currentChord, 5.0);
-      this.chordIndex = (this.chordIndex + 1) % this.chords.length;
-      this.timerId = setTimeout(step, 4500);
-    };
+    if (this.currentMode === 'zen') {
+      this.startNoise();
+    }
 
-    step();
+    this.playStep();
+    this.startVisualizer();
+    this.updateUI();
   },
 
   stop() {
     this.isPlaying = false;
     if (this.timerId) clearTimeout(this.timerId);
+    this.stopNoise();
     if (this.masterGain && this.ctx) {
-      this.masterGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.5);
+      this.masterGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.4);
     }
+    this.stopVisualizer();
+    this.updateUI();
   },
 
   setVolume(val) {
     this.volume = Math.max(0, Math.min(1, val));
+    if (this.volume > 0) this.lastNonZeroVolume = this.volume;
     if (this.masterGain && this.ctx) {
       this.masterGain.gain.setValueAtTime(this.volume, this.ctx.currentTime);
     }
+    this.updateVolumeUI();
+  },
+
+  setSleepTimer(minutes) {
+    if (this.sleepTimerId) {
+      clearInterval(this.sleepTimerId);
+      this.sleepTimerId = null;
+    }
+    if (minutes === 0) {
+      this.sleepSeconds = 0;
+      this.updateSleepTimerUI("");
+      showToast("مؤقت الاسترخاء: تشغيل مستمر دون توقف");
+      return;
+    }
+    this.sleepSeconds = minutes * 60;
+    this.updateSleepTimerUI("(" + minutes + ":00)");
+    showToast("⏱ تم ضبط مؤقت إيقاف الموسيقى بعد " + minutes + " دقيقة");
+
+    this.sleepTimerId = setInterval(() => {
+      this.sleepSeconds--;
+      if (this.sleepSeconds <= 0) {
+        clearInterval(this.sleepTimerId);
+        this.sleepTimerId = null;
+        if (this.isPlaying) {
+          this.stop();
+          showToast("تم إيقاف الموسيقى تلقائياً بانتهاء مؤقت الاسترخاء");
+        }
+        this.updateSleepTimerUI("");
+      } else {
+        const m = Math.floor(this.sleepSeconds / 60);
+        const s = this.sleepSeconds % 60;
+        const str = "(" + m + ":" + (s < 10 ? "0" : "") + s + ")";
+        this.updateSleepTimerUI(str);
+      }
+    }, 1000);
+  },
+
+  startVisualizer() {
+    if (this.visualizerInterval) return;
+    const visualizerEl = document.getElementById("serenityVisualizer");
+    const miniBars = document.getElementById("miniVisualizerBars");
+    const bufferLength = this.analyser ? this.analyser.frequencyBinCount : 0;
+    const dataArray = new Uint8Array(bufferLength);
+
+    const updateBars = () => {
+      if (!this.isPlaying || !this.analyser) {
+        this.resetVisualizerBars();
+        return;
+      }
+      this.analyser.getByteFrequencyData(dataArray);
+
+      if (visualizerEl) {
+        const bars = visualizerEl.children;
+        for (let i = 0; i < bars.length; i++) {
+          const sampleIdx = Math.floor((i / bars.length) * (bufferLength / 2));
+          const val = dataArray[sampleIdx] || 0;
+          const height = Math.max(4, Math.round((val / 255) * 26));
+          bars[i].style.height = height + "px";
+        }
+      }
+
+      if (miniBars) {
+        const mBars = miniBars.children;
+        for (let j = 0; j < mBars.length; j++) {
+          const sampleIdx = j * 4;
+          const val = dataArray[sampleIdx] || 0;
+          const height = Math.max(3, Math.round((val / 255) * 14));
+          mBars[j].style.height = height + "px";
+        }
+      }
+
+      this.visualizerInterval = requestAnimationFrame(updateBars);
+    };
+
+    this.visualizerInterval = requestAnimationFrame(updateBars);
+  },
+
+  stopVisualizer() {
+    if (this.visualizerInterval) {
+      cancelAnimationFrame(this.visualizerInterval);
+      this.visualizerInterval = null;
+    }
+    this.resetVisualizerBars();
+  },
+
+  resetVisualizerBars() {
+    const visualizerEl = document.getElementById("serenityVisualizer");
+    if (visualizerEl) {
+      for (let bar of visualizerEl.children) {
+        bar.style.height = "4px";
+      }
+    }
+    const miniBars = document.getElementById("miniVisualizerBars");
+    if (miniBars) {
+      for (let bar of miniBars.children) {
+        bar.style.height = "3px";
+      }
+    }
+  },
+
+  updateUI() {
+    const m = this.modes[this.currentMode];
+
+    // Header buttons
+    const btn = document.getElementById("ambientMusicBtn");
+    const icon = document.getElementById("musicBtnIcon");
+    const text = document.getElementById("musicBtnText");
+    if (btn) {
+      if (this.isPlaying) btn.classList.add("playing");
+      else btn.classList.remove("playing");
+    }
+    if (icon) icon.innerText = this.isPlaying ? "⏸" : "🎵";
+    if (text) text.innerText = this.isPlaying ? "إيقاف الموسيقى" : "موسيقى هادئة";
+
+    // Main serenity bar controls
+    const sBtn = document.getElementById("btnSerenityPlay");
+    const sIcon = document.getElementById("serenityPlayIcon");
+    const sText = document.getElementById("serenityPlayText");
+    if (sIcon) sIcon.innerText = this.isPlaying ? "⏸" : "▶";
+    if (sText) sText.innerText = this.isPlaying ? "إيقاف الموسيقى مؤقتاً" : "تشغيل الموسيقى الهادئة";
+    if (sBtn) {
+      if (this.isPlaying) sBtn.classList.add("is-active-playing");
+      else sBtn.classList.remove("is-active-playing");
+    }
+
+    // Current track titles
+    const titleEl = document.getElementById("serenityTrackTitle");
+    if (titleEl) titleEl.innerText = m.name;
+
+    const descEl = document.getElementById("serenityTrackDesc");
+    if (descEl) descEl.innerText = m.desc;
+
+    // Mood buttons state
+    document.querySelectorAll(".serenity-mood-pill").forEach(el => {
+      const modeKey = el.getAttribute("data-mode");
+      if (modeKey === this.currentMode) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
+
+    // Floating widget state
+    const floatWidget = document.getElementById("floatingSerenityWidget");
+    if (floatWidget) {
+      if (this.isPlaying) floatWidget.classList.add("is-playing");
+      else floatWidget.classList.remove("is-playing");
+    }
+    const floatTrackName = document.getElementById("floatTrackName");
+    if (floatTrackName) floatTrackName.innerText = m.name;
+    const floatPlayIcon = document.getElementById("floatPlayIcon");
+    if (floatPlayIcon) floatPlayIcon.innerText = this.isPlaying ? "⏸" : "▶";
+  },
+
+  updateVolumeUI() {
+    const pct = Math.round(this.volume * 100);
+    const label = document.getElementById("ambientVolLabel");
+    if (label) label.innerText = pct + "%";
+    const range = document.getElementById("ambientVolRange");
+    if (range && range.value != pct) range.value = pct;
+
+    const muteIcon = document.getElementById("serenityMuteIcon");
+    if (muteIcon) {
+      muteIcon.innerText = this.volume === 0 ? "🔇" : (this.volume < 0.4 ? "🔉" : "🔊");
+    }
+  },
+
+  updateSleepTimerUI(text) {
+    const el = document.getElementById("sleepTimerStatus");
+    if (el) el.innerText = text;
   }
 };
 
 function toggleAmbientMusic() {
-  const btn = document.getElementById("ambientMusicBtn");
-  const serenityBtn = document.getElementById("btnSerenityPlay");
-  const icon = document.getElementById("musicBtnIcon");
-  const text = document.getElementById("musicBtnText");
-  const sIcon = document.getElementById("serenityPlayIcon");
-  const sText = document.getElementById("serenityPlayText");
-
   if (!RoyalSerenityEngine.isPlaying) {
     RoyalSerenityEngine.start();
-    if (btn) btn.classList.add("playing");
-    if (icon) icon.innerText = "⏸";
-    if (text) text.innerText = "إيقاف الموسيقى";
-    if (sIcon) sIcon.innerText = "⏸";
-    if (sText) sText.innerText = "إيقاف الموسيقى الهادئة";
-    showToast("🎵 تم تشغيل موسيقى الاسترخاء والهدوء في عيادات رويال");
+    const m = RoyalSerenityEngine.modes[RoyalSerenityEngine.currentMode];
+    showToast("🎵 تم تشغيل: " + m.name + " (" + m.tag + ")");
   } else {
     RoyalSerenityEngine.stop();
-    if (btn) btn.classList.remove("playing");
-    if (icon) icon.innerText = "🎵";
-    if (text) text.innerText = "موسيقى هادئة";
-    if (sIcon) sIcon.innerText = "▶";
-    if (sText) sText.innerText = "تشغيل الموسيقى الهادئة";
-    showToast("تم إيقاف الموسيقى مؤقتاً");
+    showToast("تم إيقاف الموسيقى الهادئة مؤقتاً");
+  }
+}
+
+function setSerenityMode(modeKey) {
+  RoyalSerenityEngine.setMode(modeKey);
+  const m = RoyalSerenityEngine.modes[modeKey];
+  showToast("🎧 تم اختيار مسار: " + m.name);
+  if (!RoyalSerenityEngine.isPlaying) {
+    RoyalSerenityEngine.start();
   }
 }
 
 function setAmbientVolume(val) {
   const norm = val / 100;
   RoyalSerenityEngine.setVolume(norm);
+}
+
+function toggleMuteSerenity() {
+  if (RoyalSerenityEngine.volume > 0) {
+    RoyalSerenityEngine.setVolume(0);
+    showToast("🔇 تم كتم صوت الموسيقى");
+  } else {
+    RoyalSerenityEngine.setVolume(RoyalSerenityEngine.lastNonZeroVolume || 0.40);
+    showToast("🔊 تم استعادة الصوت");
+  }
+}
+
+function setSerenitySleepTimer(minutes, btnEl) {
+  document.querySelectorAll(".serenity-timer-box .btn-timer-pill").forEach(b => b.classList.remove("active"));
+  if (btnEl) btnEl.classList.add("active");
+  RoyalSerenityEngine.setSleepTimer(minutes);
+}
+
+function scrollToSerenityPlayer() {
+  const el = document.getElementById("serenityBar");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.style.boxShadow = "0 0 28px rgba(197, 160, 89, 0.45)";
+    setTimeout(() => {
+      el.style.boxShadow = "";
+    }, 1800);
+  }
 }
 
 /* ========================================================
@@ -5295,6 +6021,19 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<!-- FLOATING SERENITY MINI-WIDGET (Persistent Clinic Audio Bar) -->
+<div class="floating-serenity-widget" id="floatingSerenityWidget" title="مشغل الموسيقى الملكية الهادئة">
+  <div class="mini-visualizer-bars" id="miniVisualizerBars">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="floating-serenity-title" id="floatTrackName" onclick="scrollToSerenityPlayer()" style="cursor:pointer;" title="انقر للانتقال لمشغل الموسيقى">
+    بيانو الاسترخاء
+  </div>
+  <button type="button" class="btn-float-serenity-toggle" onclick="toggleAmbientMusic()" id="btnFloatSerenityToggle" title="تشغيل / إيقاف">
+    <span id="floatPlayIcon">▶</span>
+  </button>
+</div>
 
 <!-- FLOATING SPEED-DIAL CONTACT BAR -->
 <div class="floating-contact-bar" id="floatingContactBar">
