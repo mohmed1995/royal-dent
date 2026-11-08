@@ -2354,8 +2354,14 @@
         <div>
           © <span id="copyright-year">2026</span> مركز رويال لطب الفم والأسنان. جميع الحقوق محفوظة.
         </div>
-        <div style="font-size:11px;color:#6B6458;">
-          ديروط • أسيوط • القوصية • ديرمواس
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <a href="admin.html" style="font-size:12px; color:#A8A093; display:inline-flex; align-items:center; gap:5px; transition:color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#A8A093'">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>بوابة الاستقبال والإدارة</span>
+          </a>
+          <span style="font-size:11px;color:#6B6458;">
+            ديروط • أسيوط • القوصية • ديرمواس
+          </span>
         </div>
       </div>
     </div>
@@ -2713,6 +2719,39 @@
             document.getElementById('ticket-date').textContent = formattedDate;
             document.getElementById('ticket-shift').textContent = shiftVal;
             document.getElementById('ticket-service').textContent = serviceVal;
+
+            // Save to Reception / Admin Portal Store
+            try {
+              const newBookingRecord = {
+                id: ticketId,
+                name: nameVal,
+                phone: rawPhone,
+                branch: branchVal,
+                service: serviceVal,
+                date: dateVal,
+                dateFormatted: formattedDate,
+                shift: shiftVal,
+                notes: notesVal,
+                coupon: couponVal,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+              };
+              const existingList = JSON.parse(localStorage.getItem('royal_dent_bookings') || '[]');
+              existingList.unshift(newBookingRecord);
+              localStorage.setItem('royal_dent_bookings', JSON.stringify(existingList));
+
+              const cloudWebhook = localStorage.getItem('royal_cloud_sync_url');
+              if (cloudWebhook) {
+                fetch(cloudWebhook, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(newBookingRecord),
+                  mode: 'no-cors'
+                }).catch(function (err) { console.warn('Cloud sync error:', err); });
+              }
+            } catch (storageErr) {
+              console.warn('Storage sync error:', storageErr);
+            }
 
             // Build pre-formatted WhatsApp Message
             let waMsg = `*طلب حجز موعد - مركز رويال لطب الأسنان*\n` +
