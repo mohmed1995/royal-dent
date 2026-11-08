@@ -3280,6 +3280,241 @@ body {
   color: var(--tx-dim);
 }
 
+
+/* ========================================================
+   RECEPTION LUXURY KANBAN BOARD SUITE
+   ======================================================== */
+.reception-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.btn-reception-view {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--bd-subtle);
+  background: var(--bg-card-soft);
+  color: var(--tx-secondary);
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+.btn-reception-view:hover {
+  border-color: var(--gold);
+  color: var(--tx-primary);
+}
+.btn-reception-view.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border-color: var(--gold);
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+
+.kanban-board-wrapper {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 6px 2px 22px 2px;
+  scroll-behavior: smooth;
+  margin-bottom: 26px;
+  -webkit-overflow-scrolling: touch;
+}
+.kanban-column {
+  flex: 0 0 295px;
+  max-width: 300px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  transition: all 0.22s ease;
+}
+.kanban-column.drag-over {
+  border-color: var(--gold) !important;
+  background: rgba(197, 160, 89, 0.12) !important;
+  transform: scale(1.015);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.20);
+}
+.kanban-col-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--bd-subtle);
+}
+.kanban-col-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-head);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+}
+.kanban-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.dot-pending { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; }
+.dot-confirmed { background: #10B981; box-shadow: 0 0 8px #10B981; }
+.dot-waiting { background: #3B82F6; box-shadow: 0 0 8px #3B82F6; }
+.dot-chair { background: #8B5CF6; box-shadow: 0 0 8px #8B5CF6; }
+.dot-completed { background: #059669; box-shadow: 0 0 8px #059669; }
+
+.kanban-counter-pill {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--bd-subtle);
+  color: var(--tx-primary);
+}
+
+.kanban-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 220px;
+}
+.kanban-patient-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(28, 36, 48, 0.03);
+  cursor: grab;
+  transition: all 0.22s ease;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kanban-patient-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(197, 160, 89, 0.16);
+}
+.kanban-patient-card:active {
+  cursor: grabbing;
+}
+.kanban-patient-card.is-dragging {
+  opacity: 0.45;
+  transform: scale(0.96);
+  border-style: dashed;
+}
+
+.kcard-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+.kcard-id {
+  font-family: var(--f-mono);
+  font-weight: 800;
+  color: var(--tx-gold);
+}
+.kcard-time {
+  color: var(--tx-muted);
+}
+.kcard-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kcard-name {
+  font-family: var(--f-head);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+}
+.kcard-call-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-decoration: none;
+  transition: all 0.18s;
+}
+.kcard-call-btn:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+.kcard-details {
+  font-size: 12px;
+  color: var(--tx-secondary);
+  line-height: 1.45;
+}
+.kcard-doc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--tx-gold);
+  background: var(--gold-bg);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.kcard-actions-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(197, 160, 89, 0.20);
+  margin-top: 4px;
+}
+.kcard-mini-btn {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--bd-subtle);
+  background: var(--bg-card-soft);
+  color: var(--tx-primary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+.kcard-mini-btn:hover {
+  border-color: var(--gold);
+  background: #FFFFFF;
+}
+.btn-advance-stage {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border: none;
+}
+.btn-advance-stage:hover {
+  transform: scale(1.05);
+}
+
 </style>
 </head>
 <body>
@@ -4899,7 +5134,81 @@ body {
       </div>
 
       <!-- BOOKINGS INTERACTIVE TABLE -->
-      <div style="overflow-x:auto; margin-bottom:28px;">
+            <!-- RECEPTION VIEW TOGGLE (KANBAN VS TABLE) -->
+      <div class="reception-view-toggle">
+        <button type="button" class="btn-reception-view active" id="btnViewKanban" onclick="switchReceptionView('kanban')">
+          <span>📋 لوحة كانبان التفاعلية لإدارة مسار المرضى (Kanban Board)</span>
+        </button>
+        <button type="button" class="btn-reception-view" id="btnViewTable" onclick="switchReceptionView('table')">
+          <span>📑 جدول السجلات التفصيلي (Table View)</span>
+        </button>
+      </div>
+
+      <!-- KANBAN BOARD CONTAINER -->
+      <div class="kanban-board-wrapper" id="receptionKanbanBoard">
+        <!-- 1. Pending Column -->
+        <div class="kanban-column" id="col-pending" ondragover="onKanbanDragOver(event)" ondragleave="onKanbanDragLeave(event)" ondrop="onKanbanDrop(event, 'pending')">
+          <div class="kanban-col-head">
+            <div class="kanban-col-title">
+              <span class="kanban-dot dot-pending"></span>
+              <span>طلبات جديدة (مراجعة)</span>
+            </div>
+            <span class="kanban-counter-pill" id="kcount-pending">0</span>
+          </div>
+          <div class="kanban-cards-stack" id="kcards-pending"></div>
+        </div>
+
+        <!-- 2. Confirmed Column -->
+        <div class="kanban-column" id="col-confirmed" ondragover="onKanbanDragOver(event)" ondrop="onKanbanDrop(event, 'confirmed')">
+          <div class="kanban-col-head">
+            <div class="kanban-col-title">
+              <span class="kanban-dot dot-confirmed"></span>
+              <span>مؤكد ومجدول ✅</span>
+            </div>
+            <span class="kanban-counter-pill" id="kcount-confirmed">0</span>
+          </div>
+          <div class="kanban-cards-stack" id="kcards-confirmed"></div>
+        </div>
+
+        <!-- 3. Waiting Lounge Column -->
+        <div class="kanban-column" id="col-waiting" ondragover="onKanbanDragOver(event)" ondrop="onKanbanDrop(event, 'waiting')">
+          <div class="kanban-col-head">
+            <div class="kanban-col-title">
+              <span class="kanban-dot dot-waiting"></span>
+              <span>بالاستقبال وصالة الانتظار 🛋️</span>
+            </div>
+            <span class="kanban-counter-pill" id="kcount-waiting">0</span>
+          </div>
+          <div class="kanban-cards-stack" id="kcards-waiting"></div>
+        </div>
+
+        <!-- 4. Treatment / In Chair Column -->
+        <div class="kanban-column" id="col-chair" ondragover="onKanbanDragOver(event)" ondrop="onKanbanDrop(event, 'chair')">
+          <div class="kanban-col-head">
+            <div class="kanban-col-title">
+              <span class="kanban-dot dot-chair"></span>
+              <span>بالعيادة على الكرسي 🩺</span>
+            </div>
+            <span class="kanban-counter-pill" id="kcount-chair">0</span>
+          </div>
+          <div class="kanban-cards-stack" id="kcards-chair"></div>
+        </div>
+
+        <!-- 5. Completed Column -->
+        <div class="kanban-column" id="col-completed" ondragover="onKanbanDragOver(event)" ondrop="onKanbanDrop(event, 'completed')">
+          <div class="kanban-col-head">
+            <div class="kanban-col-title">
+              <span class="kanban-dot dot-completed"></span>
+              <span>اكتمل الكشف والمتابعة ✨</span>
+            </div>
+            <span class="kanban-counter-pill" id="kcount-completed">0</span>
+          </div>
+          <div class="kanban-cards-stack" id="kcards-completed"></div>
+        </div>
+      </div>
+
+      <!-- BOOKINGS INTERACTIVE TABLE (TOGGLEABLE) -->
+      <div id="receptionTableView" style="display:none; overflow-x:auto; margin-bottom:28px;">
         <table class="queue-table">
           <thead>
             <tr>
@@ -6878,6 +7187,25 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     createdAt: "2026-11-08 09:30 ص"
   },
   {
+    id: "RD-DAY-9024",
+    patientName: "يوسف حسام الدين",
+    phone: "01044820100",
+    doctor: "د. محمد عبدالواحد",
+    room: "عيادة 3 (التجميل وحشو العصب)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-10",
+    teeth: "#55",
+    pathology: "فحص تسوس وحشوة ليزر تجميلية",
+    promo: "ROYAL-DIRECT",
+    branchKey: "dayrmawas",
+    branchName: "فرع ديرمواس",
+    branchPhone: "01044820100",
+    branchAddress: "ديرمواس: شارع مدرسة التجارة - أعلى مكتبة الإسكندرية وأسواق المهندس",
+    isLadies: false,
+    status: "pending",
+    createdAt: "2026-11-08 11:45 ص"
+  },
+  {
     id: "RD-ASS-9022",
     patientName: "مريم إبراهيم خليل",
     phone: "01116596599",
@@ -6918,31 +7246,89 @@ const DEFAULT_SAMPLE_BOOKINGS = [
     createdAt: "2026-11-08 11:00 ص"
   },
   {
-    id: "RD-DAY-9024",
-    patientName: "يوسف حسام الدين",
-    phone: "01044820100",
+    id: "RD-ASS-9025",
+    patientName: "سارة مصطفى كمال",
+    phone: "01116596599",
     doctor: "د. محمد عبدالواحد",
-    room: "عيادة 3 (التجميل وحشو العصب)",
+    room: "عيادة 3 (التجميل والفينير)",
     shift: "المسائية (4:00 م - 10:30 م)",
-    date: "2026-11-10",
-    teeth: "#55",
-    pathology: "فحص تسوس وحشوة ليزر تجميلية",
+    date: "2026-11-08",
+    teeth: "#11, #12, #21, #22",
+    pathology: "جلسة تصميم ابتسامة هوليوود ديجيتال DSD",
+    promo: "ROYAL-SMILE-VIP",
+    branchKey: "assiut",
+    branchName: "فرع أسيوط",
+    branchPhone: "01116596599",
+    branchAddress: "أسيوط: ميدان الزهراء - بجوار عمر أفندي",
+    isLadies: true,
+    status: "waiting",
+    createdAt: "2026-11-08 04:10 م"
+  },
+  {
+    id: "RD-DAI-9026",
+    patientName: "كريم عبدالحميد رضوان",
+    phone: "01066726432",
+    doctor: "د. عبدالله عزام",
+    room: "عيادة 2 (التقويم)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-08",
+    teeth: "الفكين كاملاً",
+    pathology: "متابعة دورية وتغيير أسلاك التقويم الشفاف",
     promo: "ROYAL-DIRECT",
-    branchKey: "dayrmawas",
-    branchName: "فرع ديرمواس",
-    branchPhone: "01044820100",
-    branchAddress: "ديرمواس: شارع مدرسة التجارة - أعلى مكتبة الإسكندرية وأسواق المهندس",
+    branchKey: "dairut",
+    branchName: "فرع ديروط (الفرع الرئيسي)",
+    branchPhone: "01066726432",
+    branchAddress: "ديروط: ميدان أبو جبل",
     isLadies: false,
-    status: "pending",
-    createdAt: "2026-11-08 11:45 ص"
+    status: "waiting",
+    createdAt: "2026-11-08 04:30 م"
+  },
+  {
+    id: "RD-DAI-9027",
+    patientName: "طارق محمود الجزار",
+    phone: "01066726432",
+    doctor: "د. محمد عبدالراضي",
+    room: "عيادة 1 (الجراحة والزرع)",
+    shift: "المسائية (4:00 م - 10:30 م)",
+    date: "2026-11-08",
+    teeth: "#46",
+    pathology: "زراعة أسنان موجهة بالـ 3D CBCT",
+    promo: "ROYAL-IMPLANT-25",
+    branchKey: "dairut",
+    branchName: "فرع ديروط (الفرع الرئيسي)",
+    branchPhone: "01066726432",
+    branchAddress: "ديروط: ميدان أبو جبل",
+    isLadies: false,
+    status: "chair",
+    createdAt: "2026-11-08 04:00 م"
+  },
+  {
+    id: "RD-QUS-9028",
+    patientName: "فاطمة حسن النجار",
+    phone: "01500098392",
+    doctor: "د. محمد عبدالواحد",
+    room: "عيادة 3 (التجميل)",
+    shift: "الصباحية (11:00 ص - 3:30 م)",
+    date: "2026-11-08",
+    teeth: "كامل الأسنان",
+    pathology: "تنظيف جير وتبييض أسنان ليزر فوري",
+    promo: "ROYAL-WHITENING",
+    branchKey: "qusiya",
+    branchName: "فرع القوصية",
+    branchPhone: "01500098392",
+    branchAddress: "القوصية: شارع الجلاء",
+    isLadies: false,
+    status: "completed",
+    completedAt: "01:45 م",
+    createdAt: "2026-11-08 11:30 ص"
   }
 ];
 
 function getStoredBookings() {
   try {
-    const raw = localStorage.getItem("royal_clinic_bookings_v3");
+    const raw = localStorage.getItem("royal_clinic_bookings_v4");
     if (!raw) {
-      localStorage.setItem("royal_clinic_bookings_v3", JSON.stringify(DEFAULT_SAMPLE_BOOKINGS));
+      localStorage.setItem("royal_clinic_bookings_v4", JSON.stringify(DEFAULT_SAMPLE_BOOKINGS));
       return DEFAULT_SAMPLE_BOOKINGS;
     }
     return JSON.parse(raw);
@@ -6953,23 +7339,46 @@ function getStoredBookings() {
 
 function saveStoredBookings(list) {
   try {
-    localStorage.setItem("royal_clinic_bookings_v3", JSON.stringify(list));
+    localStorage.setItem("royal_clinic_bookings_v4", JSON.stringify(list));
   } catch(e) {}
 }
 
-function renderBookingsManager() {
-  const tbody = document.getElementById("bookingsTableBody");
-  if (!tbody) return;
+let currentReceptionView = 'kanban'; // 'kanban' | 'table'
 
+function switchReceptionView(viewType) {
+  currentReceptionView = viewType;
+  const btnK = document.getElementById("btnViewKanban");
+  const btnT = document.getElementById("btnViewTable");
+  const boardK = document.getElementById("receptionKanbanBoard");
+  const viewT = document.getElementById("receptionTableView");
+
+  if (viewType === 'kanban') {
+    if (btnK) btnK.classList.add("active");
+    if (btnT) btnT.classList.remove("active");
+    if (boardK) boardK.style.display = "flex";
+    if (viewT) viewT.style.display = "none";
+  } else {
+    if (btnK) btnK.classList.remove("active");
+    if (btnT) btnT.classList.add("active");
+    if (boardK) boardK.style.display = "none";
+    if (viewT) viewT.style.display = "block";
+  }
+  renderBookingsManager();
+}
+
+function renderBookingsManager() {
   const bookings = getStoredBookings();
   const branchFilter = document.getElementById("mgmtBranchFilter") ? document.getElementById("mgmtBranchFilter").value : "all";
   const statusFilter = document.getElementById("mgmtStatusFilter") ? document.getElementById("mgmtStatusFilter").value : "all";
   const searchKw = document.getElementById("mgmtSearchInput") ? document.getElementById("mgmtSearchInput").value.trim().toLowerCase() : "";
 
-  // Compute KPI Counts
+  // Compute KPI Counts across all stored records
   const total = bookings.length;
   const confirmedCount = bookings.filter(b => b.status === "confirmed").length;
   const pendingCount = bookings.filter(b => b.status === "pending").length;
+  const waitingCount = bookings.filter(b => b.status === "waiting").length;
+  const chairCount = bookings.filter(b => b.status === "chair").length;
+  const completedCount = bookings.filter(b => b.status === "completed").length;
   const ladiesCount = bookings.filter(b => b.isLadies).length;
 
   const elTotal = document.getElementById("kpiTotalBookings");
@@ -6992,60 +7401,190 @@ function renderBookingsManager() {
       const matchName = (b.patientName || "").toLowerCase().includes(searchKw);
       const matchPhone = (b.phone || "").toLowerCase().includes(searchKw);
       const matchId = (b.id || "").toLowerCase().includes(searchKw);
-      if (!matchName && !matchPhone && !matchId) return false;
+      const matchDoc = (b.doctor || "").toLowerCase().includes(searchKw);
+      if (!matchName && !matchPhone && !matchId && !matchDoc) return false;
     }
     return true;
   });
 
-  if (filtered.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:32px; color:var(--tx-muted); font-size:14px;">لا توجد حجوزات مطابقة للفلاتر المحددة حالياً. يمكنك إضافة حجز جديد بالزر أعلاه.</td></tr>';
-    return;
+  // 1. RENDER KANBAN COLUMNS
+  const stages = ['pending', 'confirmed', 'waiting', 'chair', 'completed'];
+  stages.forEach(stage => {
+    const colCounter = document.getElementById("kcount-" + stage);
+    const colStack = document.getElementById("kcards-" + stage);
+    const stageBookings = filtered.filter(b => (b.status || 'pending') === stage);
+
+    if (colCounter) colCounter.innerText = stageBookings.length;
+
+    if (colStack) {
+      if (stageBookings.length === 0) {
+        colStack.innerHTML = '<div style="text-align:center; padding:32px 12px; color:var(--tx-muted); font-size:12px; border:1.5px dashed var(--bd-subtle); border-radius:12px;">اسحب مريضاً إلى هنا<br>أو لا توجد حالات حالياً</div>';
+      } else {
+        colStack.innerHTML = stageBookings.map(b => {
+          let nextStageLabel = '➡️ نقل';
+          let nextStageKey = 'confirmed';
+          if (stage === 'pending') { nextStageLabel = '✅ تأكيد'; nextStageKey = 'confirmed'; }
+          else if (stage === 'confirmed') { nextStageLabel = '🛋️ وصول'; nextStageKey = 'waiting'; }
+          else if (stage === 'waiting') { nextStageLabel = '🩺 للكرسي'; nextStageKey = 'chair'; }
+          else if (stage === 'chair') { nextStageLabel = '✨ إنهاء'; nextStageKey = 'completed'; }
+          else if (stage === 'completed') { nextStageLabel = '🔄 إعادة'; nextStageKey = 'pending'; }
+
+          return `<div class="kanban-patient-card" id="kcard-${b.id}" draggable="true" ondragstart="onKanbanDragStart(event, '${b.id}')">
+            <div class="kcard-top-row">
+              <span class="kcard-id">${b.id}</span>
+              <span class="kcard-time">${b.shift ? b.shift.split(' ')[0] : 'المسائية'}</span>
+            </div>
+
+            <div class="kcard-name-row">
+              <div class="kcard-name">${b.patientName}</div>
+              <a href="tel:${b.phone}" class="kcard-call-btn" title="اتصال فوري">${b.isLadies ? '🌸' : '📞'}</a>
+            </div>
+
+            <div class="kcard-details">
+              <div>${b.pathology || 'كشف دوري وفحص أسنان'}</div>
+              <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">
+                الأسنان: <strong>${b.teeth || 'شامل'}</strong> • ${b.branchName ? b.branchName.replace('فرع ', '') : 'ديروط'}
+              </div>
+            </div>
+
+            <div>
+              <span class="kcard-doc-pill">👨‍⚕️ ${b.doctor}</span>
+            </div>
+
+            <div class="kcard-actions-cluster">
+              <div style="display:flex; gap:4px;">
+                <button type="button" class="kcard-mini-btn" onclick="sendWhatsAppConfirmation('${b.id}')" title="واتساب المريض">
+                  💬
+                </button>
+                <button type="button" class="kcard-mini-btn" onclick="callPatientByVoice('${b.patientName}', '${b.room || 'عيادة الكشف'}')" title="نداء صوتي">
+                  🔔
+                </button>
+                <button type="button" class="kcard-mini-btn" onclick="deleteBookingById('${b.id}')" title="إلغاء">
+                  ✕
+                </button>
+              </div>
+
+              <button type="button" class="kcard-mini-btn btn-advance-stage" onclick="moveBookingToStage('${b.id}', '${nextStageKey}')" title="نقل للمرحلة التالية">
+                <span>${nextStageLabel}</span>
+              </button>
+            </div>
+          </div>`;
+        }).join("");
+      }
+    }
+  });
+
+  // 2. RENDER TABLE VIEW (IF VISIBLE)
+  const tbody = document.getElementById("bookingsTableBody");
+  if (tbody) {
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:32px; color:var(--tx-muted); font-size:14px;">لا توجد حجوزات مطابقة للفلاتر المحددة حالياً. يمكنك إضافة حجز جديد بالزر أعلاه.</td></tr>';
+    } else {
+      tbody.innerHTML = filtered.map(b => {
+        let statusBadge = '';
+        if (b.status === "confirmed") {
+          statusBadge = `<span class="status-pill status-confirmed">✅ مؤكد رسمياً ${b.confirmedAt ? '(' + b.confirmedAt + ')' : ''}</span>`;
+        } else if (b.status === "waiting") {
+          statusBadge = '<span class="status-pill" style="background:#DBEAFE; color:#1E40AF; border:1px solid #BFDBFE;">🛋️ بصالة الانتظار</span>';
+        } else if (b.status === "chair") {
+          statusBadge = '<span class="status-pill" style="background:#EDE9FE; color:#5B21B6; border:1px solid #DDD6FE;">🩺 على كرسي العلاج</span>';
+        } else if (b.status === "completed") {
+          statusBadge = '<span class="status-pill status-completed">✨ تم الكشف بنجاح</span>';
+        } else {
+          statusBadge = '<span class="status-pill status-pending">⏳ قيد المراجعة</span>';
+        }
+
+        return `<tr>
+          <td>
+            <div style="font-family:var(--f-mono); font-weight:800; color:var(--tx-gold); font-size:13px;">${b.id}</div>
+            <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">${b.date || 'اليوم'} • ${b.shift || 'المسائية'}</div>
+          </td>
+          <td>
+            <div style="font-weight:800; font-size:14px; color:var(--tx-primary);">${b.patientName}</div>
+            <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
+              <span style="font-family:var(--f-mono); font-size:12px; color:var(--tx-muted);">${b.phone}</span>
+              <a href="tel:${b.phone}" class="btn-row-action btn-act-call" style="padding:2px 6px; font-size:10px;" title="اتصال هاتفي">📞</a>
+            </div>
+          </td>
+          <td>
+            <div style="font-size:12.5px; font-weight:700; color:var(--tx-primary);">${b.branchName || 'فرع ديروط'}</div>
+            <div style="font-size:11.5px; color:var(--tx-gold); margin-top:2px;">${b.doctor} <span style="color:var(--tx-dim);">(${b.room || 'عيادة الفحص'})</span></div>
+          </td>
+          <td>
+            <div style="font-size:12px; color:var(--tx-primary);">${b.pathology || 'كشف دوري'}</div>
+            <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">الأسنان: <strong>${b.teeth || 'فحص شامل'}</strong> ${b.isLadies ? ' • <span style="color:var(--rose); font-weight:700;">🌸 قسم السيدات</span>' : ''}</div>
+          </td>
+          <td>${statusBadge}</td>
+          <td>
+            <div class="row-actions-flex">
+              <button type="button" class="btn-row-action btn-act-confirm" onclick="moveBookingToStage('${b.id}', 'confirmed')" title="تأكيد"><span>✅</span></button>
+              <button type="button" class="btn-row-action btn-act-done" onclick="moveBookingToStage('${b.id}', 'chair')" title="إدخال للعيادة"><span>🩺</span></button>
+              <button type="button" class="btn-row-action btn-act-wa" onclick="sendWhatsAppConfirmation('${b.id}')" title="واتساب"><span>💬</span></button>
+              <button type="button" class="btn-row-action btn-act-chime" onclick="callPatientByVoice('${b.patientName}', '${b.room || 'عيادة الكشف'}')" title="نداء صوتي"><span>🔔</span></button>
+              <button type="button" class="btn-row-action btn-act-del" onclick="deleteBookingById('${b.id}')" title="إلغاء"><span>✕</span></button>
+            </div>
+          </td>
+        </tr>`;
+      }).join("");
+    }
+  }
+}
+
+/* ========================================================
+   KANBAN DRAG AND DROP & STAGE MOVERS
+   ======================================================== */
+function onKanbanDragStart(e, bookingId) {
+  e.dataTransfer.setData("text/plain", bookingId);
+  const card = document.getElementById("kcard-" + bookingId);
+  if (card) card.classList.add("is-dragging");
+}
+
+function onKanbanDragOver(e) {
+  e.preventDefault();
+  const col = e.currentTarget;
+  if (col) col.classList.add("drag-over");
+}
+
+function onKanbanDragLeave(e) {
+  const col = e.currentTarget;
+  if (col) col.classList.remove("drag-over");
+}
+
+function onKanbanDrop(e, targetStatus) {
+  e.preventDefault();
+  const col = e.currentTarget;
+  if (col) col.classList.remove("drag-over");
+
+  const bookingId = e.dataTransfer.getData("text/plain");
+  if (!bookingId) return;
+
+  moveBookingToStage(bookingId, targetStatus);
+}
+
+function moveBookingToStage(id, newStatus) {
+  const bookings = getStoredBookings();
+  const target = bookings.find(b => b.id === id);
+  if (!target) return;
+
+  target.status = newStatus;
+  if (newStatus === 'confirmed' && !target.confirmedAt) {
+    target.confirmedAt = new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'});
   }
 
-  tbody.innerHTML = filtered.map(b => {
-    let statusBadge = '';
-    if (b.status === "confirmed") {
-      statusBadge = `<span class="status-pill status-confirmed">✅ مؤكد رسمياً ${b.confirmedAt ? '(' + b.confirmedAt + ')' : ''}</span>`;
-    } else if (b.status === "completed") {
-      statusBadge = '<span class="status-pill status-completed">🩺 تم الكشف بنجاح</span>';
-    } else {
-      statusBadge = '<span class="status-pill status-pending">⏳ قيد المراجعة</span>';
-    }
+  saveStoredBookings(bookings);
+  renderBookingsManager();
 
-    return `<tr>
-      <td>
-        <div style="font-family:var(--f-mono); font-weight:800; color:var(--tx-gold); font-size:13px;">${b.id}</div>
-        <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">${b.date || 'اليوم'} • ${b.shift || 'المسائية'}</div>
-      </td>
-      <td>
-        <div style="font-weight:800; font-size:14px; color:var(--tx-primary);">${b.patientName}</div>
-        <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
-          <span style="font-family:var(--f-mono); font-size:12px; color:var(--tx-muted);">${b.phone}</span>
-          <a href="tel:${b.phone}" class="btn-row-action btn-act-call" style="padding:2px 6px; font-size:10px;" title="اتصال هاتفي">📞</a>
-        </div>
-      </td>
-      <td>
-        <div style="font-size:12.5px; font-weight:700; color:var(--tx-primary);">${b.branchName || 'فرع ديروط'}</div>
-        <div style="font-size:11.5px; color:var(--tx-gold); margin-top:2px;">${b.doctor} <span style="color:var(--tx-dim);">(${b.room || 'عيادة الفحص'})</span></div>
-      </td>
-      <td>
-        <div style="font-size:12px; color:var(--tx-primary);">${b.pathology || 'كشف دوري'}</div>
-        <div style="font-size:11px; color:var(--tx-muted); margin-top:2px;">الأسنان: <strong>${b.teeth || 'فحص شامل'}</strong> ${b.isLadies ? ' • <span style="color:var(--rose); font-weight:700;">🌸 قسم السيدات</span>' : ''}</div>
-      </td>
-      <td>${statusBadge}</td>
-      <td>
-        <div class="row-actions-flex">
-          ${b.status !== "confirmed" ? 
-            `<button type="button" class="btn-row-action btn-act-confirm" onclick="confirmBookingById('${b.id}')" title="تأكيد الحجز فوراً"><span>✅ تأكيد</span></button>` : 
-            `<button type="button" class="btn-row-action btn-act-done" onclick="markBookingCompleted('${b.id}')" title="تسجيل إنهاء الكشف"><span>🩺 إنهاء</span></button>`
-          }
-          <button type="button" class="btn-row-action btn-act-wa" onclick="sendWhatsAppConfirmation('${b.id}')" title="إرسال رسالة تأكيد لواتساب المريض"><span>💬 واتساب</span></button>
-          <button type="button" class="btn-row-action btn-act-chime" onclick="callPatientByVoice('${b.patientName}', '${b.room || 'عيادة الكشف'}')" title="استدعاء صوتي للمريض"><span>🔔 نداء</span></button>
-          <button type="button" class="btn-row-action btn-act-del" onclick="deleteBookingById('${b.id}')" title="إلغاء الحجز"><span>✕</span></button>
-        </div>
-      </td>
-    </tr>`;
-  }).join("");
+  const stageTitles = {
+    pending: "طلبات المراجعة",
+    confirmed: "المؤكد والمجدول",
+    waiting: "صالة الانتظار والاستقبال",
+    chair: "عيادة الكشف والعلاج",
+    completed: "المكتمل والمنتهي"
+  };
+
+  const title = stageTitles[newStatus] || newStatus;
+  RoyalAudio.playSuccess();
+  showToast("📋 تم نقل المريض / " + target.patientName + " إلى: " + title);
 }
 
 function confirmBookingById(id) {
