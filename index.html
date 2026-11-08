@@ -349,6 +349,368 @@ body {
 }
 
 /* ========================================================
+   ROYAL SERENE MINIMALISM (SWISS & MANUS LUXURY DESIGN TOKENS)
+   ======================================================== */
+:root {
+  --royal-canvas: #FAF8F5;
+  --royal-card: #FFFFFF;
+  --royal-gold-champagne: #C5A059;
+  --royal-gold-light: #F7EFE3;
+  --royal-slate-dark: #1A1E24;
+  --royal-slate-muted: #5A6578;
+}
+
+body {
+  background-color: var(--royal-canvas);
+  color: var(--royal-slate-dark);
+}
+
+.royal-appbar {
+  background: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.20) !important;
+  box-shadow: 0 4px 20px rgba(28, 36, 48, 0.03) !important;
+}
+[data-theme="dark"] .royal-appbar {
+  background: rgba(18, 24, 30, 0.92) !important;
+  border-bottom-color: rgba(197, 160, 89, 0.25) !important;
+}
+
+/* REFINED HERO SANCTUARY */
+.royal-hero-sanctuary {
+  margin: 18px 0 24px 0;
+  padding: 44px 36px 36px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, #FFFFFF, #FAF6EE);
+  border: 1px solid rgba(197, 160, 89, 0.24);
+  box-shadow: 0 12px 36px -8px rgba(28, 36, 48, 0.04);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+[data-theme="dark"] .royal-hero-sanctuary {
+  background: linear-gradient(180deg, #1A232D, #131A21);
+  border-color: rgba(197, 160, 89, 0.20);
+}
+.royal-hero-sanctuary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.8;
+}
+
+.hero-crest-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.10);
+  border: 1px solid rgba(197, 160, 89, 0.30);
+  margin-bottom: 20px;
+}
+.hero-crest-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--gold);
+}
+.hero-crest-text {
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--tx-gold);
+}
+
+.hero-title-refined {
+  font-family: var(--f-head);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--tx-primary);
+  margin: 0 auto 12px auto;
+  max-width: 780px;
+  line-height: 1.35;
+}
+.hero-sub-refined {
+  font-size: 14.5px;
+  color: var(--tx-muted);
+  max-width: 680px;
+  margin: 0 auto 24px auto;
+  line-height: 1.7;
+}
+
+.hero-actions-refined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.btn-hero-primary {
+  padding: 13px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--f-head);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px var(--gold-glow);
+  transition: all 0.22s ease;
+}
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--gold-glow);
+}
+.btn-hero-secondary {
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--tx-primary);
+  border: 1.5px solid var(--bd-subtle);
+  font-family: var(--f-head);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.22s ease;
+}
+.btn-hero-secondary:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hero-trust-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(197, 160, 89, 0.22);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--tx-dim);
+}
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.trust-dot-sep {
+  color: var(--gold);
+  opacity: 0.5;
+}
+
+/* Branch Meta Pills in Hero */
+.hero-branch-pill-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: var(--bg-card-soft);
+  border: 1px solid var(--bd-subtle);
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+/* SERENITY DRAWER / MODAL */
+.serenity-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 26, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.serenity-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.serenity-modal-card {
+  width: 100%;
+  max-width: 660px;
+  background: var(--bg-surface);
+  border-radius: 24px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.serenity-modal-backdrop.open .serenity-modal-card {
+  transform: scale(1);
+}
+.serenity-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bd-subtle);
+}
+.btn-close-modal {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card-soft);
+  border: 1px solid var(--bd-subtle);
+  color: var(--tx-primary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-close-modal:hover {
+  background: #FEE2E2;
+  color: #DC2626;
+  border-color: #FECACA;
+}
+
+/* UNIFIED ROYAL DYNAMIC CAPSULE (BOTTOM ACTION ISLAND) */
+.royal-dynamic-capsule {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 10px 32px rgba(28, 36, 48, 0.12), 0 0 18px rgba(197, 160, 89, 0.18);
+  user-select: none;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: calc(100vw - 32px);
+}
+[data-theme="dark"] .royal-dynamic-capsule {
+  background: rgba(22, 28, 36, 0.94);
+  border-color: rgba(197, 160, 89, 0.28);
+}
+.capsule-music-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+.capsule-music-box:hover {
+  background: rgba(197, 160, 89, 0.10);
+}
+.capsule-visualizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+}
+.capsule-visualizer span {
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: height 0.08s ease;
+}
+.capsule-music-text {
+  font-family: var(--f-head);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  white-space: nowrap;
+}
+.capsule-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(197, 160, 89, 0.30);
+}
+.capsule-actions-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.capsule-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+.capsule-btn-wa:hover {
+  transform: scale(1.04);
+}
+.capsule-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px var(--gold-glow);
+}
+.capsule-btn-call:hover {
+  transform: scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .hero-title-refined {
+    font-size: 24px;
+  }
+  .royal-hero-sanctuary {
+    padding: 30px 18px 24px;
+  }
+  .capsule-music-text {
+    display: none;
+  }
+}
+
+/* ========================================================
    ROYAL SERENITY AMBIENT SUITE 2.0 (MEDITATIVE AUDIO SUITE)
    ======================================================== */
 .serenity-player-bar {
@@ -2444,252 +2806,54 @@ body {
 
 <main class="app-container">
 
-  <!-- ROYAL SERENITY AMBIENT SUITE (CLINICAL 432Hz MEDITATIVE AUDIO) -->
-  <div class="serenity-player-bar" id="serenityBar">
-    <!-- Top Header Row -->
-    <div class="serenity-header-row">
-      <div class="serenity-brand-block">
-        <div class="serenity-pulse-badge">
-          <span class="serenity-pulse-dot"></span>
-          <span>أجواء صوتية استرخائية حية</span>
-        </div>
-        <div class="serenity-title-box">
-          <div class="serenity-main-title">
-            <span>🎧 استمع للأجواء الهادئة في عيادات رويال (Royal Serenity)</span>
-            <span class="telecom-pill" style="background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;">مُعتمد 432Hz</span>
-          </div>
-          <div class="serenity-sub-desc">
-            ترددات صوتية مهدئة علمياً لتخفيف ضربات القلب وإزالة خوف الأسنان (Dentophobia) لراحة تامة أثناء التصفح والكشف
-          </div>
-        </div>
-      </div>
-
-      <!-- Real-time Equalizer Visualizer (Dynamic Web Audio Bars) -->
-      <div class="serenity-visualizer-wrap" id="serenityVisualizer" title="محلل الترددات الصوتية الحي">
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-        <div class="serenity-visualizer-bar"></div>
-      </div>
+  <!-- REFINED HERO SANCTUARY (SPACIOUS LUXURY MINIMALISM) -->
+  <section class="royal-hero-sanctuary">
+    <div class="hero-crest-wrap">
+      <img src="assets/royal_logo_official.jpg" alt="شعار مركز رويال" class="hero-crest-logo">
+      <span class="hero-crest-text">مركز رويال لطب الفم والأسنان • ROYAL DENTAL CENTER</span>
     </div>
 
-    <!-- Mood Selection Cards (3 Clinical Ambience Modes) -->
-    <div class="serenity-moods-grid">
-      <!-- Mode 1: Piano & Crystals -->
-      <div class="serenity-mood-pill active" data-mode="piano" onclick="setSerenityMode('piano')" title="نغمات بيانو وأوتار هادئة ورنين كريستالي">
-        <div class="serenity-mood-icon">🎹</div>
-        <div class="serenity-mood-info">
-          <div class="serenity-mood-name">بيانو وسكينة ملكية</div>
-          <div class="serenity-mood-tag">432Hz • أوتار ورنين كريستالي دافئ</div>
-        </div>
-      </div>
+    <h1 class="hero-title-refined" id="heroBranchHeading">
+      رعاية ملكية متكاملة تليق بابتسامتك
+    </h1>
 
-      <!-- Mode 2: Zen & Water Stream -->
-      <div class="serenity-mood-pill" data-mode="zen" onclick="setSerenityMode('zen')" title="صوت خرير ماء هادئ ورياح لطيفة مع نغمات بنتونيك">
-        <div class="serenity-mood-icon">🌿</div>
-        <div class="serenity-mood-info">
-          <div class="serenity-mood-name">واحة زن وخرير الماء</div>
-          <div class="serenity-mood-tag">طبيعة نقية • أمواج وشلالات ناعمة</div>
-        </div>
-      </div>
+    <p class="hero-sub-refined">
+      صرح طبي رائد لطب وجراحة وتجميل وزراعة وتقويم الأسنان بأحدث التقنيات الرقمية العالمية وبدون ألم — بإشراف نخبة من كبار الاستشاريين في 4 فروع معتمدة بمحافظتي أسيوط والمنيا.
+    </p>
 
-      <!-- Mode 3: Deep Alpha Waves -->
-      <div class="serenity-mood-pill" data-mode="alpha" onclick="setSerenityMode('alpha')" title="ترددات ألفا 10Hz لمزامنة المخ وإزالة توتر عضلات الوجه">
-        <div class="serenity-mood-icon">✨</div>
-        <div class="serenity-mood-info">
-          <div class="serenity-mood-name">ترددات ألفا 432Hz للشفاء</div>
-          <div class="serenity-mood-tag">موجات ثنائية 10Hz • استرخاء عصبي عميق</div>
-        </div>
-      </div>
+    <!-- Branch Address & Hotline live chips (preserved for JS updates) -->
+    <div class="hero-branch-pill-bar">
+      <span id="heroAddressChip">📍 ديروط: ميدان أبو جبل - بجوار فرع فودافون أعلى Q جيم</span>
+      <span class="trust-dot-sep">•</span>
+      <span>⏰ 11:00 ص - 10:30 م</span>
+      <span class="trust-dot-sep">•</span>
+      <span id="heroPhoneChip">📞 01066726432 - 01500098392 - 01044820100</span>
     </div>
 
-    <!-- Controls & Timer Row -->
-    <div class="serenity-controls-row">
-      <div class="serenity-play-group">
-        <button type="button" class="btn-serenity-master" id="btnSerenityPlay" onclick="toggleAmbientMusic()">
-          <span id="serenityPlayIcon" style="font-size:14px;">▶</span>
-          <span id="serenityPlayText">تشغيل الموسيقى الهادئة</span>
-        </button>
-
-        <div class="serenity-now-playing">
-          <div class="serenity-track-title" id="serenityTrackTitle">بيانو الاسترخاء الملكي</div>
-          <div class="serenity-track-desc" id="serenityTrackDesc">أوتار هادئة ورنين كريستالي 432Hz لتخفيف التوتر وإشاعة الطمأنينة قبل الكشف</div>
-        </div>
-      </div>
-
-      <div class="serenity-actions-group">
-        <!-- Volume Control -->
-        <div class="serenity-vol-box" title="التحكم في شدة الصوت">
-          <button type="button" onclick="toggleMuteSerenity()" style="background:none; border:none; cursor:pointer; font-size:13px;" id="serenityMuteIcon">🔉</button>
-          <input type="range" min="0" max="100" value="40" id="ambientVolRange" class="serenity-vol-slider" oninput="setAmbientVolume(this.value)" title="مستوى الصوت">
-          <span class="serenity-vol-label" id="ambientVolLabel">40%</span>
-        </div>
-
-        <!-- Sleep Timer -->
-        <div class="serenity-timer-box">
-          <span>⏱ مؤقت الاسترخاء:</span>
-          <button type="button" class="btn-timer-pill active" onclick="setSerenitySleepTimer(0, this)">مستمر</button>
-          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(10, this)">10 د</button>
-          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(20, this)">20 د</button>
-          <span id="sleepTimerStatus" style="font-family:var(--f-mono); font-size:11px; font-weight:700; color:var(--tx-gold); margin-right:4px;"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section class="royal-hero">
-    <div class="hero-content">
-      <div class="hero-brand-badge-card">
-        <img src="assets/royal_logo_official.jpg" alt="الشعار الرسمي المعتمد لمركز رويال لطب الفم والأسنان" class="hero-brand-logo-img">
-        <div class="hero-brand-badge-info">
-          <div class="badge-tag">👑 الشعار الرسمي المعتمد • ROYAL DENTAL CENTER</div>
-          <div class="badge-name">مركز رويال لطب الفم والأسنان</div>
-          <div class="badge-sub">ديروط • أسيوط • القوصية • ديرمواس — تحت إشراف نخبة من كبار الاستشاريين</div>
-        </div>
-      </div>
-
-      <div class="hero-tag">
-        <span>✦</span>
-        <span>ROYAL DENTAL LUXURY NETWORK 2026</span>
-      </div>
-      <h1 class="hero-title" id="heroBranchHeading">
-        فرع ديروط (الفرع الرئيسي) — ابتسامتك الملكية بأحدث المعايير
-      </h1>
-      <p class="hero-desc">
-        صرح طبي رائد لطب وجراحة وتجميل وزراعة وتقويم الأسنان يجمع بين الخبرة الاستشارية، والراحة النفسية والاسترخاء، وأحدث ما توصلت إليه تكنولوجيا الأسنان العالمية في 4 فروع بمحافظة أسيوط والمنيا.
-      </p>
-
-      <div class="hero-meta-chips">
-        <div class="meta-chip" id="heroAddressChip">
-          <span>📍 ديروط: ميدان أبو جبل - بجوار فرع فودافون أعلى Q جيم</span>
-        </div>
-        <div class="meta-chip">
-          <span>⏰ يومياً 11:00 ص - 10:30 م (الجمعة 4:00 م - 10:00 م)</span>
-        </div>
-        <div class="meta-chip" id="heroPhoneChip">
-          <span>📞 01066726432 - 01500098392 - 01044820100</span>
-        </div>
-      </div>
+    <div class="hero-actions-refined">
+      <button type="button" class="btn-hero-primary" onclick="switchSuiteTab('kiosk'); document.getElementById('view-kiosk').scrollIntoView({behavior:'smooth'});">
+        <span>✨ احجز كشفك واستشارتك الطبية فوراً</span>
+      </button>
+      <button type="button" class="btn-hero-secondary" onclick="switchSuiteTab('contact'); document.getElementById('view-contact').scrollIntoView({behavior:'smooth'});">
+        <span>📞 دليل الفروع والمواقع والـ GPS</span>
+      </button>
     </div>
 
-    <div class="hero-quick-kpi">
-      <div class="kpi-card">
-        <span class="val">4</span>
-        <span class="lbl">فروع معتمدة</span>
+    <div class="hero-trust-ribbon">
+      <div class="hero-trust-item">
+        <span>👑 4 فروع رسمية معتمدة</span>
       </div>
-      <div class="kpi-card">
-        <span class="val">18k+</span>
-        <span class="lbl">ابتسامة مكتملة</span>
+      <span class="trust-dot-sep">•</span>
+      <div class="hero-trust-item">
+        <span>⭐ 18,000+ ابتسامة مكتملة</span>
       </div>
-      <div class="kpi-card">
-        <span class="val">100%</span>
-        <span class="lbl">تعقيم معتمد</span>
+      <span class="trust-dot-sep">•</span>
+      <div class="hero-trust-item">
+        <span>💳 خطة تقسيط 0% بدون فوائد</span>
       </div>
-      <div class="kpi-card">
-        <span class="val">0%</span>
-        <span class="lbl">فوائد تقسيط</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROYAL 4-BRANCH GPS MAPS & LIVE COMMUNICATION HUB (REQUESTED BY USER) -->
-  <section class="royal-branch-hub" id="royalBranchHub">
-    <div class="branch-hub-header">
-      <div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <span style="font-size:20px;">🧭</span>
-          <h2 class="font-royal" style="font-size:22px; font-weight:700; color:var(--tx-primary); margin:0;">
-            شبكة فروع مركز رويال — الخريطة التفاعلية والاتصال المباشر
-          </h2>
-        </div>
-        <p style="font-size:12.5px; color:var(--tx-muted); margin:4px 0 0 0;">
-          اختر الفرع للوصول إلى أرقام الاستقبال المباشرة، موقع Google Maps بالـ GPS، والاتجاهات الدقيقة
-        </p>
-      </div>
-      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-        <span class="badge-tag" style="font-size:12px; margin:0;">4 فروع رسمية بمحافظتي أسيوط والمنيا</span>
-        <button type="button" class="btn-royal-submit" style="padding:6px 14px; font-size:11.5px; background:var(--gold-light); border-color:var(--gold); color:var(--tx-gold); font-weight:800; cursor:pointer;" onclick="switchSuiteTab('contact')">
-          <span>📞 دليل الفروع الشامل</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- 4 Branch Switcher Tabs -->
-    <div class="branch-tabs-row">
-      <div class="branch-tab-card active" id="bcard-dairut" onclick="switchHubBranch('dairut')">
-        <span>👑 فرع ديروط (الرئيسي)</span>
-        <span class="tab-sub">ميدان أبو جبل • 3 خطوط</span>
-      </div>
-      <div class="branch-tab-card" id="bcard-assiut" onclick="switchHubBranch('assiut')">
-        <span>🏢 فرع مدينة أسيوط</span>
-        <span class="tab-sub">ميدان الزهراء • عمر أفندي</span>
-      </div>
-      <div class="branch-tab-card" id="bcard-qusiya" onclick="switchHubBranch('qusiya')">
-        <span>🏛️ فرع القوصية</span>
-        <span class="tab-sub">شارع الجلاء • بنك القاهرة</span>
-      </div>
-      <div class="branch-tab-card" id="bcard-dayrmawas" onclick="switchHubBranch('dayrmawas')">
-        <span>🌿 فرع ديرمواس</span>
-        <span class="tab-sub">مدرسة التجارة • أسواق المهندس</span>
-      </div>
-    </div>
-
-    <!-- 2-Col Split: Left Phones, Right GPS Map -->
-    <div class="branch-details-grid">
-      <!-- Col 1: Phone Numbers & Direct Actions -->
-      <div style="display:flex; flex-direction:column; justify-content:space-between;">
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--bd-subtle);">
-            <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);" id="hubPhoneBoxTitle">
-              أرقام التواصل وحجز المواعيد — فرع ديروط الرئيسي
-            </div>
-            <span style="font-size:11px; font-weight:700; color:var(--emerald);">● متاح للاتصال الآن</span>
-          </div>
-
-          <div id="hubPhoneListContainer">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-
-        <a id="hubWhatsAppBtn" href="#" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:12px; font-size:13.5px; margin-top:10px;">
-          <span>💬 محادثة واتساب فورية مع استقبال الفرع</span>
-        </a>
-      </div>
-
-      <!-- Col 2: GPS Map & Landmarks -->
-      <div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-          <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);">
-            📍 الموقع الدقيق على الخريطة والاتجاهات
-          </div>
-          <span id="hubGpsBadge" style="font-family:var(--f-mono); font-size:11px; font-weight:800; color:var(--tx-gold);">DAIRUT GPS</span>
-        </div>
-
-        <div class="gps-landmark-card" id="hubLandmarkCard">
-          <!-- Rendered by JS -->
-        </div>
-
-        <div class="gps-map-frame">
-          <iframe id="hubMapIframe" style="width:100%; height:100%; border:none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=27.5583,30.8144&hl=ar&z=15&output=embed"></iframe>
-        </div>
-
-        <div style="display:flex; gap:8px; margin-top:10px;">
-          <a id="hubGmapDirectionsBtn" href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-royal-submit" style="flex:1; background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
-            <span>🚗 فتح الملاحة والمسار (Google Maps)</span>
-          </a>
-          <button type="button" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--bd-subtle); color:var(--tx-primary); padding:10px 14px; font-size:12.5px;" onclick="copyBranchAddress()">
-            <span>📋 نسخ العنوان</span>
-          </button>
-        </div>
+      <span class="trust-dot-sep">•</span>
+      <div class="hero-trust-item">
+        <span>🌸 قسم نسائي وأطفال مستقل</span>
       </div>
     </div>
   </section>
@@ -3169,6 +3333,99 @@ body {
     </div>
 
     <!-- 4 BRANCHES GRID -->
+    <!-- ROYAL 4-BRANCH GPS MAPS & LIVE COMMUNICATION HUB (REQUESTED BY USER) -->
+  <section class="royal-branch-hub" id="royalBranchHub">
+    <div class="branch-hub-header">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:20px;">🧭</span>
+          <h2 class="font-royal" style="font-size:22px; font-weight:700; color:var(--tx-primary); margin:0;">
+            شبكة فروع مركز رويال — الخريطة التفاعلية والاتصال المباشر
+          </h2>
+        </div>
+        <p style="font-size:12.5px; color:var(--tx-muted); margin:4px 0 0 0;">
+          اختر الفرع للوصول إلى أرقام الاستقبال المباشرة، موقع Google Maps بالـ GPS، والاتجاهات الدقيقة
+        </p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="badge-tag" style="font-size:12px; margin:0;">4 فروع رسمية بمحافظتي أسيوط والمنيا</span>
+        <button type="button" class="btn-royal-submit" style="padding:6px 14px; font-size:11.5px; background:var(--gold-light); border-color:var(--gold); color:var(--tx-gold); font-weight:800; cursor:pointer;" onclick="switchSuiteTab('contact')">
+          <span>📞 دليل الفروع الشامل</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 Branch Switcher Tabs -->
+    <div class="branch-tabs-row">
+      <div class="branch-tab-card active" id="bcard-dairut" onclick="switchHubBranch('dairut')">
+        <span>👑 فرع ديروط (الرئيسي)</span>
+        <span class="tab-sub">ميدان أبو جبل • 3 خطوط</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-assiut" onclick="switchHubBranch('assiut')">
+        <span>🏢 فرع مدينة أسيوط</span>
+        <span class="tab-sub">ميدان الزهراء • عمر أفندي</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-qusiya" onclick="switchHubBranch('qusiya')">
+        <span>🏛️ فرع القوصية</span>
+        <span class="tab-sub">شارع الجلاء • بنك القاهرة</span>
+      </div>
+      <div class="branch-tab-card" id="bcard-dayrmawas" onclick="switchHubBranch('dayrmawas')">
+        <span>🌿 فرع ديرمواس</span>
+        <span class="tab-sub">مدرسة التجارة • أسواق المهندس</span>
+      </div>
+    </div>
+
+    <!-- 2-Col Split: Left Phones, Right GPS Map -->
+    <div class="branch-details-grid">
+      <!-- Col 1: Phone Numbers & Direct Actions -->
+      <div style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--bd-subtle);">
+            <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);" id="hubPhoneBoxTitle">
+              أرقام التواصل وحجز المواعيد — فرع ديروط الرئيسي
+            </div>
+            <span style="font-size:11px; font-weight:700; color:var(--emerald);">● متاح للاتصال الآن</span>
+          </div>
+
+          <div id="hubPhoneListContainer">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <a id="hubWhatsAppBtn" href="#" target="_blank" class="btn-royal-submit" style="background:#25D366; border-color:#1EBE5D; text-decoration:none; padding:12px; font-size:13.5px; margin-top:10px;">
+          <span>💬 محادثة واتساب فورية مع استقبال الفرع</span>
+        </a>
+      </div>
+
+      <!-- Col 2: GPS Map & Landmarks -->
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div style="font-family:var(--f-head); font-size:14px; font-weight:800; color:var(--tx-primary);">
+            📍 الموقع الدقيق على الخريطة والاتجاهات
+          </div>
+          <span id="hubGpsBadge" style="font-family:var(--f-mono); font-size:11px; font-weight:800; color:var(--tx-gold);">DAIRUT GPS</span>
+        </div>
+
+        <div class="gps-landmark-card" id="hubLandmarkCard">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="gps-map-frame">
+          <iframe id="hubMapIframe" style="width:100%; height:100%; border:none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=27.5583,30.8144&hl=ar&z=15&output=embed"></iframe>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <a id="hubGmapDirectionsBtn" href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-royal-submit" style="flex:1; background:var(--bg-card-soft); border-color:var(--gold); color:var(--tx-primary); text-decoration:none; padding:10px; font-size:12.5px;">
+            <span>🚗 فتح الملاحة والمسار (Google Maps)</span>
+          </a>
+          <button type="button" class="btn-royal-submit" style="background:var(--bg-card-soft); border-color:var(--bd-subtle); color:var(--tx-primary); padding:10px 14px; font-size:12.5px;" onclick="copyBranchAddress()">
+            <span>📋 نسخ العنوان</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
     <div class="contact-branches-grid">
       <!-- 1. Dairut Main Branch -->
       <div class="branch-contact-card featured">
@@ -4488,13 +4745,14 @@ const RoyalSerenityEngine = {
         }
       }
 
-      if (miniBars) {
-        const mBars = miniBars.children;
-        for (let j = 0; j < mBars.length; j++) {
+      const capsuleBars = document.getElementById("capsuleVisualizer");
+      if (capsuleBars) {
+        const cBars = capsuleBars.children;
+        for (let j = 0; j < cBars.length; j++) {
           const sampleIdx = j * 4;
           const val = dataArray[sampleIdx] || 0;
           const height = Math.max(3, Math.round((val / 255) * 14));
-          mBars[j].style.height = height + "px";
+          cBars[j].style.height = height + "px";
         }
       }
 
@@ -4519,9 +4777,9 @@ const RoyalSerenityEngine = {
         bar.style.height = "4px";
       }
     }
-    const miniBars = document.getElementById("miniVisualizerBars");
-    if (miniBars) {
-      for (let bar of miniBars.children) {
+    const capsuleBars = document.getElementById("capsuleVisualizer");
+    if (capsuleBars) {
+      for (let bar of capsuleBars.children) {
         bar.style.height = "3px";
       }
     }
@@ -4569,16 +4827,16 @@ const RoyalSerenityEngine = {
       }
     });
 
-    // Floating widget state
-    const floatWidget = document.getElementById("floatingSerenityWidget");
-    if (floatWidget) {
-      if (this.isPlaying) floatWidget.classList.add("is-playing");
-      else floatWidget.classList.remove("is-playing");
+    // Dynamic Bottom Capsule State
+    const capsuleIcon = document.getElementById("capsuleMusicIcon");
+    if (capsuleIcon) capsuleIcon.innerText = this.isPlaying ? "⏸" : "🎵";
+    const capsuleText = document.getElementById("capsuleMusicText");
+    if (capsuleText) capsuleText.innerText = m.name;
+    const capsule = document.getElementById("royalDynamicCapsule");
+    if (capsule) {
+      if (this.isPlaying) capsule.classList.add("is-playing");
+      else capsule.classList.remove("is-playing");
     }
-    const floatTrackName = document.getElementById("floatTrackName");
-    if (floatTrackName) floatTrackName.innerText = m.name;
-    const floatPlayIcon = document.getElementById("floatPlayIcon");
-    if (floatPlayIcon) floatPlayIcon.innerText = this.isPlaying ? "⏸" : "▶";
   },
 
   updateVolumeUI() {
@@ -4599,6 +4857,16 @@ const RoyalSerenityEngine = {
     if (el) el.innerText = text;
   }
 };
+
+function openSerenityDrawer() {
+  const d = document.getElementById("serenityDrawerModal");
+  if (d) d.classList.add("open");
+}
+
+function closeSerenityDrawer() {
+  const d = document.getElementById("serenityDrawerModal");
+  if (d) d.classList.remove("open");
+}
 
 function toggleAmbientMusic() {
   if (!RoyalSerenityEngine.isPlaying) {
@@ -6022,27 +6290,156 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- FLOATING SERENITY MINI-WIDGET (Persistent Clinic Audio Bar) -->
-<div class="floating-serenity-widget" id="floatingSerenityWidget" title="مشغل الموسيقى الملكية الهادئة">
-  <div class="mini-visualizer-bars" id="miniVisualizerBars">
-    <span></span><span></span><span></span><span></span>
+
+<!-- UNIFIED ROYAL DYNAMIC CAPSULE (BOTTOM ACTION ISLAND) -->
+<div class="royal-dynamic-capsule" id="royalDynamicCapsule">
+  <!-- Left: Ambient Sound Quick Pill -->
+  <div class="capsule-music-box" onclick="toggleAmbientMusic()" title="تشغيل / إيقاف موسيقى الاسترخاء 432Hz">
+    <span id="capsuleMusicIcon">🎵</span>
+    <div class="capsule-visualizer" id="capsuleVisualizer">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span class="capsule-music-text" id="capsuleMusicText">بيانو وسكينة</span>
   </div>
-  <div class="floating-serenity-title" id="floatTrackName" onclick="scrollToSerenityPlayer()" style="cursor:pointer;" title="انقر للانتقال لمشغل الموسيقى">
-    بيانو الاسترخاء
-  </div>
-  <button type="button" class="btn-float-serenity-toggle" onclick="toggleAmbientMusic()" id="btnFloatSerenityToggle" title="تشغيل / إيقاف">
-    <span id="floatPlayIcon">▶</span>
+
+  <button type="button" onclick="openSerenityDrawer()" style="background:none; border:none; color:var(--tx-gold); font-size:12px; cursor:pointer; padding:2px;" title="إعدادات ومسارات الموسيقى">
+    ⚙️
   </button>
+
+  <div class="capsule-divider"></div>
+
+  <!-- Right: Direct Instant Actions -->
+  <div class="capsule-actions-box">
+    <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%84%D8%B7%D8%A8%20%D8%A7%D9%84%D8%A3%D8%B3%D9%86%D8%A7%D9%86" target="_blank" class="capsule-btn-wa" title="محادثة واتساب فورية">
+      <span>💬 واتساب</span>
+    </a>
+    <a href="tel:01066726432" class="capsule-btn-call" title="اتصال هاتفي مباشر">
+      <span>📞 01066726432</span>
+    </a>
+  </div>
 </div>
 
-<!-- FLOATING SPEED-DIAL CONTACT BAR -->
-<div class="floating-contact-bar" id="floatingContactBar">
-  <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%84%D8%B7%D8%A8%20%D8%A7%D9%84%D8%A3%D8%B3%D9%86%D8%A7%D9%86" target="_blank" class="float-btn-wa" title="محادثة واتساب فورية">
-    <span>💬 واتساب الفرع</span>
-  </a>
-  <a href="tel:01066726432" class="float-btn-phone" title="اتصال هاتفي مباشر">
-    <span>📞 01066726432</span>
-  </a>
+
+<!-- SERENITY AMBIENT AUDIO DRAWER / MODAL -->
+<div class="serenity-modal-backdrop" id="serenityDrawerModal" onclick="if(event.target===this)closeSerenityDrawer()">
+  <div class="serenity-modal-card">
+    <div class="serenity-modal-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:22px;">🎧</span>
+        <div>
+          <div style="font-family:var(--f-head); font-size:16px; font-weight:800; color:var(--tx-primary);">
+            استوديو رويال للاسترخاء الطبي والهدوء النفسي (Royal Serenity)
+          </div>
+          <div style="font-size:11.5px; color:var(--tx-muted);">
+            ترددات صوتية طبية 432Hz معتمدة لإزالة خوف الأسنان وتهدئة ضربات القلب
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeSerenityDrawer()" title="إغلاق">✕</button>
+    </div>
+    
+    <!-- ROYAL SERENITY AMBIENT SUITE (CLINICAL 432Hz MEDITATIVE AUDIO) -->
+  <div class="serenity-player-bar" id="serenityBar">
+    <!-- Top Header Row -->
+    <div class="serenity-header-row">
+      <div class="serenity-brand-block">
+        <div class="serenity-pulse-badge">
+          <span class="serenity-pulse-dot"></span>
+          <span>أجواء صوتية استرخائية حية</span>
+        </div>
+        <div class="serenity-title-box">
+          <div class="serenity-main-title">
+            <span>🎧 استمع للأجواء الهادئة في عيادات رويال (Royal Serenity)</span>
+            <span class="telecom-pill" style="background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;">مُعتمد 432Hz</span>
+          </div>
+          <div class="serenity-sub-desc">
+            ترددات صوتية مهدئة علمياً لتخفيف ضربات القلب وإزالة خوف الأسنان (Dentophobia) لراحة تامة أثناء التصفح والكشف
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-time Equalizer Visualizer (Dynamic Web Audio Bars) -->
+      <div class="serenity-visualizer-wrap" id="serenityVisualizer" title="محلل الترددات الصوتية الحي">
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+        <div class="serenity-visualizer-bar"></div>
+      </div>
+    </div>
+
+    <!-- Mood Selection Cards (3 Clinical Ambience Modes) -->
+    <div class="serenity-moods-grid">
+      <!-- Mode 1: Piano & Crystals -->
+      <div class="serenity-mood-pill active" data-mode="piano" onclick="setSerenityMode('piano')" title="نغمات بيانو وأوتار هادئة ورنين كريستالي">
+        <div class="serenity-mood-icon">🎹</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">بيانو وسكينة ملكية</div>
+          <div class="serenity-mood-tag">432Hz • أوتار ورنين كريستالي دافئ</div>
+        </div>
+      </div>
+
+      <!-- Mode 2: Zen & Water Stream -->
+      <div class="serenity-mood-pill" data-mode="zen" onclick="setSerenityMode('zen')" title="صوت خرير ماء هادئ ورياح لطيفة مع نغمات بنتونيك">
+        <div class="serenity-mood-icon">🌿</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">واحة زن وخرير الماء</div>
+          <div class="serenity-mood-tag">طبيعة نقية • أمواج وشلالات ناعمة</div>
+        </div>
+      </div>
+
+      <!-- Mode 3: Deep Alpha Waves -->
+      <div class="serenity-mood-pill" data-mode="alpha" onclick="setSerenityMode('alpha')" title="ترددات ألفا 10Hz لمزامنة المخ وإزالة توتر عضلات الوجه">
+        <div class="serenity-mood-icon">✨</div>
+        <div class="serenity-mood-info">
+          <div class="serenity-mood-name">ترددات ألفا 432Hz للشفاء</div>
+          <div class="serenity-mood-tag">موجات ثنائية 10Hz • استرخاء عصبي عميق</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls & Timer Row -->
+    <div class="serenity-controls-row">
+      <div class="serenity-play-group">
+        <button type="button" class="btn-serenity-master" id="btnSerenityPlay" onclick="toggleAmbientMusic()">
+          <span id="serenityPlayIcon" style="font-size:14px;">▶</span>
+          <span id="serenityPlayText">تشغيل الموسيقى الهادئة</span>
+        </button>
+
+        <div class="serenity-now-playing">
+          <div class="serenity-track-title" id="serenityTrackTitle">بيانو الاسترخاء الملكي</div>
+          <div class="serenity-track-desc" id="serenityTrackDesc">أوتار هادئة ورنين كريستالي 432Hz لتخفيف التوتر وإشاعة الطمأنينة قبل الكشف</div>
+        </div>
+      </div>
+
+      <div class="serenity-actions-group">
+        <!-- Volume Control -->
+        <div class="serenity-vol-box" title="التحكم في شدة الصوت">
+          <button type="button" onclick="toggleMuteSerenity()" style="background:none; border:none; cursor:pointer; font-size:13px;" id="serenityMuteIcon">🔉</button>
+          <input type="range" min="0" max="100" value="40" id="ambientVolRange" class="serenity-vol-slider" oninput="setAmbientVolume(this.value)" title="مستوى الصوت">
+          <span class="serenity-vol-label" id="ambientVolLabel">40%</span>
+        </div>
+
+        <!-- Sleep Timer -->
+        <div class="serenity-timer-box">
+          <span>⏱ مؤقت الاسترخاء:</span>
+          <button type="button" class="btn-timer-pill active" onclick="setSerenitySleepTimer(0, this)">مستمر</button>
+          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(10, this)">10 د</button>
+          <button type="button" class="btn-timer-pill" onclick="setSerenitySleepTimer(20, this)">20 د</button>
+          <span id="sleepTimerStatus" style="font-family:var(--f-mono); font-size:11px; font-weight:700; color:var(--tx-gold); margin-right:4px;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </div>
+
 </body>
 </html>
