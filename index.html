@@ -3143,6 +3143,143 @@ body {
 .slider-tag-before { right: 14px; }
 .slider-tag-after { left: 14px; color: var(--gold-light); border: 1px solid var(--gold); }
 
+
+/* ========================================================
+   ROYAL MASTER AUTHORITY HUB (SMART GENIUS ARCHITECTURE)
+   ======================================================== */
+.royal-master-hub {
+  margin: 24px 0 32px 0;
+  padding: 24px 28px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1.5px solid var(--bd-subtle);
+  box-shadow: 0 10px 32px rgba(28, 36, 48, 0.04);
+  position: relative;
+}
+.master-hub-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bd-subtle);
+}
+.btn-master-seg {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--bg-card-soft);
+  color: var(--tx-secondary);
+  border: 1.5px solid var(--bd-subtle);
+  font-family: var(--f-head);
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+.btn-master-seg:hover {
+  border-color: var(--gold);
+  color: var(--tx-primary);
+  transform: translateY(-1px);
+}
+.btn-master-seg.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px var(--gold-glow);
+}
+.master-panel {
+  display: none;
+  animation: masterPanelFade 0.28s ease forwards;
+}
+.master-panel.active {
+  display: block;
+}
+@keyframes masterPanelFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Branch Quick Tabs */
+.hero-branch-quick-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 18px auto 20px auto;
+}
+.btn-hero-branch-pill {
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  color: var(--tx-secondary);
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-hero-branch-pill:hover, .btn-hero-branch-pill.active {
+  border-color: var(--gold);
+  background: var(--gold-bg);
+  color: var(--tx-gold);
+  box-shadow: 0 2px 10px var(--gold-glow);
+}
+
+/* Doctors preview in Master Hub */
+.master-doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.master-doc-card {
+  background: var(--bg-card-soft);
+  border: 1.5px solid var(--bd-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s;
+}
+.master-doc-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.15);
+}
+.master-doc-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+.master-doc-info h4 {
+  font-family: var(--f-head);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  margin: 0 0 4px 0;
+}
+.master-doc-spec {
+  font-size: 12px;
+  color: var(--tx-gold);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.master-doc-role {
+  font-size: 11px;
+  color: var(--tx-dim);
+}
+
 </style>
 </head>
 <body>
@@ -3210,6 +3347,15 @@ body {
       <span class="hero-crest-text">مركز رويال لطب الفم والأسنان • ROYAL DENTAL CENTER</span>
     </div>
 
+    
+    <!-- 4 Branch Interactive Quick Selector in Hero -->
+    <div class="hero-branch-quick-tabs">
+      <button type="button" class="btn-hero-branch-pill active" id="heroTab-dairut" onclick="switchHeroBranch('dairut')">👑 فرع ديروط الرئيسي</button>
+      <button type="button" class="btn-hero-branch-pill" id="heroTab-assiut" onclick="switchHeroBranch('assiut')">🌸 فرع مدينة أسيوط</button>
+      <button type="button" class="btn-hero-branch-pill" id="heroTab-qusiya" onclick="switchHeroBranch('qusiya')">🏛️ فرع القوصية</button>
+      <button type="button" class="btn-hero-branch-pill" id="heroTab-dayrmawas" onclick="switchHeroBranch('dayrmawas')">🌿 فرع ديرمواس</button>
+    </div>
+
     <h1 class="hero-title-refined" id="heroBranchHeading">
       رعاية ملكية متكاملة تليق بابتسامتك
     </h1>
@@ -3259,446 +3405,393 @@ body {
   <!-- ========================================================
        WORLD-CLASS FLAGSHIP 4-BRANCH SHOWCASE (PROUD MEDICAL NETWORK)
        ======================================================== -->
-  <section class="royal-flagship-section" id="flagshipBranches">
-    <div class="flagship-section-header">
-      <div class="flagship-header-badge">
-        <span>✦</span> <span>شبكة الفروع الرسمية المعتمدة • أسيوط والمنيا</span> <span>✦</span>
-      </div>
-      <h2 class="flagship-section-title">
-        صروح مركز رويال الطبية — شبكة الفروع الأربعة المعتمدة 👑
-      </h2>
-      <p class="flagship-section-sub">
-        اختر أقرب فرع إليك لحجز كشفك الطبي المباشر، الملاحة بالـ GPS، أو الاتصال بفريق الاستقبال والاستشارات الفورية.
-      </p>
-    </div>
-
-    <div class="flagship-branches-grid">
-      <!-- 1. Dairut Flagship HQ -->
-      <div class="flagship-branch-card is-main-hq">
-        <div>
-          <div class="branch-top-bar">
-            <div class="branch-title-group">
-              <h3>👑 فرع ديروط (المقر الرئيسي)</h3>
-              <span class="branch-tag-pill">المقر الرئيسي المركزي • DAIRUT</span>
-            </div>
-            <span class="branch-status-live">● متاح الآن</span>
-          </div>
-
-          <div class="branch-address-box">
-            📍 ميدان أبو جبل، بجوار فرع فودافون، أعلى Q جيم ومطعم التيسير — الدور الثاني
-          </div>
-
-          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
-            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
-          </div>
-
-          <div class="branch-phones-stack">
-            <!-- Dairut Main Line -->
-            <div class="lux-phone-card is-hotline">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">🔥</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
-                      <span class="telecom-pill telecom-voda">فودافون</span>
-                    </div>
-                    <div class="lux-phone-dept">الخط الساخن المركزي للحجز الفوري</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
-                <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
-              </div>
-            </div>
-
-            <div class="lux-phone-card">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">0150 009 8392</span>
-                      <span class="telecom-pill telecom-we">وي WE</span>
-                    </div>
-                    <div class="lux-phone-dept">استقبال العيادات التخصصية</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="branch-actions-cluster">
-          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dairut')">
-            <span>🎫 احجز موعد كشف في فرع ديروط</span>
-          </button>
-          <div class="branch-sub-actions">
-            <a href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-branch-action-sub">
-              <span>🚗 مسار GPS ديروط</span>
-            </a>
-            <a href="https://wa.me/201066726432" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
-              <span>💬 واتساب الفرع</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Assiut City Flagship (Ladies & Specialty Wing) -->
-      <div class="flagship-branch-card">
-        <div>
-          <div class="branch-top-bar">
-            <div class="branch-title-group">
-              <h3>🏢 فرع مدينة أسيوط (ميدان الزهراء)</h3>
-              <span class="branch-tag-pill" style="background:#FDF2F8; color:#BE185D; border-color:#FBCFE8;">🌸 جناح السيدات • ASSIUT</span>
-            </div>
-            <span class="branch-status-live">● متاح الآن</span>
-          </div>
-
-          <div class="branch-address-box">
-            📍 ميدان الزهراء، بجوار عمر أفندي — برج مهران الدور الثاني، قلب مدينة أسيوط
-          </div>
-
-          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
-            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
-          </div>
-
-          <div class="branch-phones-stack">
-            <!-- Assiut Dedicated Line -->
-            <div class="lux-phone-card is-hotline">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">🌸</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">011 1659 6599</span>
-                      <span class="telecom-pill telecom-eti">اتصالات e&</span>
-                    </div>
-                    <div class="lux-phone-dept">استقبال فرع أسيوط وجناح السيدات</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01116596599" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
-                <a href="https://wa.me/201116596599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A3%D8%B3%D9%8A%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
-              </div>
-            </div>
-
-            <div class="lux-phone-card">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
-                      <span class="telecom-pill telecom-voda">فودافون</span>
-                    </div>
-                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="branch-actions-cluster">
-          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('assiut')">
-            <span>🎫 احجز موعد كشف في فرع أسيوط</span>
-          </button>
-          <div class="branch-sub-actions">
-            <a href="https://maps.google.com/?q=27.1809,31.1837" target="_blank" class="btn-branch-action-sub">
-              <span>🚗 مسار GPS أسيوط</span>
-            </a>
-            <a href="https://wa.me/201116596599" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
-              <span>💬 واتساب الفرع</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Qusiya Flagship -->
-      <div class="flagship-branch-card">
-        <div>
-          <div class="branch-top-bar">
-            <div class="branch-title-group">
-              <h3>🏛️ فرع القوصية (شارع الجلاء)</h3>
-              <span class="branch-tag-pill">بنك القاهرة • QUSIYA</span>
-            </div>
-            <span class="branch-status-live">● متاح الآن</span>
-          </div>
-
-          <div class="branch-address-box">
-            📍 شارع الجلاء، بجوار بنك القاهرة — برج فاطمة الزهراء، مركز القوصية
-          </div>
-
-          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
-            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
-          </div>
-
-          <div class="branch-phones-stack">
-            <!-- Qusiya Line -->
-            <div class="lux-phone-card is-hotline">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">0150 009 8392</span>
-                      <span class="telecom-pill telecom-we">وي WE</span>
-                    </div>
-                    <div class="lux-phone-dept">استقبال عيادات فرع القوصية</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
-                <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D9%88%D8%B5%D9%8A%D8%A9" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
-              </div>
-            </div>
-
-            <div class="lux-phone-card">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
-                      <span class="telecom-pill telecom-voda">فودافون</span>
-                    </div>
-                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="branch-actions-cluster">
-          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('qusiya')">
-            <span>🎫 احجز موعد كشف في فرع القوصية</span>
-          </button>
-          <div class="branch-sub-actions">
-            <a href="https://maps.google.com/?q=27.4419,30.8175" target="_blank" class="btn-branch-action-sub">
-              <span>🚗 مسار GPS القوصية</span>
-            </a>
-            <a href="https://wa.me/201500098392" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
-              <span>💬 واتساب الفرع</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Dayr Mawas Flagship -->
-      <div class="flagship-branch-card">
-        <div>
-          <div class="branch-top-bar">
-            <div class="branch-title-group">
-              <h3>🌿 فرع ديرمواس (جنوب المنيا)</h3>
-              <span class="branch-tag-pill">مدرسة التجارة • DAYR MAWAS</span>
-            </div>
-            <span class="branch-status-live">● متاح الآن</span>
-          </div>
-
-          <div class="branch-address-box">
-            📍 شارع مدرسة التجارة، أعلى مكتبة الإسكندرية وأسواق المهندس — موقع هادئ ومريح
-          </div>
-
-          <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
-            🕒 الفترات: صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
-          </div>
-
-          <div class="branch-phones-stack">
-            <!-- Dayr Mawas Line -->
-            <div class="lux-phone-card is-hotline">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">010 4482 0100</span>
-                      <span class="telecom-pill telecom-voda">فودافون</span>
-                    </div>
-                    <div class="lux-phone-dept">استقبال عيادات فرع ديرمواس</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01044820100" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
-                <a href="https://wa.me/201044820100?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%85%D9%88%D8%A7%D8%B3" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
-              </div>
-            </div>
-
-            <div class="lux-phone-card">
-              <div class="lux-phone-card-top">
-                <div class="lux-phone-info">
-                  <div class="lux-phone-icon">📞</div>
-                  <div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                      <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
-                      <span class="telecom-pill telecom-voda">فودافون</span>
-                    </div>
-                    <div class="lux-phone-dept">الخط الموحد المركزي</div>
-                  </div>
-                </div>
-              </div>
-              <div class="lux-phone-actions">
-                <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="branch-actions-cluster">
-          <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dayrmawas')">
-            <span>🎫 احجز موعد كشف في فرع ديرمواس</span>
-          </button>
-          <div class="branch-sub-actions">
-            <a href="https://maps.google.com/?q=27.6441,30.8465" target="_blank" class="btn-branch-action-sub">
-              <span>🚗 مسار GPS ديرمواس</span>
-            </a>
-            <a href="https://wa.me/201044820100" target="_blank" class="btn-branch-action-sub" style="color:#25D366;">
-              <span>💬 واتساب الفرع</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ========================================================
-       MEDICAL TECHNOLOGY & HOSPITAL-GRADE FLEET (CLINICAL DOMINANCE)
+       ROYAL MASTER AUTHORITY HUB (SMART GENIUS SHOWCASE)
+       Replaces clutter with an intuitive, segmented luxury hub
        ======================================================== -->
-  <section class="royal-tech-section" id="techFleet">
-    <div class="tech-header-block">
-      <div class="tech-badge-pill">
-        <span>🔬</span> <span>أسطول التكنولوجيا الرقمية العالمية • HOSPITAL-GRADE TECHNOLOGY</span> <span>✦</span>
-      </div>
-      <h2 class="tech-main-title">
-        تكنولوجيا علاجية متطورة تُنافس كبرى المراكز الطبية العالمية
-      </h2>
-      <p class="tech-sub-title">
-        نستثمر في أحدث ما توصلت إليه التكنولوجيا الرقمية لضمان علاج دقيق 100% بدون ألم وبأعلى معايير الأمان ومكافحة العدوى العالمية في كافة فروعنا.
-      </p>
-    </div>
-
-    <div class="tech-cards-grid">
-      <!-- Tech 1 -->
-      <div class="tech-card">
-        <div>
-          <div class="tech-icon-wrap">🔬</div>
-          <div class="tech-name">الأشعة المقطعية ثلاثية الأبعاد (CBCT)</div>
-          <div class="tech-spec">3D CONE BEAM COMPUTED TOMOGRAPHY</div>
-          <div class="tech-desc">
-            تصوير مقطعي عالي الدقة لعظام الفك ومسار الأعصاب في ثوانٍ معدودة وبأقل جرعة إشعاعية، لضمان تخطيط جراحي رقمي دقيق لزراعة الأسنان بنسبة نجاح 99.4%.
-          </div>
-        </div>
-        <div class="tech-benefit-badge">✓ أمان تام وتجنب تام لمس الأعصاب</div>
-      </div>
-
-      <!-- Tech 2 -->
-      <div class="tech-card">
-        <div>
-          <div class="tech-icon-wrap">📸</div>
-          <div class="tech-name">الماسح الضوئي الرقمي (3D Intraoral)</div>
-          <div class="tech-spec">100% IMPRESSION-FREE OPTICAL SCANNER</div>
-          <div class="tech-desc">
-            وداعاً لمعجون أخذ المقاسات القديم والشعور بالغثيان. كاميرا مسح ليزري تلتقط 3000 صورة ملونة في الثانية لمطابقة الفكين وتصميم ابتسامتك في 60 ثانية.
-          </div>
-        </div>
-        <div class="tech-benefit-badge">✓ راحة تامة وسرعة إنجاز التركيبات</div>
-      </div>
-
-      <!-- Tech 3 -->
-      <div class="tech-card">
-        <div>
-          <div class="tech-icon-wrap">⚡</div>
-          <div class="tech-name">الليزر المائي الجراحي بدون ألم</div>
-          <div class="tech-spec">WATERLASE & BIOPHOTONICS THERAPY</div>
-          <div class="tech-desc">
-            طاقة ليزر مائية فائقة الدقة لتجميل الابتسامة اللثوية، وتطهير الجيوب، وقص اللثة بدون مشرط، وبدون نزيف، وبدون إبرة بنج، وبأسرع التئام أنسجة ممكن.
-          </div>
-        </div>
-        <div class="tech-benefit-badge">✓ بدون خياطة وبدون ألم وبدون تورم</div>
-      </div>
-
-      <!-- Tech 4 -->
-      <div class="tech-card">
-        <div>
-          <div class="tech-icon-wrap">🛡️</div>
-          <div class="tech-name">التعقيم المركزي الطبي Class B</div>
-          <div class="tech-spec">EUROPEAN HOSPITAL-GRADE AUTOCLAVE</div>
-          <div class="tech-desc">
-            غرف تعقيم مستقلة تعمل بأوتوكلاف البخار المفرغ من الفئة (Class B) المعتمدة بالمستشفيات الأوروبية، مع تغليف حراري معزول يفتح مباشرة أمام كل مريض.
-          </div>
-        </div>
-        <div class="tech-benefit-badge">✓ عزل ميكروبيولوجي كامل 100%</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       BEFORE & AFTER SMILE TRANSFORMATION STUDIO
-       ======================================================== -->
-  <section class="smile-studio-section" id="smileStudio">
-    <div class="smile-studio-header">
-      <div class="flagship-header-badge">
-        <span>✨</span> <span>استوديو التحول والنتائج الحقيقية • CLINICAL SMILE TRANSFORMATIONS</span> <span>✦</span>
-      </div>
-      <h2 class="flagship-section-title">
-        شاهد الفارق الحقيقي في ابتسامات مرضانا قبل وبعد العلاج 👑
-      </h2>
-      <p class="flagship-section-sub">
-        اسحب المقبض التفاعلي يميناً ويساراً لمشاهدة الدقة الفائقة في تصميم الابتسامة الملكية والفينير وتنسيق تقويم الأسنان.
-      </p>
-    </div>
-
-    <!-- Case Preset Tabs -->
-    <div class="smile-case-tabs">
-      <button type="button" class="btn-case-tab active" onclick="switchSmileCase('veneers', this)">
-        <span>✨ فينير وهوليوود سمايل DSD</span>
+  <section class="royal-master-hub" id="royalMasterHub">
+    <!-- Master Segment Switcher Navigation -->
+    <div class="master-hub-nav-wrap">
+      <button type="button" class="btn-master-seg active" id="mseg-branches" onclick="switchMasterHub('branches')">
+        <span>🏛️ شبكة الفروع الأربعة (4)</span>
       </button>
-      <button type="button" class="btn-case-tab" onclick="switchSmileCase('ortho', this)">
-        <span>📐 تقويم الأسنان والفكين</span>
+      <button type="button" class="btn-master-seg" id="mseg-tech" onclick="switchMasterHub('tech')">
+        <span>🔬 أسطول التكنولوجيا الطبية</span>
       </button>
-      <button type="button" class="btn-case-tab" onclick="switchSmileCase('whitening', this)">
-        <span>💎 تبييض الأسنان بالليزر</span>
+      <button type="button" class="btn-master-seg" id="mseg-smile" onclick="switchMasterHub('smile')">
+        <span>✨ استوديو قبل وبعد (النتائج)</span>
+      </button>
+      <button type="button" class="btn-master-seg" id="mseg-doctors" onclick="switchMasterHub('doctors')">
+        <span>👨‍⚕️ كبار الاستشاريين المعتمدين</span>
       </button>
     </div>
 
-    <!-- Interactive Draggable Split-Slider -->
-    <div class="smile-slider-box" id="smileSliderContainer">
-      <!-- Before Layer (Full) -->
-      <div class="smile-img-layer">
-        <img id="smileImgBefore" src="assets/royal_ortho_before_after.jpg" alt="حالة الأسنان قبل العلاج">
-        <div class="slider-tag-before">قبل الإجراء الطبي (Before)</div>
+    <!-- Panel 1: 4 Flagship Branches Grid -->
+    <div class="master-panel active" id="mpanel-branches">
+      <div style="text-align:center; margin-bottom:18px;">
+        <span class="flagship-header-badge">✦ شبكة الفروع الرسمية المعتمدة بمحافظتي أسيوط والمنيا ✦</span>
+        <h3 style="font-family:var(--f-head); font-size:22px; font-weight:900; color:var(--tx-primary); margin:6px 0;">
+          صروح مركز رويال — اختر فرعك للاتصال المباشر أو حجز الكشف
+        </h3>
       </div>
 
-      <!-- After Layer (Clipped by width) -->
-      <div class="smile-after-wrap" id="smileAfterWrap" style="width:50%;">
-        <img id="smileImgAfter" src="assets/royal_ortho_before_after.jpg" alt="الابتسامة الملكية بعد العلاج" style="filter: brightness(1.08) contrast(1.05);">
-        <div class="slider-tag-after">الابتسامة الملكية بعد العلاج (After ✨)</div>
-      </div>
+      <div class="flagship-branches-grid">
+        <!-- 1. Dairut HQ -->
+        <div class="flagship-branch-card is-main-hq">
+          <div>
+            <div class="branch-top-bar">
+              <div class="branch-title-group">
+                <h3>👑 فرع ديروط (المقر الرئيسي)</h3>
+                <span class="branch-tag-pill">المقر المركزي • DAIRUT</span>
+              </div>
+              <span class="branch-status-live">● متاح الآن</span>
+            </div>
+            <div class="branch-address-box">
+              📍 ميدان أبو جبل، بجوار فودافون، أعلى Q جيم ومطعم التيسير — الدور الثاني
+            </div>
+            <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+              🕒 صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+            </div>
+            <div class="branch-phones-stack">
+              <div class="lux-phone-card is-hotline">
+                <div class="lux-phone-card-top">
+                  <div class="lux-phone-info">
+                    <div class="lux-phone-icon">🔥</div>
+                    <div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <span class="lux-phone-number" dir="ltr">010 6672 6432</span>
+                        <span class="telecom-pill telecom-voda">فودافون</span>
+                      </div>
+                      <div class="lux-phone-dept">الخط الساخن المركزي للحجز والاستعلام</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lux-phone-actions">
+                  <a href="tel:01066726432" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                  <a href="https://wa.me/201066726432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="branch-actions-cluster">
+            <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dairut')">
+              <span>🎫 احجز موعدك في فرع ديروط</span>
+            </button>
+            <div class="branch-sub-actions">
+              <a href="https://maps.google.com/?q=27.5583,30.8144" target="_blank" class="btn-branch-action-sub">
+                <span>🚗 GPS ديروط</span>
+              </a>
+              <button type="button" class="btn-branch-action-sub" onclick="copyNumber('01066726432')">
+                <span>📋 نسخ الرقم</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <!-- Draggable Split Handle -->
-      <div class="smile-slider-handle" id="smileSliderHandle" style="left:50%;">
-        <div class="slider-handle-knob">⇄</div>
+        <!-- 2. Assiut Flagship -->
+        <div class="flagship-branch-card">
+          <div>
+            <div class="branch-top-bar">
+              <div class="branch-title-group">
+                <h3>🏢 فرع مدينة أسيوط (ميدان الزهراء)</h3>
+                <span class="branch-tag-pill" style="background:#FDF2F8; color:#BE185D; border-color:#FBCFE8;">🌸 جناح السيدات • ASSIUT</span>
+              </div>
+              <span class="branch-status-live">● متاح الآن</span>
+            </div>
+            <div class="branch-address-box">
+              📍 ميدان الزهراء، بجوار عمر أفندي — برج مهران الدور الثاني، قلب مدينة أسيوط
+            </div>
+            <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+              🕒 صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+            </div>
+            <div class="branch-phones-stack">
+              <div class="lux-phone-card is-hotline">
+                <div class="lux-phone-card-top">
+                  <div class="lux-phone-info">
+                    <div class="lux-phone-icon">🌸</div>
+                    <div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <span class="lux-phone-number" dir="ltr">011 1659 6599</span>
+                        <span class="telecom-pill telecom-eti">اتصالات e&</span>
+                      </div>
+                      <div class="lux-phone-dept">استقبال فرع أسيوط وجناح السيدات</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lux-phone-actions">
+                  <a href="tel:01116596599" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                  <a href="https://wa.me/201116596599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A3%D8%B3%D9%8A%D9%88%D8%B7" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="branch-actions-cluster">
+            <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('assiut')">
+              <span>🎫 احجز موعدك في فرع أسيوط</span>
+            </button>
+            <div class="branch-sub-actions">
+              <a href="https://maps.google.com/?q=27.1809,31.1837" target="_blank" class="btn-branch-action-sub">
+                <span>🚗 GPS أسيوط</span>
+              </a>
+              <button type="button" class="btn-branch-action-sub" onclick="copyNumber('01116596599')">
+                <span>📋 نسخ الرقم</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Qusiya Flagship -->
+        <div class="flagship-branch-card">
+          <div>
+            <div class="branch-top-bar">
+              <div class="branch-title-group">
+                <h3>🏛️ فرع القوصية (شارع الجلاء)</h3>
+                <span class="branch-tag-pill">بنك القاهرة • QUSIYA</span>
+              </div>
+              <span class="branch-status-live">● متاح الآن</span>
+            </div>
+            <div class="branch-address-box">
+              📍 شارع الجلاء، بجوار بنك القاهرة — برج فاطمة الزهراء، مركز القوصية
+            </div>
+            <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+              🕒 صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+            </div>
+            <div class="branch-phones-stack">
+              <div class="lux-phone-card is-hotline">
+                <div class="lux-phone-card-top">
+                  <div class="lux-phone-info">
+                    <div class="lux-phone-icon">📞</div>
+                    <div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <span class="lux-phone-number" dir="ltr">0150 009 8392</span>
+                        <span class="telecom-pill telecom-we">وي WE</span>
+                      </div>
+                      <div class="lux-phone-dept">استقبال عيادات فرع القوصية</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lux-phone-actions">
+                  <a href="tel:01500098392" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                  <a href="https://wa.me/201500098392?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D9%88%D8%B5%D9%8A%D8%A9" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="branch-actions-cluster">
+            <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('qusiya')">
+              <span>🎫 احجز موعدك في فرع القوصية</span>
+            </button>
+            <div class="branch-sub-actions">
+              <a href="https://maps.google.com/?q=27.4419,30.8175" target="_blank" class="btn-branch-action-sub">
+                <span>🚗 GPS القوصية</span>
+              </a>
+              <button type="button" class="btn-branch-action-sub" onclick="copyNumber('01500098392')">
+                <span>📋 نسخ الرقم</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Dayr Mawas Flagship -->
+        <div class="flagship-branch-card">
+          <div>
+            <div class="branch-top-bar">
+              <div class="branch-title-group">
+                <h3>🌿 فرع ديرمواس (جنوب المنيا)</h3>
+                <span class="branch-tag-pill">مدرسة التجارة • DAYR MAWAS</span>
+              </div>
+              <span class="branch-status-live">● متاح الآن</span>
+            </div>
+            <div class="branch-address-box">
+              📍 شارع مدرسة التجارة، أعلى مكتبة الإسكندرية وأسواق المهندس
+            </div>
+            <div style="font-size:11.5px; color:var(--tx-muted); margin-bottom:10px;">
+              🕒 صباحية 11:00 ص - 3:30 م | مسائية 4:00 م - 10:30 م
+            </div>
+            <div class="branch-phones-stack">
+              <div class="lux-phone-card is-hotline">
+                <div class="lux-phone-card-top">
+                  <div class="lux-phone-info">
+                    <div class="lux-phone-icon">📞</div>
+                    <div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <span class="lux-phone-number" dir="ltr">010 4482 0100</span>
+                        <span class="telecom-pill telecom-voda">فودافون</span>
+                      </div>
+                      <div class="lux-phone-dept">استقبال عيادات فرع ديرمواس</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lux-phone-actions">
+                  <a href="tel:01044820100" class="btn-lux-call"><span>📞 اتصال مباشر</span></a>
+                  <a href="https://wa.me/201044820100?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B1%D9%83%D8%B2%20%D8%B1%D9%88%D9%8A%D8%A7%D9%84%20%D9%81%D8%B1%D8%B9%20%D8%AF%D9%8A%D8%B1%D9%85%D9%88%D8%A7%D8%B3" target="_blank" class="btn-lux-wa-sm"><span>💬 واتساب</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="branch-actions-cluster">
+            <button type="button" class="btn-branch-primary-book" onclick="selectAndBookBranch('dayrmawas')">
+              <span>🎫 احجز موعدك في فرع ديرمواس</span>
+            </button>
+            <div class="branch-sub-actions">
+              <a href="https://maps.google.com/?q=27.6441,30.8465" target="_blank" class="btn-branch-action-sub">
+                <span>🚗 GPS ديرمواس</span>
+              </a>
+              <button type="button" class="btn-branch-action-sub" onclick="copyNumber('01044820100')">
+                <span>📋 نسخ الرقم</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div style="text-align:center; margin-top:16px;">
-      <button type="button" class="btn-hero-primary" onclick="switchSuiteTab('kiosk'); document.getElementById('view-kiosk').scrollIntoView({behavior:'smooth'});" style="font-size:13px; padding:10px 22px;">
-        <span>✨ صمم ابتسامتك الملكية الآن — احجز كشفك</span>
-      </button>
+    <!-- Panel 2: Medical Technology Fleet -->
+    <div class="master-panel" id="mpanel-tech">
+      <div style="text-align:center; margin-bottom:18px;">
+        <span class="flagship-header-badge">🔬 تكنولوجيا علاجية وتشخيصية متقدمة ✦</span>
+        <h3 style="font-family:var(--f-head); font-size:22px; font-weight:900; color:var(--tx-primary); margin:6px 0;">
+          أسطول الأجهزة الطبية الرقمية المعتمدة عالمياً
+        </h3>
+      </div>
+
+      <div class="tech-cards-grid">
+        <div class="tech-card" style="background:var(--bg-card-soft); border-color:var(--bd-subtle);">
+          <div>
+            <div class="tech-icon-wrap">🔬</div>
+            <div class="tech-name" style="color:var(--tx-primary);">الأشعة المقطعية ثلاثية الأبعاد (CBCT)</div>
+            <div class="tech-spec">3D CONE BEAM COMPUTED TOMOGRAPHY</div>
+            <div class="tech-desc" style="color:var(--tx-muted);">
+              فحص ميكروني فوري لعظام الفك ومسار الأعصاب في ثوانٍ معدودة وبأقل جرعة إشعاعية، لضمان تخطيط جراحي دقيق لزراعة الأسنان بنسبة نجاح 99.4%.
+            </div>
+          </div>
+          <div class="tech-benefit-badge" style="color:#059669;">✓ أمان تام وتجنب تام لمس الأعصاب</div>
+        </div>
+
+        <div class="tech-card" style="background:var(--bg-card-soft); border-color:var(--bd-subtle);">
+          <div>
+            <div class="tech-icon-wrap">📸</div>
+            <div class="tech-name" style="color:var(--tx-primary);">الماسح الضوئي الرقمي (3D Intraoral)</div>
+            <div class="tech-spec">100% IMPRESSION-FREE OPTICAL SCANNER</div>
+            <div class="tech-desc" style="color:var(--tx-muted);">
+              وداعاً لمعجون أخذ المقاسات القديم والشعور بالغثيان. كاميرا ليزرية تلتقط 3000 صورة ملونة في الثانية لمطابقة الفكين وتصميم ابتسامتك في 60 ثانية.
+            </div>
+          </div>
+          <div class="tech-benefit-badge" style="color:#059669;">✓ راحة تامة وسرعة إنجاز التركيبات</div>
+        </div>
+
+        <div class="tech-card" style="background:var(--bg-card-soft); border-color:var(--bd-subtle);">
+          <div>
+            <div class="tech-icon-wrap">⚡</div>
+            <div class="tech-name" style="color:var(--tx-primary);">الليزر المائي الجراحي بدون ألم</div>
+            <div class="tech-spec">WATERLASE & BIOPHOTONICS THERAPY</div>
+            <div class="tech-desc" style="color:var(--tx-muted);">
+              طاقة ليزر مائية فائقة الدقة لتجميل الابتسامة اللثوية، وتطهير الجيوب، وقص اللثة بدون مشرط، وبدون نزيف، وبدون إبرة بنج، وبأسرع التئام أنسجة.
+            </div>
+          </div>
+          <div class="tech-benefit-badge" style="color:#059669;">✓ بدون خياطة وبدون ألم وبدون تورم</div>
+        </div>
+
+        <div class="tech-card" style="background:var(--bg-card-soft); border-color:var(--bd-subtle);">
+          <div>
+            <div class="tech-icon-wrap">🛡️</div>
+            <div class="tech-name" style="color:var(--tx-primary);">التعقيم المركزي الطبي Class B</div>
+            <div class="tech-spec">EUROPEAN HOSPITAL-GRADE AUTOCLAVE</div>
+            <div class="tech-desc" style="color:var(--tx-muted);">
+              غرف تعقيم مستقلة تعمل بأوتوكلاف البخار المفرغ من الفئة (Class B) المعتمدة بالمستشفيات الأوروبية مع تغليف حراري معزول يفتح مباشرة أمام كل مريض.
+            </div>
+          </div>
+          <div class="tech-benefit-badge" style="color:#059669;">✓ عزل ميكروبيولوجي كامل 100%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: Before & After Smile Studio -->
+    <div class="master-panel" id="mpanel-smile">
+      <div style="text-align:center; margin-bottom:18px;">
+        <span class="flagship-header-badge">✨ نتائج وتجارب سريرية حقيقية ✦</span>
+        <h3 style="font-family:var(--f-head); font-size:22px; font-weight:900; color:var(--tx-primary); margin:6px 0;">
+          استوديو مقارنة الابتسامة التفاعلي (قبل وبعد العلاج)
+        </h3>
+        <p style="font-size:12.5px; color:var(--tx-muted);">اسحب المقبض بالماوس أو اللمس يميناً ويساراً لمشاهدة الدقة الفائقة</p>
+      </div>
+
+      <div class="smile-case-tabs">
+        <button type="button" class="btn-case-tab active" onclick="switchSmileCase('veneers', this)">
+          <span>✨ فينير وهوليوود سمايل DSD</span>
+        </button>
+        <button type="button" class="btn-case-tab" onclick="switchSmileCase('ortho', this)">
+          <span>📐 تقويم الأسنان والفكين</span>
+        </button>
+        <button type="button" class="btn-case-tab" onclick="switchSmileCase('whitening', this)">
+          <span>💎 تبييض الأسنان بالليزر</span>
+        </button>
+      </div>
+
+      <div class="smile-slider-box" id="smileSliderContainer">
+        <div class="smile-img-layer">
+          <img id="smileImgBefore" src="assets/royal_ortho_before_after.jpg" alt="قبل العلاج">
+          <div class="slider-tag-before">قبل الإجراء الطبي (Before)</div>
+        </div>
+        <div class="smile-after-wrap" id="smileAfterWrap" style="width:50%;">
+          <img id="smileImgAfter" src="assets/royal_ortho_before_after.jpg" alt="بعد العلاج" style="filter: brightness(1.10) contrast(1.08);">
+          <div class="slider-tag-after">الابتسامة الملكية بعد العلاج (After ✨)</div>
+        </div>
+        <div class="smile-slider-handle" id="smileSliderHandle" style="left:50%;">
+          <div class="slider-handle-knob">⇄</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4: Lead Consultants Roster -->
+    <div class="master-panel" id="mpanel-doctors">
+      <div style="text-align:center; margin-bottom:18px;">
+        <span class="flagship-header-badge">👨‍⚕️ الخبرة والريادة الاستشارية ✦</span>
+        <h3 style="font-family:var(--f-head); font-size:22px; font-weight:900; color:var(--tx-primary); margin:6px 0;">
+          نخبة كبار الاستشاريين المشرفين على عيادات رويال
+        </h3>
+      </div>
+
+      <div class="master-doctors-grid">
+        <!-- Doc 1 -->
+        <div class="master-doc-card">
+          <img src="assets/doc_chair_consultant.jpg" alt="د. محمد عبدالراضي" class="master-doc-avatar">
+          <div class="master-doc-info">
+            <h4>د. محمد عبدالراضي</h4>
+            <div class="master-doc-spec">استشاري جراحة الفم وزراعة الأسنان وعلاج الجذور</div>
+            <div class="master-doc-role">المشرف على زراعة الأسنان الفورية وتوجيه الغرسات ثلاثي الأبعاد</div>
+            <button type="button" class="btn-hero-primary" onclick="selectDoctorAndBook('doc-radhy')" style="padding:6px 14px; font-size:11.5px; margin-top:8px;">
+              <span>احجز مع د. محمد عبدالراضي</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Doc 2 -->
+        <div class="master-doc-card">
+          <img src="assets/doc_ortho_director.jpg" alt="د. عبدالله عزام" class="master-doc-avatar">
+          <div class="master-doc-info">
+            <h4>د. عبدالله عزام</h4>
+            <div class="master-doc-spec">استشاري تقويم الأسنان والفكين والتقسيط 0%</div>
+            <div class="master-doc-role">المشرف على خطط التقويم الشفاف والمعدني وتعديل إطباق الفكين</div>
+            <button type="button" class="btn-hero-primary" onclick="selectDoctorAndBook('doc-azzam')" style="padding:6px 14px; font-size:11.5px; margin-top:8px;">
+              <span>احجز مع د. عبدالله عزام</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Doc 3 -->
+        <div class="master-doc-card">
+          <img src="assets/doc_pediatric_specialist.jpg" alt="د. محمد عبدالواحد" class="master-doc-avatar">
+          <div class="master-doc-info">
+            <h4>د. محمد عبدالواحد</h4>
+            <div class="master-doc-spec">استشاري تجميل الأسنان وتصميم الابتسامة والفينير</div>
+            <div class="master-doc-role">المشرف على عدسات E.max وهوليوود سمايل الرقمية والتركيبات التجميلية</div>
+            <button type="button" class="btn-hero-primary" onclick="selectDoctorAndBook('doc-wahid')" style="padding:6px 14px; font-size:11.5px; margin-top:8px;">
+              <span>احجز مع د. محمد عبدالواحد</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -5801,6 +5894,48 @@ function initSmileSlider() {
 
   sliderHandle.addEventListener('mousedown', onPointerDown);
   sliderHandle.addEventListener('touchstart', onPointerDown, { passive: true });
+}
+
+function switchMasterHub(tabKey) {
+  document.querySelectorAll('.btn-master-seg').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.master-panel').forEach(p => p.classList.remove('active'));
+
+  const activeBtn = document.getElementById('mseg-' + tabKey);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  const activePanel = document.getElementById('mpanel-' + tabKey);
+  if (activePanel) activePanel.classList.add('active');
+
+  if (tabKey === 'smile') {
+    setTimeout(initSmileSlider, 50);
+  }
+}
+
+function switchHeroBranch(branchKey) {
+  document.querySelectorAll('.hero-branch-quick-tabs .btn-hero-branch-pill').forEach(b => b.classList.remove('active'));
+  const activePill = document.getElementById('heroTab-' + branchKey);
+  if (activePill) activePill.classList.add('active');
+
+  const topSelect = document.getElementById('branchSelector');
+  if (topSelect) {
+    topSelect.value = branchKey;
+    onBranchChanged();
+  }
+}
+
+function selectDoctorAndBook(docId) {
+  switchSuiteTab('kiosk');
+  const sel = document.getElementById('doctorSelect');
+  if (sel) {
+    sel.value = docId;
+    onDoctorChanged();
+  }
+  const kioskEl = document.getElementById('view-kiosk');
+  if (kioskEl) {
+    kioskEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  showToast("تم تحديد الطبيب — أكمل حجز الموعد");
+  RoyalAudio.playChime();
 }
 
 function toggleAmbientMusic() {
