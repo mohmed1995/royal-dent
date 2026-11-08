@@ -1018,43 +1018,215 @@
       border: 1px solid var(--gold-border);
     }
 
-    /* Campaign Previews */
-    .campaign-banners-wrap {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 640px) {
-      .campaign-banners-wrap {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .campaign-banner-card {
+    /* Campaign Previews & Cases Showcase */
+    .campaigns-showcase-wrap {
+      margin-top: 28px;
       background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1.5px solid var(--gold-border);
       border-radius: var(--radius-lg);
-      overflow: hidden;
+      padding: 20px 16px;
       box-shadow: var(--shadow-sm);
     }
-    .campaign-banner-img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      display: block;
+    .campaigns-showcase-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 12px;
     }
-    .campaign-banner-meta {
-      padding: 10px 14px;
+    .campaigns-showcase-head h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--gold-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .campaign-banner-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-    .campaign-banner-sub {
-      font-size: 12px;
+    .campaigns-showcase-head p {
+      font-size: 0.88rem;
       color: var(--text-muted);
       margin-top: 2px;
+    }
+    .campaigns-slider {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .campaigns-slider::-webkit-scrollbar {
+      height: 6px;
+    }
+    .campaigns-slider::-webkit-scrollbar-thumb {
+      background: var(--gold-border);
+      border-radius: var(--radius-full);
+    }
+    .campaign-card {
+      flex: 0 0 240px;
+      scroll-snap-align: start;
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    @media (min-width: 640px) {
+      .campaign-card {
+        flex: 0 0 260px;
+      }
+    }
+    .campaign-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-primary);
+    }
+    .campaign-card-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background-color: var(--bg-warm-tint);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .campaign-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .campaign-card:hover .campaign-card-img {
+      transform: scale(1.03);
+    }
+    .campaign-zoom-hint {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(26, 22, 18, 0.72);
+      color: #FFFFFF;
+      padding: 4px 8px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      backdrop-filter: blur(4px);
+    }
+    .campaign-card-body {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 10px;
+    }
+    .campaign-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background-color: var(--bg-gold-light);
+      border: 1px solid var(--gold-border);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+    .campaign-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+    .campaign-book-btn {
+      width: 100%;
+      min-height: 44px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      background-color: #FFFFFF;
+      color: var(--gold-dark);
+      border: 1px solid var(--gold-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .campaign-book-btn:hover {
+      background-color: var(--gold-primary);
+      color: #FFFFFF;
+      border-color: var(--gold-primary);
+    }
+
+    /* Lightbox Modal */
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 12, 9, 0.90);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: lightbox-fade 0.2s ease-out;
+    }
+    .image-lightbox.active {
+      display: flex;
+    }
+    @keyframes lightbox-fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      object-fit: contain;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: -46px;
+      left: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+    }
+    .lightbox-caption {
+      color: #E2DBD0;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: 700;
     }
 
     /* ==========================================================================
@@ -1291,7 +1463,7 @@
             <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             <span>احجز الآن</span>
           </a>
-          <a href="tel:+201066726432" class="btn btn-call">
+          <a href="tel:+201066726432" dir="ltr" class="btn btn-call">
             <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span>اتصال مباشر</span>
           </a>
@@ -1598,7 +1770,7 @@
             </div>
 
             <div class="branch-actions-row">
-              <a href="tel:+201066726432" class="btn btn-call">
+              <a href="tel:+201066726432" dir="ltr" class="btn btn-call">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <span>اتصال بالفرع</span>
               </a>
@@ -1664,7 +1836,7 @@
             </div>
 
             <div class="branch-actions-row">
-              <a href="tel:+201116596599" class="btn btn-call">
+              <a href="tel:+201116596599" dir="ltr" class="btn btn-call">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <span>اتصال بأسيوط</span>
               </a>
@@ -1730,7 +1902,7 @@
             </div>
 
             <div class="branch-actions-row">
-              <a href="tel:+201500098392" class="btn btn-call">
+              <a href="tel:+201500098392" dir="ltr" class="btn btn-call">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <span>اتصال بالقوصية</span>
               </a>
@@ -1796,7 +1968,7 @@
             </div>
 
             <div class="branch-actions-row">
-              <a href="tel:+201044820100" class="btn btn-call">
+              <a href="tel:+201044820100" dir="ltr" class="btn btn-call">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <span>اتصال بديرمواس</span>
               </a>
@@ -1937,21 +2109,147 @@
         </div>
       </div>
 
-      <!-- Verified Campaign Previews (With Lazy Loading and explicit Dimensions) -->
-      <div class="campaign-banners-wrap">
-        <div class="campaign-banner-card">
-          <img src="./assets/ad_ortho_distances.jpg" alt="حملة مركز رويال لتقويم الأسنان" class="campaign-banner-img" width="540" height="170" loading="lazy">
-          <div class="campaign-banner-meta">
-            <div class="campaign-banner-title">مبادرة تقويم الأسنان والفكين</div>
-            <div class="campaign-banner-sub">خطط متابعة دورية وتقسيط ميسر عبر الفروع الأربعة</div>
+      <!-- Authentic Campaigns & Clinical Cases Showcase -->
+      <div class="campaigns-showcase-wrap">
+        <div class="campaigns-showcase-head">
+          <div class="campaigns-showcase-head-title">
+            <h3>
+              <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>حملاتنا الطبية ونتائج الحالات الواقعية</span>
+            </h3>
+            <p>انقر على أي صورة للتكبير، أو احجز مباشرة في التخصص المناسب لحالتك</p>
           </div>
+          <span style="font-size:12px;color:var(--text-subtle);font-weight:700;">اسحب أفقياً لعرض المزيد ←</span>
         </div>
-        <div class="campaign-banner-card">
-          <img src="./assets/ad_ladies_clinic.jpg" alt="حملة قسم السيدات المستقل بفرع أسيوط" class="campaign-banner-img" width="540" height="170" loading="lazy">
-          <div class="campaign-banner-meta">
-            <div class="campaign-banner-title">جناح السيدات المستقل بمدينة أسيوط</div>
-            <div class="campaign-banner-sub">خصوصية كاملة وطاقم طبي نسائي معتمد</div>
+
+        <div class="campaigns-slider" role="region" aria-label="معرض حملات مركز رويال">
+          
+          <!-- Campaign 1: Before & After -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_before_after_journey.jpg', 'حالة تجميل وفينير حقيقية - مركز رويال')">
+              <img src="./assets/ad_before_after_journey.jpg" alt="حالة تجميل وتناسق الأسنان قبل وبعد بمركز رويال" class="campaign-card-img" width="819" height="1024" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">قبل وبعد (Before & After)</span>
+                <h4 class="campaign-title" style="margin-top:6px;">جاهز تبدأ رحلة ابتسامة أحلامك معانا؟</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('تجميل الأسنان والفينير')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز تجميل وفينير</span>
+              </button>
+            </div>
           </div>
+
+          <!-- Campaign 2: Orthodontics Across Ages -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_ortho_age.jpg', 'تقويم الأسنان لجميع الأعمار - مركز رويال')">
+              <img src="./assets/ad_ortho_age.jpg" alt="تقويم الأسنان لجميع الأعمار بمركز رويال" class="campaign-card-img" width="819" height="1024" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">تقويم لجميع الأعمار</span>
+                <h4 class="campaign-title" style="margin-top:6px;">هل التقويم له سن معين؟ كبار ومراهقين</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('تقويم الأسنان والفكين')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز استشارة تقويم</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Campaign 3: Gummy Smile Laser -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_gummy_smile_laser.jpg', 'تجميل الابتسامة اللثوية بالليزر - مركز رويال')">
+              <img src="./assets/ad_gummy_smile_laser.jpg" alt="تجميل وقص اللثة بالليزر بمركز رويال" class="campaign-card-img" width="819" height="1024" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">تجميل اللثة بالليزر</span>
+                <h4 class="campaign-title" style="margin-top:6px;">الابتسامة اللثوية بتغير شكل ابتسامتك في الصور</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('تجميل الأسنان والفينير')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز تجميل لثة</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Campaign 4: Overcoming Fear -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_fear_solution.jpg', 'بيئة علاجية هادئة بدون قلق - مركز رويال')">
+              <img src="./assets/ad_fear_solution.jpg" alt="علاج وتخطي حاجز الخوف من طبيب الأسنان بمركز رويال" class="campaign-card-img" width="819" height="1024" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">عناية مريحة ومهدئة</span>
+                <h4 class="campaign-title" style="margin-top:6px;">الخوف من دكتور الأسنان مش هو الحل!!</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('كشف واستشارة عامة')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز كشفاً مريحاً</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Campaign 5: Kids Confidence -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_confident_smile_kids.jpg', 'طب أسنان الأطفال - مركز رويال')">
+              <img src="./assets/ad_confident_smile_kids.jpg" alt="طب أسنان الأطفال والأسرة بمركز رويال" class="campaign-card-img" width="819" height="1024" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">عيادة الأطفال والأسرة</span>
+                <h4 class="campaign-title" style="margin-top:6px;">خلّي ضحكتك تعكس ثقتك في كل خطوة</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('طب أسنان الأطفال')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز عيادة أطفال</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Campaign 6: Ladies Department -->
+          <div class="campaign-card">
+            <div class="campaign-card-img-wrap" onclick="openLightbox('./assets/ad_ladies_clinic.jpg', 'قسم السيدات المستقل بفرع أسيوط - مركز رويال')">
+              <img src="./assets/ad_ladies_clinic.jpg" alt="قسم السيدات المستقل بفرع أسيوط بمركز رويال" class="campaign-card-img" width="540" height="170" loading="lazy">
+              <div class="campaign-zoom-hint">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>تكبير</span>
+              </div>
+            </div>
+            <div class="campaign-card-body">
+              <div>
+                <span class="campaign-badge">قسم السيدات المستقل</span>
+                <h4 class="campaign-title" style="margin-top:6px;">جناح السيدات المستقل بمدينة أسيوط</h4>
+              </div>
+              <button type="button" class="campaign-book-btn" onclick="bookCampaignService('عيادة السيدات المتخصصة')">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>احجز عيادة السيدات</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -2074,7 +2372,7 @@
           <span class="bottom-brand-name">رويال</span>
         </div>
         <div class="bottom-bar-actions">
-          <a href="tel:+201066726432" class="btn btn-call bottom-bar-btn" aria-label="اتصال سريع">
+          <a href="tel:+201066726432" dir="ltr" class="btn btn-call bottom-bar-btn" aria-label="اتصال سريع">
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span>اتصال</span>
           </a>
@@ -2458,7 +2756,60 @@
         });
       }
 
+      /* ==========================================================================
+         7. Campaign Booking & Lightbox Handlers
+         ========================================================================== */
+      window.bookCampaignService = function (serviceOptionValue) {
+        const serviceSelect = document.getElementById('booking-service');
+        if (serviceSelect && serviceOptionValue) {
+          // Find matching option
+          for (let i = 0; i < serviceSelect.options.length; i++) {
+            if (serviceSelect.options[i].text.includes(serviceOptionValue) || serviceSelect.options[i].value.includes(serviceOptionValue)) {
+              serviceSelect.selectedIndex = i;
+              break;
+            }
+          }
+          serviceSelect.focus();
+        }
+        const bookingSec = document.getElementById('booking-section');
+        if (bookingSec) {
+          bookingSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      window.openLightbox = function (imgSrc, captionText) {
+        const lightbox = document.getElementById('ad-lightbox');
+        const lbImg = document.getElementById('lightbox-target-img');
+        const lbCap = document.getElementById('lightbox-caption-text');
+        if (lightbox && lbImg) {
+          lbImg.src = imgSrc;
+          if (lbCap) lbCap.textContent = captionText || '';
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+
+      window.closeLightbox = function () {
+        const lightbox = document.getElementById('ad-lightbox');
+        if (lightbox) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      };
+
     })();
   </script>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div id="ad-lightbox" class="image-lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="عرض الصورة بالحجم الكامل">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="إغلاق المعاينة">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <span>إغلاق</span>
+      </button>
+      <img id="lightbox-target-img" src="" alt="معاينة إعلان مركز رويال" class="lightbox-img">
+      <div id="lightbox-caption-text" class="lightbox-caption"></div>
+    </div>
+  </div>
 </body>
 </html>

@@ -151,7 +151,59 @@ const ROYAL_CONTENT = {
     sterilizationStandard: "تعقيم فئة B أوروبية لكل مريض", // TODO: confirm with clinic
     painlessCareText: "عناية طبية مريحة ومهدئة للتوتر", // TODO: confirm with clinic (صياغة معتدلة بدون ادعاء قطعي لـ بدون ألم)
     defaultPromoText: "خصم 25% على الكشف الأولي عند الحجز المسبق عبر الموقع" // TODO: confirm with clinic
-  }
+  },
+
+  // الحملات الإعلانية المعتمدة
+  campaigns: [
+    {
+      id: "before_after",
+      title: "جاهز تبدأ رحلة ابتسامة أحلامك معانا؟",
+      badge: "حالة قبل وبعد حقيقية",
+      image: "./assets/ad_before_after_journey.jpg",
+      serviceTarget: "تجميل الأسنان والفينير",
+      desc: "حالة تجميل وتناسق ابتسامة حقيقية نفذت في عيادات رويال."
+    },
+    {
+      id: "ortho_age",
+      title: "هل التقويم له سن معين؟",
+      badge: "تقويم لكل الأعمار",
+      image: "./assets/ad_ortho_age.jpg",
+      serviceTarget: "تقويم الأسنان والفكين",
+      desc: "خطط تقويم الأسنان والفكين لمختلف الفئات العمرية بأجهزة حديثة."
+    },
+    {
+      id: "gummy_smile",
+      title: "الابتسامة اللثوية بتغير شكل ابتسامتك في الصور",
+      badge: "تجميل اللثة بالليزر",
+      image: "./assets/ad_gummy_smile_laser.jpg",
+      serviceTarget: "تجميل الأسنان والفينير",
+      desc: "قص وتنسيق اللثة بالليزر المائي بدقة وسرعة تعافٍ دون نزيف."
+    },
+    {
+      id: "fear_solution",
+      title: "الخوف من دكتور الأسنان مش هو الحل!!",
+      badge: "عناية بدون قلق",
+      image: "./assets/ad_fear_solution.jpg",
+      serviceTarget: "كشف واستشارة عامة",
+      desc: "بروتوكول تهدئة وبيئة علاجية مريحة ومرحبة بكل مريض."
+    },
+    {
+      id: "confident_smile",
+      title: "خلّي ضحكتك تعكس ثقتك في كل خطوة",
+      badge: "طب أسنان الأطفال والأسرة",
+      image: "./assets/ad_confident_smile_kids.jpg",
+      serviceTarget: "طب أسنان الأطفال",
+      desc: "رعاية وقائية وترحيبية تجعل زيارة الطفل لعيادة الأسنان تجربة ممتعة."
+    },
+    {
+      id: "ladies_clinic",
+      title: "جناح السيدات المستقل بمدينة أسيوط",
+      badge: "قسم السيدات المستقل",
+      image: "./assets/ad_ladies_clinic.jpg",
+      serviceTarget: "عيادة السيدات المتخصصة",
+      desc: "خصوصية كاملة وطاقم طبي نسائي معتمد بفرع أسيوط."
+    }
+  ]
 };
 
 if (typeof module !== "undefined" && module.exports) {
